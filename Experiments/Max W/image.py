@@ -3,19 +3,25 @@ try:
 except ImportError:
     import image
 import pytesseract, datetime
+#PIL, python imaging library
+#pytesseract, python wrapper for google's OCR CLI
+#datetime, used to time execution
 
-#pytesseract.pytesseract.tesseract_cmd = r'/usr/local/Cellar/tesseract/4.1.1/bin/tesseract'
+#accumulate excecution time for 100 trials
 tT = 0
-for num in range(100):
+#loop runs single scan test 100 times and measures execution time
+for num in range(100): 
     startTime = datetime.datetime.now()
-    pytesseract.image_to_string(Image.open('test_label.png'))
+    #Here I'm using pytesseract to extract text from the image as a string
+    pytesseract.image_to_string(Image.open('test_label.png')) 
     endTime = datetime.datetime.now()
     tT += (endTime-startTime).total_seconds()
 
 print('Single scan average time:', tT / 100)
-tT = 0
+tT = 0 
 
-for num in range(100):
+#loop runs multi scan test 100 times to test avg time
+for num in range(100): 
     startTime = datetime.datetime.now()
     label = Image.open('test_label.png')
     width, height = label.size
@@ -69,6 +75,4 @@ However, this is only one segment of our problem. We also need to find a way to 
 in the image. Maybe something to do with edge detection to find a box in the image and crop out 
 excess. Second, we must parse the text we get out of tesseract. I don't have a whole lot of ideas 
 for this yet but we just need to look for keywords and split lines into segments.
-
-
 '''
