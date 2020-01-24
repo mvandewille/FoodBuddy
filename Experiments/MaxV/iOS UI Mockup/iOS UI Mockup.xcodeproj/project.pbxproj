@@ -16,6 +16,7 @@
 		AFFEDE8623D9F0B7002D6E82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFFEDE8423D9F0B7002D6E82 /* LaunchScreen.storyboard */; };
 		AFFEDE9123D9F0B7002D6E82 /* iOS_UI_MockupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFEDE9023D9F0B7002D6E82 /* iOS_UI_MockupTests.swift */; };
 		AFFEDE9C23D9F0B7002D6E82 /* iOS_UI_MockupUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFEDE9B23D9F0B7002D6E82 /* iOS_UI_MockupUITests.swift */; };
+		AFFEDEAB23DB80B2002D6E82 /* TabbedPages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFFEDEA923DB80B2002D6E82 /* TabbedPages.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		AFFEDE9723D9F0B7002D6E82 /* iOS UI MockupUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS UI MockupUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFFEDE9B23D9F0B7002D6E82 /* iOS_UI_MockupUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_UI_MockupUITests.swift; sourceTree = "<group>"; };
 		AFFEDE9D23D9F0B7002D6E82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFFEDEAA23DB80B2002D6E82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "iOS UI Mockup/Base.lproj/TabbedPages.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,9 +107,10 @@
 				AFFEDE7923D9F0B5002D6E82 /* SceneDelegate.swift */,
 				AFFEDE7B23D9F0B5002D6E82 /* FirstViewController.swift */,
 				AFFEDE7D23D9F0B5002D6E82 /* SecondViewController.swift */,
-				AFFEDE7F23D9F0B5002D6E82 /* Main.storyboard */,
-				AFFEDE8223D9F0B7002D6E82 /* Assets.xcassets */,
 				AFFEDE8423D9F0B7002D6E82 /* LaunchScreen.storyboard */,
+				AFFEDE7F23D9F0B5002D6E82 /* Main.storyboard */,
+				AFFEDEA923DB80B2002D6E82 /* TabbedPages.storyboard */,
+				AFFEDE8223D9F0B7002D6E82 /* Assets.xcassets */,
 				AFFEDE8723D9F0B7002D6E82 /* Info.plist */,
 			);
 			path = "iOS UI Mockup";
@@ -238,6 +241,7 @@
 				AFFEDE8623D9F0B7002D6E82 /* LaunchScreen.storyboard in Resources */,
 				AFFEDE8323D9F0B7002D6E82 /* Assets.xcassets in Resources */,
 				AFFEDE8123D9F0B5002D6E82 /* Main.storyboard in Resources */,
+				AFFEDEAB23DB80B2002D6E82 /* TabbedPages.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +319,14 @@
 				AFFEDE8523D9F0B7002D6E82 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		AFFEDEA923DB80B2002D6E82 /* TabbedPages.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AFFEDEAA23DB80B2002D6E82 /* Base */,
+			);
+			name = TabbedPages.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
