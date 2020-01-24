@@ -17,6 +17,8 @@
 		AFFEDE9123D9F0B7002D6E82 /* iOS_UI_MockupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFEDE9023D9F0B7002D6E82 /* iOS_UI_MockupTests.swift */; };
 		AFFEDE9C23D9F0B7002D6E82 /* iOS_UI_MockupUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFEDE9B23D9F0B7002D6E82 /* iOS_UI_MockupUITests.swift */; };
 		AFFEDEAB23DB80B2002D6E82 /* TabbedPages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFFEDEA923DB80B2002D6E82 /* TabbedPages.storyboard */; };
+		AFFEDEAE23DB8AD1002D6E82 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFFEDEAC23DB8AD1002D6E82 /* Settings.storyboard */; };
+		AFFEDEB023DB8AF2002D6E82 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFFEDEAF23DB8AF2002D6E82 /* Calendar.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		AFFEDE9B23D9F0B7002D6E82 /* iOS_UI_MockupUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_UI_MockupUITests.swift; sourceTree = "<group>"; };
 		AFFEDE9D23D9F0B7002D6E82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFFEDEAA23DB80B2002D6E82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "iOS UI Mockup/Base.lproj/TabbedPages.storyboard"; sourceTree = "<group>"; };
+		AFFEDEAD23DB8AD1002D6E82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "iOS UI Mockup/iOS UI Mockup/Base.lproj/Settings.storyboard"; sourceTree = "<group>"; };
+		AFFEDEAF23DB8AF2002D6E82 /* Calendar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,8 @@
 				AFFEDE8423D9F0B7002D6E82 /* LaunchScreen.storyboard */,
 				AFFEDE7F23D9F0B5002D6E82 /* Main.storyboard */,
 				AFFEDEA923DB80B2002D6E82 /* TabbedPages.storyboard */,
+				AFFEDEAC23DB8AD1002D6E82 /* Settings.storyboard */,
+				AFFEDEAF23DB8AF2002D6E82 /* Calendar.storyboard */,
 				AFFEDE8223D9F0B7002D6E82 /* Assets.xcassets */,
 				AFFEDE8723D9F0B7002D6E82 /* Info.plist */,
 			);
@@ -238,10 +244,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFFEDEB023DB8AF2002D6E82 /* Calendar.storyboard in Resources */,
 				AFFEDE8623D9F0B7002D6E82 /* LaunchScreen.storyboard in Resources */,
 				AFFEDE8323D9F0B7002D6E82 /* Assets.xcassets in Resources */,
 				AFFEDE8123D9F0B5002D6E82 /* Main.storyboard in Resources */,
 				AFFEDEAB23DB80B2002D6E82 /* TabbedPages.storyboard in Resources */,
+				AFFEDEAE23DB8AD1002D6E82 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +335,14 @@
 				AFFEDEAA23DB80B2002D6E82 /* Base */,
 			);
 			name = TabbedPages.storyboard;
+			sourceTree = "<group>";
+		};
+		AFFEDEAC23DB8AD1002D6E82 /* Settings.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AFFEDEAD23DB8AD1002D6E82 /* Base */,
+			);
+			name = Settings.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
