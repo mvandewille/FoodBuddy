@@ -20,7 +20,7 @@
                     <navigationItem key="navigationItem" id="rbC-2k-eIM">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="calendar" catalog="system" id="Vb9-jS-N45">
                             <connections>
-                                <segue destination="BaC-gM-fso" kind="show" id="uBc-kB-k3V"/>
+                                <segue destination="95R-KD-Wae" kind="show" id="uBc-kB-k3V"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="line.horizontal.3" catalog="system" id="ISl-C5-676">
@@ -110,6 +110,22 @@
             </objects>
             <point key="canvasLocation" x="-743.47826086956525" y="730.58035714285711"/>
         </scene>
+        <!--Calendar-->
+        <scene sceneID="e0u-Sn-beN">
+            <objects>
+                <viewController title="Calendar" id="95R-KD-Wae" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xuR-KQ-byb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="rz6-vE-zz5"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="BSZ-ku-mGQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eNp-Tl-RIb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-275" y="1460"/>
+        </scene>
         <!--Settings-->
         <scene sceneID="vqA-AR-bLl">
             <objects>
@@ -119,16 +135,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zBm-fN-PKH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="466.66666666666669" y="1459.8214285714284"/>
-        </scene>
-        <!--Calendar-->
-        <scene sceneID="vQo-8r-VcJ">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Calendar" id="BaC-gM-fso" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="ZCG-4D-ZX6"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x2u-l3-5H7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-275" y="1460"/>
         </scene>
     </scenes>
     <resources>
