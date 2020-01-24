@@ -7,41 +7,111 @@ import pytesseract, datetime
 #pytesseract, python wrapper for google's OCR CLI
 #datetime, used to time execution
 
-#accumulate excecution time for 100 trials
-tT = 0
-#loop runs single scan test 100 times and measures execution time
-for num in range(100): 
-    startTime = datetime.datetime.now()
-    #Here I'm using pytesseract to extract text from the image as a string
-    pytesseract.image_to_string(Image.open('test_label.png')) 
-    endTime = datetime.datetime.now()
-    tT += (endTime-startTime).total_seconds()
+def isDark(arr):
+    if len(arr) != 3:
+        return 0
+    else:
+        grey = (arr[0] + arr[1] + arr[2]) / 3 #convert to greyscale
+        if grey <= 100: #I arbitrarily chose this value for now
+            return 1
+        else:
+            return 0
 
-print('Single scan average time:', tT / 100)
-tT = 0 
+def testRows(img):
+    width, height = img.size
+    img = img.convert('RGB')
+    pixels = img.load()
+    slices = []
+    count = 0
+    buffer = 0
+    for line in range(height):
+        if buffer > 0:
+            buffer -= 1
+            continue
+        total = 0
+        for w in range(width):
+            total += isDark(pixels[w, line])
+        if total / width > 0.8:
+            count += 1
+            if count > 3:
+                slices.append(line)
+                buffer = 10
+                count = 0
+    print(slices)
+    return slices
 
-#loop runs multi scan test 100 times to test avg time
-for num in range(100): 
-    startTime = datetime.datetime.now()
-    label = Image.open('test_label.png')
-    width, height = label.size
+def split(img, slices):
+    width, height = img.size
 
     left = 0
     right = width
     top = 0
-    bottom = height / 4
+    bottom = 0
     quarter = bottom
     #crops = []
 
-    #now we crop the image into 4 sections
-    for num in range(4):
-        pytesseract.image_to_string(label.crop((left, top, right, bottom)))
-        top = bottom
-        bottom = bottom + quarter
+    startTime = datetime.datetime.now()
+    #now we crop the image
+    for num in slices:
+        if num > 10:
+            top = bottom
+            bottom = num
+            #img.crop((left, top, right, bottom)).show()
+            print(pytesseract.image_to_string(img.crop((left, top, right, bottom))))
+            #print("---------------------------------------------------")
     endTime = datetime.datetime.now()
-    tT += (endTime-startTime).total_seconds()
+    return (endTime - startTime).total_seconds()
+            
 
-print('4 segment scan average time:', tT / 100)
+
+
+toggle = 1 #0 = run single and multi test
+           #1 = run line detection
+if toggle == 0:
+    #accumulate excecution time for 100 trials
+    tT = 0
+    #loop runs single scan test 100 times and measures execution time
+    for num in range(1): 
+        startTime = datetime.datetime.now()
+        #Here I'm using pytesseract to extract text from the image as a string
+        print(pytesseract.image_to_string(Image.open('/Users/max/Dropbox/College/Year 3/COM S 309/hv_3/Experiments/Max W/test_label.png'))) 
+        endTime = datetime.datetime.now()
+        tT += (endTime-startTime).total_seconds()
+
+    print('Single scan average time:', tT / 100)
+    tT = 0 
+
+    #loop runs multi scan test 100 times to test avg time
+    for num in range(1): 
+        startTime = datetime.datetime.now()
+        label = Image.open('/Users/max/Dropbox/College/Year 3/COM S 309/hv_3/Experiments/Max W/test_label.png')
+        width, height = label.size
+
+        left = 0
+        right = width
+        top = 0
+        bottom = height / 4
+        quarter = bottom
+        #crops = []
+
+        #now we crop the image into 4 sections
+        for num in range(4):
+            pytesseract.image_to_string(label.crop((left, top, right, bottom)))
+            top = bottom
+            bottom = bottom + quarter
+        endTime = datetime.datetime.now()
+        tT += (endTime-startTime).total_seconds()
+
+    print('4 segment scan average time:', tT / 100)
+else:
+    img = Image.open('/Users/max/Dropbox/College/Year 3/COM S 309/hv_3/Experiments/Max W/test_label.png')
+    total = 0
+    for num in range(1):
+        print(num)
+        slices = testRows(img)
+        total += split(img, slices)
+    print(total / 1) #avg 4.9 
+                     #avg 3.6
 
 #short write up on findings so far
 '''
