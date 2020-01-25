@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="text_display_placeholder">"Nothing here"</string>
+</resources>
