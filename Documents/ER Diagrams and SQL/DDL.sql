@@ -16,7 +16,8 @@ DROP TABLE IF EXISTS user;
 
 CREATE TABLE user(
 	email varchar(100),
-	name varchar(100),
+	name varchar(150),
+	user_password varchar(100) NOT NULL
 	height_in int,
 	weight_lb int,
 	calorie_limit int,

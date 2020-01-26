@@ -1,0 +1,16 @@
+https://www.youtube.com/watch?v=32ZLGl32j6U
+
+VMDK download: https://www.youtube.com/redirect?v=32ZLGl32j6U&redir_token=_y8Zpr7GTp20duYJTXQH7PnBaw18MTU4MDE0NzU0NUAxNTgwMDYxMTQ1&event=video_description&q=https%3A%2F%2Fdrive.google.com%2Fopen%3Fid%3D1Yze0H1nSgpyzssOQ_1qCfjx9SdQuccRt
+
+VMDK password (extracting): intoguide.com
+
+cd "C:\Program Files\Oracle\VirtualBox\" 
+VBoxManage.exe modifyvm "MacOS Catalina" --cpuidset 00000001 000106e5 00100800 0098e3fd bfebfbff 
+VBoxManage setextradata "MacOS Catalina" "VBoxInternal/Devices/efi/0/Config/DmiSystemProduct" "iMac11,3" 
+VBoxManage setextradata "MacOS Catalina" "VBoxInternal/Devices/efi/0/Config/DmiSystemVersion" "1.0" 
+VBoxManage setextradata "MacOS Catalina" "VBoxInternal/Devices/efi/0/Config/DmiBoardProduct" "Iloveapple" 
+VBoxManage setextradata "MacOS Catalina" "VBoxInternal/Devices/smc/0/Config/DeviceKey" "ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc" 
+VBoxManage setextradata "MacOS Catalina" "VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC" 1
+
+
+When it boots to shell enter: install.nsh
