@@ -51,7 +51,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xw4-s6-dqQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2001" y="-526"/>
+            <point key="canvasLocation" x="-2038" y="-526"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="y9f-rh-0Ox">
@@ -111,6 +111,9 @@
                                 <rect key="frame" x="71" y="778" width="273" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Dont have an account? Create one now!"/>
+                                <connections>
+                                    <segue destination="chu-uF-oAy" kind="show" id="Mcn-xO-qg3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -120,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6bK-jW-BNh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1161" y="-526"/>
+            <point key="canvasLocation" x="-1299" y="-526"/>
         </scene>
         <!--TabbedPages-->
         <scene sceneID="Rmc-I6-dXX">
@@ -214,6 +217,7 @@
         <image name="f8303ac2a4bb68a8436a3570585005d2" width="640" height="1136"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Lpu-w8-DzZ"/>
+        <segue reference="Mcn-xO-qg3"/>
+        <segue reference="1Q2-Re-UT2"/>
     </inferredMetricsTieBreakers>
 </document>
