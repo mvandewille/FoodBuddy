@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Demo 1 Multi page app</string>
+    <string name="please_enter_your_name">Please enter your name:</string>
+    <string name="enter_name">Please enter your name:</string>
+    <string name="enter_your_name">Enter your name:</string>
+    <string name="the_user_s_name_is">The user\'s name is</string>
+    <string name="retrive_the_user_s_name">Retrive the user\'s name:</string>
+    <string name="retrieve">Retrieve</string>
+</resources>
