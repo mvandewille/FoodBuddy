@@ -58,7 +58,7 @@ def split(img, slices):
             bottom = num
             #img.crop((left, top, right, bottom)).show()
             print(pytesseract.image_to_string(img.crop((left, top, right, bottom))))
-            #print("---------------------------------------------------")
+            print("---------------------------------------------------")
     endTime = datetime.datetime.now()
     return (endTime - startTime).total_seconds()
             
@@ -104,7 +104,7 @@ if toggle == 0:
 
     print('4 segment scan average time:', tT / 100)
 else:
-    img = Image.open('/Users/max/Dropbox/College/Year 3/COM S 309/hv_3/Experiments/Max W/test_label.png')
+    img = Image.open('/Users/max/Dropbox/College/Year 3/COM S 309/hv_3/Experiments/MaxW/test_label.png')
     total = 0
     for num in range(1):
         print(num)
