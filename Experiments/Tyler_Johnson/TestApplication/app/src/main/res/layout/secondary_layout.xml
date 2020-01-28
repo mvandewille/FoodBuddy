@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/moves_header"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="250dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="MOVES"
+        android:textSize="30dp"
+        android:textAlignment="center"/>
+    <TextView
+        android:id="@+id/moves_counter"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@id/moves_header"
+        app:layout_constraintLeft_toLeftOf="@id/moves_header"
+        android:layout_marginLeft="68dp"
+        android:text="0"
+        android:textSize="40dp"
+        android:textAlignment="center"/>
+
+    <Button
+        android:id="@+id/reset_button"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="45dp"
+        app:layout_constraintTop_toBottomOf="@id/moves_counter"
+        app:layout_constraintLeft_toLeftOf="@id/moves_header"
+        android:text="Start over"/>
+
+    <Button
+        android:id="@+id/goto_main_page"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        app:layout_constraintTop_toBottomOf="@id/reset_button"
+        app:layout_constraintLeft_toLeftOf="@id/reset_button"
+        android:text="Page 1"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
