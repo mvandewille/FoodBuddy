@@ -1,4 +1,4 @@
-package com.example.restservice;
+package com.example.demo;
 
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -7,13 +7,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class Greetingcontrol {
+public class GreetingController {
 
 	private static final String template = "Hello, %s!";
 	private final AtomicLong counter = new AtomicLong();
 
-	@GetMapping("/greetings")
+	@GetMapping("/greeting")
 	public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
-		return new Greeting(counter.incrementAndGet(), String.format(template, name));
+		//return new Greeting(counter.incrementAndGet(), String.format(template, name));
+		return new Greeting(counter.incrementAndGet(), "Test #2 :O", "I have now added a message to this thing.");
 	}
 }
