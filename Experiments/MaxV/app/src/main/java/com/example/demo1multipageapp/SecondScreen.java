@@ -23,10 +23,6 @@ public class SecondScreen extends Activity{
 
         String previousActivity = activityThatCalled.getExtras().getString("callingActivity");
 
-        TextView callingActivityMessage = (TextView)
-                findViewById(R.id.calling_activity_info_text_view);
-
-        callingActivityMessage.append(" " + previousActivity);
     }
 
     public void onSendUsersName(View view) {
