@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eUf-3A-MQI">
-    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -40,9 +40,10 @@
                                     <segue destination="Vc5-cI-UtT" kind="show" id="bwi-GX-5QG"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="f8303ac2a4bb68a8436a3570585005d2" translatesAutoresizingMaskIntoConstraints="NO" id="qPd-7J-R2D">
+                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="f8303ac2a4bb68a8436a3570585005d2" translatesAutoresizingMaskIntoConstraints="NO" id="qPd-7J-R2D">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="658"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -214,6 +215,6 @@
         <image name="f8303ac2a4bb68a8436a3570585005d2" width="640" height="1136"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="91L-oF-VR0"/>
+        <segue reference="Mcn-xO-qg3"/>
     </inferredMetricsTieBreakers>
 </document>
