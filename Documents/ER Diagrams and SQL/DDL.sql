@@ -21,7 +21,7 @@ CREATE TABLE app_user(
 	user_type varchar(20),
 	height_in int,
 	weight_lb int,
-	calorie_limit int,
+	calorie_limit int
 );
 
 
