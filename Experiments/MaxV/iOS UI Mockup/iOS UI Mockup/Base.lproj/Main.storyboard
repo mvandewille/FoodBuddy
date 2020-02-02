@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eUf-3A-MQI">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -133,7 +133,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X0c-z3-aEe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-379" y="-520"/>
+            <point key="canvasLocation" x="-377" y="-526"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="lfp-se-R1x">
@@ -185,9 +185,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
-                                <connections>
-                                    <segue destination="GZw-kh-Qaa" kind="show" id="Lpu-w8-DzZ"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Confirm password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5Y-ct-dn8">
                                 <rect key="frame" x="68" y="468" width="190" height="31"/>
@@ -217,7 +214,6 @@
         <image name="f8303ac2a4bb68a8436a3570585005d2" width="640" height="1136"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Mcn-xO-qg3"/>
-        <segue reference="1Q2-Re-UT2"/>
+        <segue reference="91L-oF-VR0"/>
     </inferredMetricsTieBreakers>
 </document>
