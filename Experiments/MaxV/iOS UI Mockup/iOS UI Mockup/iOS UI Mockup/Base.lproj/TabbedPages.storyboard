@@ -48,7 +48,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="glq-TA-YUJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1677" y="731"/>
+            <point key="canvasLocation" x="2586.9565217391305" y="730.58035714285711"/>
         </scene>
         <!--Label Scanner-->
         <scene sceneID="wg7-f3-ORb">
@@ -66,11 +66,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Scanner" image="barcode.viewfinder" catalog="system" id="cPa-gy-q4n"/>
+                    <navigationItem key="navigationItem" id="Ves-gH-P9E">
+                        <rightBarButtonItems>
+                            <barButtonItem id="tCR-P9-3Pe"/>
+                            <barButtonItem title="Item" image="square.and.pencil" catalog="system" id="qHr-yr-tcn"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="910.14492753623199" y="730.58035714285711"/>
+            <point key="canvasLocation" x="1820.289855072464" y="730.58035714285711"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -83,7 +88,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="mn5-NJ-RlI" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="fvQ-4U-nrj" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="HuW-Us-8iA" kind="relationship" relationship="viewControllers" id="cfe-gr-vp2"/>
                     </connections>
                 </tabBarController>
@@ -130,12 +135,32 @@
             </objects>
             <point key="canvasLocation" x="-275" y="1460"/>
         </scene>
+        <!--Scanner-->
+        <scene sceneID="oW8-1B-fG6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fvQ-4U-nrj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Scanner" image="barcode.viewfinder" catalog="system" id="cPa-gy-q4n"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="74a-Ub-Www">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="DSZ-Zq-C9n"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ehE-YS-v6J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="910.14492753623199" y="730.58035714285711"/>
+        </scene>
     </scenes>
     <resources>
         <image name="barcode.viewfinder" catalog="system" width="64" height="56"/>
         <image name="calendar" catalog="system" width="64" height="52"/>
         <image name="line.horizontal.3" catalog="system" width="64" height="32"/>
         <image name="person.2.fill" catalog="system" width="64" height="40"/>
+        <image name="square.and.pencil" catalog="system" width="64" height="58"/>
         <image name="tortoise.fill" catalog="system" width="64" height="32"/>
     </resources>
 </document>
