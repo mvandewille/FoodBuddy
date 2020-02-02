@@ -15,6 +15,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Food finger minus finger" translatesAutoresizingMaskIntoConstraints="NO" id="AYN-lz-v9Y">
+                                <rect key="frame" x="-19" y="0.0" width="453" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ofa-hr-Oms">
                                 <rect key="frame" x="0.0" y="776" width="414" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -40,11 +44,6 @@
                                     <segue destination="Vc5-cI-UtT" kind="show" id="bwi-GX-5QG"/>
                                 </connections>
                             </button>
-                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="f8303ac2a4bb68a8436a3570585005d2" translatesAutoresizingMaskIntoConstraints="NO" id="qPd-7J-R2D">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="658"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="9cg-Fn-Dxf"/>
@@ -52,7 +51,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xw4-s6-dqQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2038" y="-526"/>
+            <point key="canvasLocation" x="-2039.1304347826087" y="-526.33928571428567"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="y9f-rh-0Ox">
@@ -208,13 +207,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rBN-kP-nAw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2001" y="204"/>
+            <point key="canvasLocation" x="-2004" y="206"/>
         </scene>
     </scenes>
     <resources>
-        <image name="f8303ac2a4bb68a8436a3570585005d2" width="640" height="1136"/>
+        <image name="Food finger minus finger" width="592" height="1280"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Mcn-xO-qg3"/>
+        <segue reference="91L-oF-VR0"/>
     </inferredMetricsTieBreakers>
 </document>
