@@ -44,6 +44,10 @@
                                     <segue destination="Vc5-cI-UtT" kind="show" id="bwi-GX-5QG"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="assembly 5" translatesAutoresizingMaskIntoConstraints="NO" id="sPg-Et-BJR">
+                                <rect key="frame" x="4" y="170" width="406" height="247"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="9cg-Fn-Dxf"/>
@@ -65,7 +69,7 @@
                                 <rect key="frame" x="68" y="159" width="279" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-BoldItalic" family="Avenir Next" pointSize="50"/>
-                                <color key="textColor" red="0.32970346560000002" green="0.64451875619999999" blue="0.3360963293" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.32941176470588235" green="0.64313725490196072" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVF-jY-XCw">
@@ -212,6 +216,7 @@
     </scenes>
     <resources>
         <image name="Food finger minus finger" width="592" height="1280"/>
+        <image name="assembly 5" width="4096" height="2303"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="91L-oF-VR0"/>
