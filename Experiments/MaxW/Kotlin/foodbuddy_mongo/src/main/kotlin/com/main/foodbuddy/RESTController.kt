@@ -12,17 +12,25 @@ class RESTController {
     @Autowired
     lateinit var repository: CustomerRepository
 
-    var counter = AtomicLong()
+    //val maxId: Long
+    lateinit var counter: AtomicLong
 
     @GetMapping("/add")
-    fun addData(@RequestParam(value = "fName", defaultValue = " ") fName: String, @RequestParam(value = "lName", defaultValue = " ") lName: String): String{
-        if (!(fName == " " || lName == " ")) {
-            var temp = Customer(fName, lName, counter.incrementAndGet())
-            repository.save(temp)
+    fun addData(@RequestParam(value = "fName", required = true) fName: String, @RequestParam(value = "lName", required = true) lName: String): String{
+        println("----------------------------------------------")
+        val maxId: Long
+        val newId: Long
+        if (repository.count() != 0.toLong())
+            maxId = repository.findByOrderByIdDesc()[0].id
+        else
+            maxId = -1
+        newId = maxId + 1
 
-            return "Added new $temp"
-        }
-        return "Err: Firstname: $fName    Lastname: $lName"
+        //val temp = Customer(fName, lName, counter.getAndIncrement())
+        val temp = Customer(fName, lName, newId)
+        repository.save(temp)
+
+        return "Added new $temp"
     }
 
     @GetMapping("/delall")
