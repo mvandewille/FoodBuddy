@@ -5,6 +5,7 @@ import kotlin.collections.MutableList
 import org.springframework.data.mongodb.repository.MongoRepository
 
 interface UserRepository : MongoRepository<User, String> {
+    fun findAllBy(): MutableList<User>
     fun findByEmail(email: String): User
     fun findByName(name: String): MutableList<User>
 
