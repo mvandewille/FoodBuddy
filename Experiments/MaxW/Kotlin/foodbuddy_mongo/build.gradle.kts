@@ -50,7 +50,7 @@ tasks.withType<KotlinCompile> {
 }
 
 tasks.getByName<org.springframework.boot.gradle.tasks.run.BootRun>("bootRun") {
-	main = "com.example.FoodbuddlyApplication"
+	main = "com.example.FoodbuddyApplication"
 }
 
 tasks.getByName<Jar>("jar") {
