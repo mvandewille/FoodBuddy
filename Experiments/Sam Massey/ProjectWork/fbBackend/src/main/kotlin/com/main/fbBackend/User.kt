@@ -9,6 +9,6 @@ import java.util.concurrent.atomic.AtomicLong
 
 @RestController
 class UserController{
-    @GetMapping
-    fun 
+    @GetMapping("/")
+    fun getUser() = "User 1"
 }
