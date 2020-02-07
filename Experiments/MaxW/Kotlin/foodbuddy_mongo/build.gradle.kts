@@ -48,3 +48,16 @@ tasks.withType<KotlinCompile> {
 		jvmTarget = "1.8"
 	}
 }
+
+tasks.getByName<org.springframework.boot.gradle.tasks.run.BootRun>("bootRun") {
+	main = "com.example.ExampleApplication"
+}
+
+tasks.getByName<Jar>("jar") {
+	enabled = true
+}
+tasks.getByName<org.springframework.boot.gradle.tasks.bundling.BootJar>("bootJar") {
+	classifier = "boot"
+	mainClassName = "com.main.app.FoodbuddyApplication"
+	launchScript()
+}
