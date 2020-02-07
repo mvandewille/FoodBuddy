@@ -50,7 +50,7 @@ tasks.withType<KotlinCompile> {
 }
 
 tasks.getByName<org.springframework.boot.gradle.tasks.run.BootRun>("bootRun") {
-	main = "com.main.app.FoodbuddyApplication"
+	main = "com.main.app.FoodbuddyApplicationKt"
 }
 
 tasks.getByName<Jar>("jar") {
@@ -60,4 +60,8 @@ tasks.getByName<org.springframework.boot.gradle.tasks.bundling.BootJar>("bootJar
 	classifier = "boot"
 	mainClassName = "com.main.app.FoodbuddyApplication"
 	launchScript()
+}
+
+sourceSets["main"].withConvention(org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet::class) {
+	kotlin.srcDir("src/main/myKotlin")
 }
