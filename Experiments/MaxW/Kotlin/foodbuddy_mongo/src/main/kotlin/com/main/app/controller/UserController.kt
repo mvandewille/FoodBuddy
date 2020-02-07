@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.dao.EmptyResultDataAccessException
+import org.springframework.data.mongodb.repository.Query
 import org.springframework.web.bind.annotation.RequestMapping
 
 @RestController
@@ -19,23 +20,30 @@ class UserController {
     fun find(): String {
         try {
             var temp = repository.findAllBy()
-            var result = ""
 
-            temp.forEach{
-                result += it.toString() + "<br>"
-            }
-            return result
+            return stringify(temp)
         }
         catch (e: EmptyResultDataAccessException) {
             return "No data!"
         }
     }
 
-    @GetMapping("/findEmail")
-    fun idFind(@RequestParam(value = "email", defaultValue = "-1") email: String): String {
+    @GetMapping("/find/email")
+    fun emailFind(@RequestParam(value = "email", required = true) email: String): String {
         try {
             var temp = repository.findByEmail(email)
             return "Result: $temp"
+        }
+        catch (e: EmptyResultDataAccessException) {
+            return "No matching entry!"
+        }
+    }
+
+    @GetMapping("/find/name")
+    fun nameFind(@RequestParam(value = "name", required = true) name: String): String {
+        try {
+            var temp = repository.findByName(name)
+            return stringify(temp)
         }
         catch (e: EmptyResultDataAccessException) {
             return "No matching entry!"
@@ -54,10 +62,24 @@ class UserController {
         return "Added new $temp"
     }
 
+    @GetMapping("/delete/email")
+    fun delEmail(@RequestParam(value = "email", required = true) email: String): String {
+        repository.deleteByEmail(email)
+        return "$email deleted."
+    }
+
     @GetMapping("/delall")
     fun delData(): String {
         repository.deleteAll()
         return "Success all rows removed"
+    }
+
+    fun stringify(list: MutableList<User>): String {
+        var r = ""
+        list.forEach{
+            r += it.toString() + "<br>"
+        }
+        return r
     }
 
 }

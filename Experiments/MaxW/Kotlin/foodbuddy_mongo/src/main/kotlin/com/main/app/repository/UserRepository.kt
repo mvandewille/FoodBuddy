@@ -13,8 +13,14 @@ interface UserRepository : MongoRepository<User, String> {
     fun findByEmailAndPassword(email: String, password: String): MutableList<User>
 
     fun findByOrderByUserTypeAsc(): MutableList<User>
+    fun findByOrderByUserTypeDesc(): MutableList<User>
 
     //Order users by height and weight
     fun findByOrderByHeightAsc(): MutableList<User>
     fun findByOrderByHeightDesc(): MutableList<User>
+
+    fun findByOrderByWeightAsc(): MutableList<User>
+    fun findByOrderByWeightDesc(): MutableList<User>
+
+    fun deleteByEmail(email: String)
 }
