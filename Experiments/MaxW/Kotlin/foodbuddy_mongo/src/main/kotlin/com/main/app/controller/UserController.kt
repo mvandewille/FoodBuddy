@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.dao.EmptyResultDataAccessException
-import org.springframework.data.mongodb.repository.Query
 import org.springframework.web.bind.annotation.RequestMapping
 
 @RestController
@@ -16,7 +15,7 @@ class UserController {
     @Autowired
     lateinit var repository: UserRepository
 
-    @GetMapping("/find")
+    @GetMapping("/find/all")
     fun find(): String {
         try {
             var temp = repository.findAllBy()
