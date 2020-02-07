@@ -68,7 +68,7 @@ class UserController {
         return "$email deleted."
     }
 
-    @GetMapping("/delall")
+    @GetMapping("/delete/all")
     fun delData(): String {
         repository.deleteAll()
         return "Success all rows removed"
