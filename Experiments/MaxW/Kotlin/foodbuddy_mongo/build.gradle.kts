@@ -1,5 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+//https://docs.gradle.org/current/userguide/working_with_files.html#sec:creating_uber_jar_example
+
 plugins {
 	id("org.springframework.boot") version "2.2.4.RELEASE"
 	id("io.spring.dependency-management") version "1.0.9.RELEASE"
@@ -8,9 +10,9 @@ plugins {
 	kotlin("plugin.jpa") version "1.3.61"
 }
 
-group = "com.main"
+group = "com.main.app"
 version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_11
+java.sourceCompatibility = JavaVersion.VERSION_13
 
 val developmentOnly by configurations.creating
 configurations {
@@ -55,10 +57,19 @@ tasks.getByName<org.springframework.boot.gradle.tasks.run.BootRun>("bootRun") {
 
 tasks.getByName<Jar>("jar") {
 	enabled = true
+	manifest {
+		attributes["Main-Class"] = "com.main.app.FoodbuddyApplicationKt"
+	}
+
+	dependsOn(configurations.runtimeClasspath)
+	from({
+		configurations.runtimeClasspath.get().filter { it.name.endsWith("jar") }.map { zipTree(it) }
+	})
 }
+
 tasks.getByName<org.springframework.boot.gradle.tasks.bundling.BootJar>("bootJar") {
 	classifier = "boot"
-	mainClassName = "com.main.app.FoodbuddyApplication"
+	mainClassName = "com.main.app.FoodbuddyApplicationKt"
 	launchScript()
 }
 
