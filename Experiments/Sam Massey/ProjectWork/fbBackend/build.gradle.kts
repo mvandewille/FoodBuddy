@@ -8,9 +8,9 @@ plugins {
 	kotlin("plugin.jpa") version "1.3.61"
 }
 
-group = "com.main"
+group = "com.main.fbBackend"
 version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_11
+java.sourceCompatibility = JavaVersion.VERSION_13
 
 val developmentOnly by configurations.creating
 configurations {
@@ -47,4 +47,30 @@ tasks.withType<KotlinCompile> {
 		freeCompilerArgs = listOf("-Xjsr305=strict")
 		jvmTarget = "1.8"
 	}
+}
+
+tasks.getByName<org.springframework.boot.gradle.tasks.run.BootRun>("bootRun") {
+	main = "com.main.fbBackend.FbBackendApplicationKt"
+}
+
+tasks.getByName<Jar>("jar") {
+	enabled = true
+	manifest {
+		attributes["Main-Class"] = "com.main.fbBackend.FbBackendApplicationKt"
+	}
+
+	dependsOn(configurations.runtimeClasspath)
+	from({
+		configurations.runtimeClasspath.get().filter { it.name.endsWith("jar") }.map { zipTree(it) }
+	})
+}
+
+tasks.getByName<org.springframework.boot.gradle.tasks.bundling.BootJar>("bootJar") {
+	classifier = "boot"
+	mainClassName = "com.main.fbBackend.FbBackendApplicationKt"
+	launchScript()
+}
+
+sourceSets["main"].withConvention(org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet::class) {
+	kotlin.srcDir("src/main/kotlin")
 }

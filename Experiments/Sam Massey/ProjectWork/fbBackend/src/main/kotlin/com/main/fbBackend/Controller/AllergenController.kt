@@ -22,4 +22,9 @@ class AllergenController {
 
         return "Added new $t"
     }
+    @GetMapping("/delete/all")
+    fun findAll() :String {
+        repository.deleteAll()
+        return "All allergies deleted!"
+    }
 }
