@@ -74,5 +74,5 @@ tasks.getByName<org.springframework.boot.gradle.tasks.bundling.BootJar>("bootJar
 }
 
 sourceSets["main"].withConvention(org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet::class) {
-	kotlin.srcDir("src/main/myKotlin")
+	kotlin.srcDir("src/main/kotlin")
 }
