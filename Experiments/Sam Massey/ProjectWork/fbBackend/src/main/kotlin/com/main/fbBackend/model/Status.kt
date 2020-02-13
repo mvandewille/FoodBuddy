@@ -7,5 +7,5 @@ class Status (@Id private val name: String, private val message: String, private
     override fun toString(): String {
         return "Status[name=$name, message=$message, flagged=$flagged"
     }
-    
+
 }
