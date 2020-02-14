@@ -1,13 +1,11 @@
 package com.main.app.controller
 
 import com.main.app.model.Food
+import com.main.app.JSON.FoodJ
 import com.main.app.repository.FoodRepository
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestParam
-import org.springframework.web.bind.annotation.RestController
 import org.springframework.dao.EmptyResultDataAccessException
-import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/food")
@@ -50,11 +48,11 @@ class FoodController {
         }
     }
 
-    @GetMapping("/add")
-    fun addFood(@RequestParam(value = "name", required = true) name: String,
-                @RequestParam(value = "calories", defaultValue = "0") calories: String): String {
-        val temp = Food(name, calories.toInt())
+    @PostMapping("/add")
+    fun addFood(@RequestBody food: FoodJ): String {
+        val temp = Food(food.name, food.calories, food.sodium, food.carbs, food.protein, food.fat, food.cholesterol)
         repository.save(temp)
+
         return "Added new $temp"
     }
 
