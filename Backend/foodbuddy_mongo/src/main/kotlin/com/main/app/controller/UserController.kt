@@ -2,10 +2,17 @@ package com.main.app.controller
 
 import com.main.app.model.User
 import com.main.app.repository.UserRepository
+import com.main.app.JSON.UserJ
+
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestParam
+
 import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PostMapping
+
+import org.springframework.web.bind.annotation.RequestParam
+import org.springframework.web.bind.annotation.RequestBody
+
 import org.springframework.dao.EmptyResultDataAccessException
 import org.springframework.web.bind.annotation.RequestMapping
 
@@ -48,19 +55,25 @@ class UserController {
             return "No matching entry!"
         }
     }
-
-    @GetMapping("/add")
+    /*
+    @PostMapping("/add")
     fun addData(
             @RequestParam(value = "email", required = true) email: String,
             @RequestParam(value = "name", required = true) name: String,
-            @RequestParam(value = "password", required = true) password: String,
-            @RequestParam(value = "userType", required = true) userType: String): String{
-        val temp = User(email, name, password, userType)
+            @RequestParam(value = "password", required = true) password: String): String{
+        val temp = User(email, name, password)
         repository.save(temp)
 
         return "Added new $temp"
     }
+*/
+    @PostMapping("/add")
+    fun addData(@RequestBody user: UserJ): String {
+        val temp = User(user.email, user.name, user.password)
+        repository.save(temp)
 
+        return "Added new $temp"
+    }
     @GetMapping("/delete/email")
     fun delEmail(@RequestParam(value = "email", required = true) email: String): String {
         repository.deleteByEmail(email)
