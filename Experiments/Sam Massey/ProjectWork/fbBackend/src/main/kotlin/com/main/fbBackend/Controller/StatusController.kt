@@ -18,8 +18,7 @@ class StatusController {
     @GetMapping("/add")
     fun addStatus(@RequestParam(value = "name", required = true) name: String,
                   @RequestParam(value = "message", required = true) message: String,
-                  @RequestParam(value = "flagged", required = true) flagged: Boolean)
-    {
+                  @RequestParam(value = "flagged", required = true) flagged: Boolean): String {
         val temp = Status(name, message, flagged)
         repository.save(temp)
         return "Added new $temp"
