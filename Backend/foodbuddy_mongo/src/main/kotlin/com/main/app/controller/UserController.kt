@@ -55,18 +55,7 @@ class UserController {
             return "No matching entry!"
         }
     }
-    /*
-    @PostMapping("/add")
-    fun addData(
-            @RequestParam(value = "email", required = true) email: String,
-            @RequestParam(value = "name", required = true) name: String,
-            @RequestParam(value = "password", required = true) password: String): String{
-        val temp = User(email, name, password)
-        repository.save(temp)
 
-        return "Added new $temp"
-    }
-*/
     @PostMapping("/add")
     fun addData(@RequestBody user: UserJ): String {
         val temp = User(user.email, user.name, user.password)
@@ -74,6 +63,7 @@ class UserController {
 
         return "Added new $temp"
     }
+
     @GetMapping("/delete/email")
     fun delEmail(@RequestParam(value = "email", required = true) email: String): String {
         repository.deleteByEmail(email)
