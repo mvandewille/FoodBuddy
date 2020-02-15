@@ -1,6 +1,6 @@
-package com.main.fbBackend.repository
+package com.main.app.repository
 
-import com.main.fbBackend.model.Day
+import com.main.app.model.Day
 import kotlin.collections.MutableList
 import org.springframework.data.mongodb.repository.MongoRepository
 import java.util.*

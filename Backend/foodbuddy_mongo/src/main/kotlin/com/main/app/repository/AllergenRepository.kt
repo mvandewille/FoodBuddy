@@ -1,6 +1,6 @@
-package com.main.fbBackend.repository
+package com.main.app.repository
 
-import com.main.fbBackend.model.Allergen
+import com.main.app.model.Allergen
 import kotlin.collections.MutableList
 import org.springframework.data.mongodb.repository.MongoRepository
 

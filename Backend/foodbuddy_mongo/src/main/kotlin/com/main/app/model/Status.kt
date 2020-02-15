@@ -1,4 +1,4 @@
-package com.main.fbBackend.model
+package com.main.app.model
 
 import org.springframework.data.annotation.Id
 
