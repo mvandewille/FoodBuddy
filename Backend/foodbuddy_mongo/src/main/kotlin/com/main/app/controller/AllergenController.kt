@@ -1,4 +1,4 @@
-package com.main.fbBackend.Controller
+package com.main.app.controller
 
 import com.main.app.model.Allergen
 import com.main.app.repository.AllergenRepository
