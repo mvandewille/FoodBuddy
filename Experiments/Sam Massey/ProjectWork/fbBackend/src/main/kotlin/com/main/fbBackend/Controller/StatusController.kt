@@ -21,7 +21,7 @@ class StatusController {
                   @RequestParam(value = "flagged", required = true) flagged: Boolean): String {
 
         val i = getLastAdd()
-        val temp = Status(name, message, flagged, i + 1)
+        val temp = Status(name, message, flagged, i + 1L)
         repository.save(temp)
         return "Added new $temp"
     }
@@ -29,7 +29,7 @@ class StatusController {
     @GetMapping("/update/flag")
     fun updateStatusFlag(@RequestParam(value = "flagged", required = true) flagged: Boolean)
     {
-        val temp = repository.findByStatusIDOrderByStatusIDDesc().first()
+        val temp = repository.findByMessageOrderByStatusID().first()
     }
 
     @GetMapping("/delete/all")
@@ -38,18 +38,21 @@ class StatusController {
         return "Deleted Everything!"
     }
 
-    @GetMapping("get/last")
+    @GetMapping("/get/last")
     fun getLast(): Long{
         return getLastAdd()
     }
 
+    @GetMapping("/count")
+    fun getCount(): Long {
+        return repository.count()
+    }
+
     fun getLastAdd(): Long {
-        if(repository.count() != 0L){
-            val temp = repository.findByStatusIDOrderByStatusIDDesc().first()
+        if (repository.count() != 0L) {
+            val temp = repository.findByMessageOrderByStatusID().first()
             return temp.getStatusID()
-        }
-        else
-        {
+        } else {
             return 0L
         }
     }
