@@ -35,9 +35,9 @@ class UserController {
     }
 
     @GetMapping("/find/email")
-    fun emailFind(@RequestParam(value = "email", required = true) email: String): String {
+    fun emailFind(@RequestBody user: UserJ): String {
         try {
-            var temp = repository.findByEmail(email)
+            var temp = repository.findByEmail(user.email)
             return "Result: $temp"
         }
         catch (e: EmptyResultDataAccessException) {
