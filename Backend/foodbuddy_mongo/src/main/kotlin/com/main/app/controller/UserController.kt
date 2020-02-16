@@ -58,7 +58,7 @@ class UserController {
 
     @PostMapping("/add")
     fun addData(@RequestBody user: UserJ): String {
-        val temp = User(user.email, user.name, user.password)
+        val temp = User(user.email, user.password)
         repository.save(temp)
 
         return "Added new $temp"
