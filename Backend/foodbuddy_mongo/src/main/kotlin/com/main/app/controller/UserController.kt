@@ -1,5 +1,6 @@
 package com.main.app.controller
 
+import com.main.app.JSON.ResponseJ
 import com.main.app.model.User
 import com.main.app.repository.UserRepository
 import com.main.app.JSON.UserJ
@@ -35,16 +36,17 @@ class UserController {
     }
 
     @GetMapping("/auth")
-    fun auth(@RequestBody user: UserJ): Int {
+    fun auth(@RequestParam(value = "email", required = true) email: String,
+             @RequestParam(value = "password", required = true) password: String): ResponseJ {
         try {
-            var temp = repository.findByEmailAndPassword(user.email, user.password)
+            var temp = repository.findByEmailAndPassword(email, password)
             if(temp != null)
-                return 1
+                return ResponseJ(1)
             else
-                return 0
+                return ResponseJ(0)
         }
         catch (e: EmptyResultDataAccessException) {
-            return 0
+            return ResponseJ(0)
         }
     }
 
