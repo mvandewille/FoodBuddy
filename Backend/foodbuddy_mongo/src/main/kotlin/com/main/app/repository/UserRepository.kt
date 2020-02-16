@@ -10,7 +10,7 @@ interface UserRepository : MongoRepository<User, String> {
     fun findByName(name: String): MutableList<User>
 
     //Possible login query?
-    fun findByEmailAndPassword(email: String, password: String): MutableList<User>
+    fun findByEmailAndPassword(email: String, password: String): User
 
     fun findByOrderByUserTypeAsc(): MutableList<User>
     fun findByOrderByUserTypeDesc(): MutableList<User>

@@ -34,6 +34,20 @@ class UserController {
         }
     }
 
+    @GetMapping("/auth")
+    fun auth(@RequestBody user: UserJ): Int {
+        try {
+            var temp = repository.findByEmailAndPassword(user.email, user.password)
+            if(temp != null)
+                return 1
+            else
+                return 0
+        }
+        catch (e: EmptyResultDataAccessException) {
+            return 0
+        }
+    }
+
     @GetMapping("/find/email")
     fun emailFind(@RequestBody user: UserJ): String {
         try {
