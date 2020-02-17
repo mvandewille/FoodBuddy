@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CryptoKit
 
 class LoginViewController: UIViewController
 {
@@ -30,30 +31,43 @@ class LoginViewController: UIViewController
         {
             return
         }
+        
+        //TODO - Encrypt password here
+        
         DoLogin(email!, password!)
     }
     
     func DoLogin(_ email: String, _ pwd: String) {
         
         let urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/auth?email=" + email + "&password=" + pwd
-        let url = URL(string: urlStr)
+        let newString = urlStr.replacingOccurrences(of: " ", with: "+")
+        let url = URL(string: newString)
         var request = URLRequest(url: url!)
         request.httpMethod = "GET"
         
         //send request and decode response if exists
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
-                
-                self._error_label.text = "Could not access server"
+                DispatchQueue.main.async {
+                    self._error_label.text = "Could not access server"
+                }
                 return
             }
-            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-            if let responseJSON = responseJSON as? [String: Int] {
-                for item in responseJSON {
-                    if let item = item as? [String: Int], let responseResult = item["response"] {
-                        if (responseResult == 1)
-                        {
+            let response = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let dictionary = response as? [String: Any] {
+                if let returnCode = dictionary["response"] as? Int {
+                    if (returnCode == 1)
+                    {
+                        DispatchQueue.main.async {
                             self.performSegue(withIdentifier: "loginSuccess", sender: nil)
+                            UserDefaults.standard.set(pwd, forKey: "password")
+                            UserDefaults.standard.set(email, forKey: "email")
+                        }
+                    }
+                    else
+                    {
+                        DispatchQueue.main.async {
+                            self._error_label.text = "Incorrect email/password"
                         }
                     }
                 }
