@@ -55,7 +55,7 @@ class LoginViewController: UIViewController
             }
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
             if let responseJSON = responseJSON as? [String: Any] {
-                
+                let code = responseJSON.index (responseJSON.startIndex, offsetBy: 12)
             }
         }
         task.resume()
