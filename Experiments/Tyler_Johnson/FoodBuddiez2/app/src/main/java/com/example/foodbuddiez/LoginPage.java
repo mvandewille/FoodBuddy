@@ -1,60 +1,39 @@
 package com.example.foodbuddiez;
 
+import android.app.DownloadManager;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLConnection;
-import java.net.URLEncoder;
 
 
 public class LoginPage extends AppCompatActivity implements View.OnClickListener{
+
+    Button loginButton = findViewById(R.id.login_login_button);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_page);
+        loginButton.setOnClickListener(this);
 
     }
 
 
     @Override
     public void onClick(View v) {
-        connect_post();
+        connect_get();
     }
 
 
-    public void connect_post() {
+    public void connect_get() {
 
-    EditText username = findViewById(R.id.login_username);
-    EditText password = findViewById(R.id.login_password);
-
-    HttpURLConnection connection = null;
-    try{
-        URL url = new URL("coms-309-hv-3.cs.iastate.edu:8080/user/add");
-        String usernameValue = URLEncoder.encode(username.getText().toString());
-        String passwordValue = URLEncoder.encode(password.getText().toString());
-        connection = (HttpURLConnection) url.openConnection();
-        InputStream input = connection.getInputStream();
-        InputStreamReader inputReader = new InputStreamReader(input);
-
-
-    }
-    catch (Exception ex){
-
-    }
-    finally {
-        if (connection != null){
-            connection.disconnect();
-        }
-    }
+        String email = ((EditText) findViewById(R.id.login_username)).getText().toString();
+        String password = ((EditText) findViewById(R.id.login_password)).getText().toString();
+        String url = "http://coms-309-hv-3.cs.iastate.edu:8080/user/auth";
 
 
     }
