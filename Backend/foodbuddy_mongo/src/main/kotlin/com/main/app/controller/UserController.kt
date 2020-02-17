@@ -41,12 +41,12 @@ class UserController {
         try {
             var temp = repository.findByEmailAndPassword(email, password)
             if(temp != null)
-                return ResponseJ(1)
+                return ResponseJ(1, "N/A")
             else
-                return ResponseJ(0)
+                return ResponseJ(0, "Login failed")
         }
         catch (e: EmptyResultDataAccessException) {
-            return ResponseJ(0)
+            return ResponseJ(0, "Login failed")
         }
     }
 
@@ -73,11 +73,15 @@ class UserController {
     }
 
     @PostMapping("/add")
-    fun addData(@RequestBody user: UserJ): String {
-        val temp = User(user.email, user.password)
-        repository.save(temp)
-
-        return "Added new $temp"
+    fun addData(@RequestBody user: UserJ): ResponseJ {
+        try{
+            var temp = repository.findByEmail(user.email)
+            return ResponseJ(0, "Email already connected to account.")
+        }
+        catch (e: EmptyResultDataAccessException) {
+            repository.save(User(user.email, user.password))
+            return ResponseJ(1, "N/A")
+        }
     }
 
     @GetMapping("/delete/email")
