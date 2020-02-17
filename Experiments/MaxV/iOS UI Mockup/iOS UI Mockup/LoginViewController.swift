@@ -16,12 +16,6 @@ class LoginViewController: UIViewController
         // Do any additional setup after loading the view.
     }
     
-    extension String {
-        subscript(i: Int) -> String {
-            return String(self[index(startIndex, offsetBy: i)])
-        }
-    }
-    
     @IBOutlet weak var _email: UITextField!
     @IBOutlet weak var _password: UITextField!
     @IBOutlet weak var _login_button: UIButton!
@@ -54,8 +48,15 @@ class LoginViewController: UIViewController
                 return
             }
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-            if let responseJSON = responseJSON as? [String: Any] {
-                let code = responseJSON.index (responseJSON.startIndex, offsetBy: 12)
+            if let responseJSON = responseJSON as? [String: Int] {
+                for item in responseJSON {
+                    if let item = item as? [String: Int], let responseResult = item["response"] {
+                        if (responseResult == 1)
+                        {
+                            self.performSegue(withIdentifier: "loginSuccess", sender: nil)
+                        }
+                    }
+                }
             }
         }
         task.resume()

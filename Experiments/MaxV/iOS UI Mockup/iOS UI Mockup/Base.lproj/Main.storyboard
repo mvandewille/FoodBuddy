@@ -136,13 +136,12 @@
                         <outlet property="_error_label" destination="BuC-VL-xzS" id="f8Z-Xy-al4"/>
                         <outlet property="_login_button" destination="vbJ-lp-88t" id="nfE-wF-jYF"/>
                         <outlet property="_password" destination="GMn-gI-AYy" id="thC-Kd-I6O"/>
-                        <outlet property="errorLabel" destination="BuC-VL-xzS" id="r0e-Lq-HZu"/>
                         <segue destination="GZw-kh-Qaa" kind="show" identifier="loginSuccess" id="sbS-tG-fCi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6bK-jW-BNh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1297" y="-526"/>
+            <point key="canvasLocation" x="-1297.1014492753625" y="-526.33928571428567"/>
         </scene>
         <!--TabbedPages-->
         <scene sceneID="Rmc-I6-dXX">
