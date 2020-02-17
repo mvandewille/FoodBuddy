@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AFB06D6723F9E99C001B652B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB06D6623F9E99C001B652B /* LoginViewController.swift */; };
 		AFFEDE7823D9F0B5002D6E82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFEDE7723D9F0B5002D6E82 /* AppDelegate.swift */; };
 		AFFEDE7A23D9F0B5002D6E82 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFEDE7923D9F0B5002D6E82 /* SceneDelegate.swift */; };
 		AFFEDE7C23D9F0B5002D6E82 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFEDE7B23D9F0B5002D6E82 /* FirstViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AFB06D6623F9E99C001B652B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AFFEDE7423D9F0B5002D6E82 /* iOS UI Mockup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS UI Mockup.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFFEDE7723D9F0B5002D6E82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFFEDE7923D9F0B5002D6E82 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				AFFEDE7923D9F0B5002D6E82 /* SceneDelegate.swift */,
 				AFFEDE7B23D9F0B5002D6E82 /* FirstViewController.swift */,
 				AFFEDE7D23D9F0B5002D6E82 /* SecondViewController.swift */,
+				AFB06D6623F9E99C001B652B /* LoginViewController.swift */,
 				AFFEDE8423D9F0B7002D6E82 /* LaunchScreen.storyboard */,
 				AFFEDE7F23D9F0B5002D6E82 /* Main.storyboard */,
 				AFFEDEA923DB80B2002D6E82 /* TabbedPages.storyboard */,
@@ -277,6 +280,7 @@
 				AFFEDE7E23D9F0B5002D6E82 /* SecondViewController.swift in Sources */,
 				AFFEDE7C23D9F0B5002D6E82 /* FirstViewController.swift in Sources */,
 				AFFEDE7823D9F0B5002D6E82 /* AppDelegate.swift in Sources */,
+				AFB06D6723F9E99C001B652B /* LoginViewController.swift in Sources */,
 				AFFEDE7A23D9F0B5002D6E82 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
