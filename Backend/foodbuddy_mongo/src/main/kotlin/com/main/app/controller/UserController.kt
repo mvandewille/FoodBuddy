@@ -77,12 +77,27 @@ class UserController {
         try{
             if(!"""^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$""".toRegex(RegexOption.IGNORE_CASE).matches(user.email))
                 return ResponseJ(0, "Incorrect email format!")
-            var temp = repository.findByEmail(user.email)
+            repository.findByEmail(user.email)
             return ResponseJ(0, "Email already connected to account.")
         }
         catch (e: EmptyResultDataAccessException) {
+            if(user.password == null)
+                return ResponseJ(0, "Password cannot be empty")
             repository.save(User(user.email, user.password))
             return ResponseJ(1, "N/A")
+        }
+    }
+
+    @PostMapping("/update")
+    fun updateUser(@RequestBody user: UserJ): ResponseJ {
+        try{
+            var temp = repository.findByEmail(user.email)
+            temp.setExtras(user.name, user.height, user.weight, user.lifestyle)
+            repository.save(temp)
+            return ResponseJ(1, "N/A")
+        }
+        catch (e: EmptyResultDataAccessException) {
+            return ResponseJ(0, "No user found to update" )
         }
     }
 
