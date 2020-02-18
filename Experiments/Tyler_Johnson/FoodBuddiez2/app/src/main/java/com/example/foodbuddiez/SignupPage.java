@@ -25,6 +25,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -56,11 +58,23 @@ public class SignupPage extends AppCompatActivity implements View.OnClickListene
         String confirmPasswordValue = confirmPassword.getText().toString();
         String url = "http://coms-309-hv-3.cs.iastate.edu:8080/user/add";
 
+         String hashedPassword = hashSHA(passwordValue);
+
         RequestQueue queue = Volley.newRequestQueue(this);
+
+
+
+
 
         if (!(passwordValue.equals(confirmPasswordValue))) {
             Toast.makeText(this, "Passwords do not match", Toast.LENGTH_LONG).show();
-        } else {
+            password.setText("");
+            confirmPassword.setText("");
+        }
+        else{
+
+            //TODO check for email validity, check if email already exists in DB
+
             HashMap<String, String> params = new HashMap<String, String>();
             params.put("email", emailValue);
             params.put("password", passwordValue);
@@ -68,7 +82,7 @@ public class SignupPage extends AppCompatActivity implements View.OnClickListene
             JSONObject obj = new JSONObject();
             try {
                 obj.put("email", emailValue);
-                obj.put("password", passwordValue);
+                obj.put("password", hashedPassword);
             }
             catch (JSONException ex){
                 ex.printStackTrace();
@@ -115,7 +129,21 @@ public class SignupPage extends AppCompatActivity implements View.OnClickListene
 
             queue.add(stringRequest);
         }
+    }
 
-
+    public String hashSHA(String passwordPlain) {
+        MessageDigest md = null;
+        try {
+            md = MessageDigest.getInstance("SHA-512");
+        }catch (NoSuchAlgorithmException e)
+        {
+            e.printStackTrace();
+        }
+        byte[] digest = md.digest(passwordPlain.getBytes());
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < digest.length; i++) {
+            sb.append(Integer.toString((digest[i] & 0xff) + 0x100, 16).substring(1));
+        }
+        return sb.toString();
     }
 }
