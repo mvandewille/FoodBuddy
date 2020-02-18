@@ -36,7 +36,6 @@ public class MainSplash extends AppCompatActivity implements View.OnClickListene
                 Intent intent2 = new Intent(this, SignupPage.class);
                 this.startActivity(intent2);
                 break;
-
         }
     }
 }
