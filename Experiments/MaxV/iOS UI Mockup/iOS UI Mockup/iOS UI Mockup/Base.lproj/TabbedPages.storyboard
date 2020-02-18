@@ -10,7 +10,7 @@
         <!--Daily View-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController title="Daily View" id="9pv-A4-QxB" customClass="FirstViewController" customModule="iOS_UI_Mockup" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Daily View" id="9pv-A4-QxB" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

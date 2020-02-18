@@ -14,6 +14,9 @@ class SignUpViewController: UIViewController
 {
     override func viewDidLoad() {
         super.viewDidLoad()
+        DispatchQueue.main.async {
+            self._error_label.isHidden = true
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -25,12 +28,18 @@ class SignUpViewController: UIViewController
     
     @IBAction func SignUpButton(_ sender: Any)
     {
+        DispatchQueue.main.async {
+            self._error_label.isHidden = true
+        }
         let email = _email_text.text
         let password = _pwd_text.text
         let password_confirm = _pwd_confirm.text
         if (password != password_confirm)
         {
-            //TODO - Print error message here
+            DispatchQueue.main.async {
+                self._error_label.text = "Passwords do not match"
+                self._error_label.isHidden = false
+            }
             return
         }
         
@@ -59,6 +68,7 @@ class SignUpViewController: UIViewController
             guard let data = data, error == nil else {
                 DispatchQueue.main.async {
                     self._error_label.text = "Unexpected http error"
+                    self._error_label.isHidden = false
                 }
                 return
             }
@@ -74,10 +84,9 @@ class SignUpViewController: UIViewController
                 }
                 else
                 {
-                    print(responseJSON["response"] as? String)
-                    print(responseJSON["reason"] as? String)
                     DispatchQueue.main.async {
                         self._error_label.text = responseJSON["reason"] as? String
+                        self._error_label.isHidden = false
                     }
                 }
             }

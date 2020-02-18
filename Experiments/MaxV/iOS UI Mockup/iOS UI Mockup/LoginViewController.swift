@@ -14,6 +14,9 @@ class LoginViewController: UIViewController
 {
     override func viewDidLoad() {
         super.viewDidLoad()
+        DispatchQueue.main.async {
+            self._error_label.isHidden = true
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -24,6 +27,9 @@ class LoginViewController: UIViewController
     
     @IBAction func LoginButton(_ sender: Any)
     {
+        DispatchQueue.main.async {
+            self._error_label.isHidden = true
+        }
         let email = _email.text
         let password = _password.text
         
@@ -52,6 +58,7 @@ class LoginViewController: UIViewController
             guard let data = data, error == nil else {
                 DispatchQueue.main.async {
                     self._error_label.text = "Could not access server"
+                    self._error_label.isHidden = false
                 }
                 return
             }
@@ -70,6 +77,7 @@ class LoginViewController: UIViewController
                     {
                         DispatchQueue.main.async {
                             self._error_label.text = "Incorrect email/password"
+                            self._error_label.isHidden = false
                         }
                     }
                 }
