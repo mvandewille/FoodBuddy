@@ -1,5 +1,6 @@
 package com.main.app.controller
 
+import com.main.app.JSON.ResponseJ
 import com.main.app.model.User
 import com.main.app.repository.UserRepository
 import com.main.app.JSON.UserJ
@@ -34,10 +35,25 @@ class UserController {
         }
     }
 
-    @GetMapping("/find/email")
-    fun emailFind(@RequestParam(value = "email", required = true) email: String): String {
+    @GetMapping("/auth")
+    fun auth(@RequestParam(value = "email", required = true) email: String,
+             @RequestParam(value = "password", required = true) password: String): ResponseJ {
         try {
-            var temp = repository.findByEmail(email)
+            var temp = repository.findByEmailAndPassword(email, password)
+            if(temp != null)
+                return ResponseJ(1, "N/A")
+            else
+                return ResponseJ(0, "Login failed")
+        }
+        catch (e: EmptyResultDataAccessException) {
+            return ResponseJ(0, "Login failed")
+        }
+    }
+
+    @GetMapping("/find/email")
+    fun emailFind(@RequestBody user: UserJ): String {
+        try {
+            var temp = repository.findByEmail(user.email)
             return "Result: $temp"
         }
         catch (e: EmptyResultDataAccessException) {
@@ -57,11 +73,17 @@ class UserController {
     }
 
     @PostMapping("/add")
-    fun addData(@RequestBody user: UserJ): String {
-        val temp = User(user.email, user.name, user.password)
-        repository.save(temp)
-
-        return "Added new $temp"
+    fun addData(@RequestBody user: UserJ): ResponseJ {
+        try{
+            if(!"""^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$""".toRegex(RegexOption.IGNORE_CASE).matches(user.email))
+                return ResponseJ(0, "Incorrect email format!")
+            var temp = repository.findByEmail(user.email)
+            return ResponseJ(0, "Email already connected to account.")
+        }
+        catch (e: EmptyResultDataAccessException) {
+            repository.save(User(user.email, user.password))
+            return ResponseJ(1, "N/A")
+        }
     }
 
     @GetMapping("/delete/email")
