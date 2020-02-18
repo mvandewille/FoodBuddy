@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8a67a357-2504-4ed6-8c1e-a8667a16d0b6" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="fbBackend" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin File" />
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1XdH8WZ4FoXOTe8juGPJ2O2uce2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Backend/foodbuddy_mongo" />
+    <property name="show.unlinked.gradle.project.popup" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="FbBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="fbBackend.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.main.fbBackend.FbBackendApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8a67a357-2504-4ed6-8c1e-a8667a16d0b6" name="Default Changelist" comment="" />
+      <created>1581368892951</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581368892951</updated>
+      <workItem from="1581368900777" duration="5177000" />
+      <workItem from="1581700102463" duration="6614000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="0" y="0" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581794857003">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state x="0" y="0" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1707.920@0.0.1707.920" timestamp="1581794857003" />
+    <state x="978" y="219" key="FileChooserDialogImpl" timestamp="1581806017851">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state x="978" y="219" key="FileChooserDialogImpl/0.0.1707.920@0.0.1707.920" timestamp="1581806017851" />
+    <state width="975" height="138" key="GridCell.Tab.0.bottom" timestamp="1581806022447">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state width="975" height="138" key="GridCell.Tab.0.bottom/0.0.1707.920@0.0.1707.920" timestamp="1581806022447" />
+    <state width="975" height="138" key="GridCell.Tab.0.center" timestamp="1581806022446">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state width="975" height="138" key="GridCell.Tab.0.center/0.0.1707.920@0.0.1707.920" timestamp="1581806022446" />
+    <state width="975" height="138" key="GridCell.Tab.0.left" timestamp="1581806022446">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state width="975" height="138" key="GridCell.Tab.0.left/0.0.1707.920@0.0.1707.920" timestamp="1581806022446" />
+    <state width="975" height="138" key="GridCell.Tab.0.right" timestamp="1581806022447">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state width="975" height="138" key="GridCell.Tab.0.right/0.0.1707.920@0.0.1707.920" timestamp="1581806022447" />
+    <state width="975" height="138" key="GridCell.Tab.1.bottom" timestamp="1581806022448">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state width="975" height="138" key="GridCell.Tab.1.bottom/0.0.1707.920@0.0.1707.920" timestamp="1581806022448" />
+    <state width="975" height="138" key="GridCell.Tab.1.center" timestamp="1581806022447">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state width="975" height="138" key="GridCell.Tab.1.center/0.0.1707.920@0.0.1707.920" timestamp="1581806022447" />
+    <state width="975" height="138" key="GridCell.Tab.1.left" timestamp="1581806022447">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state width="975" height="138" key="GridCell.Tab.1.left/0.0.1707.920@0.0.1707.920" timestamp="1581806022447" />
+    <state width="975" height="138" key="GridCell.Tab.1.right" timestamp="1581806022448">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state width="975" height="138" key="GridCell.Tab.1.right/0.0.1707.920@0.0.1707.920" timestamp="1581806022448" />
+    <state x="552" y="286" key="com.intellij.ide.util.TipDialog" timestamp="1581700104792">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state x="552" y="286" key="com.intellij.ide.util.TipDialog/0.0.1707.920@0.0.1707.920" timestamp="1581700104792" />
+  </component>
+</project>
