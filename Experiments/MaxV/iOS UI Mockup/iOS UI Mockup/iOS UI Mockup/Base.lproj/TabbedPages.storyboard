@@ -10,7 +10,7 @@
         <!--Daily View-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController title="Daily View" id="9pv-A4-QxB" customClass="FirstViewController" customModule="iOS_UI_Mockup" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Daily View" id="9pv-A4-QxB" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -119,7 +119,7 @@
                         <viewLayoutGuide key="safeArea" id="2wi-Yl-Na1"/>
                     </view>
                     <navigationItem key="navigationItem" id="MvL-AZ-BJz">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="Gvi-zP-v23"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="Gvi-zP-v23"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mym-Q3-vfq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -151,6 +151,7 @@
         <image name="camera.viewfinder" catalog="system" width="64" height="56"/>
         <image name="line.horizontal.3" catalog="system" width="64" height="32"/>
         <image name="person.2.fill" catalog="system" width="64" height="40"/>
+        <image name="plus" catalog="system" width="64" height="56"/>
         <image name="tortoise.fill" catalog="system" width="64" height="32"/>
     </resources>
 </document>

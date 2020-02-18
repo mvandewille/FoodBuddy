@@ -14,6 +14,9 @@ class LoginViewController: UIViewController
 {
     override func viewDidLoad() {
         super.viewDidLoad()
+        DispatchQueue.main.async {
+            self._error_label.isHidden = true
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -24,6 +27,9 @@ class LoginViewController: UIViewController
     
     @IBAction func LoginButton(_ sender: Any)
     {
+        DispatchQueue.main.async {
+            self._error_label.isHidden = true
+        }
         let email = _email.text
         let password = _password.text
         
@@ -32,16 +38,14 @@ class LoginViewController: UIViewController
             return
         }
         
-        //TODO - Encrypt password here
-        if let data = password!.data(using: .utf8) {
-            let hash = SHA512.hash(data: data)
-        }
+        let data = password!.data(using: .utf8)!
+        let hash_result = SHA512.hash(data: data)
+        let hashStr = hash_result.map { String(format: "%02hhx", $0) }.joined()
         
-        
-        DoLogin(email!, hash)
+        DoLogin(email!, hashStr)
     }
     
-    func DoLogin(_ email: String, _ pwd: Int) {
+    func DoLogin(_ email: String, _ pwd: String) {
         
         let urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/auth?email=" + email + "&password=" + String(pwd)
         let newString = urlStr.replacingOccurrences(of: " ", with: "+")
@@ -54,6 +58,7 @@ class LoginViewController: UIViewController
             guard let data = data, error == nil else {
                 DispatchQueue.main.async {
                     self._error_label.text = "Could not access server"
+                    self._error_label.isHidden = false
                 }
                 return
             }
@@ -72,6 +77,7 @@ class LoginViewController: UIViewController
                     {
                         DispatchQueue.main.async {
                             self._error_label.text = "Incorrect email/password"
+                            self._error_label.isHidden = false
                         }
                     }
                 }

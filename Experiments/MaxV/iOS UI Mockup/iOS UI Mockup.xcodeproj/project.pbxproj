@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF5B649423FC9C00004708F3 /* TabbedPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5B649323FC9C00004708F3 /* TabbedPageViewController.swift */; };
 		AFB06D6723F9E99C001B652B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB06D6623F9E99C001B652B /* LoginViewController.swift */; };
 		AFB06D6923FB49BC001B652B /* LoginPromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB06D6823FB49BC001B652B /* LoginPromptViewController.swift */; };
 		AFB06D6B23FB4EAE001B652B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB06D6A23FB4EAE001B652B /* SignUpViewController.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AF5B649323FC9C00004708F3 /* TabbedPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedPageViewController.swift; sourceTree = "<group>"; };
 		AFB06D6623F9E99C001B652B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AFB06D6823FB49BC001B652B /* LoginPromptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPromptViewController.swift; sourceTree = "<group>"; };
 		AFB06D6A23FB4EAE001B652B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				AFB06D6823FB49BC001B652B /* LoginPromptViewController.swift */,
 				AFB06D6623F9E99C001B652B /* LoginViewController.swift */,
 				AFB06D6A23FB4EAE001B652B /* SignUpViewController.swift */,
+				AF5B649323FC9C00004708F3 /* TabbedPageViewController.swift */,
 				AFFEDE8423D9F0B7002D6E82 /* LaunchScreen.storyboard */,
 				AFFEDE7F23D9F0B5002D6E82 /* Main.storyboard */,
 				AFFEDEA923DB80B2002D6E82 /* TabbedPages.storyboard */,
@@ -281,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFB06D6B23FB4EAE001B652B /* SignUpViewController.swift in Sources */,
+				AF5B649423FC9C00004708F3 /* TabbedPageViewController.swift in Sources */,
 				AFFEDE7C23D9F0B5002D6E82 /* FirstViewController.swift in Sources */,
 				AFFEDE7823D9F0B5002D6E82 /* AppDelegate.swift in Sources */,
 				AFB06D6923FB49BC001B652B /* LoginPromptViewController.swift in Sources */,
