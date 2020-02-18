@@ -75,6 +75,8 @@ class UserController {
     @PostMapping("/add")
     fun addData(@RequestBody user: UserJ): ResponseJ {
         try{
+            if(!"""^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$""".toRegex(RegexOption.IGNORE_CASE).matches(user.email))
+                return ResponseJ(0, "Incorrect email format!")
             var temp = repository.findByEmail(user.email)
             return ResponseJ(0, "Email already connected to account.")
         }
