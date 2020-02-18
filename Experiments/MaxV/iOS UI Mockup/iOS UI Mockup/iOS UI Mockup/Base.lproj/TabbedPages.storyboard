@@ -119,7 +119,7 @@
                         <viewLayoutGuide key="safeArea" id="2wi-Yl-Na1"/>
                     </view>
                     <navigationItem key="navigationItem" id="MvL-AZ-BJz">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="Gvi-zP-v23"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="Gvi-zP-v23"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mym-Q3-vfq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -151,6 +151,7 @@
         <image name="camera.viewfinder" catalog="system" width="64" height="56"/>
         <image name="line.horizontal.3" catalog="system" width="64" height="32"/>
         <image name="person.2.fill" catalog="system" width="64" height="40"/>
+        <image name="plus" catalog="system" width="64" height="56"/>
         <image name="tortoise.fill" catalog="system" width="64" height="32"/>
     </resources>
 </document>

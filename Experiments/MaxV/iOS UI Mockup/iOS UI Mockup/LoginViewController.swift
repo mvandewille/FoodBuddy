@@ -32,16 +32,14 @@ class LoginViewController: UIViewController
             return
         }
         
-        //TODO - Encrypt password here
-        if let data = password!.data(using: .utf8) {
-            let hash = SHA512.hash(data: data)
-        }
+        let data = password!.data(using: .utf8)!
+        let hash_result = SHA512.hash(data: data)
+        let hashStr = hash_result.map { String(format: "%02hhx", $0) }.joined()
         
-        
-        DoLogin(email!, hash)
+        DoLogin(email!, hashStr)
     }
     
-    func DoLogin(_ email: String, _ pwd: Int) {
+    func DoLogin(_ email: String, _ pwd: String) {
         
         let urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/auth?email=" + email + "&password=" + String(pwd)
         let newString = urlStr.replacingOccurrences(of: " ", with: "+")
