@@ -22,6 +22,8 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -58,7 +60,10 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
 
         final String emailValue = userName.getText().toString();
         final String passwordValue = password.getText().toString();
-        String url = ("http://coms-309-hv-3.cs.iastate.edu:8080/user/auth?email="+ emailValue + "&password=" + passwordValue);
+
+        String hashedPass = hashSHA(passwordValue);   //unused but able to hash password in standard SHA-512 format
+
+        String url = ("http://coms-309-hv-3.cs.iastate.edu:8080/user/auth?email="+ emailValue + "&password=" + hashedPass);
         RequestQueue queue = Volley.newRequestQueue(this);
 
         StringRequest sr = new StringRequest(Request.Method.GET, url,
@@ -83,5 +88,21 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
     public void responseContainer(String r) {
         responseResult = r;
         Toast.makeText(this, "response is: " + responseResult, Toast.LENGTH_LONG).show();
+    }
+
+    public String hashSHA(String passwordPlain) {
+        MessageDigest md = null;
+        try {
+            md = MessageDigest.getInstance("SHA-512");
+        }catch (NoSuchAlgorithmException e)
+        {
+            e.printStackTrace();
+        }
+        byte[] digest = md.digest(passwordPlain.getBytes());
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < digest.length; i++) {
+            sb.append(Integer.toString((digest[i] & 0xff) + 0x100, 16).substring(1));
+        }
+        return sb.toString();
     }
 }

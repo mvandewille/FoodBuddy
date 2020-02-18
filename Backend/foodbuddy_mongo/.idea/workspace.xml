@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4c66e304-561a-4f72-97ff-c18601b93024" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/main/app/JSON/DayJ.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/main/app/JSON/DayJ.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/main/app/JSON/ResponseJ.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/main/app/JSON/ResponseJ.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/main/app/JSON/StatusJ.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/main/app/JSON/StatusJ.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/main/app/JSON/UserJ.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/main/app/JSON/UserJ.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/main/app/controller/AllergenController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/main/app/controller/AllergenController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/main/app/controller/DayController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/main/app/controller/DayController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/main/app/controller/FoodController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/main/app/controller/FoodController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/main/app/controller/StatusController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/main/app/controller/StatusController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/main/app/controller/UserController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/main/app/controller/UserController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/main/app/model/Allergen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/main/app/model/Allergen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/main/app/model/Day.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/main/app/model/Day.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/main/app/model/Status.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/main/app/model/Status.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/main/app/model/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/main/app/model/User.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/main/app/repository/AllergenRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/main/app/repository/AllergenRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/main/app/repository/DayRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/main/app/repository/DayRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/main/app/repository/FoodRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/main/app/repository/FoodRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/main/app/repository/StatusRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/main/app/repository/StatusRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Experiments/MaxV/MyPlayground2.playground/Contents.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../../Experiments/MaxV/MyPlayground2.playground/Contents.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Experiments/MaxV/iOS UI Mockup/iOS UI Mockup.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../Experiments/MaxV/iOS UI Mockup/iOS UI Mockup.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Experiments/MaxV/iOS UI Mockup/iOS UI Mockup/AppDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../../Experiments/MaxV/iOS UI Mockup/iOS UI Mockup/AppDelegate.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Experiments/MaxV/iOS UI Mockup/iOS UI Mockup/Base.lproj/Main.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/../../Experiments/MaxV/iOS UI Mockup/iOS UI Mockup/Base.lproj/Main.storyboard" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Experiments/MaxV/iOS UI Mockup/iOS UI Mockup/LoginPromptViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../../Experiments/MaxV/iOS UI Mockup/iOS UI Mockup/LoginPromptViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Experiments/MaxV/iOS UI Mockup/iOS UI Mockup/LoginViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../../Experiments/MaxV/iOS UI Mockup/iOS UI Mockup/LoginViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Experiments/MaxV/iOS UI Mockup/iOS UI Mockup/SignUpViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../../Experiments/MaxV/iOS UI Mockup/iOS UI Mockup/SignUpViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Experiments/MaxV/iOS UI Mockup/iOS UI Mockup/iOS UI Mockup/Base.lproj/TabbedPages.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/../../Experiments/MaxV/iOS UI Mockup/iOS UI Mockup/iOS UI Mockup/Base.lproj/TabbedPages.storyboard" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Interface" />
+        <option value="Kotlin File" />
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1XGtRDkX0ZEPrcMtmlDDGqzk4cl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="show.unlinked.gradle.project.popup" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.main.app.JSON" />
+      <recent name="com.main.app.controller" />
+      <recent name="com.main.app" />
+      <recent name="com.main.repository" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="FoodbuddyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" activateToolWindowBeforeRun="false">
+      <module name="foodbuddy.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.main.app.FoodbuddyApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4c66e304-561a-4f72-97ff-c18601b93024" name="Default Changelist" comment="" />
+      <created>1580684248105</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1580684248105</updated>
+      <workItem from="1580684249771" duration="1455000" />
+      <workItem from="1580702849469" duration="6477000" />
+      <workItem from="1580710962344" duration="490000" />
+      <workItem from="1580711503725" duration="4096000" />
+      <workItem from="1580934634794" duration="1444000" />
+      <workItem from="1581055613679" duration="8041000" />
+      <workItem from="1581529550843" duration="4584000" />
+      <workItem from="1581692411041" duration="230000" />
+      <workItem from="1581692672483" duration="2658000" />
+      <workItem from="1581806109011" duration="1037000" />
+      <workItem from="1581816232664" duration="3275000" />
+      <workItem from="1581894248804" duration="959000" />
+      <workItem from="1581959544128" duration="4172000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/../../../.." />
+    </ignored-roots>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="872" y="67" key="#FoodbuddyApplication" timestamp="1581817829130">
+      <screen x="0" y="0" width="2048" height="1122" />
+    </state>
+    <state x="872" y="67" key="#FoodbuddyApplication/0.0.2048.1122@0.0.2048.1122" timestamp="1581817829130" />
+    <state x="613" y="75" key="#FoodbuddyApplication/0.23.1440.877@0.23.1440.877" timestamp="1581628873553" />
+    <state x="369" y="193" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581367824502">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="959" y="217" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1122@0.0.2048.1122" timestamp="1581058645608" />
+    <state x="369" y="193" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.877@0.23.1440.877" timestamp="1581367824502" />
+    <state x="1234" y="346" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1581058642005">
+      <screen x="0" y="0" width="2048" height="1122" />
+    </state>
+    <state x="1234" y="346" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2048.1122@0.0.2048.1122" timestamp="1581058642005" />
+    <state x="630" y="184" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1581529557503">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="630" y="184" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1440.877@0.23.1440.877" timestamp="1581529557503" />
+    <state x="957" y="488" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1581058189674">
+      <screen x="0" y="0" width="2048" height="1122" />
+    </state>
+    <state x="957" y="488" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.2048.1122@0.0.2048.1122" timestamp="1581058189674" />
+    <state x="1250" y="309" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1581057432084">
+      <screen x="0" y="0" width="2048" height="1122" />
+    </state>
+    <state x="1250" y="309" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2048.1122@0.0.2048.1122" timestamp="1581057432084" />
+    <state x="913" y="191" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1581623894132">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="1299" y="215" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.2048.1122@0.0.2048.1122" timestamp="1581058210175" />
+    <state x="913" y="191" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.23.1440.877@0.23.1440.877" timestamp="1581623894132" />
+    <state width="1038" height="199" key="GridCell.Tab.0.bottom" timestamp="1582060694252">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1012" height="306" key="GridCell.Tab.0.bottom/0.0.2048.1122@0.0.2048.1122" timestamp="1582008186679" />
+    <state width="1038" height="199" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1582060694252" />
+    <state width="1038" height="199" key="GridCell.Tab.0.center" timestamp="1582060694251">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1012" height="306" key="GridCell.Tab.0.center/0.0.2048.1122@0.0.2048.1122" timestamp="1582008186679" />
+    <state width="1038" height="199" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1582060694251" />
+    <state width="1038" height="199" key="GridCell.Tab.0.left" timestamp="1582060694250">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1012" height="306" key="GridCell.Tab.0.left/0.0.2048.1122@0.0.2048.1122" timestamp="1582008186679" />
+    <state width="1038" height="199" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1582060694250" />
+    <state width="1038" height="199" key="GridCell.Tab.0.right" timestamp="1582060694251">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1012" height="306" key="GridCell.Tab.0.right/0.0.2048.1122@0.0.2048.1122" timestamp="1582008186679" />
+    <state width="1038" height="199" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1582060694251" />
+    <state width="1038" height="199" key="GridCell.Tab.1.bottom" timestamp="1582060694254">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1012" height="306" key="GridCell.Tab.1.bottom/0.0.2048.1122@0.0.2048.1122" timestamp="1582008186679" />
+    <state width="1038" height="199" key="GridCell.Tab.1.bottom/0.23.1440.877@0.23.1440.877" timestamp="1582060694254" />
+    <state width="1038" height="199" key="GridCell.Tab.1.center" timestamp="1582060694253">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1012" height="306" key="GridCell.Tab.1.center/0.0.2048.1122@0.0.2048.1122" timestamp="1582008186679" />
+    <state width="1038" height="199" key="GridCell.Tab.1.center/0.23.1440.877@0.23.1440.877" timestamp="1582060694253" />
+    <state width="1038" height="199" key="GridCell.Tab.1.left" timestamp="1582060694252">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1012" height="306" key="GridCell.Tab.1.left/0.0.2048.1122@0.0.2048.1122" timestamp="1582008186679" />
+    <state width="1038" height="199" key="GridCell.Tab.1.left/0.23.1440.877@0.23.1440.877" timestamp="1582060694252" />
+    <state width="1038" height="199" key="GridCell.Tab.1.right" timestamp="1582060694253">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1012" height="306" key="GridCell.Tab.1.right/0.0.2048.1122@0.0.2048.1122" timestamp="1582008186679" />
+    <state width="1038" height="199" key="GridCell.Tab.1.right/0.23.1440.877@0.23.1440.877" timestamp="1582060694253" />
+    <state x="413" y="23" key="SettingsEditor" timestamp="1581692528765">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="413" y="23" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1581692528765" />
+    <state x="794" y="325" key="com.intellij.ide.util.TipDialog" timestamp="1581959559619">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="1229" y="387" key="com.intellij.ide.util.TipDialog/0.0.2048.1122@0.0.2048.1122" timestamp="1581816234203" />
+    <state x="794" y="325" key="com.intellij.ide.util.TipDialog/0.23.1440.877@0.23.1440.877" timestamp="1581959559619" />
+    <state x="171" y="203" width="670" height="676" key="search.everywhere.popup" timestamp="1581804510716">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="171" y="203" width="670" height="676" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1581804510716" />
+  </component>
+</project>

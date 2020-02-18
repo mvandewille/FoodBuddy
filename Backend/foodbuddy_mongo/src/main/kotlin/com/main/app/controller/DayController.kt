@@ -33,7 +33,6 @@ class DayController {
 
     @PostMapping("/add")
     fun addName(@RequestBody day: DayJ): ResponseJ {
-        val genDate: Date
         if(checkDate(day.date)) {
             try {
                 val temp = repository.findByDate(day.date)
