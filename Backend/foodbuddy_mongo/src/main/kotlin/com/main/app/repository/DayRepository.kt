@@ -7,7 +7,7 @@ import java.util.*
 
 interface DayRepository : MongoRepository<Day, String> {
     fun findAllBy(): MutableList<Day>
-    fun findByDate(date: Date): MutableList<Day>
+    fun findByDate(date: String): Day
 
-    fun deleteByDate(date: Date): Day
+    fun deleteByDate(date: String): Day
 }
