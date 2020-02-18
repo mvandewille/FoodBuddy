@@ -1,12 +1,18 @@
+import CryptoKit
+import Foundation
 import UIKit
 
-var str = "Hello, playground"
-print(str)
+var email = "tdj1@iastate.edu"
+var password = "password"
+var userDict = ["blank": email]
 
-if (str == "Hello, playground")
-{
-    print("great success")
+if let data = password.data(using: .utf8) {
+    let hash = SHA512.hash(data: data)
+    let hashStr = hash
+    userDict = ["email": email, "password": String(hash)]
 }
-else{
-    print("womp womp")
-}
+
+let jsonData = try! JSONSerialization.data(withJSONObject: userDict)
+let jsonString = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)
+
+print(jsonString)

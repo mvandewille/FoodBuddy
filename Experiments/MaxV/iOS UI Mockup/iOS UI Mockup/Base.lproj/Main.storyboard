@@ -229,6 +229,7 @@
                         <outlet property="_email_text" destination="cXf-aO-foB" id="B1E-jT-zGD"/>
                         <outlet property="_pwd_confirm" destination="FR9-v1-H3G" id="UO1-19-XfO"/>
                         <outlet property="_pwd_text" destination="jtl-8Y-uSG" id="nZt-k2-xHK"/>
+                        <outlet property="_submit_btn" destination="FM2-ZH-KHw" id="axC-wS-wrV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rBN-kP-nAw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
