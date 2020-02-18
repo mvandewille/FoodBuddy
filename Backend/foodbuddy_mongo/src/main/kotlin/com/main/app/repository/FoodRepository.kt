@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.repository.MongoRepository
 
 interface FoodRepository : MongoRepository<Food, String> {
     fun findAllBy(): MutableList<Food>
-    fun findByName(name: String): MutableList<Food>
+    fun findByName(name: String): Food
 
     //Query by Calories
     fun findByOrderByCaloriesAsc(): MutableList<Food>

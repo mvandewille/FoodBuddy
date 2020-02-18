@@ -1,10 +1,15 @@
 package com.main.app.controller
 
+import com.main.app.JSON.ResponseJ
+import com.main.app.JSON.StatusJ
 import com.main.app.model.Status
 import com.main.app.repository.StatusRepository
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.dao.EmptyResultDataAccessException
+import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestParam
+import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.bind.annotation.RequestMapping
 
@@ -14,21 +19,36 @@ class StatusController {
     @Autowired
     lateinit var repository: StatusRepository
 
-    @GetMapping("/add")
-    fun addStatus(@RequestParam(value = "name", required = true) name: String,
-                  @RequestParam(value = "message", required = true) message: String,
-                  @RequestParam(value = "flagged", required = true) flagged: Boolean): String {
+    @GetMapping("/find/all")
+    fun find(): String {
+        try {
+            var temp = repository.findAllBy()
 
-        val i = getLastAdd()
-        val temp = Status(name, message, flagged, i + 1L)
-        repository.save(temp)
-        return "Added new $temp"
+            return stringify(temp)
+        }
+        catch (e: EmptyResultDataAccessException) {
+            return "No data!"
+        }
+    }
+
+    @PostMapping("/add")
+    fun addStatus(@RequestBody status: StatusJ): ResponseJ {
+        val list = repository.findAllByOrderByIdDesc()
+        if(!list.isEmpty()) {
+            val temp = list.first().getId()
+            repository.save(Status(temp+1, status.name, status.message))
+            return ResponseJ(1, "N/A")
+        }
+        else {
+            repository.save(Status(0, status.name, status.message))
+            return ResponseJ(1, "N/A")
+        }
     }
 
     @GetMapping("/update/flag")
     fun updateStatusFlag(@RequestParam(value = "flagged", required = true) flagged: Boolean)
     {
-        val temp = repository.findByMessageOrderByStatusID().first()
+        val temp = repository.findByMessageOrderById().first()
     }
 
     @GetMapping("/delete/all")
@@ -37,22 +57,16 @@ class StatusController {
         return "Deleted Everything!"
     }
 
-    @GetMapping("/get/last")
-    fun getLast(): Long{
-        return getLastAdd()
-    }
-
     @GetMapping("/count")
     fun getCount(): Long {
         return repository.count()
     }
 
-    fun getLastAdd(): Long {
-        if (repository.count() != 0L) {
-            val temp = repository.findByMessageOrderByStatusID().first()
-            return temp.getStatusID()
-        } else {
-            return 0L
+    fun stringify(list: MutableList<Status>): String {
+        var r = ""
+        list.forEach{
+            r += it.toString() + "<br>"
         }
+        return r
     }
 }
