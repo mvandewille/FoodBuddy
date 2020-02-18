@@ -1,5 +1,6 @@
 package com.example.foodbuddiez;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -94,6 +95,7 @@ public class SignupPage extends AppCompatActivity implements View.OnClickListene
                 @Override
                 public void onResponse(String response) {
                     Log.i("VOLLEY", response);
+                    intentKickoff();
                 }
             }, new Response.ErrorListener() {
                 @Override
@@ -145,5 +147,11 @@ public class SignupPage extends AppCompatActivity implements View.OnClickListene
             sb.append(Integer.toString((digest[i] & 0xff) + 0x100, 16).substring(1));
         }
         return sb.toString();
+    }
+
+
+    public void intentKickoff() {
+        Intent intent = new Intent(this, UserConfig.class);
+        this.startActivity(intent);
     }
 }

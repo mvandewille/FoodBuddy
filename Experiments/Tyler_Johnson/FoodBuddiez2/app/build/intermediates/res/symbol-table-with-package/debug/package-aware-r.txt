@@ -521,6 +521,7 @@ dimen hint_alpha_material_dark
 dimen hint_alpha_material_light
 dimen hint_pressed_alpha_material_dark
 dimen hint_pressed_alpha_material_light
+dimen inter_widget_margin_distance
 dimen notification_action_icon_size
 dimen notification_action_text_size
 dimen notification_big_circle_margin
@@ -544,6 +545,8 @@ dimen tooltip_precise_anchor_threshold
 dimen tooltip_vertical_padding
 dimen tooltip_y_offset_non_touch
 dimen tooltip_y_offset_touch
+dimen widget_height
+dimen widget_width
 drawable abc_ab_share_pack_mtrl_alpha
 drawable abc_action_bar_item_background_material
 drawable abc_btn_borderless_material
@@ -800,6 +803,19 @@ id topPanel
 id uniform
 id up
 id useLogo
+id user_config_activity
+id user_config_activity_field
+id user_config_gender
+id user_config_gender_field
+id user_config_height
+id user_config_height_field
+id user_config_name
+id user_config_name_field
+id user_config_splash
+id user_config_submit
+id user_config_subtext_splash
+id user_config_weight
+id user_config_weight_field
 id withText
 id wrap
 id wrap_content
@@ -849,6 +865,7 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout signup_page
 layout support_simple_spinner_dropdown_item
+layout user_config
 mipmap ic_launcher
 mipmap ic_launcher_round
 string abc_action_bar_home_description

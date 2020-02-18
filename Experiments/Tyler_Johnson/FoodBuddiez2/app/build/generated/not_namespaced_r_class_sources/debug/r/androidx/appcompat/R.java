@@ -490,29 +490,29 @@ public final class R {
         public static final int hint_alpha_material_light = 0x7f050058;
         public static final int hint_pressed_alpha_material_dark = 0x7f050059;
         public static final int hint_pressed_alpha_material_light = 0x7f05005a;
-        public static final int notification_action_icon_size = 0x7f05005b;
-        public static final int notification_action_text_size = 0x7f05005c;
-        public static final int notification_big_circle_margin = 0x7f05005d;
-        public static final int notification_content_margin_start = 0x7f05005e;
-        public static final int notification_large_icon_height = 0x7f05005f;
-        public static final int notification_large_icon_width = 0x7f050060;
-        public static final int notification_main_column_padding_top = 0x7f050061;
-        public static final int notification_media_narrow_margin = 0x7f050062;
-        public static final int notification_right_icon_size = 0x7f050063;
-        public static final int notification_right_side_padding_top = 0x7f050064;
-        public static final int notification_small_icon_background_padding = 0x7f050065;
-        public static final int notification_small_icon_size_as_large = 0x7f050066;
-        public static final int notification_subtext_size = 0x7f050067;
-        public static final int notification_top_pad = 0x7f050068;
-        public static final int notification_top_pad_large_text = 0x7f050069;
-        public static final int tooltip_corner_radius = 0x7f05006a;
-        public static final int tooltip_horizontal_padding = 0x7f05006b;
-        public static final int tooltip_margin = 0x7f05006c;
-        public static final int tooltip_precise_anchor_extra_offset = 0x7f05006d;
-        public static final int tooltip_precise_anchor_threshold = 0x7f05006e;
-        public static final int tooltip_vertical_padding = 0x7f05006f;
-        public static final int tooltip_y_offset_non_touch = 0x7f050070;
-        public static final int tooltip_y_offset_touch = 0x7f050071;
+        public static final int notification_action_icon_size = 0x7f05005c;
+        public static final int notification_action_text_size = 0x7f05005d;
+        public static final int notification_big_circle_margin = 0x7f05005e;
+        public static final int notification_content_margin_start = 0x7f05005f;
+        public static final int notification_large_icon_height = 0x7f050060;
+        public static final int notification_large_icon_width = 0x7f050061;
+        public static final int notification_main_column_padding_top = 0x7f050062;
+        public static final int notification_media_narrow_margin = 0x7f050063;
+        public static final int notification_right_icon_size = 0x7f050064;
+        public static final int notification_right_side_padding_top = 0x7f050065;
+        public static final int notification_small_icon_background_padding = 0x7f050066;
+        public static final int notification_small_icon_size_as_large = 0x7f050067;
+        public static final int notification_subtext_size = 0x7f050068;
+        public static final int notification_top_pad = 0x7f050069;
+        public static final int notification_top_pad_large_text = 0x7f05006a;
+        public static final int tooltip_corner_radius = 0x7f05006b;
+        public static final int tooltip_horizontal_padding = 0x7f05006c;
+        public static final int tooltip_margin = 0x7f05006d;
+        public static final int tooltip_precise_anchor_extra_offset = 0x7f05006e;
+        public static final int tooltip_precise_anchor_threshold = 0x7f05006f;
+        public static final int tooltip_vertical_padding = 0x7f050070;
+        public static final int tooltip_y_offset_non_touch = 0x7f050071;
+        public static final int tooltip_y_offset_touch = 0x7f050072;
     }
     public static final class drawable {
         private drawable() {}
@@ -723,7 +723,7 @@ public final class R {
         public static final int topPanel = 0x7f070097;
         public static final int uniform = 0x7f070098;
         public static final int up = 0x7f070099;
-        public static final int wrap_content = 0x7f07009d;
+        public static final int wrap_content = 0x7f0700aa;
     }
     public static final class integer {
         private integer() {}
