@@ -43,10 +43,10 @@ class UserController {
             if(temp != null)
                 return ResponseJ(1, "N/A")
             else
-                return ResponseJ(0, "Login failed")
+                return ResponseJ(0, "Login failed!")
         }
         catch (e: EmptyResultDataAccessException) {
-            return ResponseJ(0, "Login failed")
+            return ResponseJ(0, "Login failed!")
         }
     }
 
@@ -78,11 +78,11 @@ class UserController {
             if(!"""^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$""".toRegex(RegexOption.IGNORE_CASE).matches(user.email))
                 return ResponseJ(0, "Incorrect email format!")
             repository.findByEmail(user.email)
-            return ResponseJ(0, "Email already connected to account.")
+            return ResponseJ(0, "Email already connected to account!")
         }
         catch (e: EmptyResultDataAccessException) {
             if(user.password == null)
-                return ResponseJ(0, "Password cannot be empty")
+                return ResponseJ(0, "Password cannot be empty!")
             repository.save(User(user.email, user.password))
             return ResponseJ(1, "N/A")
         }
@@ -92,12 +92,12 @@ class UserController {
     fun updateUser(@RequestBody user: UserJ): ResponseJ {
         try{
             var temp = repository.findByEmail(user.email)
-            temp.setExtras(user.name, user.height, user.weight, user.lifestyle)
+            temp.setExtras(user.name, user.height, user.weight, user.lifestyle, user.gender)
             repository.save(temp)
             return ResponseJ(1, "N/A")
         }
         catch (e: EmptyResultDataAccessException) {
-            return ResponseJ(0, "No user found to update" )
+            return ResponseJ(0, "No user found to update!" )
         }
     }
 
@@ -110,7 +110,7 @@ class UserController {
     @GetMapping("/delete/all")
     fun delData(): String {
         repository.deleteAll()
-        return "Success all rows removed"
+        return "Success all rows removed!"
     }
 
     fun stringify(list: MutableList<User>): String {

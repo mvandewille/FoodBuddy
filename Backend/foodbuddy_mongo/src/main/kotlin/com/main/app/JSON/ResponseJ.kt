@@ -4,5 +4,5 @@ import com.fasterxml.jackson.annotation.JsonCreator
 
 data class ResponseJ @JsonCreator constructor(
         val response: Int,
-        val reason: String
+        val message: String
 )
