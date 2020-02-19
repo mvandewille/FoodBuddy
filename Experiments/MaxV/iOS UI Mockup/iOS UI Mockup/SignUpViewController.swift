@@ -80,12 +80,15 @@ class SignUpViewController: UIViewController
                         self.performSegue(withIdentifier: "signupSuccess", sender: nil)
                         UserDefaults.standard.set(pwd, forKey: "password")
                         UserDefaults.standard.set(email, forKey: "email")
+//                        let tabbedBoard = UIStoryboard(name: "TabbedPages", bundle: nil)
+//                        let controller = tabbedBoard.instantiateViewController(withIdentifier: "tabbedFirst")
+//                        self.present(controller, animated: true, completion: nil)
                     }
                 }
                 else
                 {
                     DispatchQueue.main.async {
-                        self._error_label.text = responseJSON["reason"] as? String
+                        self._error_label.text = responseJSON["message"] as? String
                         self._error_label.isHidden = false
                     }
                 }

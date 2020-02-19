@@ -10,7 +10,7 @@
         <!--Daily View-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController title="Daily View" id="9pv-A4-QxB" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainDailyPage" title="Daily View" id="9pv-A4-QxB" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,7 +53,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabbedFirst" id="49e-Tb-3d3" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>

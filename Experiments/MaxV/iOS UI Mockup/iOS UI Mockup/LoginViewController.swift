@@ -71,6 +71,9 @@ class LoginViewController: UIViewController
                             self.performSegue(withIdentifier: "loginSuccess", sender: nil)
                             UserDefaults.standard.set(pwd, forKey: "password")
                             UserDefaults.standard.set(email, forKey: "email")
+//                            let tabbedBoard = UIStoryboard(name: "TabbedPages", bundle: nil)
+//                            let controller = tabbedBoard.instantiateViewController(withIdentifier: "tabbedFirst")
+//                            self.present(controller, animated: true, completion: nil)
                         }
                     }
                     else
