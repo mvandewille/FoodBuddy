@@ -23,18 +23,6 @@ class UserController {
     @Autowired
     lateinit var repository: UserRepository
 
-    @GetMapping("/find/all")
-    fun find(): String {
-        try {
-            var temp = repository.findAllBy()
-
-            return stringify(temp)
-        }
-        catch (e: EmptyResultDataAccessException) {
-            return "No data!"
-        }
-    }
-
     @GetMapping("/auth")
     fun auth(@RequestParam(value = "email", required = true) email: String,
              @RequestParam(value = "password", required = true) password: String): ResponseJ {
@@ -50,14 +38,27 @@ class UserController {
         }
     }
 
-    @GetMapping("/find/email")
-    fun emailFind(@RequestBody user: UserJ): String {
+    @GetMapping("/find/all")
+    fun find(): String {
         try {
-            var temp = repository.findByEmail(user.email)
-            return "Result: $temp"
+            var temp = repository.findAllBy()
+
+            return stringify(temp)
         }
         catch (e: EmptyResultDataAccessException) {
-            return "No matching entry!"
+            return "No data!"
+        }
+    }
+
+    @GetMapping("/find/email")
+    fun emailFind(@RequestBody user: UserJ): UserJ {
+        try {
+            var temp = repository.findByEmail(user.email)
+            return temp.toJson()
+        }
+        // This is really poorly made right now we need to adjust it
+        catch (e: EmptyResultDataAccessException) {
+            return UserJ(user.email, null, null, null, null, null, null, null, null)
         }
     }
 

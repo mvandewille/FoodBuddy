@@ -1,5 +1,6 @@
 package com.main.app.model
 
+import com.main.app.JSON.UserJ
 import org.springframework.data.annotation.Id
 
 //https://hellokoding.com/jpa-one-to-one-foreignkey-relationship-example-with-spring-boot-maven-and-mysql/
@@ -17,6 +18,10 @@ class User (@Id private var email: String, private var name: String?, private va
 
     override fun toString(): String {
         return "User[email=$email, name=$name, userType=$userType]"
+    }
+
+    fun toJson(): UserJ {
+        return UserJ(this.email, null, this.name, this.height, this.weight, this.lifestyle, this.gender, this.calorieLimit, this.userType)
     }
 
     fun setExtras(name: String?, height: Int?, weight: Int?, lifestyle: String?, gender: String?) {

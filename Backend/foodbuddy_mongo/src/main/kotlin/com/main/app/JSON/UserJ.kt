@@ -9,5 +9,7 @@ data class UserJ @JsonCreator constructor(
         val height: Int?,
         val weight: Int?,
         val lifestyle: String?,
-        val gender: String?
+        val gender: String?,
+        val calorieLimit: Int?,
+        val userType: String?
 )
