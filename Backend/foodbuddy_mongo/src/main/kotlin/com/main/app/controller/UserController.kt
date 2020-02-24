@@ -51,14 +51,14 @@ class UserController {
     }
 
     @GetMapping("/find/email")
-    fun emailFind(@RequestBody user: UserJ): UserJ {
+    fun emailFind(@RequestParam(value= "email", required = true) email: String): UserJ {
         try {
-            var temp = repository.findByEmail(user.email)
+            var temp = repository.findByEmail(email)
             return temp.toJson()
         }
         // This is really poorly made right now we need to adjust it
         catch (e: EmptyResultDataAccessException) {
-            return UserJ(user.email, null, null, null, null, null, null, null, null)
+            return UserJ(email, null, null, null, null, null, null, null, null, null)
         }
     }
 
@@ -93,7 +93,7 @@ class UserController {
     fun updateUser(@RequestBody user: UserJ): ResponseJ {
         try{
             var temp = repository.findByEmail(user.email)
-            temp.setExtras(user.name, user.height, user.weight, user.lifestyle, user.gender)
+            temp.setExtras(user.name, user.height, user.weight, user.lifestyle, user.gender, user.allergens)
             repository.save(temp)
             return ResponseJ(1, "N/A")
         }
