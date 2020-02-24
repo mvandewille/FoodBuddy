@@ -36,11 +36,11 @@ class StatusController {
         val list = repository.findAllByOrderByIdDesc()
         if(!list.isEmpty()) {
             val temp = list.first().getId()
-            repository.save(Status(temp+1, status.name, status.message))
+            repository.save(Status(temp+1, status.email, status.name, status.message))
             return ResponseJ(1, "N/A")
         }
         else {
-            repository.save(Status(0, status.name, status.message))
+            repository.save(Status(0, status.email, status.name, status.message))
             return ResponseJ(1, "N/A")
         }
     }

@@ -13,4 +13,5 @@ interface StatusRepository : MongoRepository<Status, String>{
     fun findByMessage(message : String) : MutableList<Status>
     fun findByFlagged(flagged : Boolean) : MutableList<Status>
     fun findByMessageOrderById() : MutableList<Status>
+    fun findByEmailOrderById(): MutableList<Status>
 }
