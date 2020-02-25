@@ -12,3 +12,20 @@ shell:
     - sudo docker run -d -p 8080:8080 --name foodbuddy maximillion1112/foodbuddy:latest
     - sleep 10
     - sudo docker logs foodbuddy > /home/maw1/docker/logs/log.txt
+
+#Questions:
+#I need to update the repository that is stored on the server
+#   How do I do that in one line in the gitlab-runner shell
+
+#I need to run gradle clean build but gradle is only installed for root user
+#   How do I install gradle everywhere and/or fix this problem
+#gradle is being super weird. I can run it without using sudo on my user account
+#but if I run sudo gradle clean build the command is not found
+
+#when I run gradle clean build without sudo on my account it doesn't
+#work because I don't have full root permissions
+
+#if I first run sudo bash to be root user then I can run gradle clean build
+#everything works as intended. But I cant get into sudo bash in gitlab-runner
+
+#
