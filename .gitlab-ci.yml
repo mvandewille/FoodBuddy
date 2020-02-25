@@ -1,4 +1,4 @@
-job:
+deploy_prod:
   script:
     - sudo bash
     - cd /home/maw1/hv_3/Backend/foodbuddy_mongo
