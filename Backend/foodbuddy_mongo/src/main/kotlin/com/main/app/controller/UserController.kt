@@ -39,14 +39,14 @@ class UserController {
     }
 
     @GetMapping("/find/all")
-    fun find(): String {
+    fun find(): UserJArray {
         try {
             var temp = repository.findAllBy()
 
-            return stringify(temp)
+            return UserJArray(temp.map {it.toJson()})
         }
         catch (e: EmptyResultDataAccessException) {
-            return "No data!"
+            return UserJArray(null)
         }
     }
 
