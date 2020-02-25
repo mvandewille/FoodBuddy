@@ -2,7 +2,6 @@ shell:
   script:
     - sudo bash
     - cd /home/maw1/hv_3/Backend/foodbuddy_mongo
-    - git pull
     - gradle clean build
     - cd build/libs/
     - yes | cp foodbuddy-0.0.2-boot.jar /home/maw1/docker/foodbuddy/
