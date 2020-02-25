@@ -1,5 +1,6 @@
 shell:
   script:
+    - sudo bash
     - cd /home/maw1/hv_3/Backend/foodbuddy_mongo
     - gradle clean build
     - cd build/libs/
