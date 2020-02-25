@@ -1,0 +1,12 @@
+job:
+  script:
+    - sudo bash
+    - cd /home/maw1/hv_3/Backend/foodbuddy_mongo
+    - gradle clean build
+    - cd build/libs/
+    - yes | cp foodbuddy-0.0.2-boot.jar /home/maw1/docker/foodbuddy/
+    - cd /home/maw1/docker/foodbuddy
+    - docker stop foodbuddy
+    - docker container prune
+    - docker build -t maximillion1112/foodbuddy:latest
+    - docker run -d -p 8080:8080 --name foodbuddy maximillion1112/foodbuddy:latest
