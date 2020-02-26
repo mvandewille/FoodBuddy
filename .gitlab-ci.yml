@@ -1,7 +1,7 @@
 shell:
   script:
     #- cd /home/maw1/hv_3/Backend/foodbuddy_mongo
-    - /home/maw1/gitlab/zeKXaUnq/0/cs309/spring-2020/hv_3/
+    - cd /home/maw1/gitlab/zeKXaUnq/0/cs309/spring-2020/hv_3/
     - sudo ./gradlew clean build
     - cd build/libs/
     - sudo mv -f foodbuddy-0.0.2-boot.jar /home/maw1/docker/foodbuddy/
