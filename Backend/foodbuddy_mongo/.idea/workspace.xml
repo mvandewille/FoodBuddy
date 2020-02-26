@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4c66e304-561a-4f72-97ff-c18601b93024" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../.gitlab-ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitlab-ci.yml" afterDir="false" />
-    </list>
+    <list default="true" id="4c66e304-561a-4f72-97ff-c18601b93024" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
