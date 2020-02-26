@@ -1,7 +1,6 @@
 shell:
   script:
     - cd /home/maw1/hv_3/Backend/foodbuddy_mongo
-    - pwd
     - sudo ./gradlew clean build
     - cd build/libs/
     - sudo mv -f foodbuddy-0.0.2-boot.jar /home/maw1/docker/foodbuddy/
@@ -10,8 +9,8 @@ shell:
     - sudo docker container prune -f
     - sudo docker build -t maximillion1112/foodbuddy:latest .
     - sudo docker run -d -p 8080:8080 --name foodbuddy maximillion1112/foodbuddy:latest
-    - sleep 10
-    - sudo docker logs foodbuddy > /home/maw1/docker/logs/log.txt
+    - sleep 7
+    - sudo docker logs foodbuddy | sudo tee /home/maw1/docker/logs/log.txt
 
 #Questions:
 #I need to update the repository that is stored on the server
