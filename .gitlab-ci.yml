@@ -1,5 +1,6 @@
 shell:
   script:
+    - sudo bash
     - cd /home/maw1/hv_3/Backend/foodbuddy_mongo
     - pwd
     - gradle clean build
@@ -27,5 +28,3 @@ shell:
 
 #if I first run sudo bash to be root user then I can run gradle clean build
 #everything works as intended. But I cant get into sudo bash in gitlab-runner
-
-#
