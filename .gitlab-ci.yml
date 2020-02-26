@@ -4,7 +4,7 @@ shell:
     - pwd
     - sudo ./gradlew clean build
     - cd build/libs/
-    - sudo yes | sudo cp foodbuddy-0.0.2-boot.jar /home/maw1/docker/foodbuddy/
+    - sudo mv -f foodbuddy-0.0.2-boot.jar /home/maw1/docker/foodbuddy/
     - cd /home/maw1/docker/foodbuddy
     - sudo docker stop foodbuddy
     - sudo docker container prune
