@@ -9,21 +9,55 @@
 import Foundation
 import UIKit
 
-class AllergenAddController : UIViewController
+class AllergenAddController : UIViewController, UITableViewDelegate, UITableViewDataSource
 {
+    
     var incomingDict: Dictionary<String, Any> = [:]
+    var allergenArray: [String] = []
+    var allAllergens = ["Milk", "Eggs", "Tree Nuts", "Peanuts", "Shellfish", "Wheat", "Soy", "Fish", "Banana", "Garlic"]
     
     @IBOutlet weak var _calories: UITextField!
     @IBOutlet weak var _continue: UIButton!
     @IBOutlet weak var _stack: UIStackView!
+    @IBOutlet weak var _errorlabel: UILabel!
+    @IBOutlet weak var _allergenTable: UITableView!
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return allAllergens.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
+        cell.textLabel?.text = allAllergens[indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.checkmark)
+        {
+            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
+            allergenArray.remove(at: index(ofAccessibilityElement: tableView.cellForRow(at: indexPath)?.textLabel?.text!))
+        }
+        else
+        {
+            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
+            allergenArray.append((tableView.cellForRow(at: indexPath)?.textLabel!.text)!)
+        }
+        
+    }
     
     @IBAction func doSubmit(_ sender: Any)
     {
-        
+        incomingDict["calories"] = Int(_calories.text!)
+        incomingDict["allergens"] = allergenArray
+        doHTTP(dict: incomingDict)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self._errorlabel.isHidden = true
+        self._allergenTable.allowsMultipleSelection = true
+        self._allergenTable.allowsMultipleSelectionDuringEditing = true
         var textCalories = ""
         if let v = incomingDict["calorieLimit"]
         {
@@ -31,6 +65,8 @@ class AllergenAddController : UIViewController
         }
         _calories.text = textCalories
         _stack.setCustomSpacing(50.0, after: _calories)
+        _allergenTable.dataSource = self
+        _allergenTable.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,8 +92,8 @@ class AllergenAddController : UIViewController
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
                 DispatchQueue.main.async {
-//                    self._errorLabel.text = "Unexpected http error"
-//                    self._errorLabel.isHidden = false
+                    self._errorlabel.text = "Unexpected http error"
+                    self._errorlabel.isHidden = false
                 }
                 return
             }
@@ -66,14 +102,14 @@ class AllergenAddController : UIViewController
                 if (responseJSON["response"] as? Int == 1)
                 {
                     DispatchQueue.main.async {
-                        self.performSegue(withIdentifier: "signupSuccess2", sender: nil)
+                        self.performSegue(withIdentifier: "signupSuccess3", sender: nil)
                     }
                 }
                 else
                 {
                     DispatchQueue.main.async {
-//                        self._errorLabel.text = responseJSON["message"] as? String
-//                        self._errorLabel.isHidden = false
+                        self._errorlabel.text = responseJSON["message"] as? String
+                        self._errorlabel.isHidden = false
                     }
                 }
             }
