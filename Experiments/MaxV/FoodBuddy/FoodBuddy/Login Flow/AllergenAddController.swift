@@ -34,11 +34,12 @@ class AllergenAddController : UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         if (tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.checkmark)
         {
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
             let testStr = tableView.cellForRow(at: indexPath)?.textLabel?.text!
-            let fakeIndex = allergenArray.index(of: testStr!)
+            let fakeIndex = allergenArray.firstIndex(of: testStr!)
             allergenArray.remove(at: fakeIndex!)
         }
         else
