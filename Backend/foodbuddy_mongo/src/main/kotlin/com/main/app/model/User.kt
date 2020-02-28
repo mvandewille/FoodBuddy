@@ -10,17 +10,17 @@ import org.springframework.data.annotation.Id
 class User (@Id private var email: String, private var name: String?, private var age: Int?,
             private var height: Int?, private var weight: Int?, private var calorieLimit: Int?,
             private var password: String, private var gender: String?, private var lifestyle: String?,
-            private var userType: String, private var allergens: Array<String>?) {
+            private var userType: String, private var allergens: Array<String>?, private var foods: Array<Food>?) {
 
     constructor(email: String, password: String)
-            : this(email, null, null, null, null, null, password, null, null, "default", null)
+            : this(email, null, null, null, null, null, password, null, null, "default", null, null)
 
     override fun toString(): String {
         return "User[email=$email, name=$name, userType=$userType]"
     }
 
     fun toJson(): UserJ {
-        return UserJ(this.email, null, this.name, this.age, this.height, this.weight, this.lifestyle, this.gender, this.calorieLimit, this.userType, this.allergens)
+        return UserJ(this.email, null, this.name, this.age, this.height, this.weight, this.lifestyle, this.gender, this.calorieLimit, this.userType, this.allergens, this.foods)
     }
 
     fun setExtras(name: String?, age: Int?, height: Int?, weight: Int?, lifestyle: String?, gender: String?, allergens: Array<String>?) {
@@ -31,6 +31,12 @@ class User (@Id private var email: String, private var name: String?, private va
         this.lifestyle = lifestyle
         this.gender = gender
         this.allergens = allergens
+    }
+
+    fun addFood(name: String, calories: Int, sodium: Double, carbs: Double, protein: Double, fat: Double, cholesterol: Double) {
+        val newFood = Food(name, calories, sodium, carbs, protein, fat, cholesterol)
+
+        this.foods.
     }
 
 }

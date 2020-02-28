@@ -1,5 +1,6 @@
 package com.main.app.controller
 
+import com.main.app.JSON.FoodJ
 import com.main.app.JSON.ResponseJ
 import com.main.app.model.User
 import com.main.app.repository.UserRepository
@@ -57,7 +58,7 @@ class UserController {
             return temp.toJson()
         }
         catch (e: EmptyResultDataAccessException) {
-            return UserJ(email, null, null, null, null, null, null, null, null, null, null)
+            return UserJ(email, null, null, null, null, null, null, null, null, null, null, null)
         }
     }
 
@@ -85,6 +86,13 @@ class UserController {
                 return ResponseJ(0, "Password cannot be empty!")
             repository.save(User(user.email, user.password))
             return ResponseJ(1, "N/A")
+        }
+    }
+
+    @PostMapping("/add/food")
+    fun addFood(@RequestBody food: FoodJ): ResponseJ {
+        try{
+
         }
     }
 
