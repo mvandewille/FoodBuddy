@@ -23,13 +23,14 @@ class User (@Id private var email: String, private var name: String?, private va
         return UserJ(this.email, null, this.name, this.age, this.height, this.weight, this.lifestyle, this.gender, this.calorieLimit, this.userType, this.allergens)
     }
 
-    fun setExtras(name: String?, age: Int?, height: Int?, weight: Int?, lifestyle: String?, gender: String?, allergens: Array<String>?) {
+    fun setExtras(name: String?, age: Int?, height: Int?, weight: Int?, lifestyle: String?, gender: String?, calorieLimit: Int?, allergens: Array<String>?) {
         this.name = name
         this.age = age
         this.height = height
         this.weight = weight
         this.lifestyle = lifestyle
         this.gender = gender
+        this.calorieLimit = calorieLimit
         this.allergens = allergens
     }
 

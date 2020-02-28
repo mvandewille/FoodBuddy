@@ -92,7 +92,7 @@ class UserController {
     fun updateUser(@RequestBody user: UserJ): ResponseJ {
         try{
             var temp = repository.findByEmail(user.email)
-            temp.setExtras(user.name, user.age, user.height, user.weight, user.lifestyle, user.gender, user.allergens)
+            temp.setExtras(user.name, user.age, user.height, user.weight, user.lifestyle, user.gender, user.calorieLimit, user.allergens)
             repository.save(temp)
             return ResponseJ(1, "N/A")
         }
