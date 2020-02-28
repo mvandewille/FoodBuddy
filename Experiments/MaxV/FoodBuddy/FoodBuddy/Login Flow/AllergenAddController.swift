@@ -29,6 +29,7 @@ class AllergenAddController : UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
         cell.textLabel?.text = allAllergens[indexPath.row]
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -36,7 +37,9 @@ class AllergenAddController : UIViewController, UITableViewDelegate, UITableView
         if (tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.checkmark)
         {
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
-            allergenArray.remove(at: index(ofAccessibilityElement: tableView.cellForRow(at: indexPath)?.textLabel?.text!))
+            let testStr = tableView.cellForRow(at: indexPath)?.textLabel?.text!
+            let fakeIndex = allergenArray.index(of: testStr!)
+            allergenArray.remove(at: fakeIndex!)
         }
         else
         {
