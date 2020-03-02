@@ -1,7 +1,7 @@
-#Mon Feb 17 22:09:31 CST 2020
-base.0=C\:\\Users\\Tyler\\AndroidStudioProjects\\hv_3\\hv_3\\Experiments\\Tyler_Johnson\\FoodBuddiez2\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
+#Wed Feb 26 22:40:55 CST 2020
+base.0=/Users/mvandewille/Documents/hv_3/Experiments/Tyler_Johnson/FoodBuddiez2/app/build/intermediates/dex/debug/mergeExtDexDebug/out/classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=C\:\\Users\\Tyler\\AndroidStudioProjects\\hv_3\\hv_3\\Experiments\\Tyler_Johnson\\FoodBuddiez2\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
+base.1=/Users/mvandewille/Documents/hv_3/Experiments/Tyler_Johnson/FoodBuddiez2/app/build/intermediates/dex/debug/mergeProjectDexDebug/out/classes.dex

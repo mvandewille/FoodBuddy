@@ -1,27 +1,41 @@
-//import UIKit
-//import CryptoKit
-//
-//func DoLogin(_ email: String, _ pwd: String) {
-//
-//    let urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/auth?email=" + email + "&password=" + pwd
-//    let url = URL(string: urlStr)
-//    var request = URLRequest(url: url!)
-//    request.httpMethod = "GET"
-//
-//    //send request and decode response if exists
-//    let task = URLSession.shared.dataTask(with: request) { data, response, error in
-//        guard let data = data, error == nil else {
-//
-//            print(error?.localizedDescription ?? "No data")
-//            return
-//        }
-//        let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-//        if let responseJSON = responseJSON as? [String: Any] {
-//            print(responseJSON)
-//        }
-//    }
-//    task.resume()
-//}
-//
-//DoLogin("tdj1@iastate.edu", "password")
-print("HELLO")
+func calculateCalories(_ gender: String,_ height: Int,_ weight: Int,_ lifestyle: String,_ age: Int) -> Int
+{
+    var limitMale: Double
+    var limitFemale: Double
+    var multiplier = 1.2
+    if lifestyle == "Active"
+    {
+        multiplier = 1.9
+    }
+    else if lifestyle == "Inactive"
+    {
+        multiplier = 1.2
+    }
+    else if lifestyle == "Moderate"
+    {
+        multiplier = 1.55
+    }
+    limitMale = 66
+    limitMale += (6.3 * Double(weight))
+    limitMale += (12.9 * Double(height))
+    limitMale -= (6.8 * Double(age))
+    limitMale *= multiplier
+
+    limitFemale = 665
+    limitFemale += (4.3 * Double(weight))
+    limitFemale += (4.7 * Double(height))
+    limitFemale -= (4.7 * Double(age))
+
+    if gender == "Male"
+    {
+        return Int(limitMale)
+    }
+    if gender == "Female"
+    {
+        return Int(limitFemale)
+    }
+    return Int((limitMale + limitFemale)/2)
+}
+
+let myLimit = calculateCalories("Male", 72, 165, "Moderate", 21)
+print(myLimit)

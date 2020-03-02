@@ -56,20 +56,19 @@ class UserController {
             var temp = repository.findByEmail(email)
             return temp.toJson()
         }
-        // This is really poorly made right now we need to adjust it
         catch (e: EmptyResultDataAccessException) {
-            return UserJ(email, null, null, null, null, null, null, null, null, null)
+            return UserJ(email, null, null, null, null, null, null, null, null, null, null)
         }
     }
 
     @GetMapping("/find/name")
-    fun nameFind(@RequestParam(value = "name", required = true) name: String): String {
+    fun nameFind(@RequestParam(value = "name", required = true) name: String): UserJArray {
         try {
             var temp = repository.findByName(name)
-            return stringify(temp)
+            return UserJArray(temp.map {it.toJson()})
         }
         catch (e: EmptyResultDataAccessException) {
-            return "No matching entry!"
+            return UserJArray(null)
         }
     }
 
@@ -93,7 +92,7 @@ class UserController {
     fun updateUser(@RequestBody user: UserJ): ResponseJ {
         try{
             var temp = repository.findByEmail(user.email)
-            temp.setExtras(user.name, user.height, user.weight, user.lifestyle, user.gender, user.allergens)
+            temp.setExtras(user.name, user.age, user.height, user.weight, user.lifestyle, user.gender, user.calorieLimit, user.allergens)
             repository.save(temp)
             return ResponseJ(1, "N/A")
         }

@@ -1,17 +1,17 @@
 shell:
   script:
-    - cd /home/maw1/hv_3/Backend/foodbuddy_mongo
-    - pwd
-    - gradle clean build
+    #- cd /home/maw1/hv_3/Backend/foodbuddy_mongo
+    - cd /home/maw1/gitlab/zeKXaUnq/0/cs309/spring-2020/hv_3/Backend/foodbuddy_mongo/
+    - sudo ./gradlew clean build
     - cd build/libs/
-    - sudo yes | sudo cp foodbuddy-0.0.2-boot.jar /home/maw1/docker/foodbuddy/
+    - sudo mv -f foodbuddy-0.0.2-boot.jar /home/maw1/docker/foodbuddy/
     - cd /home/maw1/docker/foodbuddy
     - sudo docker stop foodbuddy
-    - sudo docker container prune
-    - sudo docker build -t maximillion1112/foodbuddy:latest
+    - sudo docker container prune -f
+    - sudo docker build -t maximillion1112/foodbuddy:latest .
     - sudo docker run -d -p 8080:8080 --name foodbuddy maximillion1112/foodbuddy:latest
-    - sleep 10
-    - sudo docker logs foodbuddy > /home/maw1/docker/logs/log.txt
+    - sleep 7
+    - sudo docker logs foodbuddy | sudo tee /home/maw1/docker/logs/log.txt
 
 #Questions:
 #I need to update the repository that is stored on the server
@@ -27,5 +27,3 @@ shell:
 
 #if I first run sudo bash to be root user then I can run gradle clean build
 #everything works as intended. But I cant get into sudo bash in gitlab-runner
-
-#
