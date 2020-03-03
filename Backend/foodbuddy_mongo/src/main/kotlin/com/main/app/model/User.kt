@@ -1,6 +1,7 @@
 package com.main.app.model
 
 import com.main.app.JSON.FoodJ
+import com.main.app.JSON.UserBasicJ
 import com.main.app.JSON.UserJ
 import com.sun.xml.fastinfoset.util.StringArray
 import org.springframework.data.annotation.Id
@@ -29,6 +30,10 @@ class User (@Id private var email: String, private var name: String?, private va
         val tempFoods = mutableListOf<FoodJ>()
         this.foods.forEach { tempFoods.add(it.toJson()) }
         return UserJ(this.email, null, this.name, this.age, this.height, this.weight, this.lifestyle, this.gender, this.calorieLimit, this.userType, this.allergens, tempFoods)
+    }
+
+    fun toBasicJson(): UserBasicJ {
+        return UserBasicJ(this.email, null, this.name, this.age, this.height, this.weight, this.lifestyle, this.gender, this.calorieLimit, this.userType, this.allergens)
     }
 
     fun setExtras(name: String?, age: Int?, height: Int?, weight: Int?, lifestyle: String?, gender: String?, calorieLimit: Int?, allergens: Array<String>?): Boolean {

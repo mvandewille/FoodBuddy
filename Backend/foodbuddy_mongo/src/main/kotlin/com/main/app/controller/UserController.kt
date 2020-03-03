@@ -1,11 +1,8 @@
 package com.main.app.controller
 
-import com.main.app.JSON.FoodAddJ
-import com.main.app.JSON.FoodJ
-import com.main.app.JSON.ResponseJ
+import com.main.app.JSON.*
 import com.main.app.model.User
 import com.main.app.repository.UserRepository
-import com.main.app.JSON.UserJ
 
 import org.springframework.beans.factory.annotation.Autowired
 
@@ -60,6 +57,17 @@ class UserController {
         }
         catch (e: EmptyResultDataAccessException) {
             return UserJ(email, null, null, null, null, null, null, null, null, null, null, mutableListOf<FoodJ>())
+        }
+    }
+
+    @GetMapping("/find/email/basic")
+    fun emailFindBasic(@RequestParam(value= "email", required = true) email: String): UserBasicJ {
+        try {
+            var temp = repository.findByEmail(email)
+            return temp.toBasicJson()
+        }
+        catch (e: EmptyResultDataAccessException) {
+            return UserBasicJ(email, null, null, null, null, null, null, null, null, null, null)
         }
     }
 

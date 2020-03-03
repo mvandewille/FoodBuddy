@@ -2,7 +2,7 @@ package com.main.app.JSON
 
 import com.fasterxml.jackson.annotation.JsonCreator
 
-data class UserJ @JsonCreator constructor(
+data class UserBasicJ @JsonCreator constructor(
         val email: String,
         val password: String?,
         val name: String?,
@@ -13,6 +13,5 @@ data class UserJ @JsonCreator constructor(
         val gender: String?,
         val calorieLimit: Int?,
         val userType: String?,
-        val allergens: Array<String>?,
-        val foods: MutableList<FoodJ>?
+        val allergens: Array<String>?
 )
