@@ -113,6 +113,7 @@ class UserController {
     fun updateUser(@RequestBody user: UserJ): ResponseJ {
         try{
             var temp = repository.findByEmail(user.email)
+<<<<<<< Backend/foodbuddy_mongo/src/main/kotlin/com/main/app/controller/UserController.kt
             if(temp.setExtras(user.name, user.age, user.height, user.weight, user.lifestyle, user.gender, user.calorieLimit, user.allergens)) {
                 repository.save(temp)
                 return ResponseJ(1, "N/A")
@@ -120,6 +121,11 @@ class UserController {
             else {
                 return ResponseJ(0, "Error occurred!")
             }
+=======
+            temp.setExtras(user.name, user.age, user.height, user.weight, user.lifestyle, user.gender, user.calorieLimit, user.allergens)
+            repository.save(temp)
+            return ResponseJ(1, "N/A")
+>>>>>>> Backend/foodbuddy_mongo/src/main/kotlin/com/main/app/controller/UserController.kt
         }
         catch (e: EmptyResultDataAccessException) {
             return ResponseJ(0, "No user found to update!" )

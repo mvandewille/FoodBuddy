@@ -37,7 +37,7 @@ class AdditionalUserInfoController: UIViewController
             _errorLabel.isHidden = false
             return
         }
-        let user_email = UserDefaults.standard.string(forKey: "email")
+        let user_email = UserDefaults.standard.dictionary(forKey: "userInfo")!["email"] as? String
         let fullName = _name.text
         let heightVal = Int(_height.text!)
         let weightVal = Int(_weight.text!)
@@ -57,7 +57,9 @@ class AdditionalUserInfoController: UIViewController
             lifestyle = "Active"
         }
         calLimit = calculateCalories(gender!, heightVal!, weightVal!, lifestyle, age!)
-        formDict = ["email": user_email, "name":fullName, "height":heightVal, "weight": weightVal, "lifestyle":lifestyle, "gender":gender, "calorieLimit":calLimit]
+        formDict = ["email": user_email, "name":fullName, "height":heightVal, "weight": weightVal, "lifestyle":lifestyle, "gender":gender, "calorieLimit":calLimit, "age":age]
+        UserDefaults.standard.removeObject(forKey: "userInfo")
+        UserDefaults.standard.set(formDict, forKey: "userInfo")
         DispatchQueue.main.async {
             self.performSegue(withIdentifier: "signupSuccess2", sender: nil)
         }
@@ -102,46 +104,6 @@ class AdditionalUserInfoController: UIViewController
         return Int((limitMale + limitFemale)/2)
     }
     
-    
-    func doHTTP(dict : Dictionary<String, Any>)
-    {
-        let jsonData = try? JSONSerialization.data(withJSONObject: dict, options: [])
-        //TODO - Create JSON for email, password here
-        let urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/update"
-        let url = URL(string: urlStr)
-        var request = URLRequest(url: url!)
-        request.httpMethod = "POST"
-        request.httpBody = jsonData
-        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-                
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
-                DispatchQueue.main.async {
-                    self._errorLabel.text = "Unexpected http error"
-                    self._errorLabel.isHidden = false
-                }
-                return
-            }
-            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-            if let responseJSON = responseJSON as? [String: Any] {
-                if (responseJSON["response"] as? Int == 1)
-                {
-                    DispatchQueue.main.async {
-                        self.performSegue(withIdentifier: "signupSuccess2", sender: nil)
-                    }
-                }
-                else
-                {
-                    DispatchQueue.main.async {
-                        self._errorLabel.text = responseJSON["message"] as? String
-                        self._errorLabel.isHidden = false
-                    }
-                }
-            }
-        }
-        task.resume()
-    }
-    
     var genders = ["Male", "Female", "Other"]
     var selectedGender : String = ""
     
@@ -149,6 +111,7 @@ class AdditionalUserInfoController: UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        formDict = UserDefaults.standard.dictionary(forKey: "userInfo")!
         _errorLabel.isHidden = true
         createGenderPicker()
         createToolbar()
@@ -191,10 +154,6 @@ class AdditionalUserInfoController: UIViewController
         view.endEditing(true)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var vc = segue.destination as! AllergenAddController
-        vc.incomingDict = formDict
-    }
 }
 
 final class SnappingSlider: UISlider {
