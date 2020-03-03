@@ -1,26 +1,29 @@
 //
-//  AllergenAddController.swift
-//  iOS UI Mockup
+//  AllergenSettingsController.swift
+//  FoodBuddy
 //
-//  Created by Max Van de Wille on 2/26/20.
+//  Created by Max Van de Wille on 3/1/20.
 //  Copyright © 2020 Max Van de Wille. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class AllergenAddController : UIViewController, UITableViewDelegate, UITableViewDataSource
+class AllergenSettingsController : UIViewController, UITableViewDelegate, UITableViewDataSource
 {
+    @IBOutlet weak var _allergenTable: UITableView!
+    @IBOutlet weak var _errorLabel: UILabel!
+    @IBOutlet weak var _saveBtn: UIButton!
     
-    var incomingDict: Dictionary<String, Any> = [:]
+    @IBAction func saveAllergies(_ sender: Any)
+    {
+        sendDict["allergens"] = allergenArray
+        doHTTP(dict: sendDict)
+    }
+    
+    var sendDict: Dictionary<String, Any> = [:]
     var allergenArray: [String] = []
     var allAllergens = ["Milk", "Eggs", "Tree Nuts", "Peanuts", "Shellfish", "Wheat", "Soy", "Fish", "Banana", "Garlic"]
-    
-    @IBOutlet weak var _calories: UITextField!
-    @IBOutlet weak var _continue: UIButton!
-    @IBOutlet weak var _stack: UIStackView!
-    @IBOutlet weak var _errorlabel: UILabel!
-    @IBOutlet weak var _allergenTable: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return allAllergens.count
@@ -59,40 +62,19 @@ class AllergenAddController : UIViewController, UITableViewDelegate, UITableView
         
     }
     
-    @IBAction func doSubmit(_ sender: Any)
-    {
-        incomingDict["calorieLimit"] = Int(_calories.text!)
-        incomingDict["allergens"] = allergenArray
-        UserDefaults.standard.removeObject(forKey: "userInfo")
-        UserDefaults.standard.set(incomingDict, forKey: "userInfo")
-        doHTTP(dict: incomingDict)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        incomingDict = UserDefaults.standard.dictionary(forKey: "userInfo")!
-        self._errorlabel.isHidden = true
+        self._errorLabel.isHidden = true
         self._allergenTable.allowsMultipleSelection = true
         self._allergenTable.allowsMultipleSelectionDuringEditing = true
-        var textCalories = ""
-        if let v = incomingDict["calorieLimit"]
-        {
-            textCalories = "\(v)"
-        }
-        _calories.text = textCalories
-        _stack.setCustomSpacing(50.0, after: _calories)
         _allergenTable.dataSource = self
         _allergenTable.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
         super.viewWillAppear(animated)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
-        super.viewWillAppear(animated)
+        sendDict = UserDefaults.standard.dictionary(forKey: "userInfo")!
+        allergenArray = sendDict["allergens"] as! [String]
     }
     
     func doHTTP(dict : Dictionary<String, Any>)
@@ -108,8 +90,8 @@ class AllergenAddController : UIViewController, UITableViewDelegate, UITableView
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
                 DispatchQueue.main.async {
-                    self._errorlabel.text = "Unexpected http error"
-                    self._errorlabel.isHidden = false
+                    self._errorLabel.text = "Unexpected http error"
+                    self._errorLabel.isHidden = false
                 }
                 return
             }
@@ -117,15 +99,13 @@ class AllergenAddController : UIViewController, UITableViewDelegate, UITableView
             if let responseJSON = responseJSON as? [String: Any] {
                 if (responseJSON["response"] as? Int == 1)
                 {
-                    DispatchQueue.main.async {
-                        self.performSegue(withIdentifier: "signupSuccess3", sender: nil)
-                    }
+
                 }
                 else
                 {
                     DispatchQueue.main.async {
-                        self._errorlabel.text = responseJSON["message"] as? String
-                        self._errorlabel.isHidden = false
+                        self._errorLabel.text = responseJSON["message"] as? String
+                        self._errorLabel.isHidden = false
                     }
                 }
             }

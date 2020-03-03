@@ -11,16 +11,16 @@
         <scene sceneID="xIl-Zz-GhD">
             <objects>
                 <viewController id="VFP-K6-QS6" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hak-VQ-tEb">
+                    <view key="view" contentMode="scaleToFill" id="4cb-7r-Hkf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="stO-mH-YJB"/>
+                        <viewLayoutGuide key="safeArea" id="WSK-DP-NBe"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UHN-c1-feE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="129"/>
+            <point key="canvasLocation" x="137.68115942028987" y="128.57142857142856"/>
         </scene>
     </scenes>
 </document>
