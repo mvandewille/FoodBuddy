@@ -1,5 +1,7 @@
 package com.main.app.controller
 
+import com.main.app.JSON.FoodAddJ
+import com.main.app.JSON.FoodJ
 import com.main.app.JSON.ResponseJ
 import com.main.app.model.User
 import com.main.app.repository.UserRepository
@@ -57,7 +59,7 @@ class UserController {
             return temp.toJson()
         }
         catch (e: EmptyResultDataAccessException) {
-            return UserJ(email, null, null, null, null, null, null, null, null, null, null)
+            return UserJ(email, null, null, null, null, null, null, null, null, null, null, mutableListOf<FoodJ>())
         }
     }
 
@@ -88,13 +90,42 @@ class UserController {
         }
     }
 
+    @PostMapping("/add/food")
+    fun addFood(@RequestBody food: FoodAddJ): ResponseJ {
+        try{
+            var usr = repository.findByEmail(food.email)
+            var nameTest = 0
+            usr.getFoods().forEach { if(it.getName() == food.name) {return ResponseJ(0, "Food already exists for user!")} }
+            if(usr.addFood(food.name, food.calories, food.sodium, food.carbs, food.protein, food.fat, food.cholesterol)) {
+                repository.save(usr)
+                return ResponseJ(1, "N/A")
+            }
+            else {
+                return ResponseJ(0, "Error occurred!")
+            }
+        }
+        catch(e: EmptyResultDataAccessException) {
+            return ResponseJ(0, "No user found with that email!")
+        }
+    }
+
     @PostMapping("/update")
     fun updateUser(@RequestBody user: UserJ): ResponseJ {
         try{
             var temp = repository.findByEmail(user.email)
+<<<<<<< Backend/foodbuddy_mongo/src/main/kotlin/com/main/app/controller/UserController.kt
+            if(temp.setExtras(user.name, user.age, user.height, user.weight, user.lifestyle, user.gender, user.calorieLimit, user.allergens)) {
+                repository.save(temp)
+                return ResponseJ(1, "N/A")
+            }
+            else {
+                return ResponseJ(0, "Error occurred!")
+            }
+=======
             temp.setExtras(user.name, user.age, user.height, user.weight, user.lifestyle, user.gender, user.calorieLimit, user.allergens)
             repository.save(temp)
             return ResponseJ(1, "N/A")
+>>>>>>> Backend/foodbuddy_mongo/src/main/kotlin/com/main/app/controller/UserController.kt
         }
         catch (e: EmptyResultDataAccessException) {
             return ResponseJ(0, "No user found to update!" )

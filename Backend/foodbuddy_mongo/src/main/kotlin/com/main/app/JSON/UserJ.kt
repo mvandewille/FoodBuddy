@@ -1,6 +1,7 @@
 package com.main.app.JSON
 
 import com.fasterxml.jackson.annotation.JsonCreator
+import com.main.app.model.Food
 
 data class UserJ @JsonCreator constructor(
         val email: String,
@@ -13,5 +14,6 @@ data class UserJ @JsonCreator constructor(
         val gender: String?,
         val calorieLimit: Int?,
         val userType: String?,
-        val allergens: Array<String>?
+        val allergens: Array<String>?,
+        val foods: MutableList<FoodJ>?
 )

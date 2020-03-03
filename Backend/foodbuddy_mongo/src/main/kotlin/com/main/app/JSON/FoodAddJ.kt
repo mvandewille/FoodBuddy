@@ -2,7 +2,8 @@ package com.main.app.JSON
 
 import com.fasterxml.jackson.annotation.JsonCreator
 
-data class FoodJ @JsonCreator constructor(
+data class FoodAddJ @JsonCreator constructor(
+        val email: String,
         val name: String,
         val calories: Int,
         val sodium: Double?,
