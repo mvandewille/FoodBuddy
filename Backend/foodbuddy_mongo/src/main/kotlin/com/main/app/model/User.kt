@@ -1,8 +1,10 @@
 package com.main.app.model
 
+import com.main.app.JSON.FoodJ
 import com.main.app.JSON.UserJ
 import com.sun.xml.fastinfoset.util.StringArray
 import org.springframework.data.annotation.Id
+import kotlin.collections.MutableList
 
 //https://hellokoding.com/jpa-one-to-one-foreignkey-relationship-example-with-spring-boot-maven-and-mysql/
 //this link has information on relationships in springboot
@@ -10,33 +12,44 @@ import org.springframework.data.annotation.Id
 class User (@Id private var email: String, private var name: String?, private var age: Int?,
             private var height: Int?, private var weight: Int?, private var calorieLimit: Int?,
             private var password: String, private var gender: String?, private var lifestyle: String?,
-            private var userType: String, private var allergens: Array<String>?, private var foods: Array<Food>?) {
+            private var userType: String, private var allergens: Array<String>?, private val foods: MutableList<Food>) {
 
     constructor(email: String, password: String)
-            : this(email, null, null, null, null, null, password, null, null, "default", null, null)
+            : this(email, null, null, null, null, null, password, null, null, "default", null, mutableListOf())
 
     override fun toString(): String {
         return "User[email=$email, name=$name, userType=$userType]"
     }
 
+    fun getFoods(): MutableList<Food> {
+        return this.foods
+    }
+
     fun toJson(): UserJ {
-        return UserJ(this.email, null, this.name, this.age, this.height, this.weight, this.lifestyle, this.gender, this.calorieLimit, this.userType, this.allergens, this.foods)
+        val tempFoods = mutableListOf<FoodJ>()
+        this.foods.forEach { tempFoods.add(it.toJson()) }
+        return UserJ(this.email, null, this.name, this.age, this.height, this.weight, this.lifestyle, this.gender, this.calorieLimit, this.userType, this.allergens, tempFoods)
     }
 
-    fun setExtras(name: String?, age: Int?, height: Int?, weight: Int?, lifestyle: String?, gender: String?, allergens: Array<String>?) {
-        this.name = name
-        this.age = age
-        this.height = height
-        this.weight = weight
-        this.lifestyle = lifestyle
-        this.gender = gender
-        this.allergens = allergens
+
+    fun setExtras(name: String?, age: Int?, height: Int?, weight: Int?, lifestyle: String?, gender: String?, calorieLimit: Int?, allergens: Array<String>?): Boolean {
+        if(name != null) {this.name = name}
+        if(age != null) {this.age = age}
+        if(height != null) {this.height = height}
+        if(weight != null) {this.weight = weight}
+        if(lifestyle != null) {this.lifestyle = lifestyle}
+        if(gender != null) {this.gender = gender}
+        if(allergens != null) {this.allergens = allergens}
+        if(calorieLimit != null) {this.calorieLimit = calorieLimit}
+
+        return true
     }
 
-    fun addFood(name: String, calories: Int, sodium: Double, carbs: Double, protein: Double, fat: Double, cholesterol: Double) {
+    fun addFood(name: String, calories: Int, sodium: Double?, carbs: Double?, protein: Double?, fat: Double?, cholesterol: Double?): Boolean {
         val newFood = Food(name, calories, sodium, carbs, protein, fat, cholesterol)
 
-        this.foods.
+        this.foods.add(newFood)
+        return true
     }
 
 }

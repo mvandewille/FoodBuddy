@@ -15,5 +15,5 @@ data class UserJ @JsonCreator constructor(
         val calorieLimit: Int?,
         val userType: String?,
         val allergens: Array<String>?,
-        val foods: Array<Food>?
+        val foods: MutableList<FoodJ>?
 )
