@@ -82,12 +82,12 @@ class UserController {
         }
     }
 
-    @GetMapping("/find/status/friend")
+    @GetMapping("/find/following/status")
     fun findFriendStatus(@RequestParam(value= "email", required = true) email: String): StatusJArray {
         try {
-            var usr = u_repository.findByEmail(email)
-            var friends = usr.getFollowing()
-            var temp = s_repository.findByEmailInOrderByIdDesc(friends)
+            val usr = u_repository.findByEmail(email)
+            val following = usr.getFollowing()
+            val temp = s_repository.findByEmailInOrderByIdDesc(following)
             return StatusJArray(temp.map { it.toJson() })
         }
         catch (e: EmptyResultDataAccessException) {
