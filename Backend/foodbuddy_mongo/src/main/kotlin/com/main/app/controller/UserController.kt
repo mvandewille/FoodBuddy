@@ -86,7 +86,7 @@ class UserController {
     fun findFriendStatus(@RequestParam(value= "email", required = true) email: String): StatusJArray {
         try {
             var usr = u_repository.findByEmail(email)
-            var friends = usr.getFriends()
+            var friends = usr.getFollowing()
             var temp = s_repository.findByEmailInOrderByIdDesc(friends)
             return StatusJArray(temp.map { it.toJson() })
         }
@@ -141,7 +141,7 @@ class UserController {
             u_repository.findByEmail(request.friend)
             var usr = u_repository.findByEmail(request.email)
 
-            usr.addFriend(request.friend)
+            usr.addFollowing(request.friend)
             u_repository.save(usr)
             return ResponseJ(1, "N/A")
         }
