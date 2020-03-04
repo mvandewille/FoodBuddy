@@ -7,10 +7,10 @@ import java.util.*
 class Status (@Id private val id: Long, private val email: String,  private var timestamp: String, private val message: String, private val flagged: Boolean) {
 
     constructor(id: Long, email: String, message: String)
-        : this(id, email, "00/00/0000:00-00-00", message, false)
+        : this(id, email, "00/00/0000 00:00:00", message, false)
 
     init {
-        if(this.timestamp == "00/00/0000:00-00-00") {
+        if(this.timestamp == "00/00/0000 00:00:00") {
             val sdf = SimpleDateFormat("MM/dd/yyyy hh:mm:ss")
             val currentDate = sdf.format(Date())
             this.timestamp = currentDate
