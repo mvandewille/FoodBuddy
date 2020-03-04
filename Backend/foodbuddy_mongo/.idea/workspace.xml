@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4c66e304-561a-4f72-97ff-c18601b93024" name="Default Changelist" comment="" />
+    <list default="true" id="4c66e304-561a-4f72-97ff-c18601b93024" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/main/app/Testcases/UserTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/main/app/Testcases/UserTest.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,6 +104,7 @@
       <workItem from="1582524070003" duration="4939000" />
       <workItem from="1582595142555" duration="69000" />
       <workItem from="1582595427402" duration="2270000" />
+      <workItem from="1583180052177" duration="2323000" />
     </task>
     <servers />
   </component>
@@ -191,9 +195,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="413" y="23" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1581692528765" />
-    <state x="1229" y="387" key="com.intellij.ide.util.TipDialog" timestamp="1582595435000">
-      <screen x="0" y="0" width="2048" height="1122" />
+    <state x="1024" y="317" key="com.intellij.ide.util.TipDialog" timestamp="1583180421621">
+      <screen x="0" y="0" width="1707" height="920" />
     </state>
+    <state x="1024" y="317" key="com.intellij.ide.util.TipDialog/0.0.1707.920@0.0.1707.920" timestamp="1583180421621" />
     <state x="1229" y="387" key="com.intellij.ide.util.TipDialog/0.0.2048.1122@0.0.2048.1122" timestamp="1582595435000" />
     <state x="794" y="325" key="com.intellij.ide.util.TipDialog/0.23.1440.877@0.23.1440.877" timestamp="1582524082153" />
     <state x="171" y="203" width="670" height="676" key="search.everywhere.popup" timestamp="1581804510716">

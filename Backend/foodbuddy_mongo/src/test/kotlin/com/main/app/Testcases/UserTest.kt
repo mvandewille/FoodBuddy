@@ -6,6 +6,6 @@ import com.main.app.controller.UserController
 class UserTest {
 
     fun testMethod(d: UserController) {
-
+        
     }
 }
