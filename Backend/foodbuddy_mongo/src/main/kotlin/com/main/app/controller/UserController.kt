@@ -27,10 +27,7 @@ class UserController {
              @RequestParam(value = "password", required = true) password: String): ResponseJ {
         try {
             var temp = repository.findByEmailAndPassword(email, password)
-            if(temp != null)
-                return ResponseJ(1, "N/A")
-            else
-                return ResponseJ(0, "Login failed!")
+            return ResponseJ(1, "N/A")
         }
         catch (e: EmptyResultDataAccessException) {
             return ResponseJ(0, "Login failed!")
@@ -56,7 +53,7 @@ class UserController {
             return temp.toJson()
         }
         catch (e: EmptyResultDataAccessException) {
-            return UserJ(email, null, null, null, null, null, null, null, null, null, null, mutableListOf<FoodJ>())
+            return UserJ(email, null, null, null, null, null, null, null, null, null, mutableListOf<String>(), mutableListOf<String>(), mutableListOf<FoodJ>())
         }
     }
 
@@ -67,7 +64,7 @@ class UserController {
             return temp.toBasicJson()
         }
         catch (e: EmptyResultDataAccessException) {
-            return UserBasicJ(email, null, null, null, null, null, null, null, null, null, null)
+            return UserBasicJ(email, null, null, null, null, null, null, null, null, null, mutableListOf<String>())
         }
     }
 
@@ -102,7 +99,6 @@ class UserController {
     fun addFood(@RequestBody food: FoodAddJ): ResponseJ {
         try{
             var usr = repository.findByEmail(food.email)
-            var nameTest = 0
             usr.getFoods().forEach { if(it.getName() == food.name) {return ResponseJ(0, "Food already exists for user!")} }
             if(usr.addFood(food.name, food.calories, food.sodium, food.carbs, food.protein, food.fat, food.cholesterol)) {
                 repository.save(usr)
@@ -114,6 +110,27 @@ class UserController {
         }
         catch(e: EmptyResultDataAccessException) {
             return ResponseJ(0, "No user found with that email!")
+        }
+    }
+
+    @PostMapping("/add/friend")
+    fun addFriend(@RequestBody request: FriendJ): ResponseJ {
+        try{
+            repository.findByEmail(request.email)
+        }
+        catch (e: EmptyResultDataAccessException) {
+            return ResponseJ(0, "No user found! Thus, no friends list!")
+        }
+        try{
+            repository.findByEmail(request.friend)
+            var usr = repository.findByEmail(request.email)
+
+            usr.addFriend(request.friend)
+            repository.save(usr)
+            return ResponseJ(1, "N/A")
+        }
+        catch (e: EmptyResultDataAccessException) {
+            return ResponseJ(0, "This friend does not have an account!")
         }
     }
 

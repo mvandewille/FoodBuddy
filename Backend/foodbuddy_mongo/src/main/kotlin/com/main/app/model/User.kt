@@ -13,14 +13,11 @@ import kotlin.collections.MutableList
 class User (@Id private var email: String, private var name: String?, private var age: Int?,
             private var height: Int?, private var weight: Int?, private var calorieLimit: Int?,
             private var password: String, private var gender: String?, private var lifestyle: String?,
-            private var userType: String, private var allergens: Array<String>?, private val foods: MutableList<Food>) {
+            private var userType: String, private var allergens: MutableList<String>,
+            private val friends: MutableList<String>, private val foods: MutableList<Food>) {
 
     constructor(email: String, password: String)
-            : this(email, null, null, null, null, null, password, null, null, "default", null, mutableListOf())
-
-    override fun toString(): String {
-        return "User[email=$email, name=$name, userType=$userType]"
-    }
+            : this(email, null, null, null, null, null, password, null, null, "default", mutableListOf<String>(), mutableListOf<String>(), mutableListOf<Food>())
 
     fun getFoods(): MutableList<Food> {
         return this.foods
@@ -29,14 +26,14 @@ class User (@Id private var email: String, private var name: String?, private va
     fun toJson(): UserJ {
         val tempFoods = mutableListOf<FoodJ>()
         this.foods.forEach { tempFoods.add(it.toJson()) }
-        return UserJ(this.email, null, this.name, this.age, this.height, this.weight, this.lifestyle, this.gender, this.calorieLimit, this.userType, this.allergens, tempFoods)
+        return UserJ(this.email, null, this.name, this.age, this.height, this.weight, this.lifestyle, this.gender, this.calorieLimit, this.userType, this.allergens, this.friends, tempFoods)
     }
 
     fun toBasicJson(): UserBasicJ {
         return UserBasicJ(this.email, null, this.name, this.age, this.height, this.weight, this.lifestyle, this.gender, this.calorieLimit, this.userType, this.allergens)
     }
 
-    fun setExtras(name: String?, age: Int?, height: Int?, weight: Int?, lifestyle: String?, gender: String?, calorieLimit: Int?, allergens: Array<String>?): Boolean {
+    fun setExtras(name: String?, age: Int?, height: Int?, weight: Int?, lifestyle: String?, gender: String?, calorieLimit: Int?, allergens: MutableList<String>?): Boolean {
         if(name != null) {this.name = name}
         if(age != null) {this.age = age}
         if(height != null) {this.height = height}
@@ -53,6 +50,11 @@ class User (@Id private var email: String, private var name: String?, private va
         val newFood = Food(name, calories, sodium, carbs, protein, fat, cholesterol)
 
         this.foods.add(newFood)
+        return true
+    }
+
+    fun addFriend(email: String): Boolean{
+        this.friends.add(email)
         return true
     }
 }

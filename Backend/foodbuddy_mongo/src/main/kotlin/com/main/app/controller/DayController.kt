@@ -35,7 +35,7 @@ class DayController {
     fun addName(@RequestBody day: DayJ): ResponseJ {
         if(checkDate(day.date)) {
             try {
-                val temp = repository.findByDate(day.date)
+                repository.findByDate(day.date)
                 return ResponseJ(0, "Day already exists")
             } catch (e: EmptyResultDataAccessException) {
                 repository.save(Day(day.date))

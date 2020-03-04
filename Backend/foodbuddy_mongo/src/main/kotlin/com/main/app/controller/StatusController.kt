@@ -36,11 +36,11 @@ class StatusController {
         val list = repository.findAllByOrderByIdDesc()
         if(!list.isEmpty()) {
             val temp = list.first().getId()
-            repository.save(Status(temp+1, status.email, status.name, status.message))
+            repository.save(Status(temp+1, status.email, status.message))
             return ResponseJ(1, "N/A")
         }
         else {
-            repository.save(Status(0, status.email, status.name, status.message))
+            repository.save(Status(0, status.email, status.message))
             return ResponseJ(1, "N/A")
         }
     }
@@ -48,7 +48,7 @@ class StatusController {
     @GetMapping("/update/flag")
     fun updateStatusFlag(@RequestParam(value = "flagged", required = true) flagged: Boolean)
     {
-        val temp = repository.findByMessageOrderById().first()
+        repository.findByMessageOrderById().first()
     }
 
     @GetMapping("/delete/all")
