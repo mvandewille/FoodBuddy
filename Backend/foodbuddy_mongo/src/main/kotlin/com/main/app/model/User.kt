@@ -23,6 +23,10 @@ class User (@Id private var email: String, private var name: String?, private va
         return this.foods
     }
 
+    fun getFriends(): MutableList<String> {
+        return this.friends
+    }
+
     fun toJson(): UserJ {
         val tempFoods = mutableListOf<FoodJ>()
         this.foods.forEach { tempFoods.add(it.toJson()) }

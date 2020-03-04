@@ -2,6 +2,7 @@ package com.main.app.controller
 
 import com.main.app.JSON.*
 import com.main.app.model.User
+import com.main.app.repository.StatusRepository
 import com.main.app.repository.UserRepository
 
 import org.springframework.beans.factory.annotation.Autowired
@@ -20,13 +21,15 @@ import org.springframework.web.bind.annotation.RequestMapping
 @RequestMapping("/user")
 class UserController {
     @Autowired
-    lateinit var repository: UserRepository
+    lateinit var u_repository: UserRepository
+    @Autowired
+    lateinit var s_repository: StatusRepository
 
     @GetMapping("/auth")
     fun auth(@RequestParam(value = "email", required = true) email: String,
              @RequestParam(value = "password", required = true) password: String): ResponseJ {
         try {
-            var temp = repository.findByEmailAndPassword(email, password)
+            var temp = u_repository.findByEmailAndPassword(email, password)
             return ResponseJ(1, "N/A")
         }
         catch (e: EmptyResultDataAccessException) {
@@ -37,9 +40,9 @@ class UserController {
     @GetMapping("/find/all")
     fun find(): UserJArray {
         try {
-            var temp = repository.findAllBy()
+            var temp = u_repository.findAllBy()
 
-            return UserJArray(temp.map {it.toJson()})
+            return UserJArray(temp.map { it.toJson() })
         }
         catch (e: EmptyResultDataAccessException) {
             return UserJArray(null)
@@ -49,7 +52,7 @@ class UserController {
     @GetMapping("/find/email")
     fun emailFind(@RequestParam(value= "email", required = true) email: String): UserJ {
         try {
-            var temp = repository.findByEmail(email)
+            var temp = u_repository.findByEmail(email)
             return temp.toJson()
         }
         catch (e: EmptyResultDataAccessException) {
@@ -60,7 +63,7 @@ class UserController {
     @GetMapping("/find/email/basic")
     fun emailFindBasic(@RequestParam(value= "email", required = true) email: String): UserBasicJ {
         try {
-            var temp = repository.findByEmail(email)
+            var temp = u_repository.findByEmail(email)
             return temp.toBasicJson()
         }
         catch (e: EmptyResultDataAccessException) {
@@ -71,11 +74,24 @@ class UserController {
     @GetMapping("/find/name")
     fun nameFind(@RequestParam(value = "name", required = true) name: String): UserJArray {
         try {
-            var temp = repository.findByName(name)
-            return UserJArray(temp.map {it.toJson()})
+            var temp = u_repository.findByName(name)
+            return UserJArray(temp.map { it.toJson() })
         }
         catch (e: EmptyResultDataAccessException) {
             return UserJArray(null)
+        }
+    }
+
+    @GetMapping("/find/status/friend")
+    fun findFriendStatus(@RequestParam(value= "email", required = true) email: String): StatusJArray {
+        try {
+            var usr = u_repository.findByEmail(email)
+            var friends = usr.getFriends()
+            var temp = s_repository.findByEmailInOrderByIdDesc(friends)
+            return StatusJArray(temp.map { it.toJson() })
+        }
+        catch (e: EmptyResultDataAccessException) {
+            return StatusJArray(null)
         }
     }
 
@@ -84,13 +100,13 @@ class UserController {
         try{
             if(!"""^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$""".toRegex(RegexOption.IGNORE_CASE).matches(user.email))
                 return ResponseJ(0, "Incorrect email format!")
-            repository.findByEmail(user.email)
+            u_repository.findByEmail(user.email)
             return ResponseJ(0, "Email already connected to account!")
         }
         catch (e: EmptyResultDataAccessException) {
             if(user.password == null)
                 return ResponseJ(0, "Password cannot be empty!")
-            repository.save(User(user.email, user.password))
+            u_repository.save(User(user.email, user.password))
             return ResponseJ(1, "N/A")
         }
     }
@@ -98,10 +114,10 @@ class UserController {
     @PostMapping("/add/food")
     fun addFood(@RequestBody food: FoodAddJ): ResponseJ {
         try{
-            var usr = repository.findByEmail(food.email)
+            var usr = u_repository.findByEmail(food.email)
             usr.getFoods().forEach { if(it.getName() == food.name) {return ResponseJ(0, "Food already exists for user!")} }
             if(usr.addFood(food.name, food.calories, food.sodium, food.carbs, food.protein, food.fat, food.cholesterol)) {
-                repository.save(usr)
+                u_repository.save(usr)
                 return ResponseJ(1, "N/A")
             }
             else {
@@ -116,17 +132,17 @@ class UserController {
     @PostMapping("/add/friend")
     fun addFriend(@RequestBody request: FriendJ): ResponseJ {
         try{
-            repository.findByEmail(request.email)
+            u_repository.findByEmail(request.email)
         }
         catch (e: EmptyResultDataAccessException) {
             return ResponseJ(0, "No user found! Thus, no friends list!")
         }
         try{
-            repository.findByEmail(request.friend)
-            var usr = repository.findByEmail(request.email)
+            u_repository.findByEmail(request.friend)
+            var usr = u_repository.findByEmail(request.email)
 
             usr.addFriend(request.friend)
-            repository.save(usr)
+            u_repository.save(usr)
             return ResponseJ(1, "N/A")
         }
         catch (e: EmptyResultDataAccessException) {
@@ -137,9 +153,9 @@ class UserController {
     @PostMapping("/update")
     fun updateUser(@RequestBody user: UserJ): ResponseJ {
         try{
-            var temp = repository.findByEmail(user.email)
+            var temp = u_repository.findByEmail(user.email)
             if(temp.setExtras(user.name, user.age, user.height, user.weight, user.lifestyle, user.gender, user.calorieLimit, user.allergens)) {
-                repository.save(temp)
+                u_repository.save(temp)
                 return ResponseJ(1, "N/A")
             }
             else {
@@ -153,13 +169,13 @@ class UserController {
 
     @GetMapping("/delete/email")
     fun delEmail(@RequestParam(value = "email", required = true) email: String): String {
-        repository.deleteByEmail(email)
+        u_repository.deleteByEmail(email)
         return "$email deleted."
     }
 
     @GetMapping("/delete/all")
     fun delData(): String {
-        repository.deleteAll()
+        u_repository.deleteAll()
         return "Success all rows removed!"
     }
 
