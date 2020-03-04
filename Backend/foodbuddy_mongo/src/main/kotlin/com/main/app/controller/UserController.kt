@@ -22,7 +22,7 @@ class UserController {
     @Autowired
     lateinit var repository: UserRepository
 
-    @GetMapping("/auth")//fd
+    @GetMapping("/auth")
     fun auth(@RequestParam(value = "email", required = true) email: String,
              @RequestParam(value = "password", required = true) password: String): ResponseJ {
         try {
