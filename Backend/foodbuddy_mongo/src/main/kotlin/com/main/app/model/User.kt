@@ -14,7 +14,7 @@ class User (@Id private var email: String, private var name: String?, private va
             private var height: Int?, private var weight: Int?, private var calorieLimit: Int?,
             private var password: String, private var gender: String?, private var lifestyle: String?,
             private var userType: String, private var allergens: MutableList<String>,
-            private val friends: MutableList<String>, private val foods: MutableList<Food>) {
+            private val following: MutableList<String>, private val foods: MutableList<Food>) {
 
     constructor(email: String, password: String)
             : this(email, null, null, null, null, null, password, null, null, "default", mutableListOf<String>(), mutableListOf<String>(), mutableListOf<Food>())
@@ -23,14 +23,14 @@ class User (@Id private var email: String, private var name: String?, private va
         return this.foods
     }
 
-    fun getFriends(): MutableList<String> {
-        return this.friends
+    fun getFollowing(): MutableList<String> {
+        return this.following
     }
 
     fun toJson(): UserJ {
         val tempFoods = mutableListOf<FoodJ>()
         this.foods.forEach { tempFoods.add(it.toJson()) }
-        return UserJ(this.email, null, this.name, this.age, this.height, this.weight, this.lifestyle, this.gender, this.calorieLimit, this.userType, this.allergens, this.friends, tempFoods)
+        return UserJ(this.email, null, this.name, this.age, this.height, this.weight, this.lifestyle, this.gender, this.calorieLimit, this.userType, this.allergens, this.following, tempFoods)
     }
 
     fun toBasicJson(): UserBasicJ {
@@ -57,8 +57,8 @@ class User (@Id private var email: String, private var name: String?, private va
         return true
     }
 
-    fun addFriend(email: String): Boolean{
-        this.friends.add(email)
+    fun addFollowing(email: String): Boolean{
+        this.following.add(email)
         return true
     }
 }
