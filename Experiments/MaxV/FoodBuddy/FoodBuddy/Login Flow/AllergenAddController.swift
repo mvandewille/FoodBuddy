@@ -29,6 +29,10 @@ class AllergenAddController : UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
         cell.textLabel?.text = allAllergens[indexPath.row]
+        if allergenArray.firstIndex(of: cell.textLabel!.text!) != nil
+        {
+            cell.accessoryType = UITableViewCell.AccessoryType.checkmark
+        }
         cell.selectionStyle = .none
         return cell
     }
@@ -45,20 +49,28 @@ class AllergenAddController : UIViewController, UITableViewDelegate, UITableView
         else
         {
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
-            allergenArray.append((tableView.cellForRow(at: indexPath)?.textLabel!.text)!)
+            let testStr = (tableView.cellForRow(at: indexPath)?.textLabel!.text)!
+            let testIndex = allergenArray.firstIndex(of: testStr)
+            if testIndex == nil
+            {
+                allergenArray.append((tableView.cellForRow(at: indexPath)?.textLabel!.text)!)
+            }
         }
         
     }
     
     @IBAction func doSubmit(_ sender: Any)
     {
-        incomingDict["calories"] = Int(_calories.text!)
+        incomingDict["calorieLimit"] = Int(_calories.text!)
         incomingDict["allergens"] = allergenArray
+        UserDefaults.standard.removeObject(forKey: "userInfo")
+        UserDefaults.standard.set(incomingDict, forKey: "userInfo")
         doHTTP(dict: incomingDict)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        incomingDict = UserDefaults.standard.dictionary(forKey: "userInfo")!
         self._errorlabel.isHidden = true
         self._allergenTable.allowsMultipleSelection = true
         self._allergenTable.allowsMultipleSelectionDuringEditing = true

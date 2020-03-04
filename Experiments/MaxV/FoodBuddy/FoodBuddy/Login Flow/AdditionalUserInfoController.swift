@@ -37,7 +37,7 @@ class AdditionalUserInfoController: UIViewController
             _errorLabel.isHidden = false
             return
         }
-        let user_email = UserDefaults.standard.string(forKey: "email")
+        let user_email = UserDefaults.standard.dictionary(forKey: "userInfo")!["email"] as? String
         let fullName = _name.text
         let heightVal = Int(_height.text!)
         let weightVal = Int(_weight.text!)
@@ -57,7 +57,9 @@ class AdditionalUserInfoController: UIViewController
             lifestyle = "Active"
         }
         calLimit = calculateCalories(gender!, heightVal!, weightVal!, lifestyle, age!)
-        formDict = ["email": user_email, "name":fullName, "height":heightVal, "weight": weightVal, "lifestyle":lifestyle, "gender":gender, "calorieLimit":calLimit]
+        formDict = ["email": user_email, "name":fullName, "height":heightVal, "weight": weightVal, "lifestyle":lifestyle, "gender":gender, "calorieLimit":calLimit, "age":age]
+        UserDefaults.standard.removeObject(forKey: "userInfo")
+        UserDefaults.standard.set(formDict, forKey: "userInfo")
         DispatchQueue.main.async {
             self.performSegue(withIdentifier: "signupSuccess2", sender: nil)
         }
@@ -109,6 +111,7 @@ class AdditionalUserInfoController: UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        formDict = UserDefaults.standard.dictionary(forKey: "userInfo")!
         _errorLabel.isHidden = true
         createGenderPicker()
         createToolbar()
@@ -151,10 +154,6 @@ class AdditionalUserInfoController: UIViewController
         view.endEditing(true)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var vc = segue.destination as! AllergenAddController
-        vc.incomingDict = formDict
-    }
 }
 
 final class SnappingSlider: UISlider {

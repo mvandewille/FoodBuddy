@@ -16,6 +16,13 @@ class LoginPromptViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackground()
+        let password = UserDefaults.standard.string(forKey: "password")
+        let userInfo = UserDefaults.standard.dictionary(forKey: "userInfo")
+        if (userInfo != nil && password != nil)
+        {
+            let email = userInfo!["email"] as? String
+            DoLogin(email!, password!)
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -39,12 +46,6 @@ class LoginPromptViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         super.viewWillAppear(animated)
-//        let password = UserDefaults.standard.string(forKey: "password")
-//        let email = UserDefaults.standard.string(forKey: "email")
-//        if (email != nil && password != nil)
-//        {
-//            DoLogin(email!, password!)
-//        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -70,9 +71,7 @@ class LoginPromptViewController: UIViewController {
                 if let returnCode = dictionary["response"] as? Int {
                     if (returnCode == 1)
                     {
-                        DispatchQueue.main.async {
-                            self.performSegue(withIdentifier: "bypassLogin", sender: nil)
-                        }
+                        self.DoFieldCheck(email, pwd)
                     }
                     else
                     {
@@ -82,5 +81,48 @@ class LoginPromptViewController: UIViewController {
             }
         }
         task.resume()
+    }
+    
+    func DoFieldCheck(_ email: String,_ pwd: String)
+    {
+        let urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/find/email?email=" + email
+        let newString = urlStr.replacingOccurrences(of: " ", with: "+")
+        let url = URL(string: newString)
+        var request = URLRequest(url: url!)
+        request.httpMethod = "GET"
+        
+        //send request and decode response if exists
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            let response = try? JSONSerialization.jsonObject(with: data, options: [])
+            if var dictionary = response as? [String: Any] {
+                if let hasLifestyle = dictionary["lifestyle"] as? String
+                {
+                    dictionary.removeValue(forKey: "password")
+                    UserDefaults.standard.set(dictionary, forKey: "userInfo")
+                    DispatchQueue.main.async
+                    {
+                        self.performSegue(withIdentifier: "bypassLogin", sender: nil)
+                    }
+                }
+                else
+                {
+                    DispatchQueue.main.async
+                    {
+                        self.performSegue(withIdentifier: "needInfo2", sender: nil)
+                    }
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    @IBAction func unwindToRootViewController(segue: UIStoryboardSegue)
+    {
+        UserDefaults.standard.removeObject(forKey: "email")
+        UserDefaults.standard.removeObject(forKey: "password")
+        print("Unwinding for logout")
     }
 }

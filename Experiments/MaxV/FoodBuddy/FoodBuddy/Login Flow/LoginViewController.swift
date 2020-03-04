@@ -67,9 +67,8 @@ class LoginViewController: UIViewController
                 if let returnCode = dictionary["response"] as? Int {
                     if (returnCode == 1)
                     {
-                        self.DoFieldCheck(email, pwd)
                         UserDefaults.standard.set(pwd, forKey: "password")
-                        UserDefaults.standard.set(email, forKey: "email")
+                        self.DoFieldCheck(email, pwd)
                     }
                     else
                     {
@@ -102,9 +101,11 @@ class LoginViewController: UIViewController
                 return
             }
             let response = try? JSONSerialization.jsonObject(with: data, options: [])
-            if let dictionary = response as? [String: Any] {
+            if var dictionary = response as? [String: Any] {
                 if let hasLifestyle = dictionary["lifestyle"] as? String
                 {
+                    dictionary.removeValue(forKey: "password")
+                    UserDefaults.standard.set(dictionary, forKey: "userInfo")
                     DispatchQueue.main.async {
                         self.performSegue(withIdentifier: "loginSuccess", sender: nil)
                     }
