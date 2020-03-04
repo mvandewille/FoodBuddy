@@ -87,6 +87,7 @@ class UserController {
         try {
             val usr = u_repository.findByEmail(email)
             val following = usr.getFollowing()
+            following.add(email)
             val temp = s_repository.findByEmailInOrderByIdDesc(following)
             return StatusJArray(temp.map { it.toJson() })
         }
