@@ -29,6 +29,11 @@ class UserController {
     @Autowired
     lateinit var s_repository: StatusRepository
 
+    @PostMapping("/image")
+    fun decodeImage(@RequestBody image: TestJ): TestJ {
+        return TestJ(image.img)
+    }
+
     @GetMapping("/auth")
     fun auth(@RequestParam(value = "email", required = true) email: String,
              @RequestParam(value = "password", required = true) password: String): ResponseJ {
