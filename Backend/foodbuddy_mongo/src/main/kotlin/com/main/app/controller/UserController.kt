@@ -38,7 +38,7 @@ class UserController {
     fun auth(@RequestParam(value = "email", required = true) email: String,
              @RequestParam(value = "password", required = true) password: String): ResponseJ {
         try {
-            var temp = u_repository.findByEmailAndPassword(email, password)
+            u_repository.findByEmailAndPassword(email, password)
             return ResponseJ(1, "N/A")
         }
         catch (e: EmptyResultDataAccessException) {
