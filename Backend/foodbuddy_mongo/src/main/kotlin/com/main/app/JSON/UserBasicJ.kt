@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator
 
 data class UserBasicJ @JsonCreator constructor(
         val email: String,
-        val password: String?,
         val name: String?,
         val age: Int?,
         val height: Int?,

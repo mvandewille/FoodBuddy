@@ -24,6 +24,46 @@ class Food (@Id private val name: String, private val calories: Int,
     fun getName(): String {
         return this.name
     }
+
+    fun getCalories(): Int {
+        return this.calories
+    }
+
+    fun getSodium(): Double {
+        if (this.sodium == null)
+            return 0.0
+        else
+            return this.sodium
+    }
+
+    fun getCarbs(): Double {
+        if (this.carbs == null)
+            return 0.0
+        else
+            return this.carbs
+    }
+
+    fun getProtein(): Double {
+        if (this.protein == null)
+            return 0.0
+        else
+            return this.protein
+    }
+
+    fun getFat(): Double {
+        if (this.fat == null)
+            return 0.0
+        else
+            return this.fat
+    }
+
+    fun getCholesterol(): Double {
+        if (this.cholesterol == null)
+            return 0.0
+        else
+            return this.cholesterol
+    }
+
     fun toJson(): FoodJ {
         return FoodJ(this.name, this.calories, this.sodium, this.carbs, this.protein, this.fat, this.cholesterol)
     }

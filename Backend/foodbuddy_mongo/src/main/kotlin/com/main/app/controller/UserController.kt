@@ -1,6 +1,7 @@
 package com.main.app.controller
 
 import com.main.app.JSON.*
+import com.main.app.model.Food
 import com.main.app.model.User
 import com.main.app.repository.StatusRepository
 import com.main.app.repository.UserRepository
@@ -16,6 +17,9 @@ import org.springframework.web.bind.annotation.RequestBody
 
 import org.springframework.dao.EmptyResultDataAccessException
 import org.springframework.web.bind.annotation.RequestMapping
+import java.time.Instant
+import java.time.ZoneOffset
+import java.time.format.DateTimeFormatter
 
 @RestController
 @RequestMapping("/user")
@@ -56,7 +60,7 @@ class UserController {
             return temp.toJson()
         }
         catch (e: EmptyResultDataAccessException) {
-            return UserJ(email, null, null, null, null, null, null, null, null, null, mutableListOf<String>(), mutableListOf<String>(), mutableListOf<FoodJ>())
+            return UserJ(email, null, null, null, null, null, null, null, null, mutableListOf<String>(), mutableListOf<String>(), mutableListOf<FoodJ>(), mutableMapOf<String, DayJ>())
         }
     }
 
@@ -67,7 +71,7 @@ class UserController {
             return temp.toBasicJson()
         }
         catch (e: EmptyResultDataAccessException) {
-            return UserBasicJ(email, null, null, null, null, null, null, null, null, null, mutableListOf<String>())
+            return UserBasicJ(email, null, null, null, null, null, null, null, null, mutableListOf<String>())
         }
     }
 
@@ -96,8 +100,46 @@ class UserController {
         }
     }
 
+    @GetMapping("/day/total")
+    fun getTotal(@RequestParam(value= "email", required = true) email: String, @RequestParam(value="date", required = false) r_date: String?): NutritionJ {
+        try {
+            val usr = u_repository.findByEmail(email)
+            val result = NutritionJ(0, 0.0, 0.0, 0.0, 0.0, 0.0)
+            val date: String
+            if (r_date == null) {
+                date = DateTimeFormatter
+                    .ofPattern("MM/dd/yyyy")
+                    .withZone(ZoneOffset.systemDefault())
+                    .format(Instant.now())
+            }
+            else
+                date = r_date
+
+
+            val data = usr.getCalendar()
+            if (data.keys.contains(date)) {
+                data[date]?.getFoods()?.forEach {
+                    val food = usr.getFood(it.getName())
+                    val amt = it.getAmount()
+                    if (food != null) {
+                        result.calories += (food.getCalories() * amt).toInt()
+                        result.sodium += food.getSodium() * amt
+                        result.carbs += food.getCarbs() * amt
+                        result.protein += food.getProtein() * amt
+                        result.fat += food.getFat() * amt
+                        result.cholesterol += food.getCholesterol() * amt
+                    }
+                }
+            }
+            return result
+        }
+        catch (e: EmptyResultDataAccessException){
+            return NutritionJ(0, 0.0, 0.0, 0.0, 0.0, 0.0)
+        }
+    }
+
     @PostMapping("/add")
-    fun addData(@RequestBody user: UserJ): ResponseJ {
+    fun addData(@RequestBody user: UserAddJ): ResponseJ {
         try{
             if(!"""^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$""".toRegex(RegexOption.IGNORE_CASE).matches(user.email))
                 return ResponseJ(0, "Incorrect email format!")
@@ -111,7 +153,7 @@ class UserController {
             return ResponseJ(1, "N/A")
         }
     }
-
+/* this endpoint is going to be redundant in terms of how the app will be used. food will always be added to calendar and foods
     @PostMapping("/add/food")
     fun addFood(@RequestBody food: FoodAddJ): ResponseJ {
         try{
@@ -129,7 +171,7 @@ class UserController {
             return ResponseJ(0, "No user found with that email!")
         }
     }
-
+*/
     @PostMapping("/add/friend")
     fun addFriend(@RequestBody request: FriendJ): ResponseJ {
         try{
@@ -149,6 +191,25 @@ class UserController {
         catch (e: EmptyResultDataAccessException) {
             return ResponseJ(0, "This friend does not have an account!")
         }
+    }
+
+    @PostMapping("/day/add/food")
+    fun addFoodToDay(@RequestBody food: FoodAddJ): ResponseJ {
+        try{
+            val usr = u_repository.findByEmail(food.email)
+            val date = DateTimeFormatter
+                    .ofPattern("MM/dd/yyyy")
+                    .withZone(ZoneOffset.systemDefault())
+                    .format(Instant.now())
+
+            usr.addFood(Food(food.name, food.calories, food.sodium, food.carbs, food.protein, food.fat, food.cholesterol), food.amount, date)
+            u_repository.save(usr)
+            return ResponseJ(1, "N/A")
+        }
+        catch (e: EmptyResultDataAccessException) {
+            return ResponseJ(0, "No User found!")
+        }
+
     }
 
     @PostMapping("/update")
@@ -178,14 +239,6 @@ class UserController {
     fun delData(): String {
         u_repository.deleteAll()
         return "Success all rows removed!"
-    }
-
-    fun stringify(list: MutableList<User>): String {
-        var r = ""
-        list.forEach{
-            r += it.toString() + "<br>"
-        }
-        return r
     }
 
 }

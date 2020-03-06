@@ -10,5 +10,6 @@ data class FoodAddJ @JsonCreator constructor(
         val carbs: Double?,
         val protein: Double?,
         val fat: Double?,
-        val cholesterol: Double?
+        val cholesterol: Double?,
+        val amount: Double
 )

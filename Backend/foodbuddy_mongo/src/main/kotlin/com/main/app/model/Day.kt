@@ -1,11 +1,28 @@
 package com.main.app.model
 
+import com.main.app.JSON.DayFoodJ
+import com.main.app.JSON.DayJ
 import org.springframework.data.annotation.Id
+import java.time.Instant
+import java.time.ZoneOffset
+import java.time.format.DateTimeFormatter
 
-class Day (@Id private val date: String){
+class Day (private val foods: MutableList<DayFood>){
 
-    //Override the toString function to what we want it to be.
-    override fun toString(): String {
-        return date
+    constructor()
+        : this(mutableListOf<DayFood>())
+
+    fun getFoods(): MutableList<DayFood> {
+        return foods
     }
+    fun addFood(food: String, amount: Double) {
+        foods.add(DayFood(food, amount))
+    }
+
+    fun toJson(): DayJ {
+        val tempFoods = mutableListOf<DayFoodJ>()
+        this.foods.forEach { tempFoods.add(it.toJson()) }
+        return DayJ(tempFoods)
+    }
+
 }
