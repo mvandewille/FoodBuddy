@@ -5,6 +5,7 @@ import com.main.app.model.Food
 import com.main.app.model.User
 import com.main.app.repository.StatusRepository
 import com.main.app.repository.UserRepository
+import org.bson.internal.Base64
 
 import org.springframework.beans.factory.annotation.Autowired
 
@@ -31,7 +32,9 @@ class UserController {
 
     @PostMapping("/image")
     fun decodeImage(@RequestBody image: TestJ): TestJ {
-        return TestJ(image.img)
+        val imageBytes: ByteArray = Base64.decode(image.img)
+        //val image = ImageView
+        return TestJ(imageBytes.toString())
     }
 
     @GetMapping("/auth")

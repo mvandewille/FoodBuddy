@@ -18,3 +18,4 @@ URL = """http://localhost:8080/user/image"""
 data = {'img': img_str}
 r = requests.post(URL, json= data)
 print(r.text)
+print(img.load()[0,0])
