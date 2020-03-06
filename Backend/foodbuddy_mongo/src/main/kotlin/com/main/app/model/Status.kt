@@ -14,7 +14,7 @@ class Status (@Id private val id: Long, private val email: String,  private var 
     init {
         if(this.timestamp == "00/00/0000 00:00:00") {
             this.timestamp = DateTimeFormatter
-                    .ofPattern("MM-dd-yyyy HH:mm:ss.SS")
+                    .ofPattern("MM/dd/yyyy HH:mm:ss.SS")
                     .withZone(ZoneOffset.systemDefault())
                     .format(Instant.now())
         }

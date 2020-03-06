@@ -9,15 +9,8 @@ import org.bson.internal.Base64
 
 import org.springframework.beans.factory.annotation.Autowired
 
-import org.springframework.web.bind.annotation.RestController
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PostMapping
-
-import org.springframework.web.bind.annotation.RequestParam
-import org.springframework.web.bind.annotation.RequestBody
-
 import org.springframework.dao.EmptyResultDataAccessException
-import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.*
 import java.time.Instant
 import java.time.ZoneOffset
 import java.time.format.DateTimeFormatter
@@ -109,7 +102,8 @@ class UserController {
     }
 
     @GetMapping("/day/total")
-    fun getTotal(@RequestParam(value= "email", required = true) email: String, @RequestParam(value="date", required = false) r_date: String?): NutritionJ {
+    fun getTotal(@RequestParam(value= "email", required = true) email: String,
+                 @RequestParam(value="date", required = false) r_date: String?): NutritionJ {
         try {
             val usr = u_repository.findByEmail(email)
             val result = NutritionJ(0, 0.0, 0.0, 0.0, 0.0, 0.0)
@@ -180,7 +174,7 @@ class UserController {
         }
     }
 */
-    @PostMapping("/add/friend")
+    @PostMapping("/add/following")
     fun addFriend(@RequestBody request: FriendJ): ResponseJ {
         try{
             u_repository.findByEmail(request.email)
@@ -189,10 +183,10 @@ class UserController {
             return ResponseJ(0, "No user found! Thus, no friends list!")
         }
         try{
-            u_repository.findByEmail(request.friend)
+            u_repository.findByEmail(request.following)
             var usr = u_repository.findByEmail(request.email)
 
-            usr.addFollowing(request.friend)
+            usr.addFollowing(request.following)
             u_repository.save(usr)
             return ResponseJ(1, "N/A")
         }
@@ -221,7 +215,7 @@ class UserController {
     }
 
     @PostMapping("/update")
-    fun updateUser(@RequestBody user: UserJ): ResponseJ {
+    fun updateUser(@RequestBody user: UserBasicJ): ResponseJ {
         try{
             var temp = u_repository.findByEmail(user.email)
             if(temp.setExtras(user.name, user.age, user.height, user.weight, user.lifestyle, user.gender, user.calorieLimit, user.allergens)) {
@@ -237,16 +231,16 @@ class UserController {
         }
     }
 
-    @GetMapping("/delete/email")
-    fun delEmail(@RequestParam(value = "email", required = true) email: String): String {
+    @DeleteMapping("/delete/email")
+    fun delEmail(@RequestParam(value = "email", required = true) email: String): ResponseJ {
         u_repository.deleteByEmail(email)
-        return "$email deleted."
+        return ResponseJ(1, "Data deleted for $email")
     }
 
-    @GetMapping("/delete/all")
-    fun delData(): String {
+    @DeleteMapping("/delete/all")
+    fun delData(): ResponseJ {
         u_repository.deleteAll()
-        return "Success all rows removed!"
+        return ResponseJ(1, "All users deleted")
     }
 
 }

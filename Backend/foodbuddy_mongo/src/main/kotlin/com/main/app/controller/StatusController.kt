@@ -7,12 +7,7 @@ import com.main.app.model.Status
 import com.main.app.repository.StatusRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.dao.EmptyResultDataAccessException
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestParam
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RestController
-import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/status")
@@ -54,10 +49,10 @@ class StatusController {
         repository.findByMessageOrderById().first()
     }
 
-    @GetMapping("/delete/all")
-    fun deleteAll(): String {
+    @DeleteMapping("/delete/all")
+    fun deleteAll(): ResponseJ {
         repository.deleteAll()
-        return "Deleted Everything!"
+        return ResponseJ(1, "All statuses deleted")
     }
 
     @GetMapping("/count")
@@ -65,11 +60,4 @@ class StatusController {
         return repository.count()
     }
 
-    fun stringify(list: MutableList<Status>): String {
-        var r = ""
-        list.forEach{
-            r += it.toString() + "<br>"
-        }
-        return r
-    }
 }
