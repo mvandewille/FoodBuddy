@@ -25,9 +25,10 @@ class UserController {
 
     @PostMapping("/image")
     fun decodeImage(@RequestBody image: TestJ): TestJ {
-        val imageBytes: ByteArray = Base64.decode(image.img)
-        //val image = ImageView
-        return TestJ(imageBytes.toString())
+        val imageBytes = Base64.decode(image.img)
+        //val decodedImage =
+        //val image =
+        return TestJ(image.img.toString())
     }
 
     @GetMapping("/auth")
@@ -87,6 +88,16 @@ class UserController {
         }
     }
 
+    @GetMapping("/find/following")
+    fun findFollowing(@RequestParam(value= "email", required = true) email: String): FollowingJArray {
+        try {
+            val usr = u_repository.findByEmail(email)
+            return FollowingJArray(usr.getFollowing())
+        }
+        catch (e: EmptyResultDataAccessException) {
+            return FollowingJArray(mutableListOf<String>())
+        }
+    }
     @GetMapping("/find/following/status")
     fun findFriendStatus(@RequestParam(value= "email", required = true) email: String): StatusJArray {
         try {

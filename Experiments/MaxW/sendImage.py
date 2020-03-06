@@ -7,7 +7,8 @@ import base64
 from io import BytesIO
 import requests
 
-img = Image.open('C:/Users/Amish Cyborg/Dropbox/College/Year 3/COM S 309/hv_3/Experiments/MaxW/images/test_label.png')
+#img = Image.open('C:/Users/Amish Cyborg/Dropbox/College/Year 3/COM S 309/hv_3/Experiments/MaxW/images/test_label.png')
+img = Image.open('/Users/max/Dropbox/College/Year 3/COM S 309/hv_3/Experiments/MaxW/images/test_label.png')
 
 buffered = BytesIO()
 
