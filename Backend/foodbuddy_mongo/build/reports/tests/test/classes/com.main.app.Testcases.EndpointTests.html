@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - EndpointTests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>EndpointTests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.main.app.Testcases.html">com.main.app.Testcases</a> &gt; EndpointTests</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.004s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">test_Status()</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2020-03-09 14:29:22.493  INFO 21572 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.main.app.Testcases.EndpointTests], using SpringBootContextLoader
+2020-03-09 14:29:22.494  INFO 21572 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.main.app.Testcases.EndpointTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-03-09 14:29:22.495  INFO 21572 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.main.app.Testcases.EndpointTests]: EndpointTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-03-09 14:29:22.506  INFO 21572 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.main.app.FoodbuddyApplication for test class com.main.app.Testcases.EndpointTests
+2020-03-09 14:29:22.508  INFO 21572 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-03-09 14:29:22.509  INFO 21572 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@945187d, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@210ebfe2, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@2889b4fa, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6b16715d, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4a311ab2, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1e944db9, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7bdf04f5, org.springframework.test.context.event.EventPublishingTestExecutionListener@231b0e4a, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@613d6411, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@5d78040a, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5e035bfc, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@25917728, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@2f868267]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.4.RELEASE)
+
+2020-03-09 14:29:22.541  INFO 21572 --- [    Test worker] com.main.app.Testcases.EndpointTests     : Starting EndpointTests on Desktop with PID 21572 (started by Amish Cyborg in C:\Users\Amish Cyborg\Dropbox\College\Year 3\COM S 309\hv_3\Backend\foodbuddy_mongo)
+2020-03-09 14:29:22.542  INFO 21572 --- [    Test worker] com.main.app.Testcases.EndpointTests     : No active profile set, falling back to default profiles: default
+2020-03-09 14:29:22.773  INFO 21572 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-03-09 14:29:22.773  INFO 21572 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-03-09 14:29:22.786  INFO 21572 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.main.app.repository.StatusRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2020-03-09 14:29:22.788  INFO 21572 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.main.app.repository.UserRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2020-03-09 14:29:22.788  INFO 21572 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14ms. Found 0 JPA repository interfaces.
+2020-03-09 14:29:22.799  INFO 21572 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-03-09 14:29:22.799  INFO 21572 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-03-09 14:29:22.816  INFO 21572 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16ms. Found 2 MongoDB repository interfaces.
+2020-03-09 14:29:22.924  INFO 21572 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-09 14:29:23.017  INFO 21572 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2020-03-09 14:29:23.019  INFO 21572 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2020-03-09 14:29:23.049  INFO 21572 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-03-09 14:29:23.063  INFO 21572 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-03-09 14:29:23.097  INFO 21572 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-09 14:29:23.098  INFO 21572 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-03-09 14:29:23.163  INFO 21572 --- [    Test worker] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[coms-309-hv-3.cs.iastate.edu:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-03-09 14:29:23.164  INFO 21572 --- [    Test worker] org.mongodb.driver.cluster               : Adding discovered server coms-309-hv-3.cs.iastate.edu:27017 to client view of cluster
+2020-03-09 14:29:23.173  INFO 21572 --- [state.edu:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:553}] to coms-309-hv-3.cs.iastate.edu:27017
+2020-03-09 14:29:23.177  INFO 21572 --- [state.edu:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=coms-309-hv-3.cs.iastate.edu:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 3]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2404400}
+2020-03-09 14:29:23.177  INFO 21572 --- [state.edu:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2020-03-09 14:29:23.571  WARN 21572 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-03-09 14:29:23.717  INFO 21572 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-09 14:29:23.928  WARN 21572 --- [    Test worker] o.s.b.a.m.MustacheAutoConfiguration      : Cannot find template location: classpath:/templates/ (please add some templates, check your Mustache configuration, or set spring.mustache.check-template-location=false)
+2020-03-09 14:29:24.106  INFO 21572 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-03-09 14:29:24.106  INFO 21572 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-03-09 14:29:24.128  INFO 21572 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 22 ms
+2020-03-09 14:29:24.140  INFO 21572 --- [    Test worker] com.main.app.Testcases.EndpointTests     : Started EndpointTests in 1.629 seconds (JVM running for 10.114)
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 6.1</a> at Mar 9, 2020, 2:29:24 PM</p>
+</div>
+</div>
+</body>
+</html>

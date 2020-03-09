@@ -164,7 +164,7 @@ class UserController {
             u_repository.findByEmail(request.email)
         }
         catch (e: EmptyResultDataAccessException) {
-            return ResponseJ(0, "No user found! Thus, no friends list!")
+            return ResponseJ(0, "User does not exist!")
         }
         try{
             u_repository.findByEmail(request.following)
@@ -175,7 +175,7 @@ class UserController {
             return ResponseJ(1, "N/A")
         }
         catch (e: EmptyResultDataAccessException) {
-            return ResponseJ(0, "This friend does not have an account!")
+            return ResponseJ(0, "This person does not have an account!")
         }
     }
 
@@ -228,6 +228,20 @@ class UserController {
         }
     }
 
+    @DeleteMapping("/delete/following")
+    fun delFollowing(@RequestParam(value = "email", required = true)  email: String,
+                     @RequestParam(value="following", required = true) following: String): ResponseJ {
+        try {
+            var usr = u_repository.findByEmail(email)
+            if(usr.deleteFollowing(following))
+                return ResponseJ(1, "Deleted $following")
+            else
+                return ResponseJ(0, "Person is not in $email\'s following!")
+        }
+        catch (e: EmptyResultDataAccessException) {
+            return ResponseJ(0, "User does not exist!")
+        }
+    }
     @DeleteMapping("/delete/email")
     fun delEmail(@RequestParam(value = "email", required = true) email: String): ResponseJ {
         u_repository.deleteByEmail(email)

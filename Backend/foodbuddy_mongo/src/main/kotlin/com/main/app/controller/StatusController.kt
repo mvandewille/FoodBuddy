@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/status")
-open class StatusController {
+class StatusController {
     @Autowired
     lateinit var repository: StatusRepository
 
