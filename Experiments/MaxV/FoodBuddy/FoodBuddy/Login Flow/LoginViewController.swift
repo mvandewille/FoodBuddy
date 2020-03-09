@@ -68,6 +68,7 @@ class LoginViewController: UIViewController
                     if (returnCode == 1)
                     {
                         UserDefaults.standard.set(pwd, forKey: "password")
+                        UserDefaults.standard.set(email, forKey: "email")
                         self.DoFieldCheck(email, pwd)
                     }
                     else
@@ -85,7 +86,7 @@ class LoginViewController: UIViewController
     
     func DoFieldCheck(_ email: String,_ pwd: String)
     {
-        let urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/find/email?email=" + email
+        let urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/find/email/basic?email=" + email
         let newString = urlStr.replacingOccurrences(of: " ", with: "+")
         let url = URL(string: newString)
         var request = URLRequest(url: url!)
@@ -101,11 +102,9 @@ class LoginViewController: UIViewController
                 return
             }
             let response = try? JSONSerialization.jsonObject(with: data, options: [])
-            if var dictionary = response as? [String: Any] {
+            if let dictionary = response as? [String: Any] {
                 if let hasLifestyle = dictionary["lifestyle"] as? String
                 {
-                    dictionary.removeValue(forKey: "password")
-                    UserDefaults.standard.set(dictionary, forKey: "userInfo")
                     DispatchQueue.main.async {
                         self.performSegue(withIdentifier: "loginSuccess", sender: nil)
                     }

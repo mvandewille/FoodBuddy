@@ -105,7 +105,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vVd-wE-oPZ">
-                                <rect key="frame" x="0.0" y="20" width="414" height="793"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32A-Dc-rX8">
@@ -126,7 +126,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="vVd-wE-oPZ" firstAttribute="bottom" secondItem="2wi-Yl-Na1" secondAttribute="bottom" id="2oZ-O2-rnu"/>
-                            <constraint firstItem="vVd-wE-oPZ" firstAttribute="top" secondItem="zIe-vq-tC9" secondAttribute="top" constant="20" symbolic="YES" id="OE3-uA-y6u"/>
+                            <constraint firstItem="vVd-wE-oPZ" firstAttribute="top" secondItem="2wi-Yl-Na1" secondAttribute="top" id="EXR-RM-fig"/>
                             <constraint firstItem="32A-Dc-rX8" firstAttribute="centerX" secondItem="zIe-vq-tC9" secondAttribute="centerX" id="QTm-gB-6uJ"/>
                             <constraint firstItem="vVd-wE-oPZ" firstAttribute="trailing" secondItem="2wi-Yl-Na1" secondAttribute="trailing" id="gT6-w2-zye"/>
                             <constraint firstItem="vVd-wE-oPZ" firstAttribute="leading" secondItem="2wi-Yl-Na1" secondAttribute="leading" id="jNZ-7W-4DC"/>
@@ -149,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mym-Q3-vfq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2512" y="737"/>
+            <point key="canvasLocation" x="2511.594202898551" y="736.60714285714278"/>
         </scene>
         <!--Storyboard Reference-->
         <scene sceneID="5Dc-V2-tMB">
@@ -205,15 +205,16 @@
             </objects>
             <point key="canvasLocation" x="3328" y="737"/>
         </scene>
-        <!--Item-->
+        <!--Daily-->
         <scene sceneID="pTi-xL-RC0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CJh-tU-vAY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="globe" catalog="system" id="C2Y-7A-Dgy"/>
+                    <tabBarItem key="tabBarItem" title="Daily" image="globe" catalog="system" id="C2Y-7A-Dgy"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9Y5-zV-OfK">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.3294117647" green="0.64455527720000005" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

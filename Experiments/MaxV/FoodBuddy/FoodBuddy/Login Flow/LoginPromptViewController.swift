@@ -17,10 +17,9 @@ class LoginPromptViewController: UIViewController {
         super.viewDidLoad()
         setBackground()
         let password = UserDefaults.standard.string(forKey: "password")
-        let userInfo = UserDefaults.standard.dictionary(forKey: "userInfo")
-        if (userInfo != nil && password != nil)
+        let email = UserDefaults.standard.string(forKey: "email")
+        if (email != nil && password != nil)
         {
-            let email = userInfo!["email"] as? String
             DoLogin(email!, password!)
         }
         // Do any additional setup after loading the view.
@@ -85,7 +84,7 @@ class LoginPromptViewController: UIViewController {
     
     func DoFieldCheck(_ email: String,_ pwd: String)
     {
-        let urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/find/email?email=" + email
+        let urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/find/email/basic?email=" + email
         let newString = urlStr.replacingOccurrences(of: " ", with: "+")
         let url = URL(string: newString)
         var request = URLRequest(url: url!)
@@ -100,8 +99,6 @@ class LoginPromptViewController: UIViewController {
             if var dictionary = response as? [String: Any] {
                 if let hasLifestyle = dictionary["lifestyle"] as? String
                 {
-                    dictionary.removeValue(forKey: "password")
-                    UserDefaults.standard.set(dictionary, forKey: "userInfo")
                     DispatchQueue.main.async
                     {
                         self.performSegue(withIdentifier: "bypassLogin", sender: nil)

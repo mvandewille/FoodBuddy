@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF15B5F02412EB78002D60CB /* FriendsSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15B5EF2412EB78002D60CB /* FriendsSettingController.swift */; };
 		AF5B649423FC9C00004708F3 /* TabbedPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5B649323FC9C00004708F3 /* TabbedPageViewController.swift */; };
 		AF5B649A23FCD378004708F3 /* AdditionalUserInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5B649923FCD378004708F3 /* AdditionalUserInfoController.swift */; };
 		AF5B649C23FCE5F5004708F3 /* FoodProcessing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF5B649B23FCE5F5004708F3 /* FoodProcessing.storyboard */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AF15B5EF2412EB78002D60CB /* FriendsSettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsSettingController.swift; sourceTree = "<group>"; };
 		AF5B649323FC9C00004708F3 /* TabbedPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedPageViewController.swift; sourceTree = "<group>"; };
 		AF5B649923FCD378004708F3 /* AdditionalUserInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalUserInfoController.swift; sourceTree = "<group>"; };
 		AF5B649B23FCE5F5004708F3 /* FoodProcessing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FoodProcessing.storyboard; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				AFE02B4A240C94D300CBA9CD /* FriendsListController.swift */,
 				AFE02B48240C949200CBA9CD /* AllergenSettingsController.swift */,
 				AFE02B4C240C94F700CBA9CD /* AccountSettingsController.swift */,
+				AF15B5EF2412EB78002D60CB /* FriendsSettingController.swift */,
 				AFFEDEAC23DB8AD1002D6E82 /* Settings.storyboard */,
 			);
 			path = "Settings Flow";
@@ -359,6 +362,7 @@
 				AFFAF99F240701B70079837D /* AllergenAddController.swift in Sources */,
 				AFE02B4B240C94D300CBA9CD /* FriendsListController.swift in Sources */,
 				AFE02B4F240CB57A00CBA9CD /* SettingsController.swift in Sources */,
+				AF15B5F02412EB78002D60CB /* FriendsSettingController.swift in Sources */,
 				AFE02B4D240C94F700CBA9CD /* AccountSettingsController.swift in Sources */,
 				AFFEDE7A23D9F0B5002D6E82 /* SceneDelegate.swift in Sources */,
 				AF93C91C2404DFB700E5091F /* CameraViewController.swift in Sources */,
