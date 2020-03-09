@@ -273,4 +273,26 @@ class FoodbuddyApplicationTests {
         //verify if is called
         verify(f).getName()
     }
+
+    @Test
+    fun TestDayFoodGetAmount()
+    {
+        //Mock the object
+        val f = Mockito.mock(DayFood::class.java)
+        //Call
+        f.getAmount()
+        //verify if is called
+        verify(f).getAmount()
+    }
+
+    @Test
+    fun TestDayFoodToJson()
+    {
+        //Mock the object
+        val f = Mockito.mock(DayFood::class.java)
+        //Call
+        f.toJson()
+        //verify if is called
+        verify(f).toJson()
+    }
 }
