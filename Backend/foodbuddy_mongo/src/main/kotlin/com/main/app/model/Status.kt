@@ -6,7 +6,7 @@ import java.time.Instant
 import java.time.ZoneOffset
 import java.time.format.DateTimeFormatter
 
-class Status (@Id private val id: Long, private val email: String,  private var timestamp: String, private val flagged: Boolean, private val message: String) {
+open class Status (@Id private val id: Long, private val email: String,  private var timestamp: String, private val flagged: Boolean, private val message: String) {
 
     constructor(id: Long, email: String, message: String)
         : this(id, email, "00/00/0000 00:00:00", false, message)
@@ -26,6 +26,7 @@ class Status (@Id private val id: Long, private val email: String,  private var 
     fun getId() : Long{
         return this.id
     }
+
 
     //date format should be MM/dd/yyyy hh:mm:ss
     fun checkDate(date: String): Boolean {

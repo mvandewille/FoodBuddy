@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/status")
-class StatusController {
+open class StatusController {
     @Autowired
     lateinit var repository: StatusRepository
 
@@ -57,5 +57,4 @@ class StatusController {
     fun getCount(): Long {
         return repository.count()
     }
-
 }
