@@ -53,4 +53,9 @@ class SettingsController: UIViewController, UITableViewDelegate, UITableViewData
         _settingsTable.dataSource = self
         _settingsTable.delegate = self
     }
+    
+    @IBAction func unwindToSettingsController(segue: UIStoryboardSegue)
+    {
+        print("Unwinding from account settings")
+    }
 }

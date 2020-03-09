@@ -1,26 +1,35 @@
 package com.main.app.model
 
-import com.main.app.JSON.FoodJ
-import com.main.app.JSON.UserBasicJ
-import com.main.app.JSON.UserJ
-import com.sun.xml.fastinfoset.util.StringArray
+import com.main.app.json.DayJ
+import com.main.app.json.FoodJ
+import com.main.app.json.UserBasicJ
+import com.main.app.json.UserJ
 import org.springframework.data.annotation.Id
 import kotlin.collections.MutableList
-
-//https://hellokoding.com/jpa-one-to-one-foreignkey-relationship-example-with-spring-boot-maven-and-mysql/
-//this link has information on relationships in springboot
 
 class User (@Id private var email: String, private var name: String?, private var age: Int?,
             private var height: Int?, private var weight: Int?, private var calorieLimit: Int?,
             private var password: String, private var gender: String?, private var lifestyle: String?,
             private var userType: String, private var allergens: MutableList<String>,
-            private val following: MutableList<String>, private val foods: MutableList<Food>) {
+            private val following: MutableList<String>, private val foods: MutableList<Food>,
+            private val calendar: MutableMap<String, Day>) {
 
     constructor(email: String, password: String)
-            : this(email, null, null, null, null, null, password, null, null, "default", mutableListOf<String>(), mutableListOf<String>(), mutableListOf<Food>())
+            : this(email, null, null, null, null, null, password, null, null, "default", mutableListOf<String>(), mutableListOf<String>(), mutableListOf<Food>(), mutableMapOf<String, Day>())
 
     fun getFoods(): MutableList<Food> {
         return this.foods
+    }
+
+    fun getFood(name: String): Food? {
+        foods.forEach {
+            if (it.getName() == name)
+                return it
+        }
+        return null
+    }
+    fun getCalendar(): MutableMap<String, Day> {
+        return calendar
     }
 
     fun getFollowing(): MutableList<String> {
@@ -28,13 +37,15 @@ class User (@Id private var email: String, private var name: String?, private va
     }
 
     fun toJson(): UserJ {
+        val tempCal = mutableMapOf<String, DayJ>()
+        this.calendar.forEach { tempCal[it.key] = it.value.toJson() }
         val tempFoods = mutableListOf<FoodJ>()
         this.foods.forEach { tempFoods.add(it.toJson()) }
-        return UserJ(this.email, null, this.name, this.age, this.height, this.weight, this.lifestyle, this.gender, this.calorieLimit, this.userType, this.allergens, this.following, tempFoods)
+        return UserJ(this.email, this.name, this.age, this.height, this.weight, this.lifestyle, this.gender, this.calorieLimit, this.userType, this.allergens, this.following, tempFoods, tempCal)
     }
 
     fun toBasicJson(): UserBasicJ {
-        return UserBasicJ(this.email, null, this.name, this.age, this.height, this.weight, this.lifestyle, this.gender, this.calorieLimit, this.userType, this.allergens)
+        return UserBasicJ(this.email, this.name, this.age, this.height, this.weight, this.lifestyle, this.gender, this.calorieLimit, this.userType, this.allergens)
     }
 
     fun setExtras(name: String?, age: Int?, height: Int?, weight: Int?, lifestyle: String?, gender: String?, calorieLimit: Int?, allergens: MutableList<String>?): Boolean {
@@ -50,15 +61,29 @@ class User (@Id private var email: String, private var name: String?, private va
         return true
     }
 
-    fun addFood(name: String, calories: Int, sodium: Double?, carbs: Double?, protein: Double?, fat: Double?, cholesterol: Double?): Boolean {
-        val newFood = Food(name, calories, sodium, carbs, protein, fat, cholesterol)
-
-        this.foods.add(newFood)
+    fun addFood(food: Food, amount: Double, date: String): Boolean {
+        if (!this.foods.contains(food))
+            this.foods.add(food)
+        if (this.checkDateExists(date))
+            this.calendar[date]?.addFood(food.getName(), amount)
+        else {
+            this.calendar[date] = Day()
+            this.calendar[date]?.addFood(food.getName(), amount)
+        }
         return true
     }
 
-    fun addFollowing(email: String): Boolean{
+    fun addFollowing(email: String): Boolean {
         this.following.add(email)
+        return true
+    }
+
+    fun checkDateExists(date: String): Boolean {
+        return this.calendar.keys.contains(date)
+    }
+
+    fun changePass(password: String): Boolean{
+        this.password = password
         return true
     }
 }

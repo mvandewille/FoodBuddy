@@ -17,11 +17,11 @@ class AllergenSettingsController : UIViewController, UITableViewDelegate, UITabl
     
     @IBAction func saveAllergies(_ sender: Any)
     {
-        sendDict["allergens"] = allergenArray
-        doHTTP(dict: sendDict)
+        userDict["allergens"] = allergenArray
+        doHTTP(dict: userDict)
     }
     
-    var sendDict: Dictionary<String, Any> = [:]
+    var userDict: Dictionary<String, Any> = [:]
     var allergenArray: [String] = []
     var allAllergens = ["Milk", "Eggs", "Tree Nuts", "Peanuts", "Shellfish", "Wheat", "Soy", "Fish", "Banana", "Garlic"]
     
@@ -64,17 +64,43 @@ class AllergenSettingsController : UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        DoFieldCheck()
         self._errorLabel.isHidden = true
+    }
+    
+    func setAllergenTable()
+    {
         self._allergenTable.allowsMultipleSelection = true
         self._allergenTable.allowsMultipleSelectionDuringEditing = true
         _allergenTable.dataSource = self
         _allergenTable.delegate = self
+
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        sendDict = UserDefaults.standard.dictionary(forKey: "userInfo")!
-        allergenArray = sendDict["allergens"] as! [String]
+    func DoFieldCheck()
+    {
+        let email = UserDefaults.standard.string(forKey: "email")
+        let urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/find/email/basic?email=" + email!
+        let newString = urlStr.replacingOccurrences(of: " ", with: "+")
+        let url = URL(string: newString)
+        var request = URLRequest(url: url!)
+        request.httpMethod = "GET"
+        
+        //send request and decode response if exists
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            let response = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let dictionary = response as? [String: Any] {
+                self.userDict = dictionary
+                self.allergenArray = self.userDict["allergens"] as! [String]
+                DispatchQueue.main.async {
+                    self.setAllergenTable()
+                }
+            }
+        }
+        task.resume()
     }
     
     func doHTTP(dict : Dictionary<String, Any>)
@@ -99,7 +125,9 @@ class AllergenSettingsController : UIViewController, UITableViewDelegate, UITabl
             if let responseJSON = responseJSON as? [String: Any] {
                 if (responseJSON["response"] as? Int == 1)
                 {
-
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: "allergenUnwind", sender: nil)
+                    }
                 }
                 else
                 {

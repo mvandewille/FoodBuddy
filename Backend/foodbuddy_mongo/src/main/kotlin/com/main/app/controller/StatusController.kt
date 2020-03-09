@@ -1,18 +1,13 @@
 package com.main.app.controller
 
-import com.main.app.JSON.ResponseJ
-import com.main.app.JSON.StatusJ
-import com.main.app.JSON.StatusJArray
+import com.main.app.json.ResponseJ
+import com.main.app.json.StatusJ
+import com.main.app.json.StatusJArray
 import com.main.app.model.Status
 import com.main.app.repository.StatusRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.dao.EmptyResultDataAccessException
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestParam
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RestController
-import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/status")
@@ -34,8 +29,6 @@ class StatusController {
 
     @PostMapping("/add")
     fun addStatus(@RequestBody status: StatusJ): ResponseJ {
-        if(status.email == null || status.message == null)
-            return ResponseJ(0, "Null value for email or message!")
         val list = repository.findAllByOrderByIdDesc()
         if(!list.isEmpty()) {
             val temp = list.first().getId()
@@ -54,10 +47,10 @@ class StatusController {
         repository.findByMessageOrderById().first()
     }
 
-    @GetMapping("/delete/all")
-    fun deleteAll(): String {
+    @DeleteMapping("/delete/all")
+    fun deleteAll(): ResponseJ {
         repository.deleteAll()
-        return "Deleted Everything!"
+        return ResponseJ(1, "All statuses deleted")
     }
 
     @GetMapping("/count")
@@ -65,11 +58,4 @@ class StatusController {
         return repository.count()
     }
 
-    fun stringify(list: MutableList<Status>): String {
-        var r = ""
-        list.forEach{
-            r += it.toString() + "<br>"
-        }
-        return r
-    }
 }

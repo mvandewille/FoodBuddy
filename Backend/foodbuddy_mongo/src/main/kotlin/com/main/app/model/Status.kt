@@ -1,9 +1,10 @@
 package com.main.app.model
 
-import com.main.app.JSON.StatusJ
+import com.main.app.json.StatusJ
 import org.springframework.data.annotation.Id
-import java.text.SimpleDateFormat
-import java.util.*
+import java.time.Instant
+import java.time.ZoneOffset
+import java.time.format.DateTimeFormatter
 
 class Status (@Id private val id: Long, private val email: String,  private var timestamp: String, private val flagged: Boolean, private val message: String) {
 
@@ -12,9 +13,10 @@ class Status (@Id private val id: Long, private val email: String,  private var 
 
     init {
         if(this.timestamp == "00/00/0000 00:00:00") {
-            val sdf = SimpleDateFormat("MM/dd/yyyy hh:mm:ss")
-            val currentDate = sdf.format(Date())
-            this.timestamp = currentDate
+            this.timestamp = DateTimeFormatter
+                    .ofPattern("MM/dd/yyyy HH:mm:ss.SS")
+                    .withZone(ZoneOffset.systemDefault())
+                    .format(Instant.now())
         }
     }
     override fun toString(): String {

@@ -82,7 +82,7 @@ class SignUpViewController: UIViewController
                 if (responseJSON["response"] as? Int == 1)
                 {
                     UserDefaults.standard.set(pwd, forKey: "password")
-                    UserDefaults.standard.set(json, forKey: "userInfo")
+                    UserDefaults.standard.set(email, forKey: "email")
                     DispatchQueue.main.async {
                         self.performSegue(withIdentifier: "signupSuccess", sender: nil)
                     }

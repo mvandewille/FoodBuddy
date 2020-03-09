@@ -31,7 +31,7 @@ class AdditionalUserInfoController: UIViewController
     @IBAction func submitForm(_ sender: Any)
     {
         _errorLabel.isHidden = true
-        if (_name.text == "" || _height.text == "" || _weight.text == "" || _gender.text == "" || _age.text == "")
+        if (_name.text == "" || _height.text == "" || _weight.text == "" || _gender.text == "Select one:" || _age.text == "" || _gender.text == "")
         {
             _errorLabel.text = "Please fill out all fields!"
             _errorLabel.isHidden = false
@@ -104,7 +104,7 @@ class AdditionalUserInfoController: UIViewController
         return Int((limitMale + limitFemale)/2)
     }
     
-    var genders = ["Male", "Female", "Other"]
+    var genders = ["Select one:", "Male", "Female", "Other"]
     var selectedGender : String = ""
     
     let genderPicker = UIPickerView()
