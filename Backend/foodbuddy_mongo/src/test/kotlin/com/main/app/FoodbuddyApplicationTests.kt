@@ -1,9 +1,6 @@
 package com.main.app
 
-import com.main.app.json.StatusJ
-import com.main.app.model.Status
-import com.main.app.model.User
-import org.hamcrest.MatcherAssert.assertThat
+import com.main.app.model.*
 import org.junit.jupiter.api.Test
 import org.mockito.Mockito
 import org.mockito.Mockito.*
@@ -127,6 +124,207 @@ class FoodbuddyApplicationTests {
     @Test
     fun TestUserSetExtras()
     {
-        
+        //Mock the object
+        val u = Mockito.mock(User::class.java)
+        //Call
+        val temp = mutableListOf<String>()
+        u.setExtras("Text", 1, 1,
+                1, "Fat", "M", 1, temp)
+        //verify if is called
+        verify(u).setExtras("Text", 1, 1,
+                1, "Fat", "M", 1, temp)
+    }
+
+    //Uses a mock of Food as well
+    @Test
+    fun TestUserAddFood()
+    {
+        //Mock the object
+        val u = Mockito.mock(User::class.java)
+        //Call
+        val f = Mockito.mock(Food::class.java)
+        u.addFood(f, 1.0,"Test")
+        //verify if is called
+        verify(u).addFood(f, 1.0, "Test")
+    }
+
+    @Test
+    fun TestUserCheckDate()
+    {
+        //Mock the object
+        val u = Mockito.mock(User::class.java)
+        //Call
+        u.checkDateExists("Test")
+        //verify if is called
+        verify(u).checkDateExists("Test")
+    }
+
+    @Test
+    fun TestUserChangePassword()
+    {
+        //Mock the object
+        val u = Mockito.mock(User::class.java)
+        //Call
+        u.changePass("Test")
+        //verify if is called
+        verify(u).changePass("Test")
+    }
+
+    //TESTS FOR FOOD CLASS
+    @Test
+    fun TestFoodGetName()
+    {
+        //Mock the object
+        val f = Mockito.mock(Food::class.java)
+        //Call
+        f.getName()
+        //verify if is called
+        verify(f).getName()
+    }
+
+    @Test
+    fun TestFoodGetCalories()
+    {
+        //Mock the object
+        val f = Mockito.mock(Food::class.java)
+        //Call
+        f.getCalories()
+        //verify if is called
+        verify(f).getCalories()
+    }
+
+    @Test
+    fun TestFoodGetSodium()
+    {
+        //Mock the object
+        val f = Mockito.mock(Food::class.java)
+        //Call
+        f.getSodium()
+        //verify if is called
+        verify(f).getSodium()
+    }
+
+    @Test
+    fun TestFoodGetCarbs()
+    {
+        //Mock the object
+        val f = Mockito.mock(Food::class.java)
+        //Call
+        f.getCarbs()
+        //verify if is called
+        verify(f).getCarbs()
+    }
+
+    @Test
+    fun TestFoodGetProtein()
+    {
+        //Mock the object
+        val f = Mockito.mock(Food::class.java)
+        //Call
+        f.getProtein()
+        //verify if is called
+        verify(f).getProtein()
+    }
+
+    @Test
+    fun TestFoodGetFat()
+    {
+        //Mock the object
+        val f = Mockito.mock(Food::class.java)
+        //Call
+        f.getFat()
+        //verify if is called
+        verify(f).getFat()
+    }
+
+    @Test
+    fun TestFoodGetCholeserol()
+    {
+        //Mock the object
+        val f = Mockito.mock(Food::class.java)
+        //Call
+        f.getCholesterol()
+        //verify if is called
+        verify(f).getCholesterol()
+    }
+
+    @Test
+    fun TestFoodToJson()
+    {
+        //Mock the object
+        val f = Mockito.mock(Food::class.java)
+        //Call
+        f.toJson()
+        //verify if is called
+        verify(f).toJson()
+    }
+
+    //TEST DAYFOOD CLASS
+    @Test
+    fun TestDayFoodGetName()
+    {
+        //Mock the object
+        val f = Mockito.mock(DayFood::class.java)
+        //Call
+        f.getName()
+        //verify if is called
+        verify(f).getName()
+    }
+
+    @Test
+    fun TestDayFoodGetAmount()
+    {
+        //Mock the object
+        val f = Mockito.mock(DayFood::class.java)
+        //Call
+        f.getAmount()
+        //verify if is called
+        verify(f).getAmount()
+    }
+
+    @Test
+    fun TestDayFoodToJson()
+    {
+        //Mock the object
+        val f = Mockito.mock(DayFood::class.java)
+        //Call
+        f.toJson()
+        //verify if is called
+        verify(f).toJson()
+    }
+
+    //TEST THE DAY CLASS
+    @Test
+    fun TestDayGetFoods()
+    {
+        //Mock the object
+        val f = Mockito.mock(Day::class.java)
+        //Call
+        f.getFoods()
+        //verify if is called
+        verify(f).getFoods()
+    }
+
+    @Test
+    fun TestDayAddFoods()
+    {
+        //Mock the object
+        val f = Mockito.mock(Day::class.java)
+        //Call
+        f.addFood("Test", 1.0)
+        //verify if is called
+        verify(f).addFood("Test", 1.0)
+    }
+
+    @Test
+    fun TestDayToJson()
+    {
+        //Mock the object
+        val f = Mockito.mock(Day::class.java)
+        //Call
+        f.toJson()
+        //verify if is called
+        verify(f).toJson()
     }
 }
+
