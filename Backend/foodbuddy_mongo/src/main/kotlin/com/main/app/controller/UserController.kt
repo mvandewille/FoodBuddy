@@ -164,7 +164,7 @@ class UserController {
             u_repository.findByEmail(request.email)
         }
         catch (e: EmptyResultDataAccessException) {
-            return ResponseJ(0, "No user found! Thus, no friends list!")
+            return ResponseJ(0, "User does not exist!")
         }
         try{
             u_repository.findByEmail(request.following)
@@ -175,7 +175,7 @@ class UserController {
             return ResponseJ(1, "N/A")
         }
         catch (e: EmptyResultDataAccessException) {
-            return ResponseJ(0, "This friend does not have an account!")
+            return ResponseJ(0, "This person does not have an account!")
         }
     }
 
@@ -236,7 +236,7 @@ class UserController {
             if(usr.deleteFollowing(following))
                 return ResponseJ(1, "Deleted $following")
             else
-                return ResponseJ(0, "User not following given user!")
+                return ResponseJ(0, "Person is not in $email\'s following!")
         }
         catch (e: EmptyResultDataAccessException) {
             return ResponseJ(0, "User does not exist!")
