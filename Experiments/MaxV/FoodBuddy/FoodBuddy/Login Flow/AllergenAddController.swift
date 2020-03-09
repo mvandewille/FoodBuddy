@@ -34,6 +34,7 @@ class AllergenAddController : UIViewController, UITableViewDelegate, UITableView
             cell.accessoryType = UITableViewCell.AccessoryType.checkmark
         }
         cell.selectionStyle = .none
+        cell.tintColor = UIColor(rgb: 0x54A456)
         return cell
     }
     
