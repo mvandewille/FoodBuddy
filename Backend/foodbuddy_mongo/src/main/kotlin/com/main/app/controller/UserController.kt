@@ -5,7 +5,6 @@ import com.main.app.model.Food
 import com.main.app.model.User
 import com.main.app.repository.StatusRepository
 import com.main.app.repository.UserRepository
-import org.bson.internal.Base64
 
 import org.springframework.beans.factory.annotation.Autowired
 
@@ -22,14 +21,6 @@ class UserController {
     lateinit var u_repository: UserRepository
     @Autowired
     lateinit var s_repository: StatusRepository
-
-    @PostMapping("/image")
-    fun decodeImage(@RequestBody image: TestJ): TestJ {
-        val imageBytes = Base64.decode(image.img)
-        //val decodedImage =
-        //val image =
-        return TestJ(image.img.toString())
-    }
 
     @GetMapping("/auth")
     fun auth(@RequestParam(value = "email", required = true) email: String,
@@ -98,6 +89,7 @@ class UserController {
             return FollowingJArray(mutableListOf<String>())
         }
     }
+
     @GetMapping("/find/following/status")
     fun findFriendStatus(@RequestParam(value= "email", required = true) email: String): StatusJArray {
         try {
@@ -127,7 +119,6 @@ class UserController {
             }
             else
                 date = r_date
-
 
             val data = usr.getCalendar()
             if (data.keys.contains(date)) {
@@ -166,25 +157,7 @@ class UserController {
             return ResponseJ(1, "N/A")
         }
     }
-/* this endpoint is going to be redundant in terms of how the app will be used. food will always be added to calendar and foods
-    @PostMapping("/add/food")
-    fun addFood(@RequestBody food: FoodAddJ): ResponseJ {
-        try{
-            var usr = u_repository.findByEmail(food.email)
-            usr.getFoods().forEach { if(it.getName() == food.name) {return ResponseJ(0, "Food already exists for user!")} }
-            if(usr.addFood(food.name, food.calories, food.sodium, food.carbs, food.protein, food.fat, food.cholesterol)) {
-                u_repository.save(usr)
-                return ResponseJ(1, "N/A")
-            }
-            else {
-                return ResponseJ(0, "Error occurred!")
-            }
-        }
-        catch(e: EmptyResultDataAccessException) {
-            return ResponseJ(0, "No user found with that email!")
-        }
-    }
-*/
+
     @PostMapping("/add/following")
     fun addFriend(@RequestBody request: FriendJ): ResponseJ {
         try{
@@ -239,6 +212,19 @@ class UserController {
         }
         catch (e: EmptyResultDataAccessException) {
             return ResponseJ(0, "No user found to update!" )
+        }
+    }
+
+    @PostMapping("/update/password")
+    fun updatePassword(@RequestBody user: UserAddJ): ResponseJ {
+        try{
+            var usr = u_repository.findByEmail(user.email)
+            if(user.password != null && usr.changePass(user.password))
+                return ResponseJ(1, "Password changed")
+            return ResponseJ(0, "New password cannot be null!")
+        }
+        catch (e: EmptyResultDataAccessException) {
+            return ResponseJ(0, "No user found to update!")
         }
     }
 

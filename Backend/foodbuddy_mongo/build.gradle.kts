@@ -33,6 +33,8 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+	implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("tess4j-3.4.8.jar"))))
+	implementation(files("/build/libs/tess4j-3.4.8.jar"))
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	runtimeOnly("com.h2database:h2")
 	testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")

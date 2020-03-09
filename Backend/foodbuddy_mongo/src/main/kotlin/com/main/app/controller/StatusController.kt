@@ -29,8 +29,6 @@ class StatusController {
 
     @PostMapping("/add")
     fun addStatus(@RequestBody status: StatusJ): ResponseJ {
-        if(status.email == null || status.message == null)
-            return ResponseJ(0, "Null value for email or message!")
         val list = repository.findAllByOrderByIdDesc()
         if(!list.isEmpty()) {
             val temp = list.first().getId()

@@ -81,4 +81,9 @@ class User (@Id private var email: String, private var name: String?, private va
     fun checkDateExists(date: String): Boolean {
         return this.calendar.keys.contains(date)
     }
+
+    fun changePass(password: String): Boolean{
+        this.password = password
+        return true
+    }
 }
