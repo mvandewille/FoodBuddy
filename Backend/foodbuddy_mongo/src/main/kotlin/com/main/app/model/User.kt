@@ -78,6 +78,14 @@ class User (@Id private var email: String, private var name: String?, private va
         return true
     }
 
+    fun deleteFollowing(email: String): Boolean {
+        if (this.following.contains(email)) {
+            this.following.remove(email)
+            return true
+        }
+        return false
+    }
+
     fun checkDateExists(date: String): Boolean {
         return this.calendar.keys.contains(date)
     }

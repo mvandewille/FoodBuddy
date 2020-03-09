@@ -228,6 +228,20 @@ class UserController {
         }
     }
 
+    @DeleteMapping("/delete/following")
+    fun delFollowing(@RequestParam(value = "email", required = true)  email: String,
+                     @RequestParam(value="following", required = true) following: String): ResponseJ {
+        try {
+            var usr = u_repository.findByEmail(email)
+            if(usr.deleteFollowing(following))
+                return ResponseJ(1, "Deleted $following")
+            else
+                return ResponseJ(0, "User not following given user!")
+        }
+        catch (e: EmptyResultDataAccessException) {
+            return ResponseJ(0, "User does not exist!")
+        }
+    }
     @DeleteMapping("/delete/email")
     fun delEmail(@RequestParam(value = "email", required = true) email: String): ResponseJ {
         u_repository.deleteByEmail(email)
