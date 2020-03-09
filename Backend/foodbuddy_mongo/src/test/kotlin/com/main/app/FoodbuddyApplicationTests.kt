@@ -1,9 +1,6 @@
 package com.main.app
 
-import com.main.app.model.DayFood
-import com.main.app.model.Food
-import com.main.app.model.Status
-import com.main.app.model.User
+import com.main.app.model.*
 import org.junit.jupiter.api.Test
 import org.mockito.Mockito
 import org.mockito.Mockito.*
@@ -295,4 +292,39 @@ class FoodbuddyApplicationTests {
         //verify if is called
         verify(f).toJson()
     }
+
+    //TEST THE DAY CLASS
+    @Test
+    fun TestDayGetFoods()
+    {
+        //Mock the object
+        val f = Mockito.mock(Day::class.java)
+        //Call
+        f.getFoods()
+        //verify if is called
+        verify(f).getFoods()
+    }
+
+    @Test
+    fun TestDayAddFoods()
+    {
+        //Mock the object
+        val f = Mockito.mock(Day::class.java)
+        //Call
+        f.addFood("Test", 1.0)
+        //verify if is called
+        verify(f).addFood("Test", 1.0)
+    }
+
+    @Test
+    fun TestDayToJson()
+    {
+        //Mock the object
+        val f = Mockito.mock(Day::class.java)
+        //Call
+        f.toJson()
+        //verify if is called
+        verify(f).toJson()
+    }
 }
+
