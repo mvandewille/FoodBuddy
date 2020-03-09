@@ -1,6 +1,6 @@
 package com.main.app.controller
 
-import com.main.app.JSON.*
+import com.main.app.json.*
 import com.main.app.model.Food
 import com.main.app.model.User
 import com.main.app.repository.StatusRepository

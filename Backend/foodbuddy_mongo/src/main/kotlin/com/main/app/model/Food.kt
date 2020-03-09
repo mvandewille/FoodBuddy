@@ -1,7 +1,6 @@
 package com.main.app.model
 
-import com.main.app.JSON.FoodJ
-import com.main.app.JSON.UserJ
+import com.main.app.json.FoodJ
 import org.springframework.data.annotation.Id
 
 //https://hellokoding.com/jpa-one-to-one-foreignkey-relationship-example-with-spring-boot-maven-and-mysql/

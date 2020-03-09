@@ -1,6 +1,6 @@
 package com.main.app.model
 
-import com.main.app.JSON.DayFoodJ
+import com.main.app.json.DayFoodJ
 import java.time.Instant
 import java.time.ZoneOffset
 import java.time.format.DateTimeFormatter

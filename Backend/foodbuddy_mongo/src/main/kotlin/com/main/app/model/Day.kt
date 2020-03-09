@@ -1,11 +1,7 @@
 package com.main.app.model
 
-import com.main.app.JSON.DayFoodJ
-import com.main.app.JSON.DayJ
-import org.springframework.data.annotation.Id
-import java.time.Instant
-import java.time.ZoneOffset
-import java.time.format.DateTimeFormatter
+import com.main.app.json.DayFoodJ
+import com.main.app.json.DayJ
 
 class Day (private val foods: MutableList<DayFood>){
 

@@ -1,8 +1,8 @@
 package com.main.app.controller
 
-import com.main.app.JSON.ResponseJ
-import com.main.app.JSON.StatusJ
-import com.main.app.JSON.StatusJArray
+import com.main.app.json.ResponseJ
+import com.main.app.json.StatusJ
+import com.main.app.json.StatusJArray
 import com.main.app.model.Status
 import com.main.app.repository.StatusRepository
 import org.springframework.beans.factory.annotation.Autowired

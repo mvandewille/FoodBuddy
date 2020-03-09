@@ -1,4 +1,4 @@
-package com.main.app.JSON
+package com.main.app.json
 
 import com.fasterxml.jackson.annotation.JsonCreator
 import kotlin.collections.List

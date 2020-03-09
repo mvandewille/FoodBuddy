@@ -1,9 +1,9 @@
 package com.main.app.model
 
-import com.main.app.JSON.DayJ
-import com.main.app.JSON.FoodJ
-import com.main.app.JSON.UserBasicJ
-import com.main.app.JSON.UserJ
+import com.main.app.json.DayJ
+import com.main.app.json.FoodJ
+import com.main.app.json.UserBasicJ
+import com.main.app.json.UserJ
 import org.springframework.data.annotation.Id
 import kotlin.collections.MutableList
 

@@ -1,6 +1,6 @@
 package com.main.app.model
 
-import com.main.app.JSON.StatusJ
+import com.main.app.json.StatusJ
 import org.springframework.data.annotation.Id
 import java.time.Instant
 import java.time.ZoneOffset
