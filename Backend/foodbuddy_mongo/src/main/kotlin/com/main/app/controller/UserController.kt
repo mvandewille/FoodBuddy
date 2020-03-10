@@ -220,6 +220,7 @@ class UserController {
         try{
             var usr = u_repository.findByEmail(user.email)
             if(user.password != null && usr.changePass(user.password))
+                u_repository.save(usr)
                 return ResponseJ(1, "Password changed")
             return ResponseJ(0, "New password cannot be null!")
         }
@@ -233,8 +234,10 @@ class UserController {
                      @RequestParam(value="following", required = true) following: String): ResponseJ {
         try {
             var usr = u_repository.findByEmail(email)
-            if(usr.deleteFollowing(following))
+            if(usr.deleteFollowing(following)) {
+                u_repository.save(usr)
                 return ResponseJ(1, "Deleted $following")
+            }
             else
                 return ResponseJ(0, "Person is not in $email\'s following!")
         }
