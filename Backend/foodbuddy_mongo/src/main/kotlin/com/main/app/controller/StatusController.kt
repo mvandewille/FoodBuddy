@@ -57,5 +57,4 @@ class StatusController {
     fun getCount(): Long {
         return repository.count()
     }
-
 }
