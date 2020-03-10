@@ -68,8 +68,6 @@ class AllergenAddController : UIViewController, UITableViewDelegate, UITableView
     {
         incomingDict["calorieLimit"] = Int(_calories.text!)
         incomingDict["allergens"] = allergenArray
-        UserDefaults.standard.removeObject(forKey: "userInfo")
-        UserDefaults.standard.set(incomingDict, forKey: "userInfo")
         doHTTP(dict: incomingDict)
     }
     

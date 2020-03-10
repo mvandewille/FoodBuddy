@@ -37,7 +37,7 @@ class AdditionalUserInfoController: UIViewController
             _errorLabel.isHidden = false
             return
         }
-        let user_email = UserDefaults.standard.dictionary(forKey: "userInfo")!["email"] as? String
+        let user_email = UserDefaults.standard.string(forKey: "email")
         let fullName = _name.text
         let heightVal = Int(_height.text!)
         let weightVal = Int(_weight.text!)

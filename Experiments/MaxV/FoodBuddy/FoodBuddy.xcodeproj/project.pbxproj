@@ -34,6 +34,7 @@
 		AFFEDEAB23DB80B2002D6E82 /* TabbedPages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFFEDEA923DB80B2002D6E82 /* TabbedPages.storyboard */; };
 		AFFEDEAE23DB8AD1002D6E82 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFFEDEAC23DB8AD1002D6E82 /* Settings.storyboard */; };
 		AFFEDEB023DB8AF2002D6E82 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFFEDEAF23DB8AF2002D6E82 /* Calendar.storyboard */; };
+		F2B524D519D6FF147E690F4D /* Pods_FoodBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D52B4DCABF3E59A2E56577A1 /* Pods_FoodBuddy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43A116BC15C545F6E884AA2D /* Pods-FoodBuddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodBuddy.release.xcconfig"; path = "Target Support Files/Pods-FoodBuddy/Pods-FoodBuddy.release.xcconfig"; sourceTree = "<group>"; };
+		83CC35C5CF44E4E657D05D8A /* Pods-FoodBuddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodBuddy.debug.xcconfig"; path = "Target Support Files/Pods-FoodBuddy/Pods-FoodBuddy.debug.xcconfig"; sourceTree = "<group>"; };
 		AF15B5EF2412EB78002D60CB /* FriendsSettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsSettingController.swift; sourceTree = "<group>"; };
 		AF15B5F42417390F002D60CB /* Status.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Status.storyboard; sourceTree = "<group>"; };
 		AF15B5F62417397F002D60CB /* StatusAddController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusAddController.swift; sourceTree = "<group>"; };
@@ -87,6 +90,7 @@
 		AFFEDEAA23DB80B2002D6E82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "iOS UI Mockup/Base.lproj/TabbedPages.storyboard"; sourceTree = "<group>"; };
 		AFFEDEAD23DB8AD1002D6E82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "iOS UI Mockup/iOS UI Mockup/Base.lproj/Settings.storyboard"; sourceTree = "<group>"; };
 		AFFEDEAF23DB8AF2002D6E82 /* Calendar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
+		D52B4DCABF3E59A2E56577A1 /* Pods_FoodBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2B524D519D6FF147E690F4D /* Pods_FoodBuddy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +189,8 @@
 				AFFEDE8F23D9F0B7002D6E82 /* FoodBuddytests */,
 				AFFEDE9A23D9F0B7002D6E82 /* FoodBuddyUITests */,
 				AFFEDE7523D9F0B5002D6E82 /* Products */,
+				F8C685BF320FB24D7DC72CFE /* Pods */,
+				EAD60910C1A2B99EA75B2846 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -233,6 +240,24 @@
 			path = FoodBuddyUITests;
 			sourceTree = "<group>";
 		};
+		EAD60910C1A2B99EA75B2846 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D52B4DCABF3E59A2E56577A1 /* Pods_FoodBuddy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8C685BF320FB24D7DC72CFE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				83CC35C5CF44E4E657D05D8A /* Pods-FoodBuddy.debug.xcconfig */,
+				43A116BC15C545F6E884AA2D /* Pods-FoodBuddy.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -240,9 +265,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFFEDEA023D9F0B7002D6E82 /* Build configuration list for PBXNativeTarget "FoodBuddy" */;
 			buildPhases = (
+				6D935086F78C67B7848D3259 /* [CP] Check Pods Manifest.lock */,
 				AFFEDE7023D9F0B5002D6E82 /* Sources */,
 				AFFEDE7123D9F0B5002D6E82 /* Frameworks */,
 				AFFEDE7223D9F0B5002D6E82 /* Resources */,
+				DB77EB56443BDFF52677A9E9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -363,6 +390,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6D935086F78C67B7848D3259 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FoodBuddy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB77EB56443BDFF52677A9E9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FoodBuddy/Pods-FoodBuddy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FoodBuddy/Pods-FoodBuddy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FoodBuddy/Pods-FoodBuddy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AFFEDE7023D9F0B5002D6E82 /* Sources */ = {
@@ -572,6 +641,7 @@
 		};
 		AFFEDEA123D9F0B7002D6E82 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83CC35C5CF44E4E657D05D8A /* Pods-FoodBuddy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -591,6 +661,7 @@
 		};
 		AFFEDEA223D9F0B7002D6E82 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43A116BC15C545F6E884AA2D /* Pods-FoodBuddy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
