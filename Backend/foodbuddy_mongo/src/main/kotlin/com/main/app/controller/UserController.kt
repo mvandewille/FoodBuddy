@@ -228,7 +228,7 @@ class UserController {
             return ResponseJ(0, "No user found to update!")
         }
     }
-
+//test
     @DeleteMapping("/delete/following")
     fun delFollowing(@RequestParam(value = "email", required = true)  email: String,
                      @RequestParam(value="following", required = true) following: String): ResponseJ {
