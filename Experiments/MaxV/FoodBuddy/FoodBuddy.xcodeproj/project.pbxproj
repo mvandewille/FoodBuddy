@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		AF15B5F02412EB78002D60CB /* FriendsSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15B5EF2412EB78002D60CB /* FriendsSettingController.swift */; };
+		AF15B5F52417390F002D60CB /* Status.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF15B5F42417390F002D60CB /* Status.storyboard */; };
+		AF15B5F72417397F002D60CB /* StatusAddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15B5F62417397F002D60CB /* StatusAddController.swift */; };
+		AF15B5F924174D17002D60CB /* AddFoodController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15B5F824174D17002D60CB /* AddFoodController.swift */; };
+		AF15B5FB2417575D002D60CB /* DailyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15B5FA2417575D002D60CB /* DailyViewController.swift */; };
 		AF5B649423FC9C00004708F3 /* TabbedPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5B649323FC9C00004708F3 /* TabbedPageViewController.swift */; };
 		AF5B649A23FCD378004708F3 /* AdditionalUserInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5B649923FCD378004708F3 /* AdditionalUserInfoController.swift */; };
 		AF5B649C23FCE5F5004708F3 /* FoodProcessing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF5B649B23FCE5F5004708F3 /* FoodProcessing.storyboard */; };
@@ -16,7 +20,6 @@
 		AFB06D6923FB49BC001B652B /* LoginPromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB06D6823FB49BC001B652B /* LoginPromptViewController.swift */; };
 		AFB06D6B23FB4EAE001B652B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB06D6A23FB4EAE001B652B /* SignUpViewController.swift */; };
 		AFE02B49240C949200CBA9CD /* AllergenSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE02B48240C949200CBA9CD /* AllergenSettingsController.swift */; };
-		AFE02B4B240C94D300CBA9CD /* FriendsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE02B4A240C94D300CBA9CD /* FriendsListController.swift */; };
 		AFE02B4D240C94F700CBA9CD /* AccountSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE02B4C240C94F700CBA9CD /* AccountSettingsController.swift */; };
 		AFE02B4F240CB57A00CBA9CD /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE02B4E240CB57A00CBA9CD /* SettingsController.swift */; };
 		AFFAF99F240701B70079837D /* AllergenAddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFAF99E240701B70079837D /* AllergenAddController.swift */; };
@@ -52,6 +55,10 @@
 
 /* Begin PBXFileReference section */
 		AF15B5EF2412EB78002D60CB /* FriendsSettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsSettingController.swift; sourceTree = "<group>"; };
+		AF15B5F42417390F002D60CB /* Status.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Status.storyboard; sourceTree = "<group>"; };
+		AF15B5F62417397F002D60CB /* StatusAddController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusAddController.swift; sourceTree = "<group>"; };
+		AF15B5F824174D17002D60CB /* AddFoodController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodController.swift; sourceTree = "<group>"; };
+		AF15B5FA2417575D002D60CB /* DailyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyViewController.swift; sourceTree = "<group>"; };
 		AF5B649323FC9C00004708F3 /* TabbedPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedPageViewController.swift; sourceTree = "<group>"; };
 		AF5B649923FCD378004708F3 /* AdditionalUserInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalUserInfoController.swift; sourceTree = "<group>"; };
 		AF5B649B23FCE5F5004708F3 /* FoodProcessing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FoodProcessing.storyboard; sourceTree = "<group>"; };
@@ -60,7 +67,6 @@
 		AFB06D6823FB49BC001B652B /* LoginPromptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPromptViewController.swift; sourceTree = "<group>"; };
 		AFB06D6A23FB4EAE001B652B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		AFE02B48240C949200CBA9CD /* AllergenSettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergenSettingsController.swift; sourceTree = "<group>"; };
-		AFE02B4A240C94D300CBA9CD /* FriendsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListController.swift; sourceTree = "<group>"; };
 		AFE02B4C240C94F700CBA9CD /* AccountSettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsController.swift; sourceTree = "<group>"; };
 		AFE02B4E240CB57A00CBA9CD /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		AFFAF99E240701B70079837D /* AllergenAddController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergenAddController.swift; sourceTree = "<group>"; };
@@ -108,6 +114,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF15B5F3241738E1002D60CB /* Add Status Flow */ = {
+			isa = PBXGroup;
+			children = (
+				AF15B5F42417390F002D60CB /* Status.storyboard */,
+				AF15B5F62417397F002D60CB /* StatusAddController.swift */,
+			);
+			path = "Add Status Flow";
+			sourceTree = "<group>";
+		};
 		AF5B649723FCD2ED004708F3 /* Login Flow */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				AF5B649323FC9C00004708F3 /* TabbedPageViewController.swift */,
+				AF15B5FA2417575D002D60CB /* DailyViewController.swift */,
 				AF93C91B2404DFB700E5091F /* CameraViewController.swift */,
 				AFFEDEA923DB80B2002D6E82 /* TabbedPages.storyboard */,
 			);
@@ -135,6 +151,7 @@
 		AFE02B44240B689500CBA9CD /* Food Processing */ = {
 			isa = PBXGroup;
 			children = (
+				AF15B5F824174D17002D60CB /* AddFoodController.swift */,
 				AF5B649B23FCE5F5004708F3 /* FoodProcessing.storyboard */,
 			);
 			path = "Food Processing";
@@ -144,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				AFE02B4E240CB57A00CBA9CD /* SettingsController.swift */,
-				AFE02B4A240C94D300CBA9CD /* FriendsListController.swift */,
 				AFE02B48240C949200CBA9CD /* AllergenSettingsController.swift */,
 				AFE02B4C240C94F700CBA9CD /* AccountSettingsController.swift */,
 				AF15B5EF2412EB78002D60CB /* FriendsSettingController.swift */,
@@ -192,6 +208,7 @@
 				AFE02B44240B689500CBA9CD /* Food Processing */,
 				AFE02B46240B68D100CBA9CD /* Settings Flow */,
 				AFE02B47240B68F600CBA9CD /* Calendar History Flow */,
+				AF15B5F3241738E1002D60CB /* Add Status Flow */,
 				AFFEDE8223D9F0B7002D6E82 /* Assets.xcassets */,
 				AFFEDE8723D9F0B7002D6E82 /* Info.plist */,
 			);
@@ -324,6 +341,7 @@
 				AFFEDE8623D9F0B7002D6E82 /* LaunchScreen.storyboard in Resources */,
 				AF5B649C23FCE5F5004708F3 /* FoodProcessing.storyboard in Resources */,
 				AFFEDE8323D9F0B7002D6E82 /* Assets.xcassets in Resources */,
+				AF15B5F52417390F002D60CB /* Status.storyboard in Resources */,
 				AFFEDE8123D9F0B5002D6E82 /* Main.storyboard in Resources */,
 				AFFEDEAB23DB80B2002D6E82 /* TabbedPages.storyboard in Resources */,
 				AFFEDEAE23DB8AD1002D6E82 /* Settings.storyboard in Resources */,
@@ -356,11 +374,13 @@
 				AF5B649A23FCD378004708F3 /* AdditionalUserInfoController.swift in Sources */,
 				AF5B649423FC9C00004708F3 /* TabbedPageViewController.swift in Sources */,
 				AFFEDE7C23D9F0B5002D6E82 /* FirstViewController.swift in Sources */,
+				AF15B5FB2417575D002D60CB /* DailyViewController.swift in Sources */,
 				AFFEDE7823D9F0B5002D6E82 /* AppDelegate.swift in Sources */,
 				AFB06D6923FB49BC001B652B /* LoginPromptViewController.swift in Sources */,
+				AF15B5F924174D17002D60CB /* AddFoodController.swift in Sources */,
 				AFB06D6723F9E99C001B652B /* LoginViewController.swift in Sources */,
 				AFFAF99F240701B70079837D /* AllergenAddController.swift in Sources */,
-				AFE02B4B240C94D300CBA9CD /* FriendsListController.swift in Sources */,
+				AF15B5F72417397F002D60CB /* StatusAddController.swift in Sources */,
 				AFE02B4F240CB57A00CBA9CD /* SettingsController.swift in Sources */,
 				AF15B5F02412EB78002D60CB /* FriendsSettingController.swift in Sources */,
 				AFE02B4D240C94F700CBA9CD /* AccountSettingsController.swift in Sources */,

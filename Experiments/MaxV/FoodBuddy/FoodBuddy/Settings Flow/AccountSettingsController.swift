@@ -11,6 +11,11 @@ import UIKit
 
 class AccountSettingsController: UIViewController
 {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
+    
     var genders = ["Select one:", "Male", "Female", "Other"]
     var selectedGender : String = ""
     let genderPicker = UIPickerView()

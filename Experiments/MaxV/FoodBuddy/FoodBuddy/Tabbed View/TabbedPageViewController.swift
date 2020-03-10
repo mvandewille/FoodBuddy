@@ -27,4 +27,5 @@ class TabbedPageViewController : UITabBarController
         //self.navigationController?.setNavigationBarHidden(false, animated: animated)
         super.viewWillAppear(animated)
     }
+
 }

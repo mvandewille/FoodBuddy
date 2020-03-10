@@ -198,7 +198,7 @@
                                             <constraint firstAttribute="width" constant="280" id="1Zb-uR-bXG"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="112" translatesAutoresizingMaskIntoConstraints="NO" id="vBh-O7-GC8">
                                         <rect key="frame" x="0.0" y="149" width="252.5" height="30.5"/>
@@ -226,7 +226,7 @@
                                                     <constraint firstAttribute="width" constant="100" id="yr6-Om-94x"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Weight (lb)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Kk-cd-GR5">
                                                 <rect key="frame" x="180" y="0.0" width="100" height="34"/>
@@ -234,7 +234,7 @@
                                                     <constraint firstAttribute="width" constant="100" id="NKx-yC-xT5"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -274,7 +274,7 @@
                                                     <constraint firstAttribute="width" constant="100" id="kLs-ub-MNZ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -390,7 +390,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sWy-wg-9C5">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="151" width="414" height="691"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="NJh-Au-EWh">
@@ -403,19 +403,68 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dau-Ti-iiT">
+                                <rect key="frame" x="20" y="20" width="279" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3UT-0s-qTc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95y-vU-1DK">
+                                <rect key="frame" x="314" y="20" width="80" height="40"/>
+                                <color key="backgroundColor" red="0.32970346560000002" green="0.64451875619999999" blue="0.3360963293" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="bHO-NO-j8t"/>
+                                    <constraint firstAttribute="width" constant="80" id="uaG-Hj-AHp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                                <state key="normal" title="ADD">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="_addFollowing:" destination="4E5-JT-iyJ" eventType="touchUpInside" id="fbm-Co-X9l"/>
+                                    <action selector="saveAllergies:" destination="9Xn-Zg-4H8" eventType="touchUpInside" id="QfJ-zn-GgC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currently following:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9Q-Mm-pfe">
+                                <rect key="frame" x="10" y="110.5" width="198" height="30.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generic error message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dc6-X4-RFv">
+                                <rect key="frame" x="92" y="70" width="230" height="30.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="sWy-wg-9C5" firstAttribute="top" secondItem="mXL-9b-cFn" secondAttribute="top" id="OMN-ed-tGL"/>
-                            <constraint firstItem="sWy-wg-9C5" firstAttribute="leading" secondItem="mXL-9b-cFn" secondAttribute="leading" id="fep-fx-LPb"/>
-                            <constraint firstAttribute="bottom" secondItem="sWy-wg-9C5" secondAttribute="bottom" id="jSR-KU-ecv"/>
-                            <constraint firstItem="sWy-wg-9C5" firstAttribute="trailing" secondItem="mXL-9b-cFn" secondAttribute="trailing" id="ygm-Rj-xcR"/>
+                            <constraint firstItem="mXL-9b-cFn" firstAttribute="trailing" secondItem="95y-vU-1DK" secondAttribute="trailing" constant="20" id="9hS-eB-ep8"/>
+                            <constraint firstItem="Dc6-X4-RFv" firstAttribute="centerX" secondItem="MES-4g-hsD" secondAttribute="centerX" id="CDa-aS-hOh"/>
+                            <constraint firstItem="sWy-wg-9C5" firstAttribute="trailing" secondItem="mXL-9b-cFn" secondAttribute="trailing" id="EM6-2c-E6o"/>
+                            <constraint firstItem="Dau-Ti-iiT" firstAttribute="leading" secondItem="mXL-9b-cFn" secondAttribute="leading" constant="20" id="Hjz-yP-8Gm"/>
+                            <constraint firstItem="P9Q-Mm-pfe" firstAttribute="top" secondItem="Dc6-X4-RFv" secondAttribute="bottom" constant="10" id="SNH-6v-5Qt"/>
+                            <constraint firstItem="Dc6-X4-RFv" firstAttribute="top" secondItem="Dau-Ti-iiT" secondAttribute="bottom" constant="10" id="TW5-1e-D2r"/>
+                            <constraint firstItem="95y-vU-1DK" firstAttribute="leading" secondItem="Dau-Ti-iiT" secondAttribute="trailing" constant="15" id="bS6-hU-Jy5"/>
+                            <constraint firstAttribute="bottom" secondItem="sWy-wg-9C5" secondAttribute="bottom" id="mg1-eS-c6T"/>
+                            <constraint firstItem="Dau-Ti-iiT" firstAttribute="top" secondItem="mXL-9b-cFn" secondAttribute="top" constant="20" id="t8p-Ji-qzk"/>
+                            <constraint firstItem="95y-vU-1DK" firstAttribute="top" secondItem="mXL-9b-cFn" secondAttribute="top" constant="20" id="vo2-Jf-yHA"/>
+                            <constraint firstItem="sWy-wg-9C5" firstAttribute="leading" secondItem="mXL-9b-cFn" secondAttribute="leading" id="xi7-Ur-Xdm"/>
+                            <constraint firstItem="sWy-wg-9C5" firstAttribute="top" secondItem="P9Q-Mm-pfe" secondAttribute="bottom" constant="10" id="xrF-vw-NTd"/>
+                            <constraint firstItem="P9Q-Mm-pfe" firstAttribute="leading" secondItem="mXL-9b-cFn" secondAttribute="leading" constant="10" id="yjH-hK-GNc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mXL-9b-cFn"/>
                     </view>
                     <navigationItem key="navigationItem" title="Friends" id="Xdv-ea-fvJ"/>
                     <connections>
-                        <outlet property="_friendsTable" destination="sWy-wg-9C5" id="wgX-Gh-8bz"/>
+                        <outlet property="_addBtn" destination="95y-vU-1DK" id="k6O-8G-dG7"/>
+                        <outlet property="_email" destination="Dau-Ti-iiT" id="hby-pX-nIe"/>
+                        <outlet property="_errorLabel" destination="Dc6-X4-RFv" id="dtx-Iz-9Xq"/>
+                        <outlet property="_friendsTable" destination="sWy-wg-9C5" id="pHz-fc-qxK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iBm-Mu-pnf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

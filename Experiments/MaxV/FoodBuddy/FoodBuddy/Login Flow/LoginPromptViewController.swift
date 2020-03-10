@@ -22,7 +22,6 @@ class LoginPromptViewController: UIViewController {
         {
             DoLogin(email!, password!)
         }
-        // Do any additional setup after loading the view.
     }
 
     func setBackground()

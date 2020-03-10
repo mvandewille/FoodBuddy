@@ -7,20 +7,238 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Add Food Controller-->
         <scene sceneID="xIl-Zz-GhD">
             <objects>
-                <viewController id="VFP-K6-QS6" sceneMemberID="viewController">
+                <viewController id="VFP-K6-QS6" customClass="AddFoodController" customModule="FoodBuddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4cb-7r-Hkf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDh-Pp-p0A">
+                                <rect key="frame" x="127" y="637.5" width="160" height="60"/>
+                                <color key="backgroundColor" red="0.32970346560000002" green="0.64451875619999999" blue="0.3360963293" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="II4-WB-42M"/>
+                                    <constraint firstAttribute="height" constant="60" id="g8g-DB-TKz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                                <state key="normal" title="ADD FOOD">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="addFood:" destination="VFP-K6-QS6" eventType="touchUpInside" id="JGz-aA-o6H"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnM-B0-Vp7">
+                                <rect key="frame" x="132" y="214.5" width="118.5" height="30.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. Raisinets" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cCM-n2-TLT">
+                                <rect key="frame" x="132" y="250" width="150" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="KE7-cc-ZHh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="kFW-ZX-bvg">
+                                <rect key="frame" x="57" y="289" width="300" height="218.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="98" translatesAutoresizingMaskIntoConstraints="NO" id="dcR-9Y-2bI">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="30.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTk-SL-e74">
+                                                <rect key="frame" x="0.0" y="0.0" width="82" height="30.5"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sodium" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fuv-LZ-YFo">
+                                                <rect key="frame" x="180" y="0.0" width="120" height="30.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="I4r-4d-TeM"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="reY-pz-tRS">
+                                        <rect key="frame" x="0.0" y="35.5" width="300" height="34"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Calories" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Vk-Lv-o4E">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="PQg-DS-Ale"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sodium (mg)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wTs-dD-j8o">
+                                                <rect key="frame" x="180" y="0.0" width="120" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="Mj2-jT-qkc"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="121" translatesAutoresizingMaskIntoConstraints="NO" id="L1t-Bj-ajU">
+                                        <rect key="frame" x="0.0" y="74.5" width="300" height="30.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qmd-R0-Zwp">
+                                                <rect key="frame" x="0.0" y="0.0" width="59" height="30.5"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protein" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3G-iw-b8f">
+                                                <rect key="frame" x="180" y="0.0" width="120" height="30.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="cJw-Bc-vSP"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="SnN-E5-0cg">
+                                        <rect key="frame" x="0.0" y="110" width="300" height="34"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Carbs (g)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dLg-cf-Ihs">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="hW9-0q-Egp"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Protein (g)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="owf-JS-XSF">
+                                                <rect key="frame" x="180" y="0.0" width="120" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="yvZ-ds-EJB"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="4c9-wx-qTH">
+                                        <rect key="frame" x="0.0" y="149" width="300" height="30.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qG8-EN-Aa0">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30.5"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cholesterol" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHX-BZ-E4H">
+                                                <rect key="frame" x="180" y="0.0" width="120" height="30.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="CU9-1a-wbh"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="FEK-9y-YA6">
+                                        <rect key="frame" x="0.0" y="184.5" width="300" height="34"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Fat (g)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oYZ-S7-GP0">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="NRL-06-7lL"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Chole... (mg)" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LFP-gE-aYh">
+                                                <rect key="frame" x="180" y="0.0" width="120" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="Y18-Jk-Rk7"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. 1.5" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3fF-5e-vfC">
+                                <rect key="frame" x="147" y="553" width="120" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="sUn-tZ-uYl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Servings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LF-45-vDe">
+                                <rect key="frame" x="147" y="517.5" width="86" height="30.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generic error message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzv-72-w00">
+                                <rect key="frame" x="92" y="597" width="230" height="30.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="cCM-n2-TLT" firstAttribute="top" secondItem="qnM-B0-Vp7" secondAttribute="bottom" constant="5" id="2rV-OC-12u"/>
+                            <constraint firstItem="kFW-ZX-bvg" firstAttribute="top" secondItem="cCM-n2-TLT" secondAttribute="bottom" constant="5" id="BsR-bm-Nkr"/>
+                            <constraint firstItem="kFW-ZX-bvg" firstAttribute="centerX" secondItem="4cb-7r-Hkf" secondAttribute="centerX" id="CFI-mr-eIh"/>
+                            <constraint firstItem="3fF-5e-vfC" firstAttribute="centerX" secondItem="4cb-7r-Hkf" secondAttribute="centerX" id="DJX-ub-Hr2"/>
+                            <constraint firstItem="bzv-72-w00" firstAttribute="top" secondItem="3fF-5e-vfC" secondAttribute="bottom" constant="10" id="Fkb-c2-naR"/>
+                            <constraint firstItem="DDh-Pp-p0A" firstAttribute="top" secondItem="bzv-72-w00" secondAttribute="bottom" constant="10" id="NAP-nq-Y9E"/>
+                            <constraint firstItem="kFW-ZX-bvg" firstAttribute="top" secondItem="cCM-n2-TLT" secondAttribute="bottom" constant="5" id="Sli-9v-MqX"/>
+                            <constraint firstItem="cCM-n2-TLT" firstAttribute="centerX" secondItem="4cb-7r-Hkf" secondAttribute="centerX" id="TXe-gE-Rod"/>
+                            <constraint firstItem="3fF-5e-vfC" firstAttribute="leading" secondItem="5LF-45-vDe" secondAttribute="leading" id="XnW-Lp-t2t"/>
+                            <constraint firstItem="cCM-n2-TLT" firstAttribute="leading" secondItem="qnM-B0-Vp7" secondAttribute="leading" id="Yz7-X6-gWj"/>
+                            <constraint firstItem="5LF-45-vDe" firstAttribute="top" secondItem="kFW-ZX-bvg" secondAttribute="bottom" constant="10" id="ZTe-Gq-vBM"/>
+                            <constraint firstItem="kFW-ZX-bvg" firstAttribute="centerY" secondItem="4cb-7r-Hkf" secondAttribute="centerY" constant="-50" id="fxT-o9-dpn"/>
+                            <constraint firstItem="3fF-5e-vfC" firstAttribute="top" secondItem="5LF-45-vDe" secondAttribute="bottom" constant="5" id="hNM-26-HYt"/>
+                            <constraint firstItem="DDh-Pp-p0A" firstAttribute="centerX" secondItem="4cb-7r-Hkf" secondAttribute="centerX" id="kPF-oY-Dfm"/>
+                            <constraint firstItem="bzv-72-w00" firstAttribute="centerX" secondItem="4cb-7r-Hkf" secondAttribute="centerX" id="r6E-tb-iF3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="WSK-DP-NBe"/>
                     </view>
+                    <connections>
+                        <outlet property="_addFoodBtn" destination="DDh-Pp-p0A" id="CcJ-M4-p8A"/>
+                        <outlet property="_calories" destination="4Vk-Lv-o4E" id="xMi-DQ-FuG"/>
+                        <outlet property="_carbs" destination="dLg-cf-Ihs" id="hsl-RW-n9Y"/>
+                        <outlet property="_cholesterol" destination="LFP-gE-aYh" id="fge-tH-TvW"/>
+                        <outlet property="_errorLabel" destination="bzv-72-w00" id="wuB-Wd-6RE"/>
+                        <outlet property="_fat" destination="oYZ-S7-GP0" id="Vlf-NQ-9qb"/>
+                        <outlet property="_foodName" destination="cCM-n2-TLT" id="ULC-uv-Ajf"/>
+                        <outlet property="_protein" destination="owf-JS-XSF" id="z55-6C-QNc"/>
+                        <outlet property="_servings" destination="3fF-5e-vfC" id="pjZ-o7-fNS"/>
+                        <outlet property="_sodium" destination="wTs-dD-j8o" id="VO3-OP-QZ7"/>
+                        <segue destination="rEn-b4-v7N" kind="presentation" identifier="foodAdded" modalPresentationStyle="fullScreen" id="vWJ-cw-IHw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UHN-c1-feE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="128.57142857142856"/>
+        </scene>
+        <!--TabbedPages-->
+        <scene sceneID="4F9-uk-XOV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TabbedPages" id="rEn-b4-v7N" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ati-7v-odV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="720" y="102"/>
         </scene>
     </scenes>
 </document>

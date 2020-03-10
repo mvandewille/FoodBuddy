@@ -11,6 +11,10 @@ import UIKit
 
 class AllergenAddController : UIViewController, UITableViewDelegate, UITableViewDataSource
 {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
     
     var incomingDict: Dictionary<String, Any> = [:]
     var allergenArray: [String] = []
