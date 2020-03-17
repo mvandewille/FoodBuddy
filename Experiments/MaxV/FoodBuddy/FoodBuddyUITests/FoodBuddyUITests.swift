@@ -7,8 +7,9 @@
 //
 
 import XCTest
+@testable import FoodBuddy
 
-class iOS_UI_MockupUITests: XCTestCase {
+class FoodBuddyUITests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -40,4 +41,6 @@ class iOS_UI_MockupUITests: XCTestCase {
             }
         }
     }
+    
+    
 }

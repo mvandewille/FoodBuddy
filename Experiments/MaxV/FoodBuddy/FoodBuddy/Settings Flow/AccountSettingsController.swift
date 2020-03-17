@@ -73,7 +73,8 @@ class AccountSettingsController: UIViewController
         self._errorLabel.isHidden = true
         createGenderPicker()
         createToolbar()
-        DoFieldCheck()
+        let email = UserDefaults.standard.string(forKey: "email")
+        DoFieldCheck(email: email!)
     }
     
     func fillFields()
@@ -135,10 +136,9 @@ class AccountSettingsController: UIViewController
         _gender.inputAccessoryView = toolbar
     }
     
-    func DoFieldCheck()
+    func DoFieldCheck(email: String)
     {
-        let email = UserDefaults.standard.string(forKey: "email")
-        let urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/find/email/basic?email=" + email!
+        let urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/find/email/basic?email=" + email
         let newString = urlStr.replacingOccurrences(of: " ", with: "+")
         let url = URL(string: newString)
         var request = URLRequest(url: url!)

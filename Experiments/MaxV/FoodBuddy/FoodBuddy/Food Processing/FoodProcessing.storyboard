@@ -238,7 +238,7 @@
                 <viewControllerPlaceholder storyboardName="TabbedPages" id="rEn-b4-v7N" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ati-7v-odV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="720" y="102"/>
+            <point key="canvasLocation" x="723" y="129"/>
         </scene>
     </scenes>
 </document>

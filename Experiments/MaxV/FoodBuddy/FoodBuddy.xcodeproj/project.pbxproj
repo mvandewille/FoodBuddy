@@ -22,6 +22,7 @@
 		AFE02B49240C949200CBA9CD /* AllergenSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE02B48240C949200CBA9CD /* AllergenSettingsController.swift */; };
 		AFE02B4D240C94F700CBA9CD /* AccountSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE02B4C240C94F700CBA9CD /* AccountSettingsController.swift */; };
 		AFE02B4F240CB57A00CBA9CD /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE02B4E240CB57A00CBA9CD /* SettingsController.swift */; };
+		AFEDE97D241EBE9A000ABD7F /* StatusFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEDE97C241EBE9A000ABD7F /* StatusFeedController.swift */; };
 		AFFAF99F240701B70079837D /* AllergenAddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFAF99E240701B70079837D /* AllergenAddController.swift */; };
 		AFFEDE7823D9F0B5002D6E82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFEDE7723D9F0B5002D6E82 /* AppDelegate.swift */; };
 		AFFEDE7A23D9F0B5002D6E82 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFEDE7923D9F0B5002D6E82 /* SceneDelegate.swift */; };
@@ -29,12 +30,11 @@
 		AFFEDE8123D9F0B5002D6E82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFFEDE7F23D9F0B5002D6E82 /* Main.storyboard */; };
 		AFFEDE8323D9F0B7002D6E82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFFEDE8223D9F0B7002D6E82 /* Assets.xcassets */; };
 		AFFEDE8623D9F0B7002D6E82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFFEDE8423D9F0B7002D6E82 /* LaunchScreen.storyboard */; };
-		AFFEDE9123D9F0B7002D6E82 /* iOS_UI_MockupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFEDE9023D9F0B7002D6E82 /* iOS_UI_MockupTests.swift */; };
-		AFFEDE9C23D9F0B7002D6E82 /* iOS_UI_MockupUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFEDE9B23D9F0B7002D6E82 /* iOS_UI_MockupUITests.swift */; };
+		AFFEDE9123D9F0B7002D6E82 /* FoodBuddyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFEDE9023D9F0B7002D6E82 /* FoodBuddyTests.swift */; };
+		AFFEDE9C23D9F0B7002D6E82 /* FoodBuddyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFEDE9B23D9F0B7002D6E82 /* FoodBuddyUITests.swift */; };
 		AFFEDEAB23DB80B2002D6E82 /* TabbedPages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFFEDEA923DB80B2002D6E82 /* TabbedPages.storyboard */; };
 		AFFEDEAE23DB8AD1002D6E82 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFFEDEAC23DB8AD1002D6E82 /* Settings.storyboard */; };
 		AFFEDEB023DB8AF2002D6E82 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFFEDEAF23DB8AF2002D6E82 /* Calendar.storyboard */; };
-		F2B524D519D6FF147E690F4D /* Pods_FoodBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D52B4DCABF3E59A2E56577A1 /* Pods_FoodBuddy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +55,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		43A116BC15C545F6E884AA2D /* Pods-FoodBuddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodBuddy.release.xcconfig"; path = "Target Support Files/Pods-FoodBuddy/Pods-FoodBuddy.release.xcconfig"; sourceTree = "<group>"; };
-		83CC35C5CF44E4E657D05D8A /* Pods-FoodBuddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodBuddy.debug.xcconfig"; path = "Target Support Files/Pods-FoodBuddy/Pods-FoodBuddy.debug.xcconfig"; sourceTree = "<group>"; };
 		AF15B5EF2412EB78002D60CB /* FriendsSettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsSettingController.swift; sourceTree = "<group>"; };
 		AF15B5F42417390F002D60CB /* Status.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Status.storyboard; sourceTree = "<group>"; };
 		AF15B5F62417397F002D60CB /* StatusAddController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusAddController.swift; sourceTree = "<group>"; };
@@ -72,6 +70,7 @@
 		AFE02B48240C949200CBA9CD /* AllergenSettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergenSettingsController.swift; sourceTree = "<group>"; };
 		AFE02B4C240C94F700CBA9CD /* AccountSettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsController.swift; sourceTree = "<group>"; };
 		AFE02B4E240CB57A00CBA9CD /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		AFEDE97C241EBE9A000ABD7F /* StatusFeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusFeedController.swift; sourceTree = "<group>"; };
 		AFFAF99E240701B70079837D /* AllergenAddController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergenAddController.swift; sourceTree = "<group>"; };
 		AFFEDE7423D9F0B5002D6E82 /* FoodBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFFEDE7723D9F0B5002D6E82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,15 +81,14 @@
 		AFFEDE8523D9F0B7002D6E82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFFEDE8723D9F0B7002D6E82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFFEDE8C23D9F0B7002D6E82 /* FoodBuddyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodBuddyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AFFEDE9023D9F0B7002D6E82 /* iOS_UI_MockupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_UI_MockupTests.swift; sourceTree = "<group>"; };
+		AFFEDE9023D9F0B7002D6E82 /* FoodBuddyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodBuddyTests.swift; sourceTree = "<group>"; };
 		AFFEDE9223D9F0B7002D6E82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFFEDE9723D9F0B7002D6E82 /* FoodBuddyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodBuddyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AFFEDE9B23D9F0B7002D6E82 /* iOS_UI_MockupUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_UI_MockupUITests.swift; sourceTree = "<group>"; };
+		AFFEDE9B23D9F0B7002D6E82 /* FoodBuddyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodBuddyUITests.swift; sourceTree = "<group>"; };
 		AFFEDE9D23D9F0B7002D6E82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFFEDEAA23DB80B2002D6E82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "iOS UI Mockup/Base.lproj/TabbedPages.storyboard"; sourceTree = "<group>"; };
 		AFFEDEAD23DB8AD1002D6E82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "iOS UI Mockup/iOS UI Mockup/Base.lproj/Settings.storyboard"; sourceTree = "<group>"; };
 		AFFEDEAF23DB8AF2002D6E82 /* Calendar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
-		D52B4DCABF3E59A2E56577A1 /* Pods_FoodBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +96,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2B524D519D6FF147E690F4D /* Pods_FoodBuddy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,8 +119,8 @@
 		AF15B5F3241738E1002D60CB /* Add Status Flow */ = {
 			isa = PBXGroup;
 			children = (
-				AF15B5F42417390F002D60CB /* Status.storyboard */,
 				AF15B5F62417397F002D60CB /* StatusAddController.swift */,
+				AF15B5F42417390F002D60CB /* Status.storyboard */,
 			);
 			path = "Add Status Flow";
 			sourceTree = "<group>";
@@ -148,6 +145,7 @@
 				AF5B649323FC9C00004708F3 /* TabbedPageViewController.swift */,
 				AF15B5FA2417575D002D60CB /* DailyViewController.swift */,
 				AF93C91B2404DFB700E5091F /* CameraViewController.swift */,
+				AFEDE97C241EBE9A000ABD7F /* StatusFeedController.swift */,
 				AFFEDEA923DB80B2002D6E82 /* TabbedPages.storyboard */,
 			);
 			path = "Tabbed View";
@@ -189,8 +187,6 @@
 				AFFEDE8F23D9F0B7002D6E82 /* FoodBuddytests */,
 				AFFEDE9A23D9F0B7002D6E82 /* FoodBuddyUITests */,
 				AFFEDE7523D9F0B5002D6E82 /* Products */,
-				F8C685BF320FB24D7DC72CFE /* Pods */,
-				EAD60910C1A2B99EA75B2846 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -225,7 +221,7 @@
 		AFFEDE8F23D9F0B7002D6E82 /* FoodBuddytests */ = {
 			isa = PBXGroup;
 			children = (
-				AFFEDE9023D9F0B7002D6E82 /* iOS_UI_MockupTests.swift */,
+				AFFEDE9023D9F0B7002D6E82 /* FoodBuddyTests.swift */,
 				AFFEDE9223D9F0B7002D6E82 /* Info.plist */,
 			);
 			path = FoodBuddytests;
@@ -234,28 +230,10 @@
 		AFFEDE9A23D9F0B7002D6E82 /* FoodBuddyUITests */ = {
 			isa = PBXGroup;
 			children = (
-				AFFEDE9B23D9F0B7002D6E82 /* iOS_UI_MockupUITests.swift */,
+				AFFEDE9B23D9F0B7002D6E82 /* FoodBuddyUITests.swift */,
 				AFFEDE9D23D9F0B7002D6E82 /* Info.plist */,
 			);
 			path = FoodBuddyUITests;
-			sourceTree = "<group>";
-		};
-		EAD60910C1A2B99EA75B2846 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D52B4DCABF3E59A2E56577A1 /* Pods_FoodBuddy.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F8C685BF320FB24D7DC72CFE /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				83CC35C5CF44E4E657D05D8A /* Pods-FoodBuddy.debug.xcconfig */,
-				43A116BC15C545F6E884AA2D /* Pods-FoodBuddy.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,11 +243,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFFEDEA023D9F0B7002D6E82 /* Build configuration list for PBXNativeTarget "FoodBuddy" */;
 			buildPhases = (
-				6D935086F78C67B7848D3259 /* [CP] Check Pods Manifest.lock */,
 				AFFEDE7023D9F0B5002D6E82 /* Sources */,
 				AFFEDE7123D9F0B5002D6E82 /* Frameworks */,
 				AFFEDE7223D9F0B5002D6E82 /* Resources */,
-				DB77EB56443BDFF52677A9E9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -391,48 +367,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		6D935086F78C67B7848D3259 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FoodBuddy-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DB77EB56443BDFF52677A9E9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FoodBuddy/Pods-FoodBuddy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FoodBuddy/Pods-FoodBuddy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FoodBuddy/Pods-FoodBuddy-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		AFFEDE7023D9F0B5002D6E82 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -449,6 +383,7 @@
 				AF15B5F924174D17002D60CB /* AddFoodController.swift in Sources */,
 				AFB06D6723F9E99C001B652B /* LoginViewController.swift in Sources */,
 				AFFAF99F240701B70079837D /* AllergenAddController.swift in Sources */,
+				AFEDE97D241EBE9A000ABD7F /* StatusFeedController.swift in Sources */,
 				AF15B5F72417397F002D60CB /* StatusAddController.swift in Sources */,
 				AFE02B4F240CB57A00CBA9CD /* SettingsController.swift in Sources */,
 				AF15B5F02412EB78002D60CB /* FriendsSettingController.swift in Sources */,
@@ -462,7 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFFEDE9123D9F0B7002D6E82 /* iOS_UI_MockupTests.swift in Sources */,
+				AFFEDE9123D9F0B7002D6E82 /* FoodBuddyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,7 +405,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFFEDE9C23D9F0B7002D6E82 /* iOS_UI_MockupUITests.swift in Sources */,
+				AFFEDE9C23D9F0B7002D6E82 /* FoodBuddyUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,7 +576,6 @@
 		};
 		AFFEDEA123D9F0B7002D6E82 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 83CC35C5CF44E4E657D05D8A /* Pods-FoodBuddy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -661,7 +595,6 @@
 		};
 		AFFEDEA223D9F0B7002D6E82 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 43A116BC15C545F6E884AA2D /* Pods-FoodBuddy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -686,7 +619,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J79C7UK64W;
-				INFOPLIST_FILE = "iOS UI MockupTests/Info.plist";
+				INFOPLIST_FILE = FoodBuddytests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -708,7 +641,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J79C7UK64W;
-				INFOPLIST_FILE = "iOS UI MockupTests/Info.plist";
+				INFOPLIST_FILE = FoodBuddytests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -729,7 +662,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J79C7UK64W;
-				INFOPLIST_FILE = "iOS UI MockupUITests/Info.plist";
+				INFOPLIST_FILE = FoodBuddyUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -749,7 +682,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J79C7UK64W;
-				INFOPLIST_FILE = "iOS UI MockupUITests/Info.plist";
+				INFOPLIST_FILE = FoodBuddyUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

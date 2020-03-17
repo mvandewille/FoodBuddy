@@ -10,17 +10,85 @@
         <!--Add Status-->
         <scene sceneID="Joh-S5-I6I">
             <objects>
-                <viewController title="Add Status" id="uxb-xf-kyP" sceneMemberID="viewController">
+                <viewController title="Add Status" id="uxb-xf-kyP" customClass="StatusAddController" customModule="FoodBuddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8k1-Pf-dCg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="This text should not appear" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0dG-wo-Evd">
+                                <rect key="frame" x="67" y="244" width="280" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="EsN-UE-GAJ"/>
+                                    <constraint firstAttribute="height" constant="200" id="NcY-2d-9ti"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post a Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="et2-LU-DVn">
+                                <rect key="frame" x="67" y="206" width="136" height="33"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWa-Q5-zKy">
+                                <rect key="frame" x="147" y="524.5" width="120" height="70"/>
+                                <color key="backgroundColor" red="0.32970346560000002" green="0.64451875619999999" blue="0.3360963293" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="7X2-qK-6ri"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="d5g-vT-CVR"/>
+                                    <constraint firstAttribute="width" constant="120" id="qus-fd-REy"/>
+                                    <constraint firstAttribute="height" constant="70" id="yMe-Jq-gbk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                                <state key="normal" title="POST">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="postStatus:" destination="uxb-xf-kyP" eventType="touchUpInside" id="V2z-ce-3Z2"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generic error message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cp-CL-Uk4">
+                                <rect key="frame" x="92" y="469" width="230" height="30.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0dG-wo-Evd" firstAttribute="centerX" secondItem="8k1-Pf-dCg" secondAttribute="centerX" id="7NL-Ro-9go"/>
+                            <constraint firstItem="vWa-Q5-zKy" firstAttribute="top" secondItem="9cp-CL-Uk4" secondAttribute="bottom" constant="25" id="9p4-K5-rCp"/>
+                            <constraint firstItem="9cp-CL-Uk4" firstAttribute="centerX" secondItem="8k1-Pf-dCg" secondAttribute="centerX" id="AEG-TB-KUt"/>
+                            <constraint firstItem="0dG-wo-Evd" firstAttribute="top" secondItem="8f9-Ov-h00" secondAttribute="top" constant="200" id="F6s-Xf-Ku1"/>
+                            <constraint firstItem="9cp-CL-Uk4" firstAttribute="top" secondItem="0dG-wo-Evd" secondAttribute="bottom" constant="25" id="Feo-hc-sDC"/>
+                            <constraint firstItem="0dG-wo-Evd" firstAttribute="top" secondItem="et2-LU-DVn" secondAttribute="bottom" constant="5" id="LVh-k5-EYH"/>
+                            <constraint firstItem="0dG-wo-Evd" firstAttribute="leading" secondItem="et2-LU-DVn" secondAttribute="leading" id="n48-Xp-D2m"/>
+                            <constraint firstItem="vWa-Q5-zKy" firstAttribute="centerX" secondItem="8k1-Pf-dCg" secondAttribute="centerX" id="pvC-jh-QWT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8f9-Ov-h00"/>
                     </view>
+                    <connections>
+                        <outlet property="_errorlabel" destination="9cp-CL-Uk4" id="IpO-8J-45F"/>
+                        <outlet property="_post" destination="vWa-Q5-zKy" id="6qN-rj-GTh"/>
+                        <outlet property="textView" destination="0dG-wo-Evd" id="Vf0-3V-EKp"/>
+                        <segue destination="V4h-eD-AhY" kind="presentation" identifier="statusSuccess" modalPresentationStyle="fullScreen" id="xKT-gV-Gqk"/>
+                        <segue destination="84D-eQ-EBo" kind="unwind" identifier="statusSuccess2" unwindAction="unwindToStatusFeedControllerWithSegue:" id="HTJ-OO-sth"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iAm-BS-bWz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="84D-eQ-EBo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="110.49107142857143"/>
+        </scene>
+        <!--TabbedPages-->
+        <scene sceneID="Sbf-M2-wu7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TabbedPages" id="V4h-eD-AhY" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e94-83-2Ra" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="751" y="110"/>
         </scene>
     </scenes>
 </document>

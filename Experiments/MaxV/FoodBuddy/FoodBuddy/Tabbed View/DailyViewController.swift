@@ -8,12 +8,15 @@
 
 import Foundation
 import UIKit
-import MBCircularProgressBar
 
 class DailyViewController : UIViewController
 {
     @IBOutlet weak var _dateLabel: UILabel!
-    @IBOutlet weak var _calories: MBCircularProgressBarView!
+    
+    //CALORIE RING VIEW
+    @IBOutlet weak var _calorieView: UIView!
+    let shapeLayer = CAShapeLayer()
+    let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
     
     @IBOutlet weak var _proteinBar: UIProgressView!
     @IBOutlet weak var _proteinLabel: UILabel!
@@ -35,41 +38,70 @@ class DailyViewController : UIViewController
     let proteinLimit : Double = 50
     let fatLimit : Double = 75
     let carbLimit : Double = 325
-    let sodiumLimit : Double = 2.5
-    let cholesterolLimit : Double = 0.300
+    let sodiumLimit : Double = 2500
+    let cholesterolLimit : Double = 300
     
     override func viewDidLoad() {
+        
         getLimits()
         getData()
         setDate()
+        createCaloriering()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         DispatchQueue.main.async {
-            self._calories.value = CGFloat(self.dailyTotals["calories"]!)
+            //CALORIE RING
+            self.basicAnimation.toValue = (self.dailyTotals["calories"] ?? 0)/Double(self.calorieLimit)
+            self.basicAnimation.duration = 1
+            self.basicAnimation.fillMode = .forwards
+            self.basicAnimation.isRemovedOnCompletion = false
+            self.shapeLayer.add(self.basicAnimation, forKey: "basicBitch")
             
             //PROTEIN BAR
             self._proteinBar.progress = Float(self.dailyTotals["protein"]!/self.proteinLimit)
-            self._proteinLabel.text = "\(self.dailyTotals["protein"]!)" + "/" + "\(self.proteinLimit)"
+            self._proteinLabel.text = "\(Int(ceil(self.dailyTotals["protein"]!)))" + "/" + "\(Int(self.proteinLimit))" + "g"
             
             //SODIUM BAR
             self._sodiumBar.progress = Float(self.dailyTotals["sodium"]!/self.sodiumLimit)
-            self._sodiumLabel.text = "\(self.dailyTotals["sodium"]!)" + "/" + "\(self.sodiumLimit)"
+            self._sodiumLabel.text = "\(Int(ceil(self.dailyTotals["sodium"]!)))" + "/" + "\(Int(self.sodiumLimit))" + "mg"
             
-            //CHOLESTEROL
+            //CHOLESTEROL BAR
             self._cholesterolBar.progress = Float(self.dailyTotals["cholesterol"]!/self.cholesterolLimit)
-            self._cholesterolLabel.text = "\(self.dailyTotals["cholesterol"]!)" + "/" + "\(self.cholesterolLimit)"
+            self._cholesterolLabel.text = "\(Int(ceil(self.dailyTotals["cholesterol"]!)))" + "/" + "\(Int(self.cholesterolLimit))" + "mg"
             
-            //CARBOHYDRATES
+            //CARBOHYDRATES BAR
             self._carbBar.progress = Float(self.dailyTotals["carbs"]!/self.carbLimit)
-            self._carbLabel.text = "\(self.dailyTotals["carbs"]!)" + "/" + "\(self.carbLimit)"
+            self._carbLabel.text = "\(Int(ceil(self.dailyTotals["carbs"]!)))" + "/" + "\(Int(self.carbLimit))" + "g"
             
-            //FAT
+            //FAT BAR
             self._fatBar.progress = Float(self.dailyTotals["fat"]!/self.fatLimit)
-            self._fatLabel.text = "\(self.dailyTotals["fat"]!)" + "/" + "\(self.fatLimit)"
+            self._fatLabel.text = "\(Int(ceil(self.dailyTotals["fat"]!)))" + "/" + "\(Int(self.fatLimit))" + "g"
         }
     }
 
+    func createCaloriering()
+    {
+        let center = _calorieView.center
+        let circularPath = UIBezierPath(arcCenter: center, radius: 75, startAngle: -CGFloat.pi/2, endAngle: 1.5 * CGFloat.pi, clockwise: true)
+        let trackLayer = CAShapeLayer()
+        
+        trackLayer.path = circularPath.cgPath
+        trackLayer.strokeColor = UIColor.darkGray.cgColor
+        trackLayer.lineWidth = 20
+        trackLayer.fillColor = UIColor.clear.cgColor
+        trackLayer.lineCap = .round
+        trackLayer.strokeEnd = 1.0
+        view.layer.addSublayer(trackLayer)
+        
+        shapeLayer.path = circularPath.cgPath
+        shapeLayer.strokeColor = UIColor.red.cgColor
+        shapeLayer.lineWidth = 20
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.lineCap = .round
+        shapeLayer.strokeEnd = 0
+        view.layer.addSublayer(shapeLayer)
+    }
     
     func setDate()
     {
@@ -108,7 +140,7 @@ class DailyViewController : UIViewController
             let response = try? JSONSerialization.jsonObject(with: data, options: [])
             if let dictionary = response as? [String: Any] {
                 self.calorieLimit = dictionary["calorieLimit"] as! Int
-                self._calories.maxValue = CGFloat(self.calorieLimit)
+                //set value for calorie bar
             }
         }
         task.resume()

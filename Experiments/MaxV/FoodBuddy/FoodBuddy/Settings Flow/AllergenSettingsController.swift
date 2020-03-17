@@ -64,7 +64,8 @@ class AllergenSettingsController : UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DoFieldCheck()
+        let email = UserDefaults.standard.string(forKey: "email")
+        DoFieldCheck(email: email!)
         self._errorLabel.isHidden = true
     }
     
@@ -74,13 +75,11 @@ class AllergenSettingsController : UIViewController, UITableViewDelegate, UITabl
         self._allergenTable.allowsMultipleSelectionDuringEditing = true
         _allergenTable.dataSource = self
         _allergenTable.delegate = self
-
     }
     
-    func DoFieldCheck()
+    func DoFieldCheck(email: String)
     {
-        let email = UserDefaults.standard.string(forKey: "email")
-        let urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/find/email/basic?email=" + email!
+        let urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/find/email/basic?email=" + email
         let newString = urlStr.replacingOccurrences(of: " ", with: "+")
         let url = URL(string: newString)
         var request = URLRequest(url: url!)
