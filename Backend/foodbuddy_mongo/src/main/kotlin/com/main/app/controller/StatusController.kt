@@ -42,7 +42,7 @@ class StatusController {
         }
     }
 
-    @PostMapping("/add/like")
+    @PostMapping("/like")
     fun addLike(@RequestBody status: StatusLikeJ): ResponseJ {
         try {
             val selected = repository.findById(status.id)
@@ -57,10 +57,19 @@ class StatusController {
         }
     }
 
-    @GetMapping("/update/flag")
-    fun updateStatusFlag(@RequestParam(value = "flagged", required = true) flagged: Boolean)
-    {
-        repository.findByMessageOrderById().first()
+    @PostMapping("/flag")
+    fun updateStatusFlag(@RequestBody status: StatusLikeJ): ResponseJ {
+        try {
+            val selected = repository.findById(status.id)
+            selected.flag()
+
+            repository.deleteById(status.id)
+            repository.save(selected)
+            return ResponseJ(1, "N/A")
+        }
+        catch (e: EmptyResultDataAccessException) {
+            return ResponseJ(0, "No status with that id!")
+        }
     }
 
     @DeleteMapping("/delete/all")

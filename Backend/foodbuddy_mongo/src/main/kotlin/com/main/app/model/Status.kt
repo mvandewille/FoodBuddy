@@ -31,7 +31,7 @@ class Status (@Id private val id: Long, private val email: String,
 
     fun flag() {
         if (!this.flagged)
-            this.flagged = false
+            this.flagged = true
         return
     }
     //date format should be MM/dd/yyyy hh:mm:ss
