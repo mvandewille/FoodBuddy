@@ -15,4 +15,6 @@ interface StatusRepository : MongoRepository<Status, String>{
     fun findByEmailOrderById(): MutableList<Status>
 
     fun findByEmailInOrderByIdDesc(emails: MutableList<String>): MutableList<Status>
+
+    fun deleteById(id: Long)
 }
