@@ -60,6 +60,7 @@ class FoodbuddyApplicationTests {
     }
 
     @Test
+    //Test the get food method
     fun TestUserGetFood()
     {
         //Mock the object
@@ -71,6 +72,7 @@ class FoodbuddyApplicationTests {
     }
 
     @Test
+    //Tests the get Calender method
     fun TestUserGetCalender()
     {
         //Mock the object
@@ -81,6 +83,7 @@ class FoodbuddyApplicationTests {
         verify(u).getCalendar()
     }
 
+    //Tests the get following method
     @Test
     fun TestUserGetFollowing()
     {
