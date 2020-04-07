@@ -64,17 +64,18 @@ def split(img, slices):
             
 
 
-
+label_path='/Users/max/Documents/309/hv_3/Experiments/MaxW/images/label_2.jpg'
 toggle = 1 #0 = run single and multi test
            #1 = run line detection
 if toggle == 0:
-    #accumulate excecution time for 100 trials
+    trials = 1 #how many times do we want to run
+    #execution time
     tT = 0
-    #loop runs single scan test 100 times and measures execution time
-    for num in range(1): 
+    #loop runs single scan test set number of times and record execution time
+    for num in range(trials): 
         startTime = datetime.datetime.now()
         #Here I'm using pytesseract to extract text from the image as a string
-        print(pytesseract.image_to_string(Image.open('/Users/max/Dropbox/College/Year 3/COM S 309/hv_3/Experiments/Max W/test_label.png'))) 
+        print(pytesseract.image_to_string(Image.open(label_path))) 
         endTime = datetime.datetime.now()
         tT += (endTime-startTime).total_seconds()
 
@@ -84,7 +85,7 @@ if toggle == 0:
     #loop runs multi scan test 100 times to test avg time
     for num in range(1): 
         startTime = datetime.datetime.now()
-        label = Image.open('/Users/max/Dropbox/College/Year 3/COM S 309/hv_3/Experiments/Max W/test_label.png')
+        label = Image.open(label_path)
         width, height = label.size
 
         left = 0
@@ -104,7 +105,7 @@ if toggle == 0:
 
     print('4 segment scan average time:', tT / 100)
 else:
-    img = Image.open('/Users/max/Dropbox/College/Year 3/COM S 309/hv_3/Experiments/MaxW/test_label.png')
+    img = Image.open(label_path)
     total = 0
     for num in range(1):
         print(num)
