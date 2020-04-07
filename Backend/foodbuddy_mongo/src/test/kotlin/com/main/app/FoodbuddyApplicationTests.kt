@@ -10,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest
 class FoodbuddyApplicationTests {
 
     //STATUS CLASS TESTS
+    //Tests the Get Id Method
     @Test
     fun testStatusGetId()
     {
@@ -21,6 +22,7 @@ class FoodbuddyApplicationTests {
         verify(s).getId()
     }
 
+    //Tests the status check date
     @Test
     fun TestStatusCheckDate()
     {
@@ -32,8 +34,9 @@ class FoodbuddyApplicationTests {
         verify(s).checkDate("Test")
     }
 
+    //Test the status to Json method
     @Test
-    fun TestStatusToString()
+    fun TestStatusToJson()
     {
         //Mock the object
         val s = Mockito.mock(Status::class.java)
@@ -44,6 +47,7 @@ class FoodbuddyApplicationTests {
     }
 
     //TEST THE USER CLASS
+    //Test the Get Foods method
     @Test
     fun TestUserGetFoods()
     {
@@ -56,6 +60,7 @@ class FoodbuddyApplicationTests {
     }
 
     @Test
+    //Test the get food method
     fun TestUserGetFood()
     {
         //Mock the object
@@ -67,6 +72,7 @@ class FoodbuddyApplicationTests {
     }
 
     @Test
+    //Tests the get Calender method
     fun TestUserGetCalender()
     {
         //Mock the object
@@ -77,6 +83,7 @@ class FoodbuddyApplicationTests {
         verify(u).getCalendar()
     }
 
+    //Tests the get following method
     @Test
     fun TestUserGetFollowing()
     {

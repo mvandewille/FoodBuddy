@@ -6,10 +6,12 @@ import java.time.Instant
 import java.time.ZoneOffset
 import java.time.format.DateTimeFormatter
 
-class Status (@Id private val id: Long, private val email: String,  private var timestamp: String, private val flagged: Boolean, private var message: String) {
+class Status (@Id private val id: Long, private val email: String,
+              private var timestamp: String, private var flagged: Boolean,
+              private var message: String, private var likes: Int) {
 
     constructor(id: Long, email: String, message: String)
-        : this(id, email, "00/00/0000 00:00:00", false, message)
+        : this(id, email, "00/00/0000 00:00:00", false, message, 0)
 
     init {
         if(this.timestamp == "00/00/0000 00:00:00") {
@@ -27,6 +29,11 @@ class Status (@Id private val id: Long, private val email: String,  private var 
         return this.id
     }
 
+    fun flag() {
+        if (!this.flagged)
+            this.flagged = true
+        return
+    }
     //date format should be MM/dd/yyyy hh:mm:ss
     fun checkDate(date: String): Boolean {
         //return """^(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d${'$'}""".toRegex().matches(date)
@@ -34,6 +41,11 @@ class Status (@Id private val id: Long, private val email: String,  private var 
     }
 
     fun toJson(): StatusJ {
-        return StatusJ(this.email, this.timestamp, this.flagged, this.message)
+        return StatusJ(this.id, this.email, this.timestamp, this.flagged, this.message, this.likes)
+    }
+
+    fun addLike() {
+        this.likes += 1
+        return
     }
 }

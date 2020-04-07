@@ -3,6 +3,7 @@ package com.main.app.controller
 import com.main.app.json.ResponseJ
 import com.main.app.json.StatusJ
 import com.main.app.json.StatusJArray
+import com.main.app.json.StatusLikeJ
 import com.main.app.model.Status
 import com.main.app.repository.StatusRepository
 import org.springframework.beans.factory.annotation.Autowired
@@ -41,10 +42,34 @@ class StatusController {
         }
     }
 
-    @GetMapping("/update/flag")
-    fun updateStatusFlag(@RequestParam(value = "flagged", required = true) flagged: Boolean)
-    {
-        repository.findByMessageOrderById().first()
+    @PostMapping("/like")
+    fun addLike(@RequestBody status: StatusLikeJ): ResponseJ {
+        try {
+            val selected = repository.findById(status.id)
+            selected.addLike()
+
+            repository.deleteById(status.id)
+            repository.save(selected)
+            return ResponseJ(1, "N/A")
+        }
+        catch (e: EmptyResultDataAccessException) {
+            return ResponseJ(0, "No status with that id!")
+        }
+    }
+
+    @PostMapping("/flag")
+    fun updateStatusFlag(@RequestBody status: StatusLikeJ): ResponseJ {
+        try {
+            val selected = repository.findById(status.id)
+            selected.flag()
+
+            repository.deleteById(status.id)
+            repository.save(selected)
+            return ResponseJ(1, "N/A")
+        }
+        catch (e: EmptyResultDataAccessException) {
+            return ResponseJ(0, "No status with that id!")
+        }
     }
 
     @DeleteMapping("/delete/all")
