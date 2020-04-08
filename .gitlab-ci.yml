@@ -17,7 +17,7 @@ shell:
     - sudo dos2unix gradlew
     - sudo ./gradlew clean build
     - cd build/libs/
-    - suco mv -f websocket-0.0.1-SNAPSHOT-boot.jar /home/maw1/docker/websocket/
+    - sudo mv -f websocket-0.0.1-SNAPSHOT-boot.jar /home/maw1/docker/websocket/
     - cd /home/maw1/docker/websocket/
     - sudo docker build -t maximillion1112/websocket:latest . 
     - sudo docker run -d -p 4444:4444 --name websocket maximillion1112/websocket:latest
