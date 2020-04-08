@@ -9,7 +9,6 @@ shell:
     - sudo mv -f foodbuddy-0.0.2-boot.jar /home/maw1/docker/foodbuddy/
     - cd /home/maw1/docker/foodbuddy
     - sudo docker stop foodbuddy
-    - sudo docker stop websocket
     - sudo docker container prune -f
     - sudo docker build -t maximillion1112/foodbuddy:latest .
     - sudo docker run -d -p 8080:8080 --name foodbuddy maximillion1112/foodbuddy:latest
