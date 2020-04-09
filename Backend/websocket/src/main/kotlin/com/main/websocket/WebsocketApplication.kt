@@ -19,7 +19,7 @@ fun main(args: Array<String>) {
 	var clients = mutableListOf<Socket>()
 	var messages = mutableListOf<String>()
 
-	var fileName = "/home/maw1/docker/logs/msg_log.txt"
+	var fileName = "/log.txt"
 	File(fileName).forEachLine {
 		messages.add(it)
 	}
