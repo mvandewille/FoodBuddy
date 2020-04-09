@@ -5,7 +5,7 @@ import java.net.Socket
 import java.util.*
 
 
-class ClientHandler (private var s: Socket, private var num: Int, private var code: String, private var clients: MutableList<Socket>, private var messages: MutableList<String>): Runnable {
+class ClientHandler (private var s: Socket, private var num: Int, private var clients: MutableList<Socket>, private var messages: MutableList<String>): Runnable {
     var name: String? = null
     override fun run() {
         var inV: Scanner

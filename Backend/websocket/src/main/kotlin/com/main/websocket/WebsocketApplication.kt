@@ -15,11 +15,14 @@ class WebsocketApplication
 fun main(args: Array<String>) {
 	//runApplication<WebsocketApplication>(*args)
 
-	val code = "test"
-
 	var serverSocket: ServerSocket? = null
 	var clients = mutableListOf<Socket>()
 	var messages = mutableListOf<String>()
+
+	var fileName = "/home/maw1/docker/logs/msg_log.txt"
+	File(fileName).forEachLine {
+		messages.add(it)
+	}
 	var clientNum = 0
 	try{
 		serverSocket = ServerSocket(4444)
@@ -36,7 +39,7 @@ fun main(args: Array<String>) {
 			clientSocket = serverSocket.accept()
 			clients.add(clientSocket)
 
-			var t: Thread = Thread(ClientHandler(clientSocket, clientNum, code, clients, messages))
+			var t: Thread = Thread(ClientHandler(clientSocket, clientNum, clients, messages))
 			t.start()
 			clientNum++
 		} catch (e: IOException) {

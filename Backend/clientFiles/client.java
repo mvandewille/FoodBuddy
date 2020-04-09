@@ -9,6 +9,7 @@ public class client {
 
             System.out.print("enter your name: ");
             String name = input.nextLine();
+            input.close();
             Socket socket = new Socket("coms-309-hv-3.cs.iastate.edu", 4444);
             //Socket socket = new Socket("localhost", 4444);
 
