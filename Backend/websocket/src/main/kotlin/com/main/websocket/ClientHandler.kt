@@ -78,7 +78,7 @@ class ClientHandler (private var s: Socket, private var num: Int, private var cl
 
     private fun saveMsg(msg: String) {
         //var fileName = "/Users/max/Documents/Random_Code/docker/websockets/msgLogs.txt"
-        var fileName = "/home/maw1/docker/logs/msg_log.txt"
+        var fileName = "/log.txt"
         val file = File(fileName)
         file.appendText(msg)
     }
