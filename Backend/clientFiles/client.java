@@ -10,16 +10,18 @@ public class client {
             System.out.print("enter your name: ");
             String name = input.nextLine();
             Socket socket = new Socket("coms-309-hv-3.cs.iastate.edu", 4444);
+            //Socket socket = new Socket("localhost", 4444);
 
             PrintWriter out = new PrintWriter(new BufferedOutputStream(socket.getOutputStream()));
             out.println(name);
             out.flush();
-            System.out.println("test");
             Scanner in = new Scanner(new BufferedInputStream(socket.getInputStream()));
 
-            while(in.hasNextLine()) {
-                System.out.println(in.nextLine());
-                break;
+            String temp = "";
+            System.out.println();
+            while(!temp.equals("you are connected. Past messages are shown above")) {
+                temp = in.nextLine();
+                System.out.println(temp);
             }
             Thread t = new Thread(new MsgHandler(socket, name));
             t.start();

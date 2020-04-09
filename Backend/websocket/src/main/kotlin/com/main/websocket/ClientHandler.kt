@@ -1,9 +1,6 @@
 package com.main.websocket
 
-import java.io.BufferedInputStream
-import java.io.BufferedOutputStream
-import java.io.IOException
-import java.io.PrintWriter
+import java.io.*
 import java.net.Socket
 import java.util.*
 
@@ -24,7 +21,6 @@ class ClientHandler (private var s: Socket, private var num: Int, private var co
                 if(inV.hasNextLine()) {
                     authResponse = inV.nextLine()
                     name = authResponse
-                    println(name)
                 }
                 broadcast("Welcome $name to the chat!", clients)
                 catchUp(outV)
@@ -48,6 +44,7 @@ class ClientHandler (private var s: Socket, private var num: Int, private var co
     private fun broadcastMsg(tokens: List<String>, clients: MutableList<Socket>) {
         var outV: PrintWriter
         messages.add(tokens[0] + ": " + tokens[1])
+        saveMsg(tokens[0] + ": " + tokens[1])
         for(index in 0 until clients.size) {
             if(index == num)
                 continue
@@ -61,6 +58,7 @@ class ClientHandler (private var s: Socket, private var num: Int, private var co
     private fun broadcast(msg: String, clients: MutableList<Socket>) {
         var outV: PrintWriter
         messages.add(msg)
+        saveMsg(msg)
         for(index in 0 until clients.size) {
             if(index == num)
                 continue
@@ -76,5 +74,12 @@ class ClientHandler (private var s: Socket, private var num: Int, private var co
             client.println(it)
             client.flush()
         }
+    }
+
+    private fun saveMsg(msg: String) {
+        //var fileName = "/Users/max/Documents/Random_Code/docker/websockets/msgLogs.txt"
+        var fileName = "/home/maw1/docker/logs/msg_log.txt"
+        val file = File(fileName)
+        file.appendText(msg)
     }
 }
