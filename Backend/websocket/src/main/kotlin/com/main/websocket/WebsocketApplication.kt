@@ -19,6 +19,7 @@ fun main(args: Array<String>) {
 
 	var serverSocket: ServerSocket? = null
 	var clients = mutableListOf<Socket>()
+	var messages = mutableListOf<String>()
 	var clientNum = 0
 	try{
 		serverSocket = ServerSocket(4444)
@@ -35,7 +36,7 @@ fun main(args: Array<String>) {
 			clientSocket = serverSocket.accept()
 			clients.add(clientSocket)
 
-			var t: Thread = Thread(ClientHandler(clientSocket, clientNum, code, clients))
+			var t: Thread = Thread(ClientHandler(clientSocket, clientNum, code, clients, messages))
 			t.start()
 			clientNum++
 		} catch (e: IOException) {
