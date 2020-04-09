@@ -9,29 +9,17 @@ public class client {
 
             System.out.print("enter your name: ");
             String name = input.nextLine();
-            System.out.print("enter an access code: ");
-            String clientCode = input.nextLine();
             Socket socket = new Socket("coms-309-hv-3.cs.iastate.edu", 4444);
 
             PrintWriter out = new PrintWriter(new BufferedOutputStream(socket.getOutputStream()));
-            out.println(name + ":" + clientCode);
+            out.println(name);
             out.flush();
-
-            String buffer;
-            boolean auth = false;
+            System.out.println("test");
             Scanner in = new Scanner(new BufferedInputStream(socket.getInputStream()));
 
-            while(in.hasNextLine() || !auth) {
-                buffer = in.nextLine();
-                if (buffer.equals("incorrect access code")) {
-                    System.out.print("retry access code: ");
-                    clientCode = input.nextLine();
-                    out.println(name + ":" + clientCode);
-                    out.flush();
-                } else {
-                    System.out.println(buffer);
-                    break;
-                }
+            while(in.hasNextLine()) {
+                System.out.println(in.nextLine());
+                break;
             }
             Thread t = new Thread(new MsgHandler(socket, name));
             t.start();
