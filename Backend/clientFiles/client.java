@@ -1,4 +1,6 @@
 import java.util.Scanner;
+
+
 import java.net.*;
 import java.io.*;
 
@@ -9,21 +11,30 @@ public class client {
 
             System.out.print("enter your name: ");
             String name = input.nextLine();
-            input.close();
-            Socket socket = new Socket("coms-309-hv-3.cs.iastate.edu", 4444);
-            //Socket socket = new Socket("localhost", 4444);
+            //Socket socket = new Socket("coms-309-hv-3.cs.iastate.edu", 4444);
+            Socket socket = new Socket("localhost", 4444);
 
             PrintWriter out = new PrintWriter(new BufferedOutputStream(socket.getOutputStream()));
             out.println(name);
             out.flush();
+
+            String buffer;
+            Boolean done = false;
             Scanner in = new Scanner(new BufferedInputStream(socket.getInputStream()));
 
-            String temp = "";
             System.out.println();
-            while(!temp.equals("you are connected. Past messages are shown above")) {
-                temp = in.nextLine();
-                System.out.println(temp);
+
+            while(in.hasNextLine() || !done) {
+                buffer = in.nextLine();
+                if(!buffer.equals("you are connected. Past messages are shown above")) {
+                    System.out.println(parse(buffer));
+                }
+                else {
+                    System.out.println(parse(buffer));
+                    break;
+                }
             }
+
             Thread t = new Thread(new MsgHandler(socket, name));
             t.start();
 
@@ -37,6 +48,14 @@ public class client {
         System.out.print("Socket on Client Side: ");
         System.out.print("Local Address: " + s.getLocalAddress() + ":" + s.getLocalPort());
         System.out.println("  Remote Address: " + s.getRemoteSocketAddress());
+    }
+
+    public static String parse(String input) {
+        String[] temp = input.split(";");
+        if(temp.length > 1)
+            return temp[2].split(" ")[1] + " " + temp[0] + ": " + temp[1];
+        else    
+            return temp[0];
     }
 }
 
@@ -65,14 +84,14 @@ class MsgHandler implements Runnable {
                     String buffer = in.readLine();
                     if(buffer != null) {
                         System.out.print(backspace);
-                        System.out.println(buffer);
+                        System.out.println(parse(buffer));
                         System.out.print(name + ": ");
                     }
                 }
                 if(user.ready())
                     msg = user.readLine();
                     if(msg.length() > 0) {
-                        out.println(name + ":" + msg);
+                        out.println(name + ";" + msg);
                         msg = "";
                         System.out.print(name + ": ");
                     }
@@ -81,6 +100,14 @@ class MsgHandler implements Runnable {
             System.out.println("Err");
         }
 
+    }
+
+    public String parse(String input) {
+        String[] temp = input.split(";");
+        if(temp.length > 1)
+            return temp[2].split(" ")[1] + " " + temp[0] + ": " + temp[1];
+        else    
+            return temp[0];
     }
 
 }
