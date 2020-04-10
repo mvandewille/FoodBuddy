@@ -69,14 +69,73 @@ public class Parser {
 			checkProtein(in.get(i), values);
 			checkFat(in.get(i), values);
 			checkCholesterol(in.get(i), values);
+			checkCarb(in.get(i), values);
 		}
 		return values;
+	}
+	
+	public static void checkCarb(String in, Dictionary values) {
+		int per = 0;
+		String r[] = in.split(" ");
+		for(int i = 0; i < r.length-1; i++) {
+			per = 0;
+			if(r[i].contains("c") || r[i].contains("C")) {
+				per += 1;
+			}
+			if(r[i].contains("a")|| r[i].contains("A")) {
+				per += 1;
+			}
+			if(r[i].contains("r")|| r[i].contains("R")) {
+				per += 1;
+			}
+			if(r[i].contains("b")|| r[i].contains("B")) {
+				per += 1;
+			}
+			if(r[i].contains("o")|| r[i].contains("O")) {
+				per += 1;
+			}
+			if(r[i].contains("h")|| r[i].contains("H")) {
+				per += 1;
+			}
+			if(r[i].contains("y")|| r[i].contains("Y")) {
+				per += 1;
+			}
+			if(r[i].contains("d")|| r[i].contains("D")) {
+				per += 1;
+			}
+			if(r[i].contains("r")|| r[i].contains("R")) {
+				per += 1;
+			}
+			if(r[i].contains("a")|| r[i].contains("A")) {
+				per += 1;
+			}
+			if(r[i].contains("t")|| r[i].contains("T")) {
+				per += 1;
+			}
+			if(r[i].contains("e")|| r[i].contains("E")) {
+				per += 1;
+			}
+			if(r[i].contains("s")|| r[i].contains("S")) {
+				per += 1;
+			}
+			if(r[i].length() <= 13) {
+				if((per >= 11 || per == 5) && (r[i+1].matches(".*\\d.*") || r[i+1].toLowerCase().charAt(0) == 'o')) {
+					if(r[i+1].charAt(0) == 'o' || r[i+1].charAt(0) == 'O') {
+						values.put("Carbohydrates", 0);
+					}
+					else {
+						values.put("Carbohydrates", r[i+1].replaceAll("[^0-9]", ""));
+					}
+					return;
+				}
+			}
+		}
 	}
 	
 	public static void checkCholesterol(String in, Dictionary values) {
 		int per = 0;
 		String r[] = in.split(" ");
-		for(int i = 0; i < r.length; i++) {
+		for(int i = 0; i < r.length-1; i++) {
 			per = 0;
 			if(r[i].contains("c") || r[i].contains("C")) {
 				per += 1;
@@ -129,7 +188,7 @@ public class Parser {
 		int per = 0;
 		int per2 = 0;
 		String r[] = in.split(" ");
-		for(int i = 1; i < r.length; i++) {
+		for(int i = 1; i < r.length-1; i++) {
 			per = 0;
 			per2 = 0;
 			if(r[i].contains("f") || r[i].contains("F")) {
@@ -176,7 +235,7 @@ public class Parser {
 	public static void checkProtein(String in, Dictionary values) {
 		int per = 0;
 		String r[] = in.split(" ");
-		for(int i = 0; i < r.length; i++) {
+		for(int i = 0; i < r.length-1; i++) {
 			per = 0;
 			if(r[i].contains("p") || r[i].contains("P")) {
 				per += 1;
@@ -216,7 +275,7 @@ public class Parser {
 	public static void checkSodium(String in, Dictionary values) {
 		int per = 0;
 		String r[] = in.split(" ");
-		for(int i = 0; i < r.length; i++) {
+		for(int i = 0; i < r.length-1; i++) {
 			per = 0;
 			if(r[i].contains("s") || r[i].contains("S")) {
 				per += 1;
@@ -253,7 +312,7 @@ public class Parser {
 	public static void checkCalories(String in, Dictionary values) {
 		int per = 0;
 		String r[] = in.split(" ");
-		for(int i = 0; i < r.length; i++) {
+		for(int i = 0; i < r.length - 1; i++) {
 			per = 0;
 			if(r[i].contains("c") || r[i].contains("C")) {
 				per += 1;
