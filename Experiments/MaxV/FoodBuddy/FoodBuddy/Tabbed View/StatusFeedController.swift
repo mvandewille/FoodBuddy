@@ -37,9 +37,9 @@ class StatusFeedController : UIViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        getStatuses()
-        _tableView.delegate = self
-        _tableView.dataSource = self
+        //getStatuses()
+        //_tableView.delegate = self
+        //_tableView.dataSource = self
     }
     
     func getStatuses()
@@ -61,16 +61,5 @@ class StatusFeedController : UIViewController
             }
         }
         task.resume()
-    }
-}
-
-extension StatusFeedController : UITableViewDataSource, UITableViewDelegate
-{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return statuses.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
     }
 }

@@ -22,7 +22,7 @@ class ClientHandler (private var s: Socket, private var num: Int, private var cl
                     authResponse = inV.nextLine()
                     name = authResponse
                 }
-                broadcast("Welcome $name to the chat!", clients)
+                broadcast(Message("server", "Welcome $name!"), clients)
                 catchUp(outV)
                 outV.println("you are connected. Past messages are shown above")
                 outV.flush()
@@ -31,7 +31,7 @@ class ClientHandler (private var s: Socket, private var num: Int, private var cl
             var response: String
             while(inV.hasNextLine()) {
                 response = inV.nextLine()
-                broadcastMsg(response.split(":"), clients)
+                broadcast(Message(response.split(";")), clients)
             }
 
         } catch (e: IOException) {
@@ -41,32 +41,18 @@ class ClientHandler (private var s: Socket, private var num: Int, private var cl
         System.out.flush()
     }
 
-    private fun broadcastMsg(tokens: List<String>, clients: MutableList<Socket>) {
+    private fun broadcast(msg: Message, clients: MutableList<Socket>) {
         var outV: PrintWriter
-        messages.add(tokens[0] + ": " + tokens[1])
-        saveMsg(tokens[0] + ": " + tokens[1])
+        messages.add(msg.format())
+        saveMsg(msg.format())
         for(index in 0 until clients.size) {
             if(index == num)
                 continue
             outV = PrintWriter(BufferedOutputStream(clients[index].getOutputStream()))
-            outV.println(tokens[0] + ": " + tokens[1])
+            outV.println(msg.format())
             outV.flush()
         }
-        println(tokens[0] + ": " + tokens[1])
-    }
-
-    private fun broadcast(msg: String, clients: MutableList<Socket>) {
-        var outV: PrintWriter
-        messages.add(msg)
-        saveMsg(msg)
-        for(index in 0 until clients.size) {
-            if(index == num)
-                continue
-            outV = PrintWriter(BufferedOutputStream(clients[index].getOutputStream()))
-            outV.println(msg)
-            outV.flush()
-        }
-        println(msg)
+        msg.print()
     }
 
     private fun catchUp(client: PrintWriter) {
