@@ -11,8 +11,8 @@ public class client {
 
             System.out.print("enter your name: ");
             String name = input.nextLine();
-            //Socket socket = new Socket("coms-309-hv-3.cs.iastate.edu", 4444);
-            Socket socket = new Socket("localhost", 4444);
+            Socket socket = new Socket("coms-309-hv-3.cs.iastate.edu", 4444);
+            //Socket socket = new Socket("localhost", 4444);
 
             PrintWriter out = new PrintWriter(new BufferedOutputStream(socket.getOutputStream()));
             out.println(name);
