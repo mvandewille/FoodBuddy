@@ -8,6 +8,7 @@ public class Parser {
 	public static void main(String[] args)
 	{
 		Dictionary values = new Hashtable();
+		Dictionary values2 = new Hashtable();
 		String test = "Nutrition Facts\n"
 				+ "3 servings per container\n"
 				+ "Serving size 4 oz (113g)\n"
@@ -55,9 +56,40 @@ public class Parser {
 				+ "serving of food contributes to a daily diet. 2,000 calories a\n"
 				+ "day is used for general nutrition advice.";
 		
+			String test2 = "Nutrition Facts\n"
+					+ "Serving Size 1 Tbsp (21g)\n"
+					+ "Servings Per Container 11\n"
+					+ "\n"
+					+ "Amount Per Serving\n"
+					+ "alories 60\n"
+					+ "% Daily Value*\n"
+					+ "\n"
+					+ "Total Fat 0g 0%\n"
+					+ "Trans Fat 0g\n"
+					+ "\n"
+					+ "Sodium Omg 0%\n"
+					+ "Total Carbohydrate 179 6%\n"
+					+ "Sugars 16g\n"
+					+ "rotein Og 0%\n"
+					+ "aaa\n"
+					+ "\n"
+					+ "* Percent Daily Values are based\n"
+					+ "on a 2,000 calorie diet.\n"
+					+ "\n"
+					+ "\n"
+					+ "\n"
+					+ "8 0z. (2269) Honey\n"
+					+ "\n"
+					+ "Honey should not be fed to infants\n"
+					+ "under one year of age.";
+
+		
 			ArrayList<String> out = new ArrayList<String>();
+			ArrayList<String> out2 = new ArrayList<String>();	
 			split(test, out);
+			split(test2, out2);
 			values = readText(out, values);
+			values2 = readText(out2, values2);
 			
 	}
 	
@@ -119,7 +151,7 @@ public class Parser {
 				per += 1;
 			}
 			if(r[i].length() <= 13) {
-				if((per >= 11 || per == 5) && (r[i+1].matches(".*\\d.*") || r[i+1].toLowerCase().charAt(0) == 'o')) {
+				if((per >= 11 && (r[i+1].matches(".*\\d.*") || r[i+1].toLowerCase().charAt(0) == 'o')) || r[i].toLowerCase() == "carbs") {
 					if(r[i+1].charAt(0) == 'o' || r[i+1].charAt(0) == 'O') {
 						values.put("Carbohydrates", 0);
 					}
