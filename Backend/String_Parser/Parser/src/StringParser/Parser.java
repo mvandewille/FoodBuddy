@@ -9,6 +9,8 @@ public class Parser {
 	{
 		Dictionary values = new Hashtable();
 		Dictionary values2 = new Hashtable();
+		Dictionary values3 = new Hashtable();
+		Dictionary values4 = new Hashtable();
 		String test = "Nutrition Facts\n"
 				+ "3 servings per container\n"
 				+ "Serving size 4 oz (113g)\n"
@@ -83,14 +85,75 @@ public class Parser {
 					+ "Honey should not be fed to infants\n"
 					+ "under one year of age.";
 
+			String test3 = "Nutrition Facts\n"
+					+ "\n"
+					+ "1 serving per container\n"
+					+ "Serving size 1/4 cup (40g)\n"
+					+ "\n"
+					+ "Amount per serving\n"
+					+ "\n"
+					+ "Calories 120\n"
+					+ "% Daily Value*\n"
+					+ "Includes 0 Added Sugars 0%\n"
+					+ "Protein 1g\n"
+					+ "Vitamin D Omeg 0%\n"
+					+ "Calcium 25mg 2%\n"
+					+ "Iron 0.7mg 4%\n"
+					+ "Potassium 298mg 6%\n"
+					+ "a\n"
+					+ "* The % Daily Value (DV) tells you how much a nutrient in\n"
+					+ "a serving of food contributes to a daily diet. 2,000 calories\n"
+					+ "a day is used for general nutrition advice\n"
+					+ "Ingredients: California Raisins";
 		
+			String test4 = "Nutrition Facts\n"
+					+ "--------------------------------------------------\n"
+					+ "1 serving per container\n"
+					+ "Serving size 1/4 cup (40g)\n"
+					+ "---------------------------------------------------\n"
+					+ "---------------------------------------------------\n"
+					+ "Amount per serving\n"
+					+ "Calories 120\n"
+					+ "--------------------------------------------------\n"
+					+ "% Daily Value*\n"
+					+ "Total Fat Og 0%\n"
+					+ "---------------------------------------------------\n"
+					+ "Saturated Fat 0g\n"
+					+ "Trans Fat 0g\n"
+					+ "Cholesterol Omg\n"
+					+ "0%\n"
+					+ "0%\n"
+					+ "---------------------------------------------------\n"
+					+ "Total Carbohydrate 32g 12%\n"
+					+ "Dietary Fiber 2g 7%\n"
+					+ "--------------------------------------------------\n"
+					+ "Total Sugars 26g\n"
+					+ "Includes 0 Added Sugars 0%\n"
+					+ "Protein 1g\n"
+					+ "---------------------------------------------------\n"
+					+ "---------------------------------------------------\n"
+					+ "Vitamin D Omeg\n"
+					+ "Calcium 25mg\n"
+					+ "Iron 0.7mg\n"
+					+ "---------------------------------------------------\n"
+					+ "Potassium 298mg\n"
+					+ "---------------------------------------------------";
+
+			
 			ArrayList<String> out = new ArrayList<String>();
 			ArrayList<String> out2 = new ArrayList<String>();	
+			ArrayList<String> out3 = new ArrayList<String>();
+			ArrayList<String> out4 = new ArrayList<String>();
 			split(test, out);
 			split(test2, out2);
+			split(test3, out3);
+			split(test4, out4);
 			values = readText(out, values);
 			values2 = readText(out2, values2);
+			values3 = readText(out3, values3);
+			values4 = readText(out4, values4);
 			
+			values = null;
 	}
 	
 	public static Dictionary readText(ArrayList<String> in, Dictionary values)
