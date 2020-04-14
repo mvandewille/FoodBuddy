@@ -16,17 +16,27 @@ class ClientHandler (private var s: Socket, private var num: Int, private var cl
             outV = PrintWriter(BufferedOutputStream(s.getOutputStream()))
             var authResponse = "0"
             var auth = false
-
+            outV.println("sup bro")
+            outV.flush()
             while(!auth) {
                 if(inV.hasNextLine()) {
                     authResponse = inV.nextLine()
-                    name = authResponse
+                    println(authResponse)
+                    if(authResponse.contains("name;")) {
+                        name = authResponse.split(";")[1]
+                        println(name)
+                    }
                 }
-                broadcast(Message("server", "Welcome $name!"), clients)
-                catchUp(outV)
-                outV.println("you are connected. Past messages are shown above")
-                outV.flush()
-                auth = true
+                if( name != null ) {
+                    broadcast(Message("server", "Welcome $name!"), clients)
+                    catchUp(outV)
+                    outV.println("you are connected")
+                    outV.flush()
+                    auth = true
+                }
+                else {
+                    println("name is null")
+                }
             }
             var response: String
             while(inV.hasNextLine()) {

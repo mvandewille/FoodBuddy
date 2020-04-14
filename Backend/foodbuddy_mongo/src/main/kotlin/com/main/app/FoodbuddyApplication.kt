@@ -2,7 +2,9 @@ package com.main.app
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories
+import java.net.*
+import java.io.*
+import kotlin.system.exitProcess
 
 @SpringBootApplication
 class FoodbuddyApplication

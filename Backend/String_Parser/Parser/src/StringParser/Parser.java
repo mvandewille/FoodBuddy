@@ -153,7 +153,17 @@ public class Parser {
 			values3 = readText(out3, values3);
 			values4 = readText(out4, values4);
 			
+			printString(values);
+			printString(values2);
+			printString(values3);
+			printString(values4);
+			
 			values = null;
+	}
+	
+	public static void printString(Dictionary values)
+	{
+		System.out.println(values.toString());
 	}
 	
 	public static Dictionary readText(ArrayList<String> in, Dictionary values)
