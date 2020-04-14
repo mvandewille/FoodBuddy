@@ -52,7 +52,7 @@ public class client {
 
     public static String parse(String input) {
         String[] temp = input.split(";");
-        if(temp.length > 1)
+        if(temp.length > 2)
             return temp[2].split(" ")[1] + " " + temp[0] + ": " + temp[1];
         else    
             return temp[0];
