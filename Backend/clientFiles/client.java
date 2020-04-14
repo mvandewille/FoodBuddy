@@ -10,12 +10,12 @@ public class client {
             Scanner input = new Scanner(System.in);
 
             System.out.print("enter your name: ");
-            String name = input.nextLine();
+            String name = "name;" + input.nextLine();
             Socket socket = new Socket("coms-309-hv-3.cs.iastate.edu", 4444);
             //Socket socket = new Socket("localhost", 4444);
 
             PrintWriter out = new PrintWriter(new BufferedOutputStream(socket.getOutputStream()));
-            out.println("name;" + name);
+            out.println(name);
             out.flush();
 
             String buffer;
