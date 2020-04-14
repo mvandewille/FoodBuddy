@@ -15,7 +15,7 @@ public class client {
             //Socket socket = new Socket("localhost", 4444);
 
             PrintWriter out = new PrintWriter(new BufferedOutputStream(socket.getOutputStream()));
-            out.println(name);
+            out.println("name;" + name);
             out.flush();
 
             String buffer;

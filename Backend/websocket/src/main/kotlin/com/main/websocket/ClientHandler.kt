@@ -20,8 +20,9 @@ class ClientHandler (private var s: Socket, private var num: Int, private var cl
             while(!auth) {
                 if(inV.hasNextLine()) {
                     authResponse = inV.nextLine()
+                    print(authResponse)
                     if(authResponse.contains("name;"))
-                        name = authResponse
+                        name = authResponse.split(";")[1]
                     else
                         continue
                 }
