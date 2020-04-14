@@ -78,7 +78,9 @@ class ClientHandler (private var s: Socket, private var num: Int, private var cl
         val file = File(fileName)
         file.appendText(msg + "\n")
 
-        if (msg.contains("&&wipe"))
+        if (msg.contains("&&wipe")) {
+            println("wiped.")
             file.writeText("")
+        }
     }
 }
