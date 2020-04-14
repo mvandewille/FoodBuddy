@@ -23,7 +23,7 @@ class ClientHandler (private var s: Socket, private var num: Int, private var cl
                     if(authResponse.contains("name;"))
                         name = authResponse.split(";")[1]
                     else
-                        print("$authResponse/n")
+                        print("$authResponse /n")
                         continue
                 }
                 broadcast(Message("server", "Welcome $name!"), clients)
