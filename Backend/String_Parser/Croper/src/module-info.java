@@ -1,0 +1,3 @@
+module Croper {
+	//requires opencv;
+}
