@@ -24,7 +24,7 @@ fun main(args: Array<String>) {
 	}
 	var clientNum = 0
 	try{
-		serverSocket = ServerSocket(4444)
+		serverSocket = ServerSocket(8080)
 	} catch (e: IOException) {
 		println("Can't listen on port: 4444")
 		exitProcess(-1)
