@@ -24,7 +24,7 @@ class ClientHandler (private var s: Socket, private var num: Int, private var cl
                 }
                 broadcast(Message("server", "Welcome $name!"), clients)
                 catchUp(outV)
-                outV.println("you are connected. Past messages are shown above")
+                outV.println("you are connected")
                 outV.flush()
                 auth = true
             }
