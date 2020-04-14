@@ -20,6 +20,8 @@ class ClientHandler (private var s: Socket, private var num: Int, private var cl
             while(!auth) {
                 if(inV.hasNextLine()) {
                     authResponse = inV.nextLine()
+                    if(authResponse.equals("GET / HTTP/1.1"))
+                        continue
                     name = authResponse
                 }
                 broadcast(Message("server", "Welcome $name!"), clients)

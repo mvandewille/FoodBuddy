@@ -26,8 +26,7 @@ public class client {
 
             while(in.hasNextLine() || !done) {
                 buffer = in.nextLine();
-                if(!buffer.equals("you are connected. Past messages are shown above")) {
-                    System.out.println(buffer);
+                if(!buffer.equals("you are connected")) {
                     System.out.println(parse(buffer));
                 }
                 else {
