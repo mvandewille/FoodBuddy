@@ -68,11 +68,13 @@ class GroupChatController : UIViewController
     @IBAction func submitMsg(_ sender: Any)
     {
         let str = UserDefaults.standard.string(forKey: "email")! + ";" + _textField.text
+        messageArr.append(Message(str, isIncoming: false))
         sendMessage(str)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        startObservingKeyboard()
         let appearance = UINavigationBarAppearance()
         appearance.shadowColor = .clear
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
@@ -90,7 +92,7 @@ class GroupChatController : UIViewController
 
     func connectToSocket()
     {
-        let url = URL(string: "http://coms-309-hv-3.cs.iastate.edu:4444")!
+        let url = URL(string: "ws://coms-309-hv-3.cs.iastate.edu:4444")!
         socketConnection = URLSession.shared.webSocketTask(with: url)
         socketConnection?.resume()
     }
@@ -109,21 +111,20 @@ class GroupChatController : UIViewController
     func setReceiveHandler()
     {
         socketConnection?.receive { result in
-            defer { self.setReceiveHandler() }
-
-            do {
-                let message = try result.get()
+            switch result {
+            case .failure(let error):
+                print("Failed to receive message: \(error)")
+            case .success(let message):
                 switch message {
-                case let .string(string):
-                    print(string)
-                    //TODO - Handle string
-                case let .data(data):
-                    print(data)
+                case .string(let text):
+                    print("Received message: \(text)")
+                case .data(let data):
+                    print("Received data message: \(data)")
                 @unknown default:
-                    print("Unknown message type")
+                    fatalError()
                 }
-            }   catch {
-                print(error)
+                
+                self.setReceiveHandler()
             }
         }
     }
