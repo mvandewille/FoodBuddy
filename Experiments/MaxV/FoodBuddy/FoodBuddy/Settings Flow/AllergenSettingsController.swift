@@ -73,8 +73,8 @@ class AllergenSettingsController : UIViewController, UITableViewDelegate, UITabl
     {
         self._allergenTable.allowsMultipleSelection = true
         self._allergenTable.allowsMultipleSelectionDuringEditing = true
-        _allergenTable.dataSource = self
-        _allergenTable.delegate = self
+        self._allergenTable.dataSource = self
+        self._allergenTable.delegate = self
     }
     
     func DoFieldCheck(email: String)

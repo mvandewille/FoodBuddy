@@ -53,8 +53,6 @@ class AddFoodController: UIViewController
         foodDict["fat"] = Double(_fat.text!)
         foodDict["cholesterol"] = Double(_cholesterol.text!)
         foodDict["amount"] = Double(_servings.text!)
-        foodDict["sodium"] = foodDict["sodium"] as! Double / 1000
-        foodDict["cholesterol"] = foodDict["cholesterol"] as! Double / 1000
         doHTTP(dict: foodDict)
     }
     

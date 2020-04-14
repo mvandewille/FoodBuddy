@@ -22,7 +22,7 @@
 		AFE02B49240C949200CBA9CD /* AllergenSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE02B48240C949200CBA9CD /* AllergenSettingsController.swift */; };
 		AFE02B4D240C94F700CBA9CD /* AccountSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE02B4C240C94F700CBA9CD /* AccountSettingsController.swift */; };
 		AFE02B4F240CB57A00CBA9CD /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE02B4E240CB57A00CBA9CD /* SettingsController.swift */; };
-		AFEDE97D241EBE9A000ABD7F /* StatusFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEDE97C241EBE9A000ABD7F /* StatusFeedController.swift */; };
+		AFEDE97D241EBE9A000ABD7F /* GroupChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEDE97C241EBE9A000ABD7F /* GroupChatController.swift */; };
 		AFFAF99F240701B70079837D /* AllergenAddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFAF99E240701B70079837D /* AllergenAddController.swift */; };
 		AFFEDE7823D9F0B5002D6E82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFEDE7723D9F0B5002D6E82 /* AppDelegate.swift */; };
 		AFFEDE7A23D9F0B5002D6E82 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFEDE7923D9F0B5002D6E82 /* SceneDelegate.swift */; };
@@ -70,7 +70,7 @@
 		AFE02B48240C949200CBA9CD /* AllergenSettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergenSettingsController.swift; sourceTree = "<group>"; };
 		AFE02B4C240C94F700CBA9CD /* AccountSettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsController.swift; sourceTree = "<group>"; };
 		AFE02B4E240CB57A00CBA9CD /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
-		AFEDE97C241EBE9A000ABD7F /* StatusFeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusFeedController.swift; sourceTree = "<group>"; };
+		AFEDE97C241EBE9A000ABD7F /* GroupChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatController.swift; sourceTree = "<group>"; };
 		AFFAF99E240701B70079837D /* AllergenAddController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergenAddController.swift; sourceTree = "<group>"; };
 		AFFEDE7423D9F0B5002D6E82 /* FoodBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFFEDE7723D9F0B5002D6E82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,7 +145,7 @@
 				AF5B649323FC9C00004708F3 /* TabbedPageViewController.swift */,
 				AF15B5FA2417575D002D60CB /* DailyViewController.swift */,
 				AF93C91B2404DFB700E5091F /* CameraViewController.swift */,
-				AFEDE97C241EBE9A000ABD7F /* StatusFeedController.swift */,
+				AFEDE97C241EBE9A000ABD7F /* GroupChatController.swift */,
 				AFFEDEA923DB80B2002D6E82 /* TabbedPages.storyboard */,
 			);
 			path = "Tabbed View";
@@ -383,7 +383,7 @@
 				AF15B5F924174D17002D60CB /* AddFoodController.swift in Sources */,
 				AFB06D6723F9E99C001B652B /* LoginViewController.swift in Sources */,
 				AFFAF99F240701B70079837D /* AllergenAddController.swift in Sources */,
-				AFEDE97D241EBE9A000ABD7F /* StatusFeedController.swift in Sources */,
+				AFEDE97D241EBE9A000ABD7F /* GroupChatController.swift in Sources */,
 				AF15B5F72417397F002D60CB /* StatusAddController.swift in Sources */,
 				AFE02B4F240CB57A00CBA9CD /* SettingsController.swift in Sources */,
 				AF15B5F02412EB78002D60CB /* FriendsSettingController.swift in Sources */,

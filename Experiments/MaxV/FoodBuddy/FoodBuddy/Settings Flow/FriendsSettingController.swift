@@ -80,9 +80,8 @@ class FriendsSettingController: UIViewController, UITableViewDelegate, UITableVi
     
     func getFollowers()
     {
-        let userDict = UserDefaults.standard.dictionary(forKey: "userInfo")
-        let email = userDict?["email"] as! String
-        let urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/find/following?email=" + email
+        let email = UserDefaults.standard.string(forKey: "email")
+        let urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/find/following?email=" + email!
         let newString = urlStr.replacingOccurrences(of: " ", with: "+")
         let url = URL(string: newString)
         var request = URLRequest(url: url!)
@@ -176,7 +175,7 @@ class FriendsSettingController: UIViewController, UITableViewDelegate, UITableVi
                 {
                     DispatchQueue.main.async {
                         self._errorLabel.textColor = UIColor.green
-                        self._errorLabel.text = "No longer following " + following
+                        self._errorLabel.text = "Unfollowed" + following
                         self._errorLabel.isHidden = false
                         self.friendsArr.remove(at: self.friendsArr.firstIndex(of: following)!)
                         self._friendsTable.beginUpdates()
