@@ -21,6 +21,7 @@ class ClientHandler (private var s: Socket, private var num: Int, private var cl
                 if(inV.hasNextLine()) {
                     authResponse = inV.nextLine()
                     name = authResponse
+                    println(name)
                 }
                 broadcast(Message("server", "Welcome $name!"), clients)
                 catchUp(outV)
