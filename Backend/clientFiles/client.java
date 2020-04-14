@@ -66,7 +66,7 @@ class MsgHandler implements Runnable {
 
     MsgHandler(Socket s, String name) {
         this.s = s;
-        this.name = name;
+        this.name = name.split(";")[1];
         for(int i = 0; i < name.length() + 2; i++)
             this.backspace = this.backspace + "\b";
     }
