@@ -16,13 +16,14 @@ class ClientHandler (private var s: Socket, private var num: Int, private var cl
             outV = PrintWriter(BufferedOutputStream(s.getOutputStream()))
             var authResponse = "0"
             var auth = false
-            var ignoreStrs = arrayOf("GET / HTTP/1.1", "Host: coms-309-hv-3.cs.iastate.edu:4444", "Sec-WebSocket-Key: E5XxuwGBOhGWjzgVFK0sxA==")
+
             while(!auth) {
                 if(inV.hasNextLine()) {
                     authResponse = inV.nextLine()
-                    if(authResponse in ignoreStrs)
+                    if(authResponse.contains("name;"))
+                        name = authResponse
+                    else
                         continue
-                    name = authResponse
                 }
                 broadcast(Message("server", "Welcome $name!"), clients)
                 catchUp(outV)
