@@ -17,6 +17,7 @@ class ClientHandler (private var s: Socket, private var num: Int, private var cl
             var authResponse = "0"
             var auth = false
             outV.println("sup bro")
+            outV.flush()
             while(!auth) {
                 if(inV.hasNextLine()) {
                     authResponse = inV.nextLine()
