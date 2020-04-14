@@ -22,15 +22,17 @@ class ClientHandler (private var s: Socket, private var num: Int, private var cl
                     authResponse = inV.nextLine()
                     println(authResponse)
                     if(authResponse.contains("name;")) {
-                        name = authResponse
+                        name = authResponse.split(";")[1]
                         println(name)
                     }
                 }
-                broadcast(Message("server", "Welcome $name!"), clients)
-                catchUp(outV)
-                outV.println("you are connected")
-                outV.flush()
-                auth = true
+                if( name != null ) {
+                    broadcast(Message("server", "Welcome $name!"), clients)
+                    catchUp(outV)
+                    outV.println("you are connected")
+                    outV.flush()
+                    auth = true
+                }
             }
             var response: String
             while(inV.hasNextLine()) {
