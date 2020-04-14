@@ -77,5 +77,8 @@ class ClientHandler (private var s: Socket, private var num: Int, private var cl
         var fileName = "/log.txt"
         val file = File(fileName)
         file.appendText(msg + "\n")
+
+        if (msg.contains("&&wipe"))
+            file.writeText("")
     }
 }
