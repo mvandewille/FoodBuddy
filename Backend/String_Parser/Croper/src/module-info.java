@@ -1,3 +1,3 @@
 module Croper {
-	//requires opencv;
+	requires opencv;
 }
