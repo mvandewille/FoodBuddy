@@ -33,6 +33,9 @@ class ClientHandler (private var s: Socket, private var num: Int, private var cl
                     outV.flush()
                     auth = true
                 }
+                else {
+                    println("name is null")
+                }
             }
             var response: String
             while(inV.hasNextLine()) {
