@@ -26,6 +26,9 @@ class ClientHandler (private var s: Socket, private var num: Int, private var cl
                         name = authResponse.split(";")[1]
                         println(name)
                     }
+                    else {
+                        println("name is null")
+                    }
                 }
                 if( name != null ) {
                     broadcast(Message("server", "Welcome $name!"), clients)
@@ -33,9 +36,6 @@ class ClientHandler (private var s: Socket, private var num: Int, private var cl
                     outV.println("you are connected")
                     outV.flush()
                     auth = true
-                }
-                else {
-                    println("name is null")
                 }
             }
             var response: String
