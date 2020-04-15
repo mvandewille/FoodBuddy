@@ -1,7 +1,6 @@
 package com.main.app.repository
 
 import com.main.app.model.Status
-import kotlin.collections.MutableList
 import org.springframework.data.mongodb.repository.MongoRepository
 
 interface StatusRepository : MongoRepository<Status, String>{

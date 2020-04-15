@@ -1,6 +1,5 @@
 shell:
   script:
-    - sudo docker cp websocket:/log.txt /home/maw1/docker/websocket/msg_log.txt
     - cd /home/maw1/builds/c6ptsrCn/0/cs309/spring-2020/hv_3/Backend/foodbuddy_mongo
     - sudo chmod +x gradlew
     - sudo dos2unix gradlew
@@ -9,19 +8,8 @@ shell:
     - sudo mv -f foodbuddy-0.0.2-boot.jar /home/maw1/docker/foodbuddy/
     - cd /home/maw1/docker/foodbuddy
     - sudo docker stop foodbuddy
-    - sudo docker stop websocket
     - sudo docker container prune -f
     - sudo docker build -t maximillion1112/foodbuddy:latest .
     - sudo docker run -d -p 8080:8080 --name foodbuddy maximillion1112/foodbuddy:latest
-    - cd /home/maw1/builds/c6ptsrCn/0/cs309/spring-2020/hv_3/Backend/websocket
-    - sudo chmod +x gradlew
-    - sudo dos2unix gradlew
-    - sudo ./gradlew clean build
-    - cd build/libs/
-    - sudo mv -f websocket-0.0.1-SNAPSHOT-boot.jar /home/maw1/docker/websocket/
-    - cd /home/maw1/docker/websocket/
-    - sudo docker build -t maximillion1112/websocket:latest . 
-    - sudo docker run -d -p 4444:4444 --name websocket maximillion1112/websocket:latest
-    - sleep 5
+    - sleep 10
     - sudo docker logs foodbuddy | sudo tee /home/maw1/docker/logs/food_log.txt
-    - sudo docker logs websocket | sudo tee /home/maw1/docker/logs/web_log.txt

@@ -1,40 +1,24 @@
 package com.main.app.websocket
 
-import com.main.app.json.ResponseJ
 import com.main.app.model.Message
-import com.main.app.model.Status
 import com.main.app.repository.MessageRepository
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Hashtable;
-import java.util.Iterator;
-import java.util.List;
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Controller
+import org.springframework.web.bind.annotation.RequestParam
+import java.io.IOException
+import javax.websocket.*
+import javax.websocket.server.PathParam
+import javax.websocket.server.ServerEndpoint
 
-import javax.websocket.OnClose;
-import javax.websocket.OnError;
-import javax.websocket.OnMessage;
-import javax.websocket.OnOpen;
-import javax.websocket.Session;
-import javax.websocket.server.PathParam;
-import javax.websocket.server.ServerEndpoint;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import java.lang.StringBuilder
 
 @Controller
-@ServerEndpoint(value = "/chat/{username}")
+@ServerEndpoint(value = "/chat")
 class ChatSocket {
 
-    lateinit var msgRepo: MessageRepository
-
-    @Autowired
-    fun setMessageRepository(repo: MessageRepository) {
-        msgRepo = repo
-    }
+    //@Autowired
+    //lateinit var msgRepo: MessageRepository
 
     private val sessionUsernameMap: MutableMap<Session, String> = mutableMapOf<Session, String>()
     private val usernameSessionMap: MutableMap<String, Session> = mutableMapOf<String, Session>()
@@ -42,18 +26,18 @@ class ChatSocket {
     private val logger: Logger = LoggerFactory.getLogger(ChatSocket::class.java)
 
     @OnOpen
-    fun onOpen(session: Session, @PathParam("username") username: String) {
+    fun onOpen(session: Session, @RequestParam(value = "username", required = true) username: String) {
         logger.info("Entered into Open")
 
-        sessionUsernameMap.put(session, username)
-        usernameSessionMap.put(username, session)
+        sessionUsernameMap[session] = "max"
+        usernameSessionMap["max"] = session
 
 
     }
 
     @OnMessage
     fun onMessage(session: Session, message: String) {
-        logger.info("Entered into Message: Got Message: " + message)
+        logger.info("Entered into Message: Got Message: $message")
         val username = sessionUsernameMap[session] ?: error("username is Null!")
 
         if(message.startsWith("@")) {
@@ -66,7 +50,7 @@ class ChatSocket {
             broadcast("$username: $message")
         }
 
-        msgRepo.save(Message(getNewId(), username, message))
+        //msgRepo.save(Message(getNewId(), username, message))
     }
 
     @OnClose
@@ -88,7 +72,7 @@ class ChatSocket {
 
     private fun sendMessageToParticularUser(username: String, message: String) {
         try {
-            usernameSessionMap[username]!!.basicRemote.sendText(message)
+            (usernameSessionMap[username] ?: error("user not found")).basicRemote.sendText(message)
         }
         catch (e: IOException) {
             logger.info("Exception: " + e.message.toString())
@@ -97,8 +81,9 @@ class ChatSocket {
     }
 
     private fun broadcast(message: String) {
-        sessionUsernameMap.forEach { (session, s) ->
+        sessionUsernameMap.forEach { (session, username) ->
             try {
+                println(username)
                 session.basicRemote.sendText(message)
             }
             catch (e: IOException) {
@@ -108,25 +93,25 @@ class ChatSocket {
         }
     }
 
-    private fun getChatHistory(): String {
-        val messages = msgRepo.findAll() ?: error("no messages!")
+//    private fun getChatHistory(): String {
+//        val messages = msgRepo.findAll() ?: error("no messages!")
+//
+//        val sb = StringBuilder()
+//        if(messages.size != 0) {
+//            messages.forEach {
+//                sb.append(it.getFrom() + ": " + it.getText() + "\n")
+//            }
+//        }
+//        return sb.toString()
+//    }
 
-        val sb = StringBuilder()
-        if(messages.size != 0) {
-            messages.forEach {
-                sb.append(it.getFrom() + ": " + it.getText() + "\n")
-            }
-        }
-        return sb.toString()
-    }
-
-    fun getNewId(): Long {
-        val list = msgRepo.findAllByOrderByIdDesc()
-        if(!list.isEmpty()) {
-            return list.first().getId() + 1
-        }
-        else {
-            return 0.toLong()
-        }
-    }
+//    fun getNewId(): Long {
+//        val list = msgRepo.findAllByOrderByIdDesc()
+//        if(!list.isEmpty()) {
+//            return list.first().getId() + 1
+//        }
+//        else {
+//            return 0.toLong()
+//        }
+//    }
 }
