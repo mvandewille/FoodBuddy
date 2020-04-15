@@ -30,7 +30,7 @@ class ChatSocket {
     }
 
     private val logger = LoggerFactory.getLogger(ChatSocket::class.java)
-
+    private var session: Session? = null
     @OnOpen
     @Throws(IOException::class)
     fun onOpen(session: Session, @PathParam("username") username: String) {
@@ -39,6 +39,7 @@ class ChatSocket {
         // store connecting user information
         sessionUsernameMap[session] = username
         usernameSessionMap[username] = session
+        this.session = session
 
         //Send chat history to the newly connected user
         //sendMessageToParticularUser(username, chatHistory)
@@ -116,7 +117,8 @@ class ChatSocket {
     private fun broadcast(message: Message) {
         sessionUsernameMap.forEach { (session: Session, username: String?) ->
             try {
-                session.basicRemote.sendText(message.toString())
+                if(session != this.session)
+                    session.basicRemote.sendText(message.toString())
             } catch (e: IOException) {
                 logger.info("Exception: " + e.message.toString())
                 e.printStackTrace()
