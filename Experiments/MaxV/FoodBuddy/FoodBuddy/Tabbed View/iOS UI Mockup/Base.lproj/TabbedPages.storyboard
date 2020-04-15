@@ -2,8 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -247,16 +246,16 @@
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c2P-lg-vZL">
                                 <rect key="frame" x="0.0" y="763" width="414" height="50"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Type something..." translatesAutoresizingMaskIntoConstraints="NO" id="TKn-Zl-nKT">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" text="Type something..." translatesAutoresizingMaskIntoConstraints="NO" id="TKn-Zl-nKT">
                                         <rect key="frame" x="0.0" y="0.0" width="364" height="50"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="textColor" name="placeholderBody"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" systemColor="placeholderTextColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ukf-VH-LoY">
                                         <rect key="frame" x="364" y="0.0" width="50" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="aGx-el-vyV"/>
                                         </constraints>
@@ -275,7 +274,7 @@
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0aN-9J-GRc">
-                                <rect key="frame" x="0.0" y="88" width="414" height="675"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="699"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -301,6 +300,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQT-dV-20d" userLabel="Content Label">
                                                     <rect key="frame" x="88" y="12" width="42" height="68"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubble_pointer_incoming" translatesAutoresizingMaskIntoConstraints="NO" id="jwp-OV-wbP" userLabel="Text Bubble Pointer">
@@ -315,6 +315,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="VQT-dV-20d" firstAttribute="top" secondItem="FOf-EY-E8O" secondAttribute="top" constant="12" id="1An-wo-Mdd"/>
                                                 <constraint firstItem="F7k-8Y-tft" firstAttribute="centerY" secondItem="VQT-dV-20d" secondAttribute="centerY" id="AHI-zn-8Lb"/>
@@ -366,7 +367,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfu-Od-gKv" userLabel="Content Label">
                                                     <rect key="frame" x="284" y="12" width="42" height="68"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubble_pointer_outgoing" translatesAutoresizingMaskIntoConstraints="NO" id="Dz7-cj-hft" userLabel="Text Bubble Pointer">
@@ -413,6 +414,31 @@
                                             <outlet property="_profileBubble" destination="9sz-VP-9xT" id="LUE-Hb-Ohw"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="serverMessageCell" id="ihh-Do-KGS" customClass="serverMessageCell" customModule="FoodBuddy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="252" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ihh-Do-KGS" id="veg-Mn-nYz">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSb-0z-aPG" userLabel="Joined Label">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="zSb-0z-aPG" secondAttribute="trailing" id="5a3-Dm-YWb"/>
+                                                <constraint firstItem="zSb-0z-aPG" firstAttribute="top" secondItem="veg-Mn-nYz" secondAttribute="top" id="HNM-17-xFo"/>
+                                                <constraint firstItem="zSb-0z-aPG" firstAttribute="leading" secondItem="veg-Mn-nYz" secondAttribute="leading" id="ZOm-vb-iEk"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="_joinLabel" destination="zSb-0z-aPG" id="eGq-U3-yF2"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
@@ -420,7 +446,7 @@
                         <constraints>
                             <constraint firstItem="WiN-CQ-tMP" firstAttribute="trailing" secondItem="0aN-9J-GRc" secondAttribute="trailing" id="1sg-HO-Qco"/>
                             <constraint firstItem="WiN-CQ-tMP" firstAttribute="trailing" secondItem="c2P-lg-vZL" secondAttribute="trailing" id="MAz-ct-HQg"/>
-                            <constraint firstItem="0aN-9J-GRc" firstAttribute="top" secondItem="WiN-CQ-tMP" secondAttribute="top" id="NU8-2x-J9m"/>
+                            <constraint firstItem="0aN-9J-GRc" firstAttribute="top" secondItem="WiN-CQ-tMP" secondAttribute="top" constant="20" id="NU8-2x-J9m"/>
                             <constraint firstItem="0aN-9J-GRc" firstAttribute="leading" secondItem="WiN-CQ-tMP" secondAttribute="leading" id="Tw2-rz-AJu"/>
                             <constraint firstItem="c2P-lg-vZL" firstAttribute="leading" secondItem="WiN-CQ-tMP" secondAttribute="leading" id="UoG-mw-BCA"/>
                             <constraint firstItem="WiN-CQ-tMP" firstAttribute="bottom" secondItem="c2P-lg-vZL" secondAttribute="bottom" id="VdO-nz-dbP"/>
@@ -428,6 +454,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WiN-CQ-tMP"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Chat" image="ellipses.bubble.fill" catalog="system" id="dCp-Lo-SDp"/>
                     <navigationItem key="navigationItem" id="ZdE-FC-5by"/>
                     <connections>
                         <outlet property="_submit" destination="Ukf-VH-LoY" id="ukZ-CY-YeN"/>
@@ -438,7 +465,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="glq-TA-YUJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4107.2463768115949" y="736.60714285714278"/>
+            <point key="canvasLocation" x="3288" y="737"/>
         </scene>
         <!--Tabbed Page View Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -453,7 +480,7 @@
                     <connections>
                         <segue destination="CJh-tU-vAY" kind="relationship" relationship="viewControllers" id="cTH-iC-DOZ"/>
                         <segue destination="DzS-Rt-WDy" kind="relationship" relationship="viewControllers" id="f5S-9w-13b"/>
-                        <segue destination="RpH-gd-atl" kind="relationship" relationship="viewControllers" id="cfe-gr-vp2"/>
+                        <segue destination="HuW-Us-8iA" kind="relationship" relationship="viewControllers" id="JEm-m0-5AZ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -575,32 +602,6 @@
             </objects>
             <point key="canvasLocation" x="1707" y="737"/>
         </scene>
-        <!--Feed-->
-        <scene sceneID="gMY-B5-DVe">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RpH-gd-atl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Feed" image="person.2.fill" catalog="system" id="alx-Dg-o8s">
-                        <color key="badgeColor" red="0.3294117647" green="0.64313725489999995" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </tabBarItem>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3Xy-GR-dcl">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="HuW-Us-8iA" kind="relationship" relationship="rootViewController" id="bBM-gs-wZX"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aN3-1N-8fc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3328" y="737"/>
-        </scene>
         <!--Daily-->
         <scene sceneID="pTi-xL-RC0">
             <objects>
@@ -632,12 +633,9 @@
         <image name="bubble_pointer_outgoing" width="17" height="19"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="camera.fill" catalog="system" width="128" height="96"/>
+        <image name="ellipses.bubble.fill" catalog="system" width="128" height="110"/>
         <image name="globe" catalog="system" width="128" height="121"/>
         <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
-        <image name="person.2.fill" catalog="system" width="128" height="80"/>
         <image name="plus" catalog="system" width="128" height="113"/>
-        <namedColor name="placeholderBody">
-            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>

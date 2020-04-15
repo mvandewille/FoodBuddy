@@ -35,6 +35,7 @@ class SignUpViewController: UIViewController
     {
         DispatchQueue.main.async {
             self._error_label.isHidden = true
+            self._submit_btn.layer.cornerRadius = 5
         }
         let email = _email_text.text
         let password = _pwd_text.text

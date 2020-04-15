@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -60,6 +60,11 @@
 		AF15B5F62417397F002D60CB /* StatusAddController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusAddController.swift; sourceTree = "<group>"; };
 		AF15B5F824174D17002D60CB /* AddFoodController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodController.swift; sourceTree = "<group>"; };
 		AF15B5FA2417575D002D60CB /* DailyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyViewController.swift; sourceTree = "<group>"; };
+		AF43904B24465A6800847AB8 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		AF43904C24466C0A00847AB8 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF43905424466E4500847AB8 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF43905624466E7B00847AB8 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF43905A24466EBE00847AB8 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF5B649323FC9C00004708F3 /* TabbedPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedPageViewController.swift; sourceTree = "<group>"; };
 		AF5B649923FCD378004708F3 /* AdditionalUserInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalUserInfoController.swift; sourceTree = "<group>"; };
 		AF5B649B23FCE5F5004708F3 /* FoodProcessing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FoodProcessing.storyboard; sourceTree = "<group>"; };
@@ -116,6 +121,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42E4C6B4FC3227BFC855A520 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF43905A24466EBE00847AB8 /* Starscream.framework */,
+				AF43905624466E7B00847AB8 /* Starscream.framework */,
+				AF43905424466E4500847AB8 /* Starscream.framework */,
+				AF43904C24466C0A00847AB8 /* Starscream.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6940761DC8D87E70A12AA3BE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AF15B5F3241738E1002D60CB /* Add Status Flow */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +210,8 @@
 				AFFEDE8F23D9F0B7002D6E82 /* FoodBuddytests */,
 				AFFEDE9A23D9F0B7002D6E82 /* FoodBuddyUITests */,
 				AFFEDE7523D9F0B5002D6E82 /* Products */,
+				6940761DC8D87E70A12AA3BE /* Pods */,
+				42E4C6B4FC3227BFC855A520 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -214,6 +239,7 @@
 				AF15B5F3241738E1002D60CB /* Add Status Flow */,
 				AFFEDE8223D9F0B7002D6E82 /* Assets.xcassets */,
 				AFFEDE8723D9F0B7002D6E82 /* Info.plist */,
+				AF43904B24465A6800847AB8 /* MyPlayground.playground */,
 			);
 			path = FoodBuddy;
 			sourceTree = "<group>";
