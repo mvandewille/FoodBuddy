@@ -6,7 +6,6 @@ import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
-import org.springframework.web.bind.annotation.RequestParam
 import java.io.IOException
 import javax.websocket.*
 import javax.websocket.server.PathParam
@@ -14,7 +13,7 @@ import javax.websocket.server.ServerEndpoint
 
 
 @Controller
-@ServerEndpoint(value = "/chat")
+@ServerEndpoint(value = "/chat/{username}")
 class ChatSocket {
 
     //@Autowired
@@ -26,11 +25,11 @@ class ChatSocket {
     private val logger: Logger = LoggerFactory.getLogger(ChatSocket::class.java)
 
     @OnOpen
-    fun onOpen(session: Session, @RequestParam(value = "username", required = true) username: String) {
+    fun onOpen(session: Session, @PathParam("username") username: String) {
         logger.info("Entered into Open")
 
-        sessionUsernameMap[session] = "max"
-        usernameSessionMap["max"] = session
+        sessionUsernameMap[session] = username
+        usernameSessionMap[username] = session
 
 
     }
