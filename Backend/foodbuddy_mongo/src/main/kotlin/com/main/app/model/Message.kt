@@ -32,7 +32,7 @@ class Message (
     }
 
     override fun toString(): String {
-        return this.from + ": " + this.text
+        return this.from + ";" + this.text
     }
 
 }

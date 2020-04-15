@@ -41,11 +41,11 @@ class ChatSocket {
         usernameSessionMap[username] = session
 
         //Send chat history to the newly connected user
-        sendMessageToParticularUser(username, chatHistory)
+        //sendMessageToParticularUser(username, chatHistory)
 
         // broadcast that new user joined
-        val message = "User:$username has Joined the Chat"
-        broadcast(message)
+        val message = "$username has Joined the Chat"
+        broadcast(Message(getNewId(), "server", message))
     }
 
     @OnMessage
@@ -66,10 +66,9 @@ class ChatSocket {
         }
         else if (message.contains("&&wipe")) {
             (msgRepo ?: error("no repo")).deleteAllBy()
-            broadcast("$username wiped all messages!")
+            broadcast(Message(getNewId(), "server","$username wiped all messages!"))
         } else { // broadcast
-            broadcast("$username: $message")
-            msgRepo!!.save<Message>(Message(getNewId(), username, message))
+            broadcast(Message(getNewId(), username, message))
         }
     }
 
@@ -85,7 +84,7 @@ class ChatSocket {
 
         // broadcase that the user disconnected
         val message = "$username disconnected"
-        broadcast(message)
+        broadcast(Message(getNewId(), "server", message))
     }
 
     @OnError
@@ -114,15 +113,16 @@ class ChatSocket {
         }
     }
 
-    private fun broadcast(message: String) {
+    private fun broadcast(message: Message) {
         sessionUsernameMap.forEach { (session: Session, username: String?) ->
             try {
-                session.basicRemote.sendText(message)
+                session.basicRemote.sendText(message.toString())
             } catch (e: IOException) {
                 logger.info("Exception: " + e.message.toString())
                 e.printStackTrace()
             }
         }
+        msgRepo!!.save<Message>(Message(getNewId(), message.getFrom(), message.getText()))
     }// convert the list to a string
 
     // Gets the Chat history from the repository
