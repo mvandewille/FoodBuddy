@@ -13,7 +13,7 @@ class Message (
     init {
         if(this.time == "") {
             this.time = DateTimeFormatter
-                    .ofPattern("MM/dd/yyyy HH:mm:ss")
+                    .ofPattern("HH:mm")
                     .withZone(ZoneOffset.systemDefault())
                     .format(Instant.now())
         }
@@ -32,7 +32,7 @@ class Message (
     }
 
     override fun toString(): String {
-        return this.from + ";" + this.text
+        return this.from + ";" + this.text + ";" + this.time
     }
 
 }

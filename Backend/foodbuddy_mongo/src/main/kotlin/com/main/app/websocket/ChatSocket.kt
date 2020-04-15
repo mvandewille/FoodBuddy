@@ -62,8 +62,8 @@ class ChatSocket {
             val destUsername = message.split(" ").toTypedArray()[0].substring(1)
 
             // send the message to the sender and receiver
-            sendMessageToParticularUser(destUsername, "[DM] $username: $message")
-            sendMessageToParticularUser(username, "[DM] $username: $message")
+            sendMessageToParticularUser(destUsername, "[DM] $message")
+            sendMessageToParticularUser(username, "[DM] $message")
         }
         else if (message.contains("&&wipe")) {
             (msgRepo ?: error("no repo")).deleteAllBy()
@@ -95,9 +95,9 @@ class ChatSocket {
         throwable.printStackTrace()
     }
 
-    private fun sendMessageToParticularUser(username: String?, message: String) {
+    private fun sendMessageToParticularUser(username: String, message: String) {
         try {
-            usernameSessionMap[username]!!.basicRemote.sendText(message)
+            usernameSessionMap[username]!!.basicRemote.sendText(Message(getNewId(), username, message).toString())
         } catch (e: IOException) {
             logger.info("Exception: " + e.message.toString())
             e.printStackTrace()
