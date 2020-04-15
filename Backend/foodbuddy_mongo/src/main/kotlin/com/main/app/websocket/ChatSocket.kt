@@ -1,116 +1,152 @@
 package com.main.app.websocket
 
+import com.main.app.json.ResponseJ
 import com.main.app.model.Message
+import com.main.app.model.Status
 import com.main.app.repository.MessageRepository
-import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
 import java.io.IOException
+import java.util.*
 import javax.websocket.*
 import javax.websocket.server.PathParam
 import javax.websocket.server.ServerEndpoint
 
 
-@Controller
-@ServerEndpoint(value = "/chat/{username}")
+@Controller // this is needed for this to be an endpoint to springboot
+@ServerEndpoint(value = "/chat/{username}") // this is Websocket url
 class ChatSocket {
+    /*
+   * Grabs the MessageRepository singleton from the Spring Application
+   * Context.  This works because of the @Controller annotation on this
+   * class and because the variable is declared as static.
+   * There are other ways to set this. However, this approach is
+   * easiest.
+	 */
+    @Autowired
+    fun setMessageRepository(repo: MessageRepository?) {
+        msgRepo = repo // we are setting the static variable
+    }
 
-    //@Autowired
-    //lateinit var msgRepo: MessageRepository
-
-    private val sessionUsernameMap: MutableMap<Session, String> = mutableMapOf<Session, String>()
-    private val usernameSessionMap: MutableMap<String, Session> = mutableMapOf<String, Session>()
-
-    private val logger: Logger = LoggerFactory.getLogger(ChatSocket::class.java)
+    private val logger = LoggerFactory.getLogger(ChatSocket::class.java)
 
     @OnOpen
+    @Throws(IOException::class)
     fun onOpen(session: Session, @PathParam("username") username: String) {
         logger.info("Entered into Open")
 
+        // store connecting user information
         sessionUsernameMap[session] = username
         usernameSessionMap[username] = session
 
+        //Send chat history to the newly connected user
+        sendMessageToParticularUser(username, chatHistory)
 
+        // broadcast that new user joined
+        val message = "User:$username has Joined the Chat"
+        broadcast(message)
     }
 
     @OnMessage
+    @Throws(IOException::class)
     fun onMessage(session: Session, message: String) {
-        logger.info("Entered into Message: Got Message: $message")
-        val username = sessionUsernameMap[session] ?: error("username is Null!")
 
-        if(message.startsWith("@")) {
-            val destUsername = message.split(" ")[0].substring(1)
+        // Handle new messages
+        logger.info("Entered into Message: Got Message:$message")
+        val username = sessionUsernameMap[session] ?: error("user not found")
 
+        // Direct message to a user using the format "@username <message>"
+        if (message.startsWith("@")) {
+            val destUsername = message.split(" ").toTypedArray()[0].substring(1)
+
+            // send the message to the sender and receiver
             sendMessageToParticularUser(destUsername, "[DM] $username: $message")
             sendMessageToParticularUser(username, "[DM] $username: $message")
-        }
-        else {
+        } else { // broadcast
             broadcast("$username: $message")
         }
 
-        //msgRepo.save(Message(getNewId(), username, message))
+        // Saving chat history to repository
+        msgRepo!!.save<Message>(Message(getNewId(), username, message))
     }
 
     @OnClose
+    @Throws(IOException::class)
     fun onClose(session: Session) {
-        logger.info("Entered on Close")
+        logger.info("Entered into Close")
 
-        val username = sessionUsernameMap[session] ?: error("username is Null!")
+        // remove the user connection information
+        val username = sessionUsernameMap[session]
         sessionUsernameMap.remove(session)
         usernameSessionMap.remove(username)
 
-        broadcast("$username disconnected")
+        // broadcase that the user disconnected
+        val message = "$username disconnected"
+        broadcast(message)
     }
 
     @OnError
-    fun onError(session: Session, throwable: Throwable) {
-        logger.info("Entered on Error")
+    fun onError(session: Session?, throwable: Throwable) {
+        // Do error handling here
+        logger.info("Entered into Error")
         throwable.printStackTrace()
     }
 
-    private fun sendMessageToParticularUser(username: String, message: String) {
+    private fun sendMessageToParticularUser(username: String?, message: String) {
         try {
-            (usernameSessionMap[username] ?: error("user not found")).basicRemote.sendText(message)
+            usernameSessionMap[username]!!.basicRemote.sendText(message)
+        } catch (e: IOException) {
+            logger.info("Exception: " + e.message.toString())
+            e.printStackTrace()
         }
-        catch (e: IOException) {
+    }
+    private fun sendMessageToParticularUser(username: String?, messages: MutableList<Message>) {
+        try {
+            messages.forEach {
+                usernameSessionMap[username]!!.basicRemote.sendText(it.toString())
+            }
+        } catch (e: IOException) {
             logger.info("Exception: " + e.message.toString())
             e.printStackTrace()
         }
     }
 
     private fun broadcast(message: String) {
-        sessionUsernameMap.forEach { (session, username) ->
+        sessionUsernameMap.forEach { (session: Session, username: String?) ->
             try {
-                println(username)
                 session.basicRemote.sendText(message)
-            }
-            catch (e: IOException) {
+            } catch (e: IOException) {
                 logger.info("Exception: " + e.message.toString())
                 e.printStackTrace()
             }
         }
+    }// convert the list to a string
+
+    // Gets the Chat history from the repository
+    private val chatHistory: MutableList<Message>
+        private get() {
+            return msgRepo!!.findAll()
+        }
+
+    private fun getNewId(): Long {
+        val list = (msgRepo ?: error("Repo not initialized")).findAllByOrderByIdDesc()
+        if(list.isNotEmpty()) {
+            return list.first().getId()+1
+        }
+        else {
+            return 0.toLong()
+        }
     }
 
-//    private fun getChatHistory(): String {
-//        val messages = msgRepo.findAll() ?: error("no messages!")
-//
-//        val sb = StringBuilder()
-//        if(messages.size != 0) {
-//            messages.forEach {
-//                sb.append(it.getFrom() + ": " + it.getText() + "\n")
-//            }
-//        }
-//        return sb.toString()
-//    }
+    companion object {
+        // cannot autowire static directly (instead we do it by the below
+        // method
+        private var msgRepo: MessageRepository? = null
 
-//    fun getNewId(): Long {
-//        val list = msgRepo.findAllByOrderByIdDesc()
-//        if(!list.isEmpty()) {
-//            return list.first().getId() + 1
-//        }
-//        else {
-//            return 0.toLong()
-//        }
-//    }
-}
+        // Store all socket session and their corresponding username.
+        private val sessionUsernameMap: MutableMap<Session, String> = Hashtable()
+        private val usernameSessionMap: MutableMap<String?, Session> = Hashtable()
+    }
+} // end of Class
+

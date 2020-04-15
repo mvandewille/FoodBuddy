@@ -31,4 +31,8 @@ class Message (
         return this.text
     }
 
+    override fun toString(): String {
+        return this.from + ": " + this.text
+    }
+
 }

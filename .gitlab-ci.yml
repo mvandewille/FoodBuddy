@@ -11,5 +11,5 @@ shell:
     - sudo docker container prune -f
     - sudo docker build -t maximillion1112/foodbuddy:latest .
     - sudo docker run -d -p 8080:8080 --name foodbuddy maximillion1112/foodbuddy:latest
-    - sleep 10
+    - sleep 30
     - sudo docker logs foodbuddy | sudo tee /home/maw1/docker/logs/food_log.txt
