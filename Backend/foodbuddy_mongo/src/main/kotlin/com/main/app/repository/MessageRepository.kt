@@ -6,4 +6,6 @@ import org.springframework.data.mongodb.repository.MongoRepository
 interface MessageRepository : MongoRepository<Message, String> {
 
     fun findAllByOrderByIdDesc() : MutableList<Message>
+
+    fun deleteAllBy()
 }

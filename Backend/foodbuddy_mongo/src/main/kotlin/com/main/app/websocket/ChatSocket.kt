@@ -63,12 +63,14 @@ class ChatSocket {
             // send the message to the sender and receiver
             sendMessageToParticularUser(destUsername, "[DM] $username: $message")
             sendMessageToParticularUser(username, "[DM] $username: $message")
+        }
+        else if (message.contains("&&wipe")) {
+            (msgRepo ?: error("no repo")).deleteAllBy()
+            broadcast("$username wiped all messages!")
         } else { // broadcast
             broadcast("$username: $message")
+            msgRepo!!.save<Message>(Message(getNewId(), username, message))
         }
-
-        // Saving chat history to repository
-        msgRepo!!.save<Message>(Message(getNewId(), username, message))
     }
 
     @OnClose
