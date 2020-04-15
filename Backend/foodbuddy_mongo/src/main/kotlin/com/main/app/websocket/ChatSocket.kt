@@ -60,10 +60,10 @@ class ChatSocket {
         // Direct message to a user using the format "@username <message>"
         if (message.startsWith("@")) {
             val destUsername = message.split(" ").toTypedArray()[0].substring(1)
+            val new_msg = message.substring(destUsername.length + 2)
 
             // send the message to the sender and receiver
-            sendMessageToParticularUser(destUsername, "[DM] $message")
-            sendMessageToParticularUser(username, "[DM] $message")
+            sendMessageToParticularUser(destUsername, "[DM] $new_msg")
         }
         else if (message.contains("&&wipe")) {
             (msgRepo ?: error("no repo")).deleteAllBy()
@@ -97,7 +97,7 @@ class ChatSocket {
 
     private fun sendMessageToParticularUser(username: String, message: String) {
         try {
-            usernameSessionMap[username]!!.basicRemote.sendText(Message(getNewId(), username, message).toString())
+            (usernameSessionMap[username] ?: error("user not found")).basicRemote.sendText(Message(getNewId(), username, message).toString())
         } catch (e: IOException) {
             logger.info("Exception: " + e.message.toString())
             e.printStackTrace()
@@ -117,7 +117,7 @@ class ChatSocket {
     private fun broadcast(message: Message) {
         sessionUsernameMap.forEach { (session: Session, username: String?) ->
             try {
-                if(session != this.session)
+                if(message.getFrom() == "server" || session != this.session)
                     session.basicRemote.sendText(message.toString())
             } catch (e: IOException) {
                 logger.info("Exception: " + e.message.toString())
