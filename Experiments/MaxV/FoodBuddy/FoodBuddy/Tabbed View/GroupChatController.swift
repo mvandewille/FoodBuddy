@@ -23,18 +23,21 @@ extension Message
 {
     init(_ messageStr: String, isIncoming: Bool)
     {
-        let strArr = messageStr.split(separator: ";")
-        name = String(strArr[0])
-        message = String(strArr[1])
         incoming = isIncoming
-        if (strArr.count >= 3)
+        if isIncoming == true
         {
+            let strArr = messageStr.split(separator: ";")
+            name = String(strArr[0])
+            message = String(strArr[1])
             timestamp = String(strArr[2])
+            return
         }
-        else
-        {
-            timestamp = ""
-        }
+        name = UserDefaults.standard.string(forKey: "email")!
+        message = messageStr
+        incoming = false
+        let date = Date() // save date, so all components use the same date
+        let calendar = Calendar.current // or e.g. Calendar(identifier: .persian)
+        timestamp = String(calendar.component(.hour, from: date)) + ":" + String(calendar.component(.minute, from: date))
     }
 }
 
@@ -54,6 +57,11 @@ class outgoingMessageCell : UITableViewCell
     @IBOutlet weak var _messageBubble: UIView!
 }
 
+class serverMessageCell : UITableViewCell
+{
+    @IBOutlet weak var _joinLabel: UILabel!
+}
+
 class GroupChatController : UIViewController
 {
     @IBOutlet weak var _textField: UITextView!
@@ -63,68 +71,81 @@ class GroupChatController : UIViewController
     
     var messageArr : [Message] = []
     
-    var socketConnection: URLSessionWebSocketTask?
+    var isConnected = false
+    
+    var socketConnection = URLSession.shared.webSocketTask(with: URL(string: "ws://coms-309-hv-3.cs.iastate.edu:8080/chat/" + UserDefaults.standard.string(forKey: "email")!)!)
 
     @IBAction func submitMsg(_ sender: Any)
     {
-        let str = UserDefaults.standard.string(forKey: "email")! + ";" + _textField.text
-        messageArr.append(Message(str, isIncoming: false))
-        sendMessage(str)
+        let str = _textField.text
+        messageArr.append(Message(str!, isIncoming: false))
+        sendMessage(str!)
+        DispatchQueue.main.async {
+            self._tableView.reloadData()
+        }
+        self.addTextViewPlaceholer()
+        self.view.endEditing(true)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        startObservingKeyboard()
-        let appearance = UINavigationBarAppearance()
-        appearance.shadowColor = .clear
-        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.layoutIfNeeded()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
         title = "Global Chat"
         _tableView.dataSource = self
         _tableView.delegate = self
-        connectToSocket()
-        sendMessage(UserDefaults.standard.string(forKey: "email")!)
-        setReceiveHandler()
+        connectToServer()
+        receiveMessage()
+        _textField.delegate = self
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        socketConnection?.cancel()
-    }
-
-    func connectToSocket()
+    override func viewWillDisappear(_ animated: Bool)
     {
-        let url = URL(string: "ws://coms-309-hv-3.cs.iastate.edu:4444")!
-        socketConnection = URLSession.shared.webSocketTask(with: url)
-        socketConnection?.resume()
+        socketConnection.cancel()
     }
-
-    func sendMessage(_ str : String)
+    
+    func receiveMessage()
     {
-        let msg = URLSessionWebSocketTask.Message.string(str)
-
-        socketConnection?.send(msg) { error in
-            if let error = error {
-                print(error)
-            }
-        }
-    }
-
-    func setReceiveHandler()
-    {
-        socketConnection?.receive { result in
+        socketConnection.receive { result in
             switch result {
             case .failure(let error):
                 print("Failed to receive message: \(error)")
             case .success(let message):
                 switch message {
                 case .string(let text):
-                    print("Received message: \(text)")
+                    print("Received text message: \(text)")
+                    self.messageArr.append(Message(text, isIncoming: true))
+                    DispatchQueue.main.async {
+                        self._tableView.reloadData()
+                    }
                 case .data(let data):
-                    print("Received data message: \(data)")
+                    print("Received binary message: \(data)")
                 @unknown default:
                     fatalError()
                 }
                 
-                self.setReceiveHandler()
+                self.receiveMessage()
+            }
+        }
+    }
+    
+    func connectToServer()
+    {
+        socketConnection.resume()
+    }
+    
+    func sendMessage(_ str : String)
+    {
+        let msg = URLSessionWebSocketTask.Message.string(str)
+        socketConnection.send(msg) { error in
+            if let error = error {
+                print("Websocket sending error: \(error)")
             }
         }
     }
@@ -149,67 +170,19 @@ class GroupChatController : UIViewController
     }
     
     // MARK: - Keyboard
-    private func startObservingKeyboard() {
-      let notificationCenter = NotificationCenter.default
-      notificationCenter.addObserver(
-        forName: UIResponder.keyboardWillShowNotification,
-        object: nil,
-        queue: nil,
-        using: keyboardWillAppear)
-      notificationCenter.addObserver(
-        forName: UIResponder.keyboardWillHideNotification,
-        object: nil,
-        queue: nil,
-        using: keyboardWillDisappear)
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            self.view.frame.origin.y = 0 - keyboardSize.height
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        self.view.frame.origin.y = 0
     }
     
-    deinit {
-      let notificationCenter = NotificationCenter.default
-      notificationCenter.removeObserver(
-        self,
-        name: UIResponder.keyboardWillShowNotification,
-        object: nil)
-      notificationCenter.removeObserver(
-        self,
-        name: UIResponder.keyboardWillHideNotification,
-        object: nil)
-    }
-    
-    private func keyboardWillAppear(_ notification: Notification) {
-      let key = UIResponder.keyboardFrameEndUserInfoKey
-      guard let keyboardFrame = notification.userInfo?[key] as? CGRect else {
-        return
-      }
-      
-      let safeAreaBottom = view.safeAreaLayoutGuide.layoutFrame.maxY
-      let viewHeight = view.bounds.height
-      let safeAreaOffset = viewHeight - safeAreaBottom
-      
-      let lastVisibleCell = _tableView.indexPathsForVisibleRows?.last
-      
-      UIView.animate(
-        withDuration: 0.3,
-        delay: 0,
-        options: [.curveEaseInOut],
-        animations: {
-          self.textAreaBottom.constant = -keyboardFrame.height + safeAreaOffset
-          self.view.layoutIfNeeded()
-          if let lastVisibleCell = lastVisibleCell {
-            self._tableView.scrollToRow(
-              at: lastVisibleCell, at: .bottom, animated: false)
-          }
-      })
-    }
-    
-    private func keyboardWillDisappear(_ notification: Notification) {
-      UIView.animate(
-        withDuration: 0.3,
-        delay: 0,
-        options: [.curveEaseInOut],
-        animations: {
-          self.textAreaBottom.constant = 0
-          self.view.layoutIfNeeded()
-      })
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
     }
     
 }
@@ -225,9 +198,15 @@ extension GroupChatController: UITableViewDataSource, UITableViewDelegate
     {
         var incomingCell : incomingMessageCell
         var outgoingCell : outgoingMessageCell
+        var serverCell : serverMessageCell
         
         let message = messageArr[indexPath.row]
-        
+        if (message.name == "server")
+        {
+            serverCell = tableView.dequeueReusableCell(withIdentifier: "serverMessageCell", for: indexPath) as! serverMessageCell
+            serverCell._joinLabel.text = message.message
+            return serverCell
+        }
         if (message.incoming == true)
         {
             incomingCell = tableView.dequeueReusableCell(withIdentifier: "incomingMessageCell", for: indexPath) as! incomingMessageCell
@@ -235,7 +214,7 @@ extension GroupChatController: UITableViewDataSource, UITableViewDelegate
             incomingCell._messageBubble.layer.cornerRadius = 5
             incomingCell._profileBubble.layer.cornerRadius = 20
             incomingCell._profileBubble.backgroundColor = getNameColor(message.name)
-            incomingCell._initialLabel.text = String(message.name[message.name.index(message.name.startIndex, offsetBy: 0)])
+            incomingCell._initialLabel.text = String(message.name[message.name.index(message.name.startIndex, offsetBy: 0)]).uppercased()
             return incomingCell
         }
         else
@@ -255,12 +234,12 @@ extension GroupChatController: UITableViewDataSource, UITableViewDelegate
 extension GroupChatController: UITextViewDelegate {
   private func addTextViewPlaceholer() {
     _textField.text = "Type something..."
-    _textField.textColor = .lightGray
+    _textField.textColor = .placeholderText
   }
   
   private func removeTextViewPlaceholder() {
     _textField.text = ""
-    _textField.textColor = .black
+    _textField.textColor = .label
   }
   
   func textViewDidBeginEditing(_ textView: UITextView) {

@@ -21,6 +21,7 @@ class LoginViewController: UIViewController
         super.viewDidLoad()
         DispatchQueue.main.async {
             self._error_label.isHidden = true
+            self._login_button.layer.cornerRadius = 5
         }
         // Do any additional setup after loading the view.
     }
@@ -105,6 +106,7 @@ class LoginViewController: UIViewController
             if let dictionary = response as? [String: Any] {
                 if let hasLifestyle = dictionary["lifestyle"] as? String
                 {
+                    UserDefaults.standard.set(dictionary["name"], forKey: "userName")
                     DispatchQueue.main.async {
                         self.performSegue(withIdentifier: "loginSuccess", sender: nil)
                     }

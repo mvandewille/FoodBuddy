@@ -87,7 +87,7 @@ class DailyViewController : UIViewController
         let trackLayer = CAShapeLayer()
         
         trackLayer.path = circularPath.cgPath
-        trackLayer.strokeColor = UIColor.darkGray.cgColor
+        trackLayer.strokeColor = UIColor.placeholderText.cgColor
         trackLayer.lineWidth = 20
         trackLayer.fillColor = UIColor.clear.cgColor
         trackLayer.lineCap = .round

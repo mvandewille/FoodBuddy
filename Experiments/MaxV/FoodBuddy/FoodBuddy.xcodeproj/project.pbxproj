@@ -26,7 +26,6 @@
 		AFFAF99F240701B70079837D /* AllergenAddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFAF99E240701B70079837D /* AllergenAddController.swift */; };
 		AFFEDE7823D9F0B5002D6E82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFEDE7723D9F0B5002D6E82 /* AppDelegate.swift */; };
 		AFFEDE7A23D9F0B5002D6E82 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFEDE7923D9F0B5002D6E82 /* SceneDelegate.swift */; };
-		AFFEDE7C23D9F0B5002D6E82 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFEDE7B23D9F0B5002D6E82 /* FirstViewController.swift */; };
 		AFFEDE8123D9F0B5002D6E82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFFEDE7F23D9F0B5002D6E82 /* Main.storyboard */; };
 		AFFEDE8323D9F0B7002D6E82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFFEDE8223D9F0B7002D6E82 /* Assets.xcassets */; };
 		AFFEDE8623D9F0B7002D6E82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFFEDE8423D9F0B7002D6E82 /* LaunchScreen.storyboard */; };
@@ -60,6 +59,11 @@
 		AF15B5F62417397F002D60CB /* StatusAddController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusAddController.swift; sourceTree = "<group>"; };
 		AF15B5F824174D17002D60CB /* AddFoodController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodController.swift; sourceTree = "<group>"; };
 		AF15B5FA2417575D002D60CB /* DailyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyViewController.swift; sourceTree = "<group>"; };
+		AF43904B24465A6800847AB8 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		AF43904C24466C0A00847AB8 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF43905424466E4500847AB8 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF43905624466E7B00847AB8 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF43905A24466EBE00847AB8 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF5B649323FC9C00004708F3 /* TabbedPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedPageViewController.swift; sourceTree = "<group>"; };
 		AF5B649923FCD378004708F3 /* AdditionalUserInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalUserInfoController.swift; sourceTree = "<group>"; };
 		AF5B649B23FCE5F5004708F3 /* FoodProcessing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FoodProcessing.storyboard; sourceTree = "<group>"; };
@@ -75,7 +79,6 @@
 		AFFEDE7423D9F0B5002D6E82 /* FoodBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFFEDE7723D9F0B5002D6E82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFFEDE7923D9F0B5002D6E82 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AFFEDE7B23D9F0B5002D6E82 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		AFFEDE8023D9F0B5002D6E82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AFFEDE8223D9F0B7002D6E82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AFFEDE8523D9F0B7002D6E82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -116,6 +119,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42E4C6B4FC3227BFC855A520 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF43905A24466EBE00847AB8 /* Starscream.framework */,
+				AF43905624466E7B00847AB8 /* Starscream.framework */,
+				AF43905424466E4500847AB8 /* Starscream.framework */,
+				AF43904C24466C0A00847AB8 /* Starscream.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6940761DC8D87E70A12AA3BE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AF15B5F3241738E1002D60CB /* Add Status Flow */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +208,8 @@
 				AFFEDE8F23D9F0B7002D6E82 /* FoodBuddytests */,
 				AFFEDE9A23D9F0B7002D6E82 /* FoodBuddyUITests */,
 				AFFEDE7523D9F0B5002D6E82 /* Products */,
+				6940761DC8D87E70A12AA3BE /* Pods */,
+				42E4C6B4FC3227BFC855A520 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -205,7 +228,6 @@
 			children = (
 				AFFEDE7723D9F0B5002D6E82 /* AppDelegate.swift */,
 				AFFEDE7923D9F0B5002D6E82 /* SceneDelegate.swift */,
-				AFFEDE7B23D9F0B5002D6E82 /* FirstViewController.swift */,
 				AF5B649723FCD2ED004708F3 /* Login Flow */,
 				AF5B649823FCD30D004708F3 /* Tabbed View */,
 				AFE02B44240B689500CBA9CD /* Food Processing */,
@@ -214,6 +236,7 @@
 				AF15B5F3241738E1002D60CB /* Add Status Flow */,
 				AFFEDE8223D9F0B7002D6E82 /* Assets.xcassets */,
 				AFFEDE8723D9F0B7002D6E82 /* Info.plist */,
+				AF43904B24465A6800847AB8 /* MyPlayground.playground */,
 			);
 			path = FoodBuddy;
 			sourceTree = "<group>";
@@ -376,7 +399,6 @@
 				AFB06D6B23FB4EAE001B652B /* SignUpViewController.swift in Sources */,
 				AF5B649A23FCD378004708F3 /* AdditionalUserInfoController.swift in Sources */,
 				AF5B649423FC9C00004708F3 /* TabbedPageViewController.swift in Sources */,
-				AFFEDE7C23D9F0B5002D6E82 /* FirstViewController.swift in Sources */,
 				AF15B5FB2417575D002D60CB /* DailyViewController.swift in Sources */,
 				AFFEDE7823D9F0B5002D6E82 /* AppDelegate.swift in Sources */,
 				AFB06D6923FB49BC001B652B /* LoginPromptViewController.swift in Sources */,

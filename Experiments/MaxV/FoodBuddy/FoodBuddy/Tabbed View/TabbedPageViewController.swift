@@ -13,8 +13,6 @@ class TabbedPageViewController : UITabBarController
 {
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.tintColor = UIColor.white
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         // Do any additional setup after loading the view.
     }
     

@@ -73,6 +73,9 @@ class AllergenAddController : UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        DispatchQueue.main.async {
+            self._continue.layer.cornerRadius = 5
+        }
         incomingDict = UserDefaults.standard.dictionary(forKey: "userInfo")!
         self._errorlabel.isHidden = true
         self._allergenTable.allowsMultipleSelection = true
