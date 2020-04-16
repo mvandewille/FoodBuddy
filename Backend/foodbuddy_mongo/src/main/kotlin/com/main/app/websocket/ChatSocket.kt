@@ -108,10 +108,10 @@ class ChatSocket {
     private fun broadcast(message: Message, users: String?) {
         sessionUsernameMap.forEach { (session: Session, username: String?) ->
             try {
-                if(message.getFrom() == "server" || session != this.session)
-                    session.basicRemote.sendText(message.toString())
-                else if(session == this.session && users != null)
+                if(session == this.session && users != null)
                     session.basicRemote.sendText("$message;$users")
+                else if(message.getFrom() == "server" || session != this.session)
+                    session.basicRemote.sendText(message.toString())
             } catch (e: IOException) {
                 logger.info("Exception: " + e.message.toString())
                 e.printStackTrace()
