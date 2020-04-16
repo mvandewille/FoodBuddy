@@ -71,6 +71,9 @@ class AccountSettingsController: UIViewController
 
     override func viewDidLoad() {
         self._errorLabel.isHidden = true
+        DispatchQueue.main.async {
+            self._saveBtn.layer.cornerRadius = 5
+        }
         createGenderPicker()
         createToolbar()
         let email = UserDefaults.standard.string(forKey: "email")

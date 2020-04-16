@@ -64,6 +64,9 @@ class AllergenSettingsController : UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        DispatchQueue.main.async {
+            self._saveBtn.layer.cornerRadius = 5
+        }
         let email = UserDefaults.standard.string(forKey: "email")
         DoFieldCheck(email: email!)
         self._errorLabel.isHidden = true

@@ -67,6 +67,9 @@ class FriendsSettingController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         self._errorLabel.isHidden = true
+        DispatchQueue.main.async {
+            self._addBtn.layer.cornerRadius = 5
+        }
         getFollowers()
     }
     

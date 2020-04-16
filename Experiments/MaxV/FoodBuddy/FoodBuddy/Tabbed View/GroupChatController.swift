@@ -32,7 +32,7 @@ extension Message
             timestamp = String(strArr[2])
             return
         }
-        name = UserDefaults.standard.string(forKey: "email")!
+        name = UserDefaults.standard.string(forKey: "email")?.uppercased() as! String
         message = messageStr
         incoming = false
         let date = Date() // save date, so all components use the same date
@@ -78,6 +78,10 @@ class GroupChatController : UIViewController
     @IBAction func submitMsg(_ sender: Any)
     {
         let str = _textField.text
+        if (str == "Type something...")
+        {
+            return
+        }
         messageArr.append(Message(str!, isIncoming: false))
         sendMessage(str!)
         DispatchQueue.main.async {
@@ -172,11 +176,13 @@ class GroupChatController : UIViewController
     // MARK: - Keyboard
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            self.tabBarController?.tabBar.isHidden = true
             self.view.frame.origin.y = 0 - keyboardSize.height
         }
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
+        self.tabBarController?.tabBar.isHidden = false
         self.view.frame.origin.y = 0
     }
     
