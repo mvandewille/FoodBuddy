@@ -311,7 +311,7 @@
                                             <constraint firstAttribute="width" constant="280" id="qte-RD-hWR"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="name"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="112" translatesAutoresizingMaskIntoConstraints="NO" id="eNm-yF-WD6">
                                         <rect key="frame" x="0.0" y="86.5" width="252.5" height="30.5"/>
@@ -657,7 +657,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3P9-xL-bIB"/>
-        <segue reference="sbS-tG-fCi"/>
+        <segue reference="w8d-bC-due"/>
+        <segue reference="BVs-Xl-Kei"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -14,36 +14,48 @@ class CameraViewController : UIViewController
 {
     @IBOutlet weak var _capture: UIButton!
     @IBOutlet weak var _cameraView: UIView!
-
-    var captureSession: AVCaptureSession?
-    var videoPreviewLayer: AVCaptureVideoPreviewLayer?
-    var backCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
+    @IBOutlet weak var _dailyViewBtn: UIButton!
+    @IBOutlet weak var _globalChatBtn: UIButton!
+    
+    @IBAction func sendToDaily(_ sender: Any) {
+        self.tabBarController?.selectedIndex = 0
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    @IBAction func sendToChat(_ sender: Any) {
+        self.tabBarController?.selectedIndex = 2
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    private(set) lazy var cameraLayer : AVCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
+    
+    private lazy var captureSession : AVCaptureSession = {
+        let session = AVCaptureSession()
+        session.sessionPreset = AVCaptureSession.Preset.photo
+        
+        guard
+            let backCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back),
+            let input = try? AVCaptureDeviceInput(device: backCamera)
+        else {
+          return session
+        }
+        
+        session.addInput(input)
+        return session
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if #available(iOS 13, *)
-        {
-            let captureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
-            do
-            {
-                let input = try AVCaptureDeviceInput(device: captureDevice!)
-                captureSession = AVCaptureSession()
-                captureSession?.addInput(input)
-                videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
-                videoPreviewLayer?.frame = view.layer.bounds
-                _cameraView.layer.addSublayer(videoPreviewLayer!)
-                captureSession?.startRunning()
-            }
-            catch
-            {
-                print("womp womp")
-            }
-        }
-
-        _cameraView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        _cameraView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        _cameraView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        _cameraView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 }
