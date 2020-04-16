@@ -47,8 +47,7 @@ class ChatSocket {
 
         // broadcast that new user joined
         val message = "$username has Joined the Chat"
-        broadcast(Message(getNewId(), "server", message))
-        session.basicRemote.sendText(collectionToDelimitedString(usernameSessionMap.keys, ";"))
+        broadcast(Message(getNewId(), "server", message), collectionToDelimitedString(usernameSessionMap.keys, ";"))
     }
 
     @OnMessage
@@ -62,16 +61,16 @@ class ChatSocket {
         // Direct message to a user using the format "@username <message>"
         if (message.startsWith("@")) {
             val destUsername = message.split(":").toTypedArray()[0].substring(1)
-            val newMsg= message.substring(destUsername.length + 3)
+            val newMsg= message.substring(destUsername.length + 2).trim(' ')
 
             // send the message to the sender and receiver
             sendMessageToParticularUser(destUsername, "[DM] $newMsg")
         }
         else if (message.contains("&&wipe")) {
             (msgRepo ?: error("no repo")).deleteAllBy()
-            broadcast(Message(getNewId(), "server","$username wiped all messages!"))
+            broadcast(Message(getNewId(), "server","$username wiped all messages!"), null)
         } else { // broadcast
-            broadcast(Message(getNewId(), username, message))
+            broadcast(Message(getNewId(), username, message), null)
         }
     }
 
@@ -87,7 +86,7 @@ class ChatSocket {
 
         // broadcase that the user disconnected
         val message = "$username disconnected"
-        broadcast(Message(getNewId(), "server", message))
+        broadcast(Message(getNewId(), "server", message), null)
     }
 
     @OnError
@@ -105,22 +104,14 @@ class ChatSocket {
             e.printStackTrace()
         }
     }
-    private fun sendMessageToParticularUser(username: String?, messages: MutableList<Message>) {
-        try {
-            messages.forEach {
-                usernameSessionMap[username]!!.basicRemote.sendText(it.toString())
-            }
-        } catch (e: IOException) {
-            logger.info("Exception: " + e.message.toString())
-            e.printStackTrace()
-        }
-    }
 
-    private fun broadcast(message: Message) {
+    private fun broadcast(message: Message, users: String?) {
         sessionUsernameMap.forEach { (session: Session, username: String?) ->
             try {
                 if(message.getFrom() == "server" || session != this.session)
                     session.basicRemote.sendText(message.toString())
+                else if(session == this.session && users != null)
+                    session.basicRemote.sendText("$message;$users")
             } catch (e: IOException) {
                 logger.info("Exception: " + e.message.toString())
                 e.printStackTrace()
