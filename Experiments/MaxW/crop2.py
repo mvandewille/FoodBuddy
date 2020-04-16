@@ -24,10 +24,10 @@ def sort_contours(cnts, method="left-to-right"):
 	# return the list of sorted contours and bounding boxes
 	return (cnts, boundingBoxes)
 
-def processImg(name, v, h):
+def processImg(name, num, v, h):
     result = []
     path = "/Users/max/Downloads/" + name
-    save_path = "/Users/max/Documents/309/images/output/" + name.split(".")[0] + "_" 
+    save_path = "/Users/max/Documents/309/images/output/" + str(num) + "_" 
     img_pre = cv2.imread(path, 0)
 
     scale_percent = 200
@@ -79,10 +79,6 @@ def processImg(name, v, h):
             cv2.imwrite("/Users/max/Documents/309/images/contours/" + name.split(".")[0] + "_" +str(idx) + ".png", new_img)
     return img_pre, result
 
-def pickImg(result):
-    i = 0
-            
-
 #img = cv2.imread("/Users/max/Documents/309/hv_3/Experiments/MaxW/images/test.jpeg", 0)
 
 path_arr = ["edge_detect_easy.png", "edge_detect_hard_1.jpg", "edge_detect_hard_2.jpg", "edge_detect_medium.jpg", "edge1.jpg", "edge2.jpg", "edge3.png", "weird.jpg", "can.jpg", "tricky.jpg", "chip.jpg", "chip2.jpg", "chip3.jpg"]
@@ -93,9 +89,9 @@ for filename in os.listdir("/Users/max/Downloads"):
         continue
     name = filename
     print(name)
-    img_pre, result = processImg(name, 6, 6)
+    img_pre, result = processImg(name, i, 6, 6)
     if len(result) == 0:
-        img_pre, result = processImg(name, 50, 50)
+        img_pre, result = processImg(name, i, 50, 50)
     cv2.imwrite("/Users/max/Documents/309/images/result/" + str(i) + "_" + "o" + ".png", img_pre)
     
     j = 0
