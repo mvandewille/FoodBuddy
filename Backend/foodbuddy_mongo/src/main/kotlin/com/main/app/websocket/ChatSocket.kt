@@ -12,6 +12,7 @@ import java.util.*
 import javax.websocket.*
 import javax.websocket.server.PathParam
 import javax.websocket.server.ServerEndpoint
+import org.springframework.util.StringUtils.collectionToDelimitedString
 
 
 @Controller // this is needed for this to be an endpoint to springboot
@@ -47,6 +48,7 @@ class ChatSocket {
         // broadcast that new user joined
         val message = "$username has Joined the Chat"
         broadcast(Message(getNewId(), "server", message))
+        session.basicRemote.sendText(collectionToDelimitedString(usernameSessionMap.keys, ";"))
     }
 
     @OnMessage
