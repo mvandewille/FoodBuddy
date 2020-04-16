@@ -61,11 +61,11 @@ class ChatSocket {
 
         // Direct message to a user using the format "@username <message>"
         if (message.startsWith("@")) {
-            val destUsername = message.split(" ").toTypedArray()[0].substring(1)
-            val new_msg = message.substring(destUsername.length + 2)
+            val destUsername = message.split(":").toTypedArray()[0].substring(1)
+            val newMsg= message.substring(destUsername.length + 3)
 
             // send the message to the sender and receiver
-            sendMessageToParticularUser(destUsername, "[DM] $new_msg")
+            sendMessageToParticularUser(destUsername, "[DM] $newMsg")
         }
         else if (message.contains("&&wipe")) {
             (msgRepo ?: error("no repo")).deleteAllBy()
