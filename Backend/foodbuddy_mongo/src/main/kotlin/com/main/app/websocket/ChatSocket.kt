@@ -47,7 +47,7 @@ class ChatSocket {
 
         // broadcast that new user joined
         val message = "$username has Joined the Chat"
-        broadcast(Message(getNewId(), "server", message), collectionToDelimitedString(usernameSessionMap.keys, ";"))
+        broadcast(Message(getNewId(), "server", message + ";" + collectionToDelimitedString(usernameSessionMap.keys, ";")))
     }
 
     @OnMessage
@@ -68,9 +68,9 @@ class ChatSocket {
         }
         else if (message.contains("&&wipe")) {
             (msgRepo ?: error("no repo")).deleteAllBy()
-            broadcast(Message(getNewId(), "server","$username wiped all messages!"), null)
+            broadcast(Message(getNewId(), "server","$username wiped all messages!"))
         } else { // broadcast
-            broadcast(Message(getNewId(), username, message), null)
+            broadcast(Message(getNewId(), username, message))
         }
     }
 
@@ -86,7 +86,7 @@ class ChatSocket {
 
         // broadcase that the user disconnected
         val message = "$username disconnected"
-        broadcast(Message(getNewId(), "server", message), null)
+        broadcast(Message(getNewId(), "server", message + ";" + collectionToDelimitedString(usernameSessionMap.keys, ";")))
     }
 
     @OnError
@@ -104,13 +104,21 @@ class ChatSocket {
             e.printStackTrace()
         }
     }
+    private fun sendMessageToParticularUser(username: String?, messages: MutableList<Message>) {
+        try {
+            messages.forEach {
+                usernameSessionMap[username]!!.basicRemote.sendText(it.toString())
+            }
+        } catch (e: IOException) {
+            logger.info("Exception: " + e.message.toString())
+            e.printStackTrace()
+        }
+    }
 
-    private fun broadcast(message: Message, users: String?) {
+    private fun broadcast(message: Message) {
         sessionUsernameMap.forEach { (session: Session, username: String?) ->
             try {
-                if(session == this.session && users != null)
-                    session.basicRemote.sendText("$message;$users")
-                else if(message.getFrom() == "server" || session != this.session)
+                if(message.getFrom() == "server" || session != this.session)
                     session.basicRemote.sendText(message.toString())
             } catch (e: IOException) {
                 logger.info("Exception: " + e.message.toString())
