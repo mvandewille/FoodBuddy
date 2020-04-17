@@ -47,7 +47,7 @@ class ChatSocket {
 
         // broadcast that new user joined
         val message = "$username has Joined the Chat"
-        broadcast(Message(getNewId(), "server", message + ";" + collectionToDelimitedString(usernameSessionMap.keys, ";")))
+        broadcast(Message(getNewId(), "server", message, collectionToDelimitedString(usernameSessionMap.keys, ";")))
     }
 
     @OnMessage
@@ -86,7 +86,7 @@ class ChatSocket {
 
         // broadcase that the user disconnected
         val message = "$username disconnected"
-        broadcast(Message(getNewId(), "server", message + ";" + collectionToDelimitedString(usernameSessionMap.keys, ";")))
+        broadcast(Message(getNewId(), "server", message, collectionToDelimitedString(usernameSessionMap.keys, ";")))
     }
 
     @OnError

@@ -7,9 +7,11 @@ import java.time.format.DateTimeFormatter
 
 class Message (
         @Id private val id: Long,
-        private val from: String, private val text: String, private var time: String) {
+        private val from: String, private val text: String, private var time: String, private var users: String?) {
     constructor(id: Long, from: String, text: String):
-            this(id, from, text, "")
+            this(id, from, text, "", "")
+    constructor(id: Long, from: String, text: String, users: String?):
+            this(id, from, text, "", users)
     init {
         if(this.time == "") {
             this.time = DateTimeFormatter
@@ -17,6 +19,8 @@ class Message (
                     .withZone(ZoneOffset.systemDefault())
                     .format(Instant.now())
         }
+        if(this.users == null)
+            this.users = ""
     }
 
     fun getId(): Long {
@@ -32,7 +36,11 @@ class Message (
     }
 
     override fun toString(): String {
-        return this.from + ";" + this.text + ";" + this.time
+        if(users != "")
+            return this.from + ";" + this.text + ";" + this.time + ";" + this.users
+        else
+            return this.from + ";" + this.text + ";" + this.time
+
     }
 
 }
