@@ -222,8 +222,8 @@
             filePath = "FoodBuddy/Settings Flow/AccountSettingsController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -238,8 +238,8 @@
             filePath = "FoodBuddy/Settings Flow/AccountSettingsController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "DoFieldCheck(email:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -254,8 +254,8 @@
             filePath = "FoodBuddy/Settings Flow/AccountSettingsController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "fillFields()"
             landmarkType = "7">
          </BreakpointContent>
@@ -356,34 +356,34 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "DF355A22-310F-448E-A17B-7838CCC6DDED - b20960bf5089f6ed"
+                  uuid = "DF355A22-310F-448E-A17B-7838CCC6DDED - e704c746dc434962"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in FoodBuddy.StatusAddController.doHTTP(dict: Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; ()"
                   moduleName = "FoodBuddy"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mvandewille/Documents/hv_3/Experiments/MaxV/FoodBuddy/FoodBuddy/Add%20Status%20Flow/StatusAddController.swift"
+                  urlString = "file:///Users/mvandewille/Documents/hv_3/Frontend/iOS/FoodBuddy/FoodBuddy/Add%20Status%20Flow/StatusAddController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "77"
                   endingLineNumber = "77"
-                  offsetFromSymbolStart = "1674">
+                  offsetFromSymbolStart = "1284">
                </Location>
                <Location
-                  uuid = "DF355A22-310F-448E-A17B-7838CCC6DDED - 4641f1836fd0a64b"
+                  uuid = "DF355A22-310F-448E-A17B-7838CCC6DDED - 134c567ae31a19c4"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #2 () -&gt; () in closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in FoodBuddy.StatusAddController.doHTTP(dict: Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; ()"
                   moduleName = "FoodBuddy"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mvandewille/Documents/hv_3/Experiments/MaxV/FoodBuddy/FoodBuddy/Add%20Status%20Flow/StatusAddController.swift"
+                  urlString = "file:///Users/mvandewille/Documents/hv_3/Frontend/iOS/FoodBuddy/FoodBuddy/Add%20Status%20Flow/StatusAddController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "78"
                   endingLineNumber = "78"
-                  offsetFromSymbolStart = "42">
+                  offsetFromSymbolStart = "48">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -487,40 +487,8 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1F04D55D-452C-41A5-BCD8-35D83D49B7EC"
+            uuid = "16C2B404-C098-4EE6-A36B-A667F6B046F8"
             shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FoodBuddy/Tabbed View/GroupChatController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "submitMsg(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "77CD07E5-F559-43AC-A6D2-5A0390761AC8"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FoodBuddy/Tabbed View/GroupChatController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "init(_:isIncoming:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1B0D4432-FF41-498B-81D7-A969DAFDC866"
-            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodBuddy/Tabbed View/GroupChatController.swift"
@@ -528,7 +496,71 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "205"
             endingLineNumber = "205"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkName = "getNameColor(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D7D96C84-5E4A-4450-9B7F-4C5C9353EF08"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodBuddy/Tabbed View/TabbedPageViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "tabBarController(_:didSelect:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B37DDC9A-6BC9-4B3A-BB45-0344EA7D512E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodBuddy/Tabbed View/TabbedPageViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "tabBarController(_:didSelect:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C18B7FDF-14EE-43D5-B234-CBD14CF9D7F0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodBuddy/Tabbed View/TabbedPageViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "tabBarController(_:didSelect:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6DD1E2F7-6763-49D2-93CE-6C43A1A2FB3A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodBuddy/Tabbed View/CameraViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "sendToChat(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

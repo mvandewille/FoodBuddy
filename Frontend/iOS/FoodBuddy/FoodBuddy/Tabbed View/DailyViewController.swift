@@ -42,7 +42,7 @@ class DailyViewController : UIViewController
     let cholesterolLimit : Double = 300
     
     override func viewDidLoad() {
-        
+        print(UserDefaults.standard.string(forKey: "userName"))
         getLimits()
         getData()
         setDate()

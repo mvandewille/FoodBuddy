@@ -15,30 +15,12 @@ class LoginPromptViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setBackground()
         let password = UserDefaults.standard.string(forKey: "password")
         let email = UserDefaults.standard.string(forKey: "email")
         if (email != nil && password != nil)
         {
             DoLogin(email!, password!)
         }
-    }
-
-    func setBackground()
-    {
-        view.addSubview(backgroundImageView)
-        backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
-        backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        backgroundImageView.image = UIImage(named: "Food finger minus finger")
-        self.view.sendSubviewToBack(backgroundImageView)
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true)
-        super.touchesBegan(touches, with: event)
     }
 
     override func viewWillAppear(_ animated: Bool) {

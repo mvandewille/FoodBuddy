@@ -19,6 +19,8 @@
 		AFB06D6723F9E99C001B652B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB06D6623F9E99C001B652B /* LoginViewController.swift */; };
 		AFB06D6923FB49BC001B652B /* LoginPromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB06D6823FB49BC001B652B /* LoginPromptViewController.swift */; };
 		AFB06D6B23FB4EAE001B652B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB06D6A23FB4EAE001B652B /* SignUpViewController.swift */; };
+		AFB59F5B244A42D700738823 /* ImageConfirmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB59F5A244A42D700738823 /* ImageConfirmController.swift */; };
+		AFB59F5D244A9F4400738823 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB59F5C244A9F4400738823 /* UIView+Extensions.swift */; };
 		AFE02B49240C949200CBA9CD /* AllergenSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE02B48240C949200CBA9CD /* AllergenSettingsController.swift */; };
 		AFE02B4D240C94F700CBA9CD /* AccountSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE02B4C240C94F700CBA9CD /* AccountSettingsController.swift */; };
 		AFE02B4F240CB57A00CBA9CD /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE02B4E240CB57A00CBA9CD /* SettingsController.swift */; };
@@ -71,6 +73,9 @@
 		AFB06D6623F9E99C001B652B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AFB06D6823FB49BC001B652B /* LoginPromptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPromptViewController.swift; sourceTree = "<group>"; };
 		AFB06D6A23FB4EAE001B652B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		AFB59F5A244A42D700738823 /* ImageConfirmController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConfirmController.swift; sourceTree = "<group>"; };
+		AFB59F5C244A9F4400738823 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "../../../../../../Downloads/ARKitRectangleDetection-master/ARKitRectangleDetection/Extensions + Utilities/UIView+Extensions.swift"; sourceTree = "<group>"; };
+		AFB59F5F244A9F6500738823 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		AFE02B48240C949200CBA9CD /* AllergenSettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergenSettingsController.swift; sourceTree = "<group>"; };
 		AFE02B4C240C94F700CBA9CD /* AccountSettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsController.swift; sourceTree = "<group>"; };
 		AFE02B4E240CB57A00CBA9CD /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
@@ -167,9 +172,18 @@
 				AF15B5FA2417575D002D60CB /* DailyViewController.swift */,
 				AF93C91B2404DFB700E5091F /* CameraViewController.swift */,
 				AFEDE97C241EBE9A000ABD7F /* GroupChatController.swift */,
+				AFB59F5A244A42D700738823 /* ImageConfirmController.swift */,
 				AFFEDEA923DB80B2002D6E82 /* TabbedPages.storyboard */,
 			);
 			path = "Tabbed View";
+			sourceTree = "<group>";
+		};
+		AFB59F5E244A9F5200738823 /* Extensions+Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				AFB59F5F244A9F6500738823 /* UIView+Extensions.swift */,
+			);
+			path = "Extensions+Utilities";
 			sourceTree = "<group>";
 		};
 		AFE02B44240B689500CBA9CD /* Food Processing */ = {
@@ -236,6 +250,8 @@
 				AF15B5F3241738E1002D60CB /* Add Status Flow */,
 				AFFEDE8223D9F0B7002D6E82 /* Assets.xcassets */,
 				AFFEDE8723D9F0B7002D6E82 /* Info.plist */,
+				AFB59F5C244A9F4400738823 /* UIView+Extensions.swift */,
+				AFB59F5E244A9F5200738823 /* Extensions+Utilities */,
 				AF43904B24465A6800847AB8 /* MyPlayground.playground */,
 			);
 			path = FoodBuddy;
@@ -403,9 +419,11 @@
 				AFFEDE7823D9F0B5002D6E82 /* AppDelegate.swift in Sources */,
 				AFB06D6923FB49BC001B652B /* LoginPromptViewController.swift in Sources */,
 				AF15B5F924174D17002D60CB /* AddFoodController.swift in Sources */,
+				AFB59F5B244A42D700738823 /* ImageConfirmController.swift in Sources */,
 				AFB06D6723F9E99C001B652B /* LoginViewController.swift in Sources */,
 				AFFAF99F240701B70079837D /* AllergenAddController.swift in Sources */,
 				AFEDE97D241EBE9A000ABD7F /* GroupChatController.swift in Sources */,
+				AFB59F5D244A9F4400738823 /* UIView+Extensions.swift in Sources */,
 				AF15B5F72417397F002D60CB /* StatusAddController.swift in Sources */,
 				AFE02B4F240CB57A00CBA9CD /* SettingsController.swift in Sources */,
 				AF15B5F02412EB78002D60CB /* FriendsSettingController.swift in Sources */,

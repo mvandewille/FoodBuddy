@@ -59,6 +59,7 @@ class AdditionalUserInfoController: UIViewController
         calLimit = calculateCalories(gender!, heightVal!, weightVal!, lifestyle, age!)
         formDict = ["email": user_email, "name":fullName, "height":heightVal, "weight": weightVal, "lifestyle":lifestyle, "gender":gender, "calorieLimit":calLimit, "age":age]
         UserDefaults.standard.set(fullName, forKey: "userName")
+        UserDefaults.standard.set(formDict, forKey: "userInfo")
         DispatchQueue.main.async {
             self.performSegue(withIdentifier: "signupSuccess2", sender: nil)
         }
@@ -113,7 +114,6 @@ class AdditionalUserInfoController: UIViewController
         DispatchQueue.main.async {
             self._submit.layer.cornerRadius = 5
         }
-        formDict = UserDefaults.standard.dictionary(forKey: "userInfo")!
         _errorLabel.isHidden = true
         createGenderPicker()
         createToolbar()

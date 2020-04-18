@@ -9,11 +9,26 @@
 import Foundation
 import UIKit
 
-class TabbedPageViewController : UITabBarController
+class TabbedPageViewController : UITabBarController, UITabBarControllerDelegate
 {
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.delegate = self
         // Do any additional setup after loading the view.
+    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        let fromView = selectedViewController?.view
+        let toView = viewController.view
+        
+        if viewController is UINavigationController && selectedIndex == 1
+        {
+            tabBarController.tabBar.isHidden = true
+        }
+        if (fromView != toView)
+        {
+            UIView.transition(from: fromView!, to: toView!, duration: 0.5, options: [.transitionFlipFromTop], completion: nil)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -36,7 +36,9 @@ class AccountSettingsController: UIViewController
     @IBAction func logOut(_ sender: Any)
     {
         UserDefaults.standard.removeObject(forKey: "userInfo")
+        UserDefaults.standard.removeObject(forKey: "email")
         UserDefaults.standard.removeObject(forKey: "password")
+        UserDefaults.standard.removeObject(forKey: "userName")
         self.performSegue(withIdentifier: "logOut", sender: nil)
     }
     
