@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.main.app.BasicTests" tests="27" skipped="0" failures="0" errors="0" timestamp="2020-04-29T03:59:59" hostname="DESKTOP" time="1.384">
+  <properties/>
+  <testcase name="testUserAddFood()" classname="com.main.app.BasicTests" time="1.092"/>
+  <testcase name="testUserGetFoods()" classname="com.main.app.BasicTests" time="0.013"/>
+  <testcase name="testFoodGetFat()" classname="com.main.app.BasicTests" time="0.012"/>
+  <testcase name="testUserChangePassword()" classname="com.main.app.BasicTests" time="0.009"/>
+  <testcase name="testUserAddFollowing()" classname="com.main.app.BasicTests" time="0.008"/>
+  <testcase name="testStatusToJson()" classname="com.main.app.BasicTests" time="0.056"/>
+  <testcase name="testFoodToJson()" classname="com.main.app.BasicTests" time="0.007"/>
+  <testcase name="testDayFoodGetAmount()" classname="com.main.app.BasicTests" time="0.036"/>
+  <testcase name="testUserGetFollowing()" classname="com.main.app.BasicTests" time="0.004"/>
+  <testcase name="testUserGetFood()" classname="com.main.app.BasicTests" time="0.005"/>
+  <testcase name="testDayFoodGetName()" classname="com.main.app.BasicTests" time="0.005"/>
+  <testcase name="testUserGetCalender()" classname="com.main.app.BasicTests" time="0.004"/>
+  <testcase name="testUserToBasicJson()" classname="com.main.app.BasicTests" time="0.005"/>
+  <testcase name="testStatusCheckDate()" classname="com.main.app.BasicTests" time="0.005"/>
+  <testcase name="testUserSetExtras()" classname="com.main.app.BasicTests" time="0.006"/>
+  <testcase name="testFoodGetCalories()" classname="com.main.app.BasicTests" time="0.009"/>
+  <testcase name="testUserCheckDate()" classname="com.main.app.BasicTests" time="0.006"/>
+  <testcase name="testDayToJson()" classname="com.main.app.BasicTests" time="0.03"/>
+  <testcase name="testDayGetFoods()" classname="com.main.app.BasicTests" time="0.005"/>
+  <testcase name="testFoodGetCarbs()" classname="com.main.app.BasicTests" time="0.005"/>
+  <testcase name="testUserToJson()" classname="com.main.app.BasicTests" time="0.005"/>
+  <testcase name="testFoodGetProtein()" classname="com.main.app.BasicTests" time="0.005"/>
+  <testcase name="testDayFoodToJson()" classname="com.main.app.BasicTests" time="0.005"/>
+  <testcase name="testFoodGetName()" classname="com.main.app.BasicTests" time="0.005"/>
+  <testcase name="testDayAddFoods()" classname="com.main.app.BasicTests" time="0.005"/>
+  <testcase name="testFoodGetSodium()" classname="com.main.app.BasicTests" time="0.004"/>
+  <testcase name="testFoodGetCholeserol()" classname="com.main.app.BasicTests" time="0.004"/>
+  <system-out><![CDATA[21:59:50.427 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+21:59:50.446 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+21:59:50.485 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.main.app.BasicTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+21:59:50.510 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.main.app.BasicTests], using SpringBootContextLoader
+21:59:50.516 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.main.app.BasicTests]: class path resource [com/main/app/BasicTests-context.xml] does not exist
+21:59:50.516 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.main.app.BasicTests]: class path resource [com/main/app/BasicTestsContext.groovy] does not exist
+21:59:50.516 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.main.app.BasicTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+21:59:50.517 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.main.app.BasicTests]: BasicTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+21:59:50.572 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.main.app.BasicTests]
+21:59:50.665 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\Users\Amish Cyborg\Documents\hv_3\Backend\foodbuddy_mongo\build\classes\kotlin\main\com\main\app\FoodbuddyApplication.class]
+21:59:50.673 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.main.app.FoodbuddyApplication for test class com.main.app.BasicTests
+21:59:50.804 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.main.app.BasicTests]: using defaults.
+21:59:50.804 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener]
+21:59:50.829 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@24ae22aa, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@654a0656, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4d5d0d60, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@75afa327, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2041744a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@158caea2, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@301f977e, org.springframework.test.context.event.EventPublishingTestExecutionListener@3821acc1, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@13696cab, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@63e039da, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2f08e6bf, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@1a7a103b, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@42ae3beb]
+21:59:50.837 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@3f3b8bed testClass = BasicTests, testInstance = com.main.app.BasicTests@4c89a519, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@4b69a99e testClass = BasicTests, locations = '{}', classes = '{class com.main.app.FoodbuddyApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@32993497, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@2271d9c5, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@70e505b8, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@50c39a31], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> false]]].
+21:59:50.864 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.6.RELEASE)
+
+2020-04-28 21:59:51.224  INFO 1300 --- [    Test worker] com.main.app.BasicTests                  : Starting BasicTests on Desktop with PID 1300 (started by Amish Cyborg in C:\Users\Amish Cyborg\Documents\hv_3\Backend\foodbuddy_mongo)
+2020-04-28 21:59:51.225  INFO 1300 --- [    Test worker] com.main.app.BasicTests                  : No active profile set, falling back to default profiles: default
+2020-04-28 21:59:52.442  INFO 1300 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-28 21:59:52.445  INFO 1300 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-04-28 21:59:52.509  INFO 1300 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.main.app.repository.MessageRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2020-04-28 21:59:52.513  INFO 1300 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.main.app.repository.StatusRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2020-04-28 21:59:52.518  INFO 1300 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.main.app.repository.UserRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2020-04-28 21:59:52.519  INFO 1300 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60ms. Found 0 JPA repository interfaces.
+2020-04-28 21:59:52.553  INFO 1300 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-28 21:59:52.553  INFO 1300 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-04-28 21:59:52.605  INFO 1300 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52ms. Found 3 MongoDB repository interfaces.
+2020-04-28 21:59:53.634  INFO 1300 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2020-04-28 21:59:53.650  INFO 1300 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-28 21:59:53.651  INFO 1300 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-28 21:59:53.881  INFO 1300 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-28 21:59:53.882  INFO 1300 --- [    Test worker] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2625 ms
+2020-04-28 21:59:54.184  INFO 1300 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-04-28 21:59:54.431  INFO 1300 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-04-28 21:59:54.535  INFO 1300 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-04-28 21:59:54.670  INFO 1300 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-04-28 21:59:54.894  INFO 1300 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-04-28 21:59:55.074  INFO 1300 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-04-28 21:59:55.397  INFO 1300 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-28 21:59:55.407  INFO 1300 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-04-28 21:59:55.762  INFO 1300 --- [    Test worker] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[coms-309-hv-3.cs.iastate.edu:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-04-28 21:59:55.763  INFO 1300 --- [    Test worker] org.mongodb.driver.cluster               : Adding discovered server coms-309-hv-3.cs.iastate.edu:27017 to client view of cluster
+2020-04-28 21:59:56.004  INFO 1300 --- [state.edu:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:1438}] to coms-309-hv-3.cs.iastate.edu:27017
+2020-04-28 21:59:56.045  INFO 1300 --- [state.edu:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=coms-309-hv-3.cs.iastate.edu:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 3]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=37574300}
+2020-04-28 21:59:56.047  INFO 1300 --- [state.edu:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2020-04-28 21:59:57.048  WARN 1300 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-04-28 21:59:57.489  INFO 1300 --- [    Test worker] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-04-28 21:59:57.886  INFO 1300 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-28 21:59:58.168  WARN 1300 --- [    Test worker] o.s.b.a.m.MustacheAutoConfiguration      : Cannot find template location: classpath:/templates/ (please add some templates, check your Mustache configuration, or set spring.mustache.check-template-location=false)
+2020-04-28 21:59:58.465  INFO 1300 --- [    Test worker] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-04-28 21:59:58.498  INFO 1300 --- [    Test worker] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-04-28 21:59:58.544  INFO 1300 --- [    Test worker] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-04-28 21:59:58.942  INFO 1300 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findUsingGET_1
+2020-04-28 21:59:59.014  INFO 1300 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 53949 (http) with context path ''
+2020-04-28 21:59:59.017  INFO 1300 --- [    Test worker] com.main.app.BasicTests                  : Started BasicTests in 8.15 seconds (JVM running for 10.263)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
