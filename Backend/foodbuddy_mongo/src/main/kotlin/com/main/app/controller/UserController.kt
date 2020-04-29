@@ -222,7 +222,6 @@ class UserController {
             if(user.password != null && usr.changePass(user.password))
                 u_repository.save(usr)
                 return ResponseJ(1, "Password changed")
-            return ResponseJ(0, "New password cannot be null!")
         }
         catch (e: EmptyResultDataAccessException) {
             return ResponseJ(0, "No user found to update!")
