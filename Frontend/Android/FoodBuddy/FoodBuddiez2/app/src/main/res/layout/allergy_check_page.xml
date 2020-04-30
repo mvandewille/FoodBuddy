@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <TextView
+        android:id="@+id/allergy_calorie_count_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textColor="@color/colorMainGreen"
+        android:text="We have determined your calorie count to be:"
+        />
+
+    <EditText
+        android:id="@+id/allergy_calorie_count_display"
+        android:layout_width="100dp"
+        android:layout_height="@dimen/widget_height"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/allergy_calorie_count_text"
+        android:layout_marginTop="20dp"
+        android:text="2000"
+        android:textAlignment="center"
+        />
+
+
+    <TextView
+        android:id="@+id/user_config_allergy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/allergy_calorie_count_display"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/inter_widget_margin_distance"
+        android:text="Do you have any food allergies?"
+        android:textColor="@color/colorMainGreen"/>
+
+    <CheckBox
+        android:id="@+id/allergy_allergy_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/user_config_allergy"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorMainGreen"
+        app:layout_constraintBottom_toBottomOf="@id/allergy_allergy_checkbox"
+        app:layout_constraintRight_toLeftOf="@id/allergy_allergy_checkbox"
+        android:text="Yes"/>
+
+
+
+ <ScrollView
+     android:id="@+id/allergy_list"
+     android:layout_width="wrap_content"
+     android:layout_height="300dp"
+     app:layout_constraintLeft_toLeftOf="parent"
+     app:layout_constraintRight_toRightOf="parent"
+     app:layout_constraintBottom_toBottomOf="@id/allergy_submit"
+     android:layout_marginBottom="30dp"
+     app:layout_constraintBottom_toTopOf="@id/allergy_submit"
+    android:visibility="invisible">
+
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+>
+
+      <TextView
+          android:id="@+id/allergy_milk"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintLeft_toLeftOf="parent"
+          android:layout_marginTop="@dimen/inter_widget_margin_distance"
+          android:text="Milk"
+          android:textColor="@color/colorMainGreen"/>
+
+      <TextView
+          android:id="@+id/allergy_egg"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toBottomOf="@id/allergy_milk"
+          app:layout_constraintLeft_toLeftOf="parent"
+          android:layout_marginTop="@dimen/inter_widget_margin_distance"
+          android:text="Egg"
+          android:textColor="@color/colorMainGreen"/>
+      <TextView
+          android:id="@+id/allergy_peanut"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toBottomOf="@id/allergy_egg"
+          app:layout_constraintLeft_toLeftOf="parent"
+          android:layout_marginTop="@dimen/inter_widget_margin_distance"
+          android:text="Peanut"
+          android:textColor="@color/colorMainGreen"/>
+
+      <TextView
+          android:id="@+id/allergy_tree_nut"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toBottomOf="@id/allergy_peanut"
+          app:layout_constraintLeft_toLeftOf="parent"
+          android:layout_marginTop="@dimen/inter_widget_margin_distance"
+          android:text="Tree nut"
+          android:textColor="@color/colorMainGreen"/>
+
+      <TextView
+          android:id="@+id/allergy_soy"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toBottomOf="@id/allergy_tree_nut"
+          app:layout_constraintLeft_toLeftOf="parent"
+          android:layout_marginTop="@dimen/inter_widget_margin_distance"
+          android:text="Soy"
+          android:textColor="@color/colorMainGreen"/>
+
+      <TextView
+          android:id="@+id/allergy_wheat"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toBottomOf="@id/allergy_soy"
+          app:layout_constraintLeft_toLeftOf="parent"
+          android:layout_marginTop="@dimen/inter_widget_margin_distance"
+          android:text="Wheat"
+          android:textColor="@color/colorMainGreen"/>
+
+      <TextView
+          android:id="@+id/allergy_fish"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toBottomOf="@id/allergy_wheat"
+          app:layout_constraintLeft_toLeftOf="parent"
+          android:layout_marginTop="@dimen/inter_widget_margin_distance"
+          android:text="Fish"
+          android:textColor="@color/colorMainGreen"/>
+
+      <TextView
+          android:id="@+id/allergy_shellfish"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toBottomOf="@id/allergy_fish"
+          app:layout_constraintLeft_toLeftOf="parent"
+          android:layout_marginTop="@dimen/inter_widget_margin_distance"
+          android:text="Shellfish"
+          android:textColor="@color/colorMainGreen"/>
+
+      <TextView
+          android:id="@+id/allergy_corn"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toBottomOf="@id/allergy_shellfish"
+          app:layout_constraintLeft_toLeftOf="parent"
+          android:layout_marginTop="@dimen/inter_widget_margin_distance"
+          android:text="Corn"
+          android:textColor="@color/colorMainGreen"/>
+
+      <TextView
+          android:id="@+id/allergy_meat"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toBottomOf="@id/allergy_corn"
+          app:layout_constraintLeft_toLeftOf="parent"
+          android:layout_marginTop="@dimen/inter_widget_margin_distance"
+          android:text="Meat"
+          android:textColor="@color/colorMainGreen"/>
+
+      <CheckBox
+          android:id="@+id/allergy_milk_checkbox"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toTopOf="@id/allergy_milk"
+          app:layout_constraintBottom_toBottomOf="@id/allergy_milk"
+          app:layout_constraintLeft_toRightOf="@id/allergy_milk"
+          android:layout_marginLeft="100dp"/>
+
+      <CheckBox
+          android:id="@+id/allergy_egg_checkbox"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toTopOf="@id/allergy_egg"
+          app:layout_constraintBottom_toBottomOf="@id/allergy_egg"
+          app:layout_constraintLeft_toLeftOf="@id/allergy_milk_checkbox" />
+
+      <CheckBox
+          android:id="@+id/allergy_peanut_checkbox"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toTopOf="@id/allergy_peanut"
+          app:layout_constraintBottom_toBottomOf="@id/allergy_peanut"
+          app:layout_constraintLeft_toLeftOf="@id/allergy_milk_checkbox" />
+
+      <CheckBox
+          android:id="@+id/allergy_tree_nut_checkbox"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toTopOf="@id/allergy_tree_nut"
+          app:layout_constraintBottom_toBottomOf="@id/allergy_tree_nut"
+          app:layout_constraintLeft_toLeftOf="@id/allergy_milk_checkbox" />
+
+      <CheckBox
+          android:id="@+id/allergy_soy_checkbox"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toTopOf="@id/allergy_soy"
+          app:layout_constraintBottom_toBottomOf="@id/allergy_soy"
+          app:layout_constraintLeft_toLeftOf="@id/allergy_milk_checkbox" />
+
+      <CheckBox
+          android:id="@+id/allergy_wheat_checkbox"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toTopOf="@id/allergy_wheat"
+          app:layout_constraintBottom_toBottomOf="@id/allergy_wheat"
+          app:layout_constraintLeft_toLeftOf="@id/allergy_milk_checkbox" />
+
+      <CheckBox
+          android:id="@+id/allergy_fish_checkbox"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toTopOf="@id/allergy_fish"
+          app:layout_constraintBottom_toBottomOf="@id/allergy_fish"
+          app:layout_constraintLeft_toLeftOf="@id/allergy_milk_checkbox" />
+
+      <CheckBox
+          android:id="@+id/allergy_shellfish_checkbox"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toTopOf="@id/allergy_shellfish"
+          app:layout_constraintBottom_toBottomOf="@id/allergy_shellfish"
+          app:layout_constraintLeft_toLeftOf="@id/allergy_milk_checkbox" />
+
+      <CheckBox
+          android:id="@+id/allergy_corn_checkbox"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toTopOf="@id/allergy_corn"
+          app:layout_constraintBottom_toBottomOf="@id/allergy_corn"
+          app:layout_constraintLeft_toLeftOf="@id/allergy_milk_checkbox" />
+
+      <CheckBox
+          android:id="@+id/allergy_meat_checkbox"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toTopOf="@id/allergy_meat"
+          app:layout_constraintBottom_toBottomOf="@id/allergy_meat"
+          app:layout_constraintLeft_toLeftOf="@id/allergy_milk_checkbox" />
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+ </ScrollView>
+
+
+
+
+
+    <Button
+        android:id="@+id/allergy_submit"
+        android:layout_width="@dimen/widget_width"
+        android:layout_height="@dimen/widget_height"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="@dimen/inter_widget_margin_distance"
+        android:text="Submit"
+        android:textColor="@android:color/white"
+        android:background="@color/colorMainGreen"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

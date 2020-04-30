@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainSplash">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/settings_splash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Account"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textSize="40dp"
+        android:textColor="@color/colorMainGreen"/>
+
+    <TextView
+        android:id="@+id/settings_name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/settings_splash"
+        app:layout_constraintRight_toLeftOf="@id/settings_splash"
+        android:text="Name: "
+        android:textSize="30dp"/>
+    <EditText
+        android:id="@+id/settings_name_edit"
+        android:layout_width="@dimen/widget_width"
+        android:layout_height="@dimen/widget_height"
+        android:hint="Insert name"
+        app:layout_constraintLeft_toRightOf="@id/settings_name_text"
+        app:layout_constraintTop_toTopOf="@id/settings_name_text"/>
+
+    <TextView
+        android:id="@+id/settings_email_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/settings_name_text"
+        app:layout_constraintLeft_toLeftOf="@id/settings_name_text"
+        android:text="Email: "
+        android:textSize="30dp"
+        android:layout_marginTop="30dp"/>
+    <EditText
+        android:id="@+id/settings_email_edit"
+        android:layout_width="@dimen/widget_width"
+        android:layout_height="@dimen/widget_height"
+        android:hint="Insert email"
+        app:layout_constraintLeft_toRightOf="@id/settings_name_text"
+        app:layout_constraintTop_toTopOf="@id/settings_email_text"/>
+
+    <TextView
+        android:id="@+id/settings_age_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/settings_email_text"
+        app:layout_constraintLeft_toLeftOf="@id/settings_email_text"
+        android:text="Age: "
+        android:textSize="30dp"
+        android:layout_marginTop="30dp"/>
+    <EditText
+        android:id="@+id/settings_age_edit"
+        android:layout_width="@dimen/widget_width"
+        android:layout_height="@dimen/widget_height"
+        android:hint="Insert age"
+        app:layout_constraintLeft_toRightOf="@id/settings_name_text"
+        app:layout_constraintTop_toTopOf="@id/settings_age_text"/>
+
+    <TextView
+        android:id="@+id/settings_height_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/settings_age_text"
+        app:layout_constraintLeft_toLeftOf="@id/settings_email_text"
+        android:text="Height: "
+        android:textSize="30dp"
+        android:layout_marginTop="30dp"/>
+    <EditText
+        android:id="@+id/settings_height_edit"
+        android:layout_width="@dimen/widget_width"
+        android:layout_height="@dimen/widget_height"
+        android:hint="Insert height (in.)"
+        app:layout_constraintLeft_toRightOf="@id/settings_height_text"
+        app:layout_constraintTop_toTopOf="@id/settings_height_text"/>
+
+    <TextView
+        android:id="@+id/settings_weight_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/settings_height_text"
+        app:layout_constraintLeft_toLeftOf="@id/settings_email_text"
+        android:text="Weight: "
+        android:textSize="30dp"
+        android:layout_marginTop="30dp"/>
+    <EditText
+        android:id="@+id/settings_weight_edit"
+        android:layout_width="@dimen/widget_width"
+        android:layout_height="@dimen/widget_height"
+        android:hint="Insert weight (lbs.)"
+        app:layout_constraintLeft_toRightOf="@id/settings_weight_text"
+        app:layout_constraintTop_toTopOf="@id/settings_weight_text"/>
+
+    <TextView
+        android:id="@+id/settings_calories_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/settings_weight_text"
+        app:layout_constraintLeft_toLeftOf="@id/settings_email_text"
+        android:text="Calories: "
+        android:textSize="30dp"
+        android:layout_marginTop="30dp"/>
+    <EditText
+        android:id="@+id/settings_calories_edit"
+        android:layout_width="@dimen/widget_width"
+        android:layout_height="@dimen/widget_height"
+        android:hint="Insert daily calories"
+        app:layout_constraintLeft_toRightOf="@id/settings_calories_text"
+        app:layout_constraintTop_toTopOf="@id/settings_calories_text"/>
+
+    <TextView
+        android:id="@+id/settings_activity_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/settings_calories_edit"
+        app:layout_constraintLeft_toLeftOf="@id/settings_email_text"
+        android:text="Activity: "
+        android:textSize="30dp"
+        android:layout_marginTop="30dp"/>
+
+    <SeekBar
+        android:id="@+id/settings_activity_edit"
+        android:layout_width="@dimen/widget_width"
+        android:layout_height="@dimen/widget_height"
+        app:layout_constraintTop_toTopOf="@id/settings_activity_text"
+        app:layout_constraintLeft_toLeftOf="@id/settings_calories_edit"
+        android:background="@android:color/white"
+        android:max="3"
+        android:min="1"/>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inactive"
+        android:textColor="@color/colorMainGreen"
+        app:layout_constraintTop_toTopOf="@id/settings_activity_edit"
+        app:layout_constraintLeft_toLeftOf="@id/settings_activity_edit" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Active"
+        android:textColor="@color/colorMainGreen"
+        app:layout_constraintTop_toTopOf="@id/settings_activity_edit"
+        app:layout_constraintRight_toRightOf="@id/settings_activity_edit" />
+
+
+
+    <TextView
+        android:id="@+id/settings_gender_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/settings_activity_text"
+        app:layout_constraintLeft_toLeftOf="@id/settings_email_text"
+        android:text="Gender: "
+        android:textSize="30dp"
+        android:layout_marginTop="30dp"/>
+    <Spinner
+        android:id="@+id/settings_gender_field"
+        android:layout_width="@dimen/widget_width"
+        android:layout_height="@dimen/widget_height"
+        app:layout_constraintTop_toTopOf="@id/settings_gender_text"
+        app:layout_constraintLeft_toRightOf="@id/settings_gender_text"
+        android:background="@android:color/white"
+        android:entries="@array/gender_array"
+        android:prompt="@string/gender_prompt" />
+
+    <Button
+        android:id="@+id/settings_update"
+      android:layout_width="@dimen/widget_width"
+      android:layout_height="@dimen/widget_height"
+      android:background="@color/colorMainGreen"
+      android:textColor="@android:color/black"
+      android:text="UPDATE"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/settings_gender_text"
+      android:layout_marginTop="@dimen/inter_widget_margin_distance"/>
+
+    <Button
+        android:id="@+id/settings_cancel"
+        android:layout_width="@dimen/widget_width"
+        android:layout_height="@dimen/widget_height"
+        android:textColor="@android:color/black"
+        android:text="Cancel"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settings_update"
+        android:layout_marginTop="@dimen/inter_widget_margin_distance"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+   <!-- <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/homescreen_settings_navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_navigation_view"
+        android:background="@color/colorLightGreen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:labelVisibilityMode="labeled"/>-->
+</ScrollView>

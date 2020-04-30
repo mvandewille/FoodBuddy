@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="colorMainGreen">#4FD75D</color>
+    <color name="colorLightGreen">#A6FFB8</color>
+    <color name="colorDarkGreen">#54A456</color>
+
+    <color name="colorMainBlue">#5195FF</color>
+    <color name="colorLightBlue">#84BEFF</color>
+    <color name="colorDarkBlue">#3F5BD2</color>
+
+    <color name="colorMainOrange">#FA9E51</color>
+    <color name="colorLightOrange">#FFC391</color>
+    <color name="colorDarkOrange">#F07F0D</color>
+
+    <color name="colorMainPurple">#B373E3</color>
+    <color name="colorLightPurple">#D2ACE4</color>
+    <color name="colorDarkPurple">#E82FE8</color>
+
+    <color name="colorMainScarlet">#E6744F</color>
+    <color name="colorLightScarlet">#FF9C89</color>
+    <color name="colorDarkScarlet">#E05E2D</color>
+
+    <color name="colorMainYellow">#FFD400</color>
+    <color name="colorLightYellow">#FFE875</color>
+    <color name="colorDarkYellow">#EABC00</color>
+
+    <color name="colorMainCyan">#36DFC8</color>
+    <color name="colorLightCyan">#98FFE4</color>
+    <color name="colorDarkCyan">#17A9A1</color>
+
+    <color name="colorMainPink">#F678ED</color>
+    <color name="colorLightPink">#FABAEE</color>
+    <color name="colorDarkPink">#C220AC</color>
+</resources>

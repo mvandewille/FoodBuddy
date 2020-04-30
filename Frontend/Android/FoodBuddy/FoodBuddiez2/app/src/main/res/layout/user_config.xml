@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainSplash">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/user_config_splash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Setup"
+        android:textColor="@color/colorMainGreen"
+        android:textSize="50dp"/>
+
+    <TextView
+        android:id="@+id/user_config_subtext_splash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/user_config_splash"
+        android:text="Let's get to know you"
+        android:textColor="@color/colorMainGreen"
+        android:textSize="30dp"/>
+
+
+    <TextView
+        android:id="@+id/user_config_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/user_config_subtext_splash"
+        android:text="Name"
+        android:layout_marginTop="60dp"
+        android:textColor="@color/colorMainGreen"
+        android:textSize="20dp"/>
+
+
+    <EditText
+        android:id="@+id/user_config_name_field"
+        android:layout_width="@dimen/widget_width"
+        android:layout_height="@dimen/widget_height"
+        app:layout_constraintTop_toBottomOf="@id/user_config_name"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@android:color/white"
+        android:hint="Please enter your name"
+        android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/user_config_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_config_name_field"
+            android:text="Age"
+            android:layout_marginTop="60dp"
+            android:textColor="@color/colorMainGreen"
+            android:textSize="20dp"/>
+
+
+        <EditText
+            android:id="@+id/user_config_age_field"
+            android:layout_width="@dimen/widget_width"
+            android:layout_height="@dimen/widget_height"
+            app:layout_constraintTop_toBottomOf="@id/user_config_age"
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@android:color/white"
+            android:hint="Age"
+            android:inputType="number"/>
+
+    <TextView
+        android:id="@+id/user_config_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/user_config_weight_field"
+        android:text="Gender"
+        android:layout_marginTop="60dp"
+        android:textColor="@color/colorMainGreen"
+        android:textSize="20dp"/>
+
+
+    <Spinner
+        android:id="@+id/user_config_gender_field"
+        android:layout_width="@dimen/widget_width"
+        android:layout_height="@dimen/widget_height"
+        app:layout_constraintTop_toBottomOf="@id/user_config_gender"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@android:color/white"
+        android:entries="@array/gender_array"
+        android:prompt="@string/gender_prompt"
+        />
+
+
+    <TextView
+        android:id="@+id/user_config_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/user_config_age_field"
+        android:text="HEIGHT (in.)"
+        android:layout_marginTop="60dp"
+        android:textColor="@color/colorMainGreen"
+        android:textSize="20dp"/>
+
+
+    <EditText
+        android:id="@+id/user_config_height_field"
+        android:layout_width="@dimen/widget_width"
+        android:layout_height="@dimen/widget_height"
+        app:layout_constraintTop_toBottomOf="@id/user_config_height"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@android:color/white"
+        android:hint="Enter your height"
+        android:inputType="number"/>
+
+    <TextView
+        android:id="@+id/user_config_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/user_config_height_field"
+        android:text="WEIGHT (lbs.)"
+        android:layout_marginTop="60dp"
+        android:textColor="@color/colorMainGreen"
+        android:textSize="20dp"/>
+
+
+    <EditText
+        android:id="@+id/user_config_weight_field"
+        android:layout_width="@dimen/widget_width"
+        android:layout_height="@dimen/widget_height"
+        app:layout_constraintTop_toBottomOf="@id/user_config_weight"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@android:color/white"
+        android:hint="Enter your weight"
+        android:inputType="number"/>
+
+    <TextView
+        android:id="@+id/user_config_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/user_config_gender_field"
+        android:text="Activity Level"
+        android:layout_marginTop="60dp"
+        android:textColor="@color/colorMainGreen"
+        android:textSize="20dp"/>
+
+
+    <SeekBar
+        android:id="@+id/user_config_activity_field"
+        android:layout_width="@dimen/widget_width"
+        android:layout_height="@dimen/widget_height"
+        app:layout_constraintTop_toBottomOf="@id/user_config_activity"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@android:color/white"
+        android:max="3"
+        android:min="1"/>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inactive"
+            android:textColor="@color/colorMainGreen"
+            app:layout_constraintTop_toTopOf="@id/user_config_activity_field"
+            app:layout_constraintLeft_toLeftOf="@id/user_config_activity_field" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Active"
+            android:textColor="@color/colorMainGreen"
+            app:layout_constraintTop_toTopOf="@id/user_config_activity_field"
+            app:layout_constraintRight_toRightOf="@id/user_config_activity_field" />
+
+
+
+
+
+        <Button
+            android:id="@+id/user_config_submit"
+            android:layout_width="@dimen/widget_width"
+            android:layout_height="@dimen/widget_height"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/user_config_activity_field"
+            android:layout_marginTop="80dp"
+            android:textColor="@android:color/white"
+            android:background="@color/colorMainGreen"
+            android:text="SUBMIT"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
