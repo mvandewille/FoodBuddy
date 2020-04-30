@@ -77,7 +77,7 @@ public class HomescreenSettings extends AppCompatActivity implements View.OnClic
     }
 
 
-    public void sendUpdate() {
+    public void sendUpdate() {      //refactoring to have method specifically for sending JSON
         JSONObject obj = new JSONObject();
         String url = ("http://coms-309-hv-3.cs.iastate.edu:8080/user/update");
         RequestQueue queue = Volley.newRequestQueue(this);

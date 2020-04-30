@@ -1510,9 +1510,11 @@ id bottom_navigation_item_calendar
 id bottom_navigation_item_camera
 id bottom_navigation_item_friends
 id bottom_navigation_item_settings
+id btnTakePicture
 id buttonPanel
 id bypass_button
 id cancel_button
+id capturedImage
 id center
 id center_horizontal
 id center_vertical
@@ -1577,6 +1579,7 @@ id homescreen_calendar_value
 id homescreen_friends_message_entry
 id homescreen_friends_navigation_bar_
 id homescreen_friends_send_button
+id homescreen_manual_entry
 id homescreen_navigation_bar
 id icon
 id icon_group
@@ -1598,6 +1601,7 @@ id login_login_button
 id login_password
 id login_splash
 id login_username
+id manual_entry_splash
 id masked
 id message
 id middle
@@ -1781,7 +1785,6 @@ id user_config_submit
 id user_config_subtext_splash
 id user_config_weight
 id user_config_weight_field
-id view_camera
 id view_offset_helper
 id visible
 id withText
@@ -1870,6 +1873,7 @@ layout homescreen_friends
 layout homescreen_settings
 layout login_page
 layout main_login
+layout manual_entry
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
 layout mtrl_alert_dialog_title

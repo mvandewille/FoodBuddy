@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Tyler\\AndroidStudioProjects\\hv_3\\Experiments\\Tyler_Johnson\\FoodBuddiez2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-large-v4\\values-large-v4.xml",
+            "outputFile": "C:\\Users\\Tyler\\AndroidStudioProjects\\hv_3\\Frontend\\Android\\FoodBuddy\\FoodBuddiez2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-large-v4\\values-large-v4.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Tyler\\.gradle\\caches\\transforms-2\\files-2.1\\5d52d9573d8a8f70a8462cc8f8a42ce9\\material-1.1.0\\res\\values-large-v4\\values-large-v4.xml",

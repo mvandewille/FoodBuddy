@@ -18,6 +18,10 @@ public class HomescreenCalendar extends AppCompatActivity implements CalendarVie
     CalendarView calendar;
     public static String email="";
 
+    int calDay;
+    int calMonth;
+    int calYear;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,15 +56,18 @@ public class HomescreenCalendar extends AppCompatActivity implements CalendarVie
     @Override
     public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
         calendarValue.setText(String.valueOf(month+1) + "-" + String.valueOf(dayOfMonth) + "-" + String.valueOf(year));
+         calDay = dayOfMonth;
+         calMonth = month;
+         calYear = year;
     }
 
 
 
-    public static String getEmail(){
+    public static String getEmail(){        //helper to get email across pages
         return email;
     }
 
-    public void setEmail(String emailSetter){
+    public void setEmail(String emailSetter){       //helper to set email if needed for login
         email = emailSetter;
     }
 }
