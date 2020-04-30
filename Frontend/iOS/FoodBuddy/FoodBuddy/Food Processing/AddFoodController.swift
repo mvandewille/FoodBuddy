@@ -31,6 +31,36 @@ class AddFoodController: UIViewController
     
     override func viewDidLoad() {
         _errorLabel.isHidden = true
+        if (foodDict["Calories"] != nil)
+        {
+            let num = String(foodDict["Calories"] as! Int)
+            _calories.text = num
+        }
+        if (foodDict["Sodium"] != nil)
+        {
+            let num = String(foodDict["Sodium"] as! Int)
+            _sodium.text = num
+        }
+        if (foodDict["Carbohydrates"] != nil)
+        {
+            let num = String(foodDict["Carbohydrates"] as! Int)
+            _carbs.text = num
+        }
+        if (foodDict["Cholesterol"] != nil)
+        {
+            let num = String(foodDict["Cholesterol"] as! Int)
+            _cholesterol.text = num
+        }
+        if (foodDict["Protein"] != nil)
+        {
+            let num = String(foodDict["Protein"] as! Int)
+            _protein.text = num
+        }
+        if (foodDict["Fat"] != nil)
+        {
+            let num = String(foodDict["Fat"] as! Int)
+            _fat.text = num
+        }
     }
     
     @IBAction func addFood(_ sender: Any)

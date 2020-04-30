@@ -119,6 +119,7 @@ class GroupChatController : UIViewController
         connectToServer()
         receiveMessage()
         _textField.delegate = self
+        addTextViewPlaceholer()
         _collectionView.delegate = self
         _collectionView.dataSource = self
         ping()

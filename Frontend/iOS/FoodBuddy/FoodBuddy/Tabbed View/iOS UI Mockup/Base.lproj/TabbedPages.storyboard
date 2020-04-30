@@ -783,7 +783,7 @@
                     <connections>
                         <outlet property="_continueBtn" destination="4tI-Og-N44" id="rFE-65-3nv"/>
                         <outlet property="_imageView" destination="NVo-fJ-uaD" id="byM-NA-z3X"/>
-                        <segue destination="d0O-c9-JSY" kind="show" id="5lk-kE-JOv"/>
+                        <segue destination="d0O-c9-JSY" kind="show" identifier="sendToFoodProcessing" id="5lk-kE-JOv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mBA-nO-YDW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
