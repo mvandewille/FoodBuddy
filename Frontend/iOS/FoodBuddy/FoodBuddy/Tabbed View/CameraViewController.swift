@@ -8,37 +8,31 @@
 
 import Foundation
 import UIKit
-import ARKit
+import AVKit
 import Vision
 
-class CameraViewController : UIViewController, ARSCNViewDelegate
+class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate
 {
     @IBOutlet weak var _capture: UIButton!
-    @IBOutlet weak var _cameraView: ARSCNView!
+    @IBOutlet weak var _cameraView: UIView!
     @IBOutlet weak var _dailyViewBtn: UIButton!
     @IBOutlet weak var _globalChatBtn: UIButton!
     
-    // Displayed rectangle outline
-    private var selectedRectangleOutlineLayer: CAShapeLayer?
+    let captureSession = AVCaptureSession()
     
-    // Observed rectangle currently being touched
-    private var selectedRectangleObservation: VNRectangleObservation?
+    let photoOutput = AVCapturePhotoOutput()
     
-    // The time the current rectangle selection was last updated
-    private var selectedRectangleLastUpdated: Date?
+    var previewLayer = AVCaptureVideoPreviewLayer()
     
-    // Current touch location
-    private var currTouchLocation: CGPoint?
+    var photoData : Data?
     
-    // Gets set to true when actively searching for rectangles in the current frame
-    private var searchingForRectangles = false
+    var drawings : [CAShapeLayer] = []
 
     //MARK: - Submit Image
     @IBAction func snap(_ sender: Any) {
-        let currentFrame = _cameraView.snapshot()
-        let vc = self.storyboard?.instantiateViewController(identifier: "ImageConfirm") as! ImageConfirmController
-        vc.image = currentFrame
-        self.navigationController?.pushViewController(vc, animated: true)
+        let photoSettings = AVCapturePhotoSettings()
+        photoSettings.flashMode = .auto
+        photoOutput.capturePhoto(with: photoSettings, delegate: self)
     }
     
     //MARK: - Tab Bar Buttons
@@ -52,17 +46,30 @@ class CameraViewController : UIViewController, ARSCNViewDelegate
         self.tabBarController?.tabBar.isHidden = false
     }
     
-    
     //MARK: - View Init/Deinit
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let configuration = ARWorldTrackingConfiguration()
-        _cameraView.session.run(configuration)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        _cameraView.delegate = self
+        
+        captureSession.sessionPreset = .photo
+        guard let captureDevice = AVCaptureDevice.default(for: .video) else { return }
+        guard let input = try? AVCaptureDeviceInput(device: captureDevice) else { return }
+        
+        captureSession.addInput(input)
+        captureSession.startRunning()
+        
+        previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        _cameraView.layer.addSublayer(previewLayer)
+        previewLayer.frame = _cameraView.frame
+        
+        let dataOuput = AVCaptureVideoDataOutput()
+        dataOuput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
+        captureSession.addOutput(dataOuput)
+        captureSession.addOutput(photoOutput)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -75,123 +82,52 @@ class CameraViewController : UIViewController, ARSCNViewDelegate
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-    
-    // MARK: - Touch Delegates
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first,
-            let currentFrame = _cameraView.session.currentFrame else {
-            return
-        }
+    //MARK: - Find Label
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         
-        currTouchLocation = touch.location(in: _cameraView)
-        findRectangle(locationInScene: currTouchLocation!, frame: currentFrame)
+        guard let pixelBuffer : CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
+        
+        guard let model = try? VNCoreMLModel(for: LabelFinder2().model) else { return }
+        let request = VNCoreMLRequest(model: model) { (finishedReq, error) in
+            print(finishedReq.results)
+            
+            guard let results = finishedReq.results as? [VNRecognizedObjectObservation] else { return }
+            self.drawBoundingBoxes(results)
+        }
+        try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // Ignore if we're currently searching for a rect
-        if searchingForRectangles {
-            return
-        }
-        
-        guard let touch = touches.first,
-            let currentFrame = _cameraView.session.currentFrame else {
-                return
-        }
-        
-        currTouchLocation = touch.location(in: _cameraView)
-        findRectangle(locationInScene: currTouchLocation!, frame: currentFrame)
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        currTouchLocation = nil
-
-        guard let selectedRect = selectedRectangleObservation else {
-            return
-        }
-    }
-    
-    // MARK: - AR Session
-    func session(_ session: ARSession, didUpdate frame: ARFrame) {
-        if searchingForRectangles {
-            return
-        }
-        
-        guard let currTouchLocation = currTouchLocation,
-            let currentFrame = _cameraView.session.currentFrame else {
-                return
-        }
-        
-        if selectedRectangleLastUpdated?.timeIntervalSinceNow ?? 0 < 1 {
-            return
-        }
-        
-        findRectangle(locationInScene: currTouchLocation, frame: currentFrame)
-    }
-    
-    //MARK: - Find Rectangle
-    private func findRectangle(locationInScene location: CGPoint, frame currentFrame: ARFrame)
+    //MARK: - Draw Bounding Boxes
+    func drawBoundingBoxes(_ objects: [VNRecognizedObjectObservation])
     {
-        searchingForRectangles = true
-        selectedRectangleObservation = nil
-        
-        DispatchQueue.global(qos: .background).async {
-            let request = VNDetectRectanglesRequest(completionHandler: { (request, error) in
-                
-                DispatchQueue.main.async {
-                    self.searchingForRectangles = false
-                    
-                    guard let observations = request.results as? [VNRectangleObservation],
-                        let _ = observations.first else {
-                            print("No results found in this area")
-                            return
-                        }
-                    
-                    print("\(observations.count) rectangles found in this location")
-                    
-                    if let layer = self.selectedRectangleOutlineLayer {
-                        layer.removeFromSuperlayer()
-                        self.selectedRectangleOutlineLayer = nil
-                    }
-                    
-                    guard let selectedRect = observations.filter({ (result) -> Bool in
-                        let convertedRect = self._cameraView.convertFromCamera(result.boundingBox)
-                        return convertedRect.contains(location)
-                    }).first else {
-                        print("No results at touch location")
-                        return
-                    }
-                    
-                    // Outline selected rectangle
-                    let points = [selectedRect.topLeft, selectedRect.topRight, selectedRect.bottomRight, selectedRect.bottomLeft]
-                    let convertedPoints = points.map { self._cameraView.convertFromCamera($0) }
-                    self.selectedRectangleOutlineLayer = self.drawPolygon(convertedPoints, color: UIColor.red)
-                    self._cameraView.layer.addSublayer(self.selectedRectangleOutlineLayer!)
-                    
-                    // Track the selected rectangle and when it was found
-                    self.selectedRectangleObservation = selectedRect
-                    self.selectedRectangleLastUpdated = Date()
-                }
-            })
-            
-            request.maximumObservations = 0
-            
-            let handler = VNImageRequestHandler(cvPixelBuffer: currentFrame.capturedImage, options: [:])
-            try? handler.perform([request])
-        }
+        self.clearDrawings()
+        let facesBoundingBoxes: [CAShapeLayer] = objects.map({ (observedLabel: VNRecognizedObjectObservation) -> CAShapeLayer in
+            let faceBoundingBoxOnScreen = self.previewLayer.layerRectConverted(fromMetadataOutputRect: observedLabel.boundingBox)
+            let faceBoundingBoxPath = CGPath(rect: faceBoundingBoxOnScreen, transform: nil)
+            let faceBoundingBoxShape = CAShapeLayer()
+            faceBoundingBoxShape.path = faceBoundingBoxPath
+            faceBoundingBoxShape.fillColor = UIColor.clear.cgColor
+            faceBoundingBoxShape.strokeColor = UIColor.green.cgColor
+            return faceBoundingBoxShape
+        })
+        facesBoundingBoxes.forEach({ faceBoundingBox in self.view.layer.addSublayer(faceBoundingBox) })
+        self.drawings = facesBoundingBoxes
     }
     
-    //MARK: - Draw outline
-    private func drawPolygon(_ points: [CGPoint], color: UIColor) -> CAShapeLayer {
-        let layer = CAShapeLayer()
-        layer.fillColor = nil
-        layer.strokeColor = color.cgColor
-        layer.lineWidth = 2
-        let path = UIBezierPath()
-        path.move(to: points.last!)
-        points.forEach { point in
-            path.addLine(to: point)
-        }
-        layer.path = path.cgPath
-        return layer
+    func clearDrawings() {
+        self.drawings.forEach({ drawing in drawing.removeFromSuperlayer() })
+    }
+}
+
+//MARK: - Camera Capture Delegate
+extension CameraViewController : AVCapturePhotoCaptureDelegate
+{    
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        guard let data = photo.fileDataRepresentation() else { return }
+        let image = UIImage(data: data)
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ImageConfirm") as! ImageConfirmController
+        vc.image = image
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -8,20 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		AF15B5F02412EB78002D60CB /* FriendsSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15B5EF2412EB78002D60CB /* FriendsSettingController.swift */; };
-		AF15B5F52417390F002D60CB /* Status.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF15B5F42417390F002D60CB /* Status.storyboard */; };
-		AF15B5F72417397F002D60CB /* StatusAddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15B5F62417397F002D60CB /* StatusAddController.swift */; };
 		AF15B5F924174D17002D60CB /* AddFoodController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15B5F824174D17002D60CB /* AddFoodController.swift */; };
 		AF15B5FB2417575D002D60CB /* DailyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15B5FA2417575D002D60CB /* DailyViewController.swift */; };
 		AF5B649423FC9C00004708F3 /* TabbedPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5B649323FC9C00004708F3 /* TabbedPageViewController.swift */; };
 		AF5B649A23FCD378004708F3 /* AdditionalUserInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5B649923FCD378004708F3 /* AdditionalUserInfoController.swift */; };
 		AF5B649C23FCE5F5004708F3 /* FoodProcessing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF5B649B23FCE5F5004708F3 /* FoodProcessing.storyboard */; };
 		AF93C91C2404DFB700E5091F /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF93C91B2404DFB700E5091F /* CameraViewController.swift */; };
+		AFA9C194245945340063FCC5 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA9C193245945340063FCC5 /* UIView+Extensions.swift */; };
+		AFA9C196245948AC0063FCC5 /* LabelFinder2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AFA9C195245948AC0063FCC5 /* LabelFinder2.mlmodel */; };
 		AFB06D6723F9E99C001B652B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB06D6623F9E99C001B652B /* LoginViewController.swift */; };
 		AFB06D6923FB49BC001B652B /* LoginPromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB06D6823FB49BC001B652B /* LoginPromptViewController.swift */; };
 		AFB06D6B23FB4EAE001B652B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB06D6A23FB4EAE001B652B /* SignUpViewController.swift */; };
 		AFB59F5B244A42D700738823 /* ImageConfirmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB59F5A244A42D700738823 /* ImageConfirmController.swift */; };
-		AFB59F5D244A9F4400738823 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB59F5C244A9F4400738823 /* UIView+Extensions.swift */; };
-		AFB59F61244CC6F300738823 /* NutritionLabelDetector 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AFB59F60244CC6F300738823 /* NutritionLabelDetector 1.mlmodel */; };
 		AFE02B49240C949200CBA9CD /* AllergenSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE02B48240C949200CBA9CD /* AllergenSettingsController.swift */; };
 		AFE02B4D240C94F700CBA9CD /* AccountSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE02B4C240C94F700CBA9CD /* AccountSettingsController.swift */; };
 		AFE02B4F240CB57A00CBA9CD /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE02B4E240CB57A00CBA9CD /* SettingsController.swift */; };
@@ -36,7 +34,6 @@
 		AFFEDE9C23D9F0B7002D6E82 /* FoodBuddyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFEDE9B23D9F0B7002D6E82 /* FoodBuddyUITests.swift */; };
 		AFFEDEAB23DB80B2002D6E82 /* TabbedPages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFFEDEA923DB80B2002D6E82 /* TabbedPages.storyboard */; };
 		AFFEDEAE23DB8AD1002D6E82 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFFEDEAC23DB8AD1002D6E82 /* Settings.storyboard */; };
-		AFFEDEB023DB8AF2002D6E82 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFFEDEAF23DB8AF2002D6E82 /* Calendar.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,11 +55,8 @@
 
 /* Begin PBXFileReference section */
 		AF15B5EF2412EB78002D60CB /* FriendsSettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsSettingController.swift; sourceTree = "<group>"; };
-		AF15B5F42417390F002D60CB /* Status.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Status.storyboard; sourceTree = "<group>"; };
-		AF15B5F62417397F002D60CB /* StatusAddController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusAddController.swift; sourceTree = "<group>"; };
 		AF15B5F824174D17002D60CB /* AddFoodController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodController.swift; sourceTree = "<group>"; };
 		AF15B5FA2417575D002D60CB /* DailyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyViewController.swift; sourceTree = "<group>"; };
-		AF43904B24465A6800847AB8 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AF43904C24466C0A00847AB8 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF43905424466E4500847AB8 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF43905624466E7B00847AB8 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,13 +65,12 @@
 		AF5B649923FCD378004708F3 /* AdditionalUserInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalUserInfoController.swift; sourceTree = "<group>"; };
 		AF5B649B23FCE5F5004708F3 /* FoodProcessing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FoodProcessing.storyboard; sourceTree = "<group>"; };
 		AF93C91B2404DFB700E5091F /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		AFA9C193245945340063FCC5 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		AFA9C195245948AC0063FCC5 /* LabelFinder2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = LabelFinder2.mlmodel; sourceTree = "<group>"; };
 		AFB06D6623F9E99C001B652B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AFB06D6823FB49BC001B652B /* LoginPromptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPromptViewController.swift; sourceTree = "<group>"; };
 		AFB06D6A23FB4EAE001B652B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		AFB59F5A244A42D700738823 /* ImageConfirmController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConfirmController.swift; sourceTree = "<group>"; };
-		AFB59F5C244A9F4400738823 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "../../../../../../Downloads/ARKitRectangleDetection-master/ARKitRectangleDetection/Extensions + Utilities/UIView+Extensions.swift"; sourceTree = "<group>"; };
-		AFB59F5F244A9F6500738823 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		AFB59F60244CC6F300738823 /* NutritionLabelDetector 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "NutritionLabelDetector 1.mlmodel"; sourceTree = SOURCE_ROOT; };
 		AFE02B48240C949200CBA9CD /* AllergenSettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergenSettingsController.swift; sourceTree = "<group>"; };
 		AFE02B4C240C94F700CBA9CD /* AccountSettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsController.swift; sourceTree = "<group>"; };
 		AFE02B4E240CB57A00CBA9CD /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
@@ -98,7 +91,6 @@
 		AFFEDE9D23D9F0B7002D6E82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFFEDEAA23DB80B2002D6E82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "iOS UI Mockup/Base.lproj/TabbedPages.storyboard"; sourceTree = "<group>"; };
 		AFFEDEAD23DB8AD1002D6E82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "iOS UI Mockup/iOS UI Mockup/Base.lproj/Settings.storyboard"; sourceTree = "<group>"; };
-		AFFEDEAF23DB8AF2002D6E82 /* Calendar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,15 +136,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		AF15B5F3241738E1002D60CB /* Add Status Flow */ = {
-			isa = PBXGroup;
-			children = (
-				AF15B5F62417397F002D60CB /* StatusAddController.swift */,
-				AF15B5F42417390F002D60CB /* Status.storyboard */,
-			);
-			path = "Add Status Flow";
-			sourceTree = "<group>";
-		};
 		AF5B649723FCD2ED004708F3 /* Login Flow */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,14 +163,6 @@
 			path = "Tabbed View";
 			sourceTree = "<group>";
 		};
-		AFB59F5E244A9F5200738823 /* Extensions+Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				AFB59F5F244A9F6500738823 /* UIView+Extensions.swift */,
-			);
-			path = "Extensions+Utilities";
-			sourceTree = "<group>";
-		};
 		AFE02B44240B689500CBA9CD /* Food Processing */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,14 +182,6 @@
 				AFFEDEAC23DB8AD1002D6E82 /* Settings.storyboard */,
 			);
 			path = "Settings Flow";
-			sourceTree = "<group>";
-		};
-		AFE02B47240B68F600CBA9CD /* Calendar History Flow */ = {
-			isa = PBXGroup;
-			children = (
-				AFFEDEAF23DB8AF2002D6E82 /* Calendar.storyboard */,
-			);
-			path = "Calendar History Flow";
 			sourceTree = "<group>";
 		};
 		AFFEDE6B23D9F0B5002D6E82 = {
@@ -248,14 +215,10 @@
 				AF5B649823FCD30D004708F3 /* Tabbed View */,
 				AFE02B44240B689500CBA9CD /* Food Processing */,
 				AFE02B46240B68D100CBA9CD /* Settings Flow */,
-				AFE02B47240B68F600CBA9CD /* Calendar History Flow */,
-				AF15B5F3241738E1002D60CB /* Add Status Flow */,
+				AFA9C193245945340063FCC5 /* UIView+Extensions.swift */,
+				AFA9C195245948AC0063FCC5 /* LabelFinder2.mlmodel */,
 				AFFEDE8223D9F0B7002D6E82 /* Assets.xcassets */,
 				AFFEDE8723D9F0B7002D6E82 /* Info.plist */,
-				AFB59F5C244A9F4400738823 /* UIView+Extensions.swift */,
-				AFB59F60244CC6F300738823 /* NutritionLabelDetector 1.mlmodel */,
-				AFB59F5E244A9F5200738823 /* Extensions+Utilities */,
-				AF43904B24465A6800847AB8 /* MyPlayground.playground */,
 			);
 			path = FoodBuddy;
 			sourceTree = "<group>";
@@ -382,11 +345,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFFEDEB023DB8AF2002D6E82 /* Calendar.storyboard in Resources */,
 				AFFEDE8623D9F0B7002D6E82 /* LaunchScreen.storyboard in Resources */,
 				AF5B649C23FCE5F5004708F3 /* FoodProcessing.storyboard in Resources */,
 				AFFEDE8323D9F0B7002D6E82 /* Assets.xcassets in Resources */,
-				AF15B5F52417390F002D60CB /* Status.storyboard in Resources */,
 				AFFEDE8123D9F0B5002D6E82 /* Main.storyboard in Resources */,
 				AFFEDEAB23DB80B2002D6E82 /* TabbedPages.storyboard in Resources */,
 				AFFEDEAE23DB8AD1002D6E82 /* Settings.storyboard in Resources */,
@@ -418,6 +379,7 @@
 				AFB06D6B23FB4EAE001B652B /* SignUpViewController.swift in Sources */,
 				AF5B649A23FCD378004708F3 /* AdditionalUserInfoController.swift in Sources */,
 				AF5B649423FC9C00004708F3 /* TabbedPageViewController.swift in Sources */,
+				AFA9C196245948AC0063FCC5 /* LabelFinder2.mlmodel in Sources */,
 				AF15B5FB2417575D002D60CB /* DailyViewController.swift in Sources */,
 				AFFEDE7823D9F0B5002D6E82 /* AppDelegate.swift in Sources */,
 				AFB06D6923FB49BC001B652B /* LoginPromptViewController.swift in Sources */,
@@ -425,14 +387,12 @@
 				AFB59F5B244A42D700738823 /* ImageConfirmController.swift in Sources */,
 				AFB06D6723F9E99C001B652B /* LoginViewController.swift in Sources */,
 				AFFAF99F240701B70079837D /* AllergenAddController.swift in Sources */,
+				AFA9C194245945340063FCC5 /* UIView+Extensions.swift in Sources */,
 				AFEDE97D241EBE9A000ABD7F /* GroupChatController.swift in Sources */,
-				AFB59F5D244A9F4400738823 /* UIView+Extensions.swift in Sources */,
-				AF15B5F72417397F002D60CB /* StatusAddController.swift in Sources */,
 				AFE02B4F240CB57A00CBA9CD /* SettingsController.swift in Sources */,
 				AF15B5F02412EB78002D60CB /* FriendsSettingController.swift in Sources */,
 				AFE02B4D240C94F700CBA9CD /* AccountSettingsController.swift in Sources */,
 				AFFEDE7A23D9F0B5002D6E82 /* SceneDelegate.swift in Sources */,
-				AFB59F61244CC6F300738823 /* NutritionLabelDetector 1.mlmodel in Sources */,
 				AF93C91C2404DFB700E5091F /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
