@@ -6,18 +6,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
-    <TextView
+    <Button
+        android:id="@+id/btnTakePicture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HOMESCREEN"
-        android:textColor="@color/colorMainGreen"
-        />
+        android:text="Take Photo"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/homescreen_navigation_bar"/>
 
+    <ImageView
+        android:id="@+id/capturedImage"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_above="@+id/btnTakePicture"/>
 
-    <androidx.camera.view.CameraView
-        android:id="@+id/view_camera"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <ImageButton
+        android:id="@+id/homescreen_manual_entry"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@android:drawable/ic_menu_edit"
+        android:background="@color/colorMainGreen"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"/>
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
