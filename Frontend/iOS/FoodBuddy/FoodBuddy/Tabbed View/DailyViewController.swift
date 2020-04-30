@@ -50,6 +50,7 @@ class DailyViewController : UIViewController
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         DispatchQueue.main.async {
             //CALORIE RING
             self.basicAnimation.toValue = (self.dailyTotals["calories"] ?? 0)/Double(self.calorieLimit)

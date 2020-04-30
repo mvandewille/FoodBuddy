@@ -15,7 +15,7 @@
 		AF5B649C23FCE5F5004708F3 /* FoodProcessing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF5B649B23FCE5F5004708F3 /* FoodProcessing.storyboard */; };
 		AF93C91C2404DFB700E5091F /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF93C91B2404DFB700E5091F /* CameraViewController.swift */; };
 		AFA9C194245945340063FCC5 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA9C193245945340063FCC5 /* UIView+Extensions.swift */; };
-		AFA9C196245948AC0063FCC5 /* LabelFinder2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AFA9C195245948AC0063FCC5 /* LabelFinder2.mlmodel */; };
+		AFA9C198245A931E0063FCC5 /* LabelFinder2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AFA9C197245A931E0063FCC5 /* LabelFinder2.mlmodel */; };
 		AFB06D6723F9E99C001B652B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB06D6623F9E99C001B652B /* LoginViewController.swift */; };
 		AFB06D6923FB49BC001B652B /* LoginPromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB06D6823FB49BC001B652B /* LoginPromptViewController.swift */; };
 		AFB06D6B23FB4EAE001B652B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB06D6A23FB4EAE001B652B /* SignUpViewController.swift */; };
@@ -66,7 +66,7 @@
 		AF5B649B23FCE5F5004708F3 /* FoodProcessing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FoodProcessing.storyboard; sourceTree = "<group>"; };
 		AF93C91B2404DFB700E5091F /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		AFA9C193245945340063FCC5 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		AFA9C195245948AC0063FCC5 /* LabelFinder2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = LabelFinder2.mlmodel; sourceTree = "<group>"; };
+		AFA9C197245A931E0063FCC5 /* LabelFinder2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = LabelFinder2.mlmodel; sourceTree = "<group>"; };
 		AFB06D6623F9E99C001B652B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AFB06D6823FB49BC001B652B /* LoginPromptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPromptViewController.swift; sourceTree = "<group>"; };
 		AFB06D6A23FB4EAE001B652B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -216,7 +216,7 @@
 				AFE02B44240B689500CBA9CD /* Food Processing */,
 				AFE02B46240B68D100CBA9CD /* Settings Flow */,
 				AFA9C193245945340063FCC5 /* UIView+Extensions.swift */,
-				AFA9C195245948AC0063FCC5 /* LabelFinder2.mlmodel */,
+				AFA9C197245A931E0063FCC5 /* LabelFinder2.mlmodel */,
 				AFFEDE8223D9F0B7002D6E82 /* Assets.xcassets */,
 				AFFEDE8723D9F0B7002D6E82 /* Info.plist */,
 			);
@@ -379,7 +379,7 @@
 				AFB06D6B23FB4EAE001B652B /* SignUpViewController.swift in Sources */,
 				AF5B649A23FCD378004708F3 /* AdditionalUserInfoController.swift in Sources */,
 				AF5B649423FC9C00004708F3 /* TabbedPageViewController.swift in Sources */,
-				AFA9C196245948AC0063FCC5 /* LabelFinder2.mlmodel in Sources */,
+				AFA9C198245A931E0063FCC5 /* LabelFinder2.mlmodel in Sources */,
 				AF15B5FB2417575D002D60CB /* DailyViewController.swift in Sources */,
 				AFFEDE7823D9F0B5002D6E82 /* AppDelegate.swift in Sources */,
 				AFB06D6923FB49BC001B652B /* LoginPromptViewController.swift in Sources */,

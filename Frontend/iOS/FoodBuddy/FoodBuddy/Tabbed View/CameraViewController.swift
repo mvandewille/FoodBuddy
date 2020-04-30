@@ -26,7 +26,7 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
     
     var photoData : Data?
     
-    var drawings : [CAShapeLayer] = []
+    var boundingBox : CGRect?
 
     //MARK: - Submit Image
     @IBAction func snap(_ sender: Any) {
@@ -49,6 +49,7 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
     //MARK: - View Init/Deinit
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        captureSession.startRunning()
     }
 
     override func viewDidLoad() {
@@ -59,7 +60,6 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
         guard let input = try? AVCaptureDeviceInput(device: captureDevice) else { return }
         
         captureSession.addInput(input)
-        captureSession.startRunning()
         
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
@@ -74,11 +74,12 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        //self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        captureSession.stopRunning()
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
@@ -92,30 +93,11 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
             print(finishedReq.results)
             
             guard let results = finishedReq.results as? [VNRecognizedObjectObservation] else { return }
-            self.drawBoundingBoxes(results)
+            
+            guard let firstResult = results.first else { return }
+            self.boundingBox = firstResult.boundingBox
         }
         try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])
-    }
-    
-    //MARK: - Draw Bounding Boxes
-    func drawBoundingBoxes(_ objects: [VNRecognizedObjectObservation])
-    {
-        self.clearDrawings()
-        let facesBoundingBoxes: [CAShapeLayer] = objects.map({ (observedLabel: VNRecognizedObjectObservation) -> CAShapeLayer in
-            let faceBoundingBoxOnScreen = self.previewLayer.layerRectConverted(fromMetadataOutputRect: observedLabel.boundingBox)
-            let faceBoundingBoxPath = CGPath(rect: faceBoundingBoxOnScreen, transform: nil)
-            let faceBoundingBoxShape = CAShapeLayer()
-            faceBoundingBoxShape.path = faceBoundingBoxPath
-            faceBoundingBoxShape.fillColor = UIColor.clear.cgColor
-            faceBoundingBoxShape.strokeColor = UIColor.green.cgColor
-            return faceBoundingBoxShape
-        })
-        facesBoundingBoxes.forEach({ faceBoundingBox in self.view.layer.addSublayer(faceBoundingBox) })
-        self.drawings = facesBoundingBoxes
-    }
-    
-    func clearDrawings() {
-        self.drawings.forEach({ drawing in drawing.removeFromSuperlayer() })
     }
 }
 
@@ -128,6 +110,10 @@ extension CameraViewController : AVCapturePhotoCaptureDelegate
         
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "ImageConfirm") as! ImageConfirmController
         vc.image = image
+        if (boundingBox != nil)
+        {
+            vc.box = boundingBox
+        }
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
