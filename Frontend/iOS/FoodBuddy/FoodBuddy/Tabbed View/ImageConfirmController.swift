@@ -16,6 +16,8 @@ class ImageConfirmController : UIViewController
     @IBOutlet weak var _imageView: UIImageView!
     @IBOutlet weak var _continueBtn: UIButton!
     
+    var foodDict : Dictionary<String, Any> = [:]
+    
     var image : UIImage?
     
     var croppedImage : UIImage?
@@ -81,13 +83,10 @@ class ImageConfirmController : UIViewController
     //MARK: - String Parsing
     func processText()
     {
-        print(recognizedText)
         let newStr = recognizedText.uppercased()
         let newStr2 = newStr.components(separatedBy: .punctuationCharacters).joined()
-
+        print(newStr2)
         let strArr = newStr2.split(separator: " ")
-        
-        var foodDict : Dictionary<String, Any> = [:]
         
         var lookingFor = 0
         
@@ -108,9 +107,6 @@ class ImageConfirmController : UIViewController
                 {
                     foodDict["Calories"] = Int(word)
                     lookingFor = 0
-                }
-                else
-                {
                     continue
                 }
             }
@@ -134,20 +130,13 @@ class ImageConfirmController : UIViewController
                     {
                         foodDict["Sodium"] = Int(tempStr)
                         lookingFor = 0
-                    }
-                    else
-                    {
                         continue
                     }
-                }
-                else
-                {
-                    continue
                 }
             }
             
             //MARK: CHOLESTEROL
-            if (word == "CHOLESTEROL")
+            if (word == "CHOLESTEROL" || word == "CHOLEST")
             {
                 lookingFor = 3
                 continue
@@ -159,21 +148,21 @@ class ImageConfirmController : UIViewController
                 //assign int to value
                 if (word.suffix(2) == "MG")
                 {
-                    let tempIndex = word.index(word.endIndex, offsetBy: -2)
-                    let tempStr = word[..<tempIndex]
-                    if (Int(tempStr) != nil)
+                    if (word.prefix(1) == "<")
                     {
-                        foodDict["Sodium"] = Int(tempStr)
-                        lookingFor = 0
+                        
+                        let tempIndex = word.index(word.endIndex, offsetBy: -2)
+                        let startIndex = word.index(word.startIndex, offsetBy: 1)
+                        var tempStr = String(word[..<tempIndex])
+                        tempStr.remove(at: tempStr.startIndex)
+
+                        if (Int(tempStr) != nil)
+                        {
+                            foodDict["Cholesterol"] = Int(tempStr)
+                            lookingFor = 0
+                            continue
+                        }
                     }
-                    else
-                    {
-                        continue
-                    }
-                }
-                else
-                {
-                    continue
                 }
             }
             
@@ -190,11 +179,18 @@ class ImageConfirmController : UIViewController
                 //assign int to value
                 if (word.suffix(1) == "G")
                 {
-                    
+                    let tempIndex = word.index(word.endIndex, offsetBy: -1)
+                    let tempStr = word[..<tempIndex]
+                    if (Int(tempStr) != nil)
+                    {
+                        foodDict["Protein"] = Int(tempStr)
+                        lookingFor = 0
+                        continue
+                    }
                 }
             }
             
-            //FAT AND CARBOHYDRATES
+            //MARK: - FAT
             if (word == "TOTAL")
             {
                 lookingFor = 5
@@ -207,17 +203,7 @@ class ImageConfirmController : UIViewController
                     lookingFor = 6
                     continue
                 }
-                else if (word == "CARB." || word == "CARBOHYDRATE")
-                {
-                    lookingFor = 7
-                    continue
-                }
-                else
-                {
-                    continue
-                }
             }
-            //MARK: FAT
             if (lookingFor == 6)
             {
                 //check if word ends with g
@@ -225,10 +211,24 @@ class ImageConfirmController : UIViewController
                 //assign int to value
                 if (word.suffix(1) == "G")
                 {
-                    
+                    let tempIndex = word.index(word.endIndex, offsetBy: -1)
+                    let tempStr = word[..<tempIndex]
+                    if (Int(tempStr) != nil)
+                    {
+                        foodDict["Fat"] = Int(tempStr)
+                        lookingFor = 0
+                        continue
+                    }
+
                 }
             }
+            
             //MARK: CARBOHYDRATES
+            if (word == "CARBOHYDRATE" || word == "CARB")
+            {
+                lookingFor = 7
+                continue
+            }
             if (lookingFor == 7)
             {
                 //check if word ends with g
@@ -236,8 +236,25 @@ class ImageConfirmController : UIViewController
                 //assign int to value
                 if (word.suffix(1) == "G")
                 {
-                    
+                    let tempIndex = word.index(word.endIndex, offsetBy: -1)
+                    let tempStr = word[..<tempIndex]
+                    if (Int(tempStr) != nil)
+                    {
+                        foodDict["Carbohydrates"] = Int(tempStr)
+                        lookingFor = 0
+                        continue
+                    }
                 }
+            }
+        }
+        print(foodDict)
+        self.performSegue(withIdentifier: "sendToFoodProcessing", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "sendToFoodProcessing" {
+            if let destinationVC = segue.destination as? AddFoodController {
+                destinationVC.foodDict = foodDict
             }
         }
     }
