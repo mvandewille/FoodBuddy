@@ -3,19 +3,6 @@ package main;
 public class Convolution {
 
 
-    /**
-     * Takes an image (grey-levels) and a kernel and a position,
-     * applies the convolution at that position and returns the
-     * new pixel value.
-     *
-     * @param input        The 2D double array representing the image.
-     * @param x            The x coordinate for the position of the convolution.
-     * @param y            The y coordinate for the position of the convolution.
-     * @param k            The 2D array representing the kernel.
-     * @param kernelWidth  The width of the kernel.
-     * @param kernelHeight The height of the kernel.
-     * @return The new pixel value after the convolution.
-     */
     public static double singlePixelConvolution(double[][] input,
                                                 int x, int y,
                                                 double[][] k,
@@ -31,18 +18,7 @@ public class Convolution {
     }
 
 
-    /**
-     * Takes a 2D array of grey-levels and a kernel and applies the convolution
-     * over the area of the image specified by width and height.
-     *
-     * @param input        the 2D double array representing the image
-     * @param width        the width of the image
-     * @param height       the height of the image
-     * @param kernel       the 2D array representing the kernel
-     * @param kernelWidth  the width of the kernel
-     * @param kernelHeight the height of the kernel
-     * @return the 2D array representing the new image
-     */
+
     public static double[][] convolution2D(double[][] input,
                                            int width, int height,
                                            double[][] kernel,
@@ -65,19 +41,7 @@ public class Convolution {
         return output;
     }
 
-    /**
-     * Takes a 2D array of grey-levels and a kernel, applies the convolution
-     * over the area of the image specified by width and height and returns
-     * a part of the final image.
-     *
-     * @param input        the 2D double array representing the image
-     * @param width        the width of the image
-     * @param height       the height of the image
-     * @param kernel       the 2D array representing the kernel
-     * @param kernelWidth  the width of the kernel
-     * @param kernelHeight the height of the kernel
-     * @return the 2D array representing the new image
-     */
+
     public static double[][] convolution2DPadded(double[][] input,
                                                  int width, int height,
                                                  double[][] kernel,
@@ -105,19 +69,7 @@ public class Convolution {
     }
 
 
-    /**
-     * Applies the convolution2DPadded  algorithm to the input array as many as
-     * iterations.
-     *
-     * @param input        the 2D double array representing the image
-     * @param width        the width of the image
-     * @param height       the height of the image
-     * @param kernel       the 2D array representing the kernel
-     * @param kernelWidth  the width of the kernel
-     * @param kernelHeight the height of the kernel
-     * @param iterations   the number of iterations to apply the convolution
-     * @return the 2D array representing the new image
-     */
+
     public double[][] convolutionType2(double[][] input,
                                        int width, int height,
                                        double[][] kernel,
