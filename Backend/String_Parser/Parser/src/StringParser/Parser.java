@@ -8,11 +8,13 @@ public class Parser {
 	
 	public String arg;
 	
+	//Little constructor for the parser
 	public Parser(String in)
 	{
 		arg = in;
 	}
 	
+	//Start the program running the input
 	public String run()
 	{
 		Dictionary values = new Hashtable();
@@ -27,11 +29,13 @@ public class Parser {
 		return values.toString();
 	}
 	
+	//Print for debugging
 	public static void printString(Dictionary values)
 	{
 		System.out.println(values.toString());
 	}
 	
+	//Reads the text and puts it into a dictionary
 	public static Dictionary readText(ArrayList<String> in, Dictionary values)
 	{
 		for(int i = 0; i < in.size(); i++){
@@ -45,6 +49,7 @@ public class Parser {
 		return values;
 	}
 	
+	//Checks the string for Carbs
 	public static void checkCarb(String in, Dictionary values) {
 		int per = 0;
 		String r[] = in.split(" ");
@@ -103,6 +108,7 @@ public class Parser {
 		}
 	}
 	
+	//Checks the string for Cholesterol
 	public static void checkCholesterol(String in, Dictionary values) {
 		int per = 0;
 		String r[] = in.split(" ");
@@ -155,6 +161,7 @@ public class Parser {
 		}
 	}
 	
+	//Check string for fat
 	public static void checkFat(String in, Dictionary values) {
 		int per = 0;
 		int per2 = 0;
@@ -203,6 +210,7 @@ public class Parser {
 		}
 	}
 	
+	//Check String for protein
 	public static void checkProtein(String in, Dictionary values) {
 		int per = 0;
 		String r[] = in.split(" ");
@@ -243,6 +251,7 @@ public class Parser {
 		}
 	}
 	
+	//Check the string for sodium
 	public static void checkSodium(String in, Dictionary values) {
 		int per = 0;
 		String r[] = in.split(" ");
@@ -280,6 +289,7 @@ public class Parser {
 		}
 	}
 	
+	//Check string for calories
 	public static void checkCalories(String in, Dictionary values) {
 		int per = 0;
 		String r[] = in.split(" ");
@@ -323,6 +333,7 @@ public class Parser {
 		}
 	}
 	
+	//Split the string into an array
 	public static String[] split(String in, ArrayList<String> modify)
 	{
 		String[] r = in.split("\n");
