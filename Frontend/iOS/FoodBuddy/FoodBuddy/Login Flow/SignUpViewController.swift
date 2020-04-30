@@ -17,6 +17,7 @@ class SignUpViewController: UIViewController
         super.touchesBegan(touches, with: event)
     }
     
+    //MARK: View Init/Deinit
     override func viewDidLoad() {
         super.viewDidLoad()
         DispatchQueue.main.async {
@@ -31,6 +32,7 @@ class SignUpViewController: UIViewController
     @IBOutlet weak var _submit_btn: UIButton!
     @IBOutlet weak var _error_label: UILabel!
     
+    //MARK: Sign Up Btn Action
     @IBAction func SignUpButton(_ sender: Any)
     {
         DispatchQueue.main.async {
@@ -56,7 +58,8 @@ class SignUpViewController: UIViewController
         
         DoSignUp(email!, hashStr)
     }
-
+    
+    //MARK: Create User HTTP
     func DoSignUp(_ email: String, _ pwd: String)
     {
         let json: [String: Any] = ["email": email, "password": pwd]

@@ -9,18 +9,20 @@
 import Foundation
 import UIKit
 
-class FriendsSettingController: UIViewController, UITableViewDelegate, UITableViewDataSource
+class FriendsSettingController: UIViewController
 {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
         super.touchesBegan(touches, with: event)
     }
     
+    //MARK: Variables
     @IBOutlet weak var _friendsTable: UITableView!
     @IBOutlet weak var _addBtn: UIButton!
     @IBOutlet weak var _email: UITextField!
     @IBOutlet weak var _errorLabel: UILabel!
     
+    //MARK: Add Follower Button
     @IBAction func _addFollowing(_ sender: Any)
     {
         self._errorLabel.isHidden = true
@@ -44,27 +46,7 @@ class FriendsSettingController: UIViewController, UITableViewDelegate, UITableVi
     
     var friendsArr : [String] = []
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friendsArr.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-        cell.textLabel?.text = friendsArr[indexPath.row]
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle == .delete)
-        {
-            doHTTPDelete(following: friendsArr[indexPath.row], index: indexPath)
-        }
-    }
-    
+    //MARK: View Init/Deinit
     override func viewDidLoad() {
         self._errorLabel.isHidden = true
         DispatchQueue.main.async {
@@ -81,6 +63,7 @@ class FriendsSettingController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
+    //MARK: Get Followers HTTP
     func getFollowers()
     {
         let email = UserDefaults.standard.string(forKey: "email")
@@ -111,6 +94,7 @@ class FriendsSettingController: UIViewController, UITableViewDelegate, UITableVi
             task.resume()
         }
     
+    //MARK: Update Followers HTTP
     func doHTTP(dict : Dictionary<String, Any>)
     {
         let jsonData = try? JSONSerialization.data(withJSONObject: dict, options: [])
@@ -155,6 +139,7 @@ class FriendsSettingController: UIViewController, UITableViewDelegate, UITableVi
         task.resume()
     }
     
+    //MARK: Remove Follower HTTP
     func doHTTPDelete(following: String, index: IndexPath)
     {
         var urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/delete/following?email="
@@ -197,5 +182,30 @@ class FriendsSettingController: UIViewController, UITableViewDelegate, UITableVi
             }
         }
         task.resume()
+    }
+}
+
+//MARK: UITableView Extension
+extension FriendsSettingController: UITableViewDelegate, UITableViewDataSource
+{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return friendsArr.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
+        cell.textLabel?.text = friendsArr[indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete)
+        {
+            doHTTPDelete(following: friendsArr[indexPath.row], index: indexPath)
+        }
     }
 }

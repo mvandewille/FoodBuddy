@@ -9,12 +9,14 @@
 import Foundation
 import UIKit
 
-class AllergenSettingsController : UIViewController, UITableViewDelegate, UITableViewDataSource
+class AllergenSettingsController : UIViewController
 {
+    //MARK: Variables
     @IBOutlet weak var _allergenTable: UITableView!
     @IBOutlet weak var _errorLabel: UILabel!
     @IBOutlet weak var _saveBtn: UIButton!
     
+    //MARK: Save Btn Action
     @IBAction func saveAllergies(_ sender: Any)
     {
         userDict["allergens"] = allergenArray
@@ -24,44 +26,8 @@ class AllergenSettingsController : UIViewController, UITableViewDelegate, UITabl
     var userDict: Dictionary<String, Any> = [:]
     var allergenArray: [String] = []
     var allAllergens = ["Milk", "Eggs", "Tree Nuts", "Peanuts", "Shellfish", "Wheat", "Soy", "Fish", "Banana", "Garlic"]
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allAllergens.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-        cell.textLabel?.text = allAllergens[indexPath.row]
-        if allergenArray.firstIndex(of: cell.textLabel!.text!) != nil
-        {
-            cell.accessoryType = UITableViewCell.AccessoryType.checkmark
-        }
-        cell.selectionStyle = .none
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        if (tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.checkmark)
-        {
-            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
-            let testStr = tableView.cellForRow(at: indexPath)?.textLabel?.text!
-            let fakeIndex = allergenArray.firstIndex(of: testStr!)
-            allergenArray.remove(at: fakeIndex!)
-        }
-        else
-        {
-            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
-            let testStr = (tableView.cellForRow(at: indexPath)?.textLabel!.text)!
-            let testIndex = allergenArray.firstIndex(of: testStr)
-            if testIndex == nil
-            {
-                allergenArray.append((tableView.cellForRow(at: indexPath)?.textLabel!.text)!)
-            }
-        }
-        
-    }
-    
+
+    //MARK: View Init/Deinit
     override func viewDidLoad() {
         super.viewDidLoad()
         DispatchQueue.main.async {
@@ -80,6 +46,7 @@ class AllergenSettingsController : UIViewController, UITableViewDelegate, UITabl
         self._allergenTable.delegate = self
     }
     
+    //MARK: Get User Allergens HTTP
     func DoFieldCheck(email: String)
     {
         let urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/find/email/basic?email=" + email
@@ -105,6 +72,7 @@ class AllergenSettingsController : UIViewController, UITableViewDelegate, UITabl
         task.resume()
     }
     
+    //MARK: Update User Info HTTP
     func doHTTP(dict : Dictionary<String, Any>)
     {
         let jsonData = try? JSONSerialization.data(withJSONObject: dict, options: [])
@@ -141,5 +109,46 @@ class AllergenSettingsController : UIViewController, UITableViewDelegate, UITabl
             }
         }
         task.resume()
+    }
+}
+
+//MARK: UITableView Extensions
+extension AllergenSettingsController: UITableViewDataSource, UITableViewDelegate
+{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return allAllergens.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
+        cell.textLabel?.text = allAllergens[indexPath.row]
+        if allergenArray.firstIndex(of: cell.textLabel!.text!) != nil
+        {
+            cell.accessoryType = UITableViewCell.AccessoryType.checkmark
+        }
+        cell.selectionStyle = .none
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if (tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.checkmark)
+        {
+            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
+            let testStr = tableView.cellForRow(at: indexPath)?.textLabel?.text!
+            let fakeIndex = allergenArray.firstIndex(of: testStr!)
+            allergenArray.remove(at: fakeIndex!)
+        }
+        else
+        {
+            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
+            let testStr = (tableView.cellForRow(at: indexPath)?.textLabel!.text)!
+            let testIndex = allergenArray.firstIndex(of: testStr)
+            if testIndex == nil
+            {
+                allergenArray.append((tableView.cellForRow(at: indexPath)?.textLabel!.text)!)
+            }
+        }
+        
     }
 }

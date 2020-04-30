@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <TextView
+        android:id="@+id/output"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/colorMainGreen"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/homescreen_friends_navigation_bar_"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_navigation_view"
+        android:background="@color/colorLightGreen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:labelVisibilityMode="labeled"/>
+
+    <EditText
+        android:id="@+id/homescreen_friends_message_entry"
+        android:layout_width="@dimen/widget_width"
+        android:layout_height="@dimen/widget_height"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="80dp"
+        app:layout_constraintBottom_toTopOf="@id/homescreen_friends_navigation_bar_"
+        android:hint="Enter message..."/>
+
+    <Button
+        android:id="@+id/homescreen_friends_send_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/homescreen_friends_message_entry"
+        app:layout_constraintTop_toTopOf="@id/homescreen_friends_message_entry"
+        android:layout_marginLeft="20dp"
+        android:text="SEND"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

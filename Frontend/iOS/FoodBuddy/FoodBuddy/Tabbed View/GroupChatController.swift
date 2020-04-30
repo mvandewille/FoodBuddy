@@ -70,6 +70,8 @@ class serverMessageCell : UITableViewCell
 
 class GroupChatController : UIViewController
 {
+    
+    //MARK: Variables
     @IBOutlet weak var _textField: UITextView!
     @IBOutlet weak var _submit: UIButton!
     @IBOutlet weak var _collectionView: UICollectionView!
@@ -84,6 +86,7 @@ class GroupChatController : UIViewController
     
     var socketConnection = URLSession.shared.webSocketTask(with: URL(string: "ws://coms-309-hv-3.cs.iastate.edu:8080/chat/")!)
 
+    //MARK: Send Message Btn Action
     @IBAction func submitMsg(_ sender: Any)
     {
         let str = _textField.text
@@ -100,6 +103,7 @@ class GroupChatController : UIViewController
         self.view.endEditing(true)
     }
 
+    //MARK: View Init/Deinit
     override func viewDidLoad() {
         super.viewDidLoad()
         let name = UserDefaults.standard.string(forKey: "userName")!.replacingOccurrences(of: " ", with: "%20")
@@ -119,6 +123,7 @@ class GroupChatController : UIViewController
         connectToServer()
         receiveMessage()
         _textField.delegate = self
+        addTextViewPlaceholer()
         _collectionView.delegate = self
         _collectionView.dataSource = self
         ping()
@@ -129,6 +134,8 @@ class GroupChatController : UIViewController
         socketConnection.cancel()
     }
     
+    
+    //MARK: Websocket Functions
     func receiveMessage()
     {
         socketConnection.receive { result in
@@ -185,6 +192,7 @@ class GroupChatController : UIViewController
         }
     }
     
+    //MARK: User Icon Processing
     func processUserArr(_ message : String)
     {
         let strArr = message.split(separator: ";")

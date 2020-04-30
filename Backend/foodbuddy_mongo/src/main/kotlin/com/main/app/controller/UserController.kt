@@ -3,7 +3,6 @@ package com.main.app.controller
 import com.main.app.json.*
 import com.main.app.model.Food
 import com.main.app.model.User
-import com.main.app.repository.StatusRepository
 import com.main.app.repository.UserRepository
 
 import org.springframework.beans.factory.annotation.Autowired
@@ -19,8 +18,6 @@ import java.time.format.DateTimeFormatter
 class UserController {
     @Autowired
     lateinit var u_repository: UserRepository
-    @Autowired
-    lateinit var s_repository: StatusRepository
 
     @GetMapping("/auth")
     fun auth(@RequestParam(value = "email", required = true) email: String,
@@ -87,20 +84,6 @@ class UserController {
         }
         catch (e: EmptyResultDataAccessException) {
             return FollowingJArray(mutableListOf<String>())
-        }
-    }
-
-    @GetMapping("/find/following/status")
-    fun findFriendStatus(@RequestParam(value= "email", required = true) email: String): StatusJArray {
-        try {
-            val usr = u_repository.findByEmail(email)
-            val following = usr.getFollowing()
-            following.add(email)
-            val temp = s_repository.findByEmailInOrderByIdDesc(following)
-            return StatusJArray(temp.map { it.toJson() })
-        }
-        catch (e: EmptyResultDataAccessException) {
-            return StatusJArray(null)
         }
     }
 

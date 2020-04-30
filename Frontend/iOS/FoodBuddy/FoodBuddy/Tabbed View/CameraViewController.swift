@@ -18,13 +18,13 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
     @IBOutlet weak var _dailyViewBtn: UIButton!
     @IBOutlet weak var _globalChatBtn: UIButton!
     
-    let captureSession = AVCaptureSession()
+    private let captureSession = AVCaptureSession()
     
-    let photoOutput = AVCapturePhotoOutput()
+    private let photoOutput = AVCapturePhotoOutput()
     
-    var previewLayer = AVCaptureVideoPreviewLayer()
+    private var previewLayer = AVCaptureVideoPreviewLayer()
     
-    var photoData : Data?
+    private var photoData : Data?
     
     var boundingBox : CGRect?
 

@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">FoodBuddiez</string>
+
+    <string name="gender_prompt">Choose a gender</string>
+
+    <string-array name="gender_array">
+        <item>*select*</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="allergy_list">
+        <item>Milk</item>
+        <item>Egg</item>
+        <item>Peanuts</item>
+        <item>Tree nuts</item>
+        <item>Soy</item>
+        <item>Wheat</item>
+        <item>Fish</item>
+        <item>Shellfish</item>
+        <item>Corn</item>
+        <item>Meat</item>
+    </string-array>
+
+
+
+</resources>

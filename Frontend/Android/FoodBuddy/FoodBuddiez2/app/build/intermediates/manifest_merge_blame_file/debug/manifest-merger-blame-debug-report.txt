@@ -1,0 +1,167 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.foodbuddiez"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:6:5-67
+11-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:6:22-64
+12    <uses-permission android:name="android.permission.CAMERA" />
+12-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:7:5-65
+12-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:7:22-62
+13
+14    <application
+14-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:9:5-91:19
+15        android:allowBackup="true"
+15-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:10:9-35
+16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+16-->[androidx.core:core:1.1.0] C:\Users\Tyler\.gradle\caches\transforms-2\files-2.1\e9dab9c67c1ee3668e0bbf86c6d8cbd8\core-1.1.0\AndroidManifest.xml:24:18-86
+17        android:debuggable="true"
+18        android:icon="@mipmap/ic_launcher"
+18-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:11:9-43
+19        android:label="@string/app_name"
+19-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:12:9-41
+20        android:roundIcon="@mipmap/ic_launcher_round"
+20-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:13:9-54
+21        android:supportsRtl="true"
+21-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:14:9-35
+22        android:theme="@style/AppTheme"
+22-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:15:9-40
+23        android:usesCleartextTraffic="true" >
+23-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:17:9-44
+24        <activity android:name="com.example.foodbuddiez.MainSplash" >
+24-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:18:9-24:20
+24-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:18:19-45
+25            <intent-filter>
+25-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:19:13-23:29
+26                <action android:name="android.intent.action.MAIN" />
+26-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:20:17-69
+26-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:20:25-66
+27
+28                <category android:name="android.intent.category.LAUNCHER" />
+28-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:22:17-77
+28-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:22:27-74
+29            </intent-filter>
+30        </activity>
+31        <activity android:name="com.example.foodbuddiez.LoginPage" >
+31-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:27:9-33:20
+31-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:27:19-44
+32            <intent-filter>
+32-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:19:13-23:29
+33                <action android:name="android.intent.action.MAIN" />
+33-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:20:17-69
+33-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:20:25-66
+34
+35                <category android:name="android.intent.category.LAUNCHER" />
+35-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:22:17-77
+35-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:22:27-74
+36            </intent-filter>
+37        </activity>
+38        <activity android:name="com.example.foodbuddiez.SignupPage" >
+38-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:35:9-41:20
+38-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:35:19-45
+39            <intent-filter>
+39-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:19:13-23:29
+40                <action android:name="android.intent.action.MAIN" />
+40-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:20:17-69
+40-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:20:25-66
+41
+42                <category android:name="android.intent.category.LAUNCHER" />
+42-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:22:17-77
+42-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:22:27-74
+43            </intent-filter>
+44        </activity>
+45        <activity android:name="com.example.foodbuddiez.UserConfig" >
+45-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:43:9-49:20
+45-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:43:19-45
+46            <intent-filter>
+46-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:19:13-23:29
+47                <action android:name="android.intent.action.MAIN" />
+47-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:20:17-69
+47-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:20:25-66
+48
+49                <category android:name="android.intent.category.LAUNCHER" />
+49-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:22:17-77
+49-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:22:27-74
+50            </intent-filter>
+51        </activity>
+52        <activity android:name="com.example.foodbuddiez.AllergyCheck" >
+52-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:51:9-57:20
+52-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:51:19-47
+53            <intent-filter>
+53-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:19:13-23:29
+54                <action android:name="android.intent.action.MAIN" />
+54-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:20:17-69
+54-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:20:25-66
+55
+56                <category android:name="android.intent.category.LAUNCHER" />
+56-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:22:17-77
+56-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:22:27-74
+57            </intent-filter>
+58        </activity>
+59        <activity android:name="com.example.foodbuddiez.Homescreen" >
+59-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:59:9-65:20
+59-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:59:19-45
+60            <intent-filter>
+60-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:19:13-23:29
+61                <action android:name="android.intent.action.MAIN" />
+61-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:20:17-69
+61-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:20:25-66
+62
+63                <category android:name="android.intent.category.LAUNCHER" />
+63-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:22:17-77
+63-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:22:27-74
+64            </intent-filter>
+65        </activity>
+66        <activity android:name="com.example.foodbuddiez.HomescreenCalendar" >
+66-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:67:9-73:20
+66-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:67:19-53
+67            <intent-filter>
+67-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:19:13-23:29
+68                <action android:name="android.intent.action.MAIN" />
+68-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:20:17-69
+68-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:20:25-66
+69
+70                <category android:name="android.intent.category.LAUNCHER" />
+70-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:22:17-77
+70-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:22:27-74
+71            </intent-filter>
+72        </activity>
+73        <activity android:name="com.example.foodbuddiez.HomescreenFriends" >
+73-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:75:9-81:20
+73-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:75:19-52
+74            <intent-filter>
+74-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:19:13-23:29
+75                <action android:name="android.intent.action.MAIN" />
+75-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:20:17-69
+75-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:20:25-66
+76
+77                <category android:name="android.intent.category.LAUNCHER" />
+77-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:22:17-77
+77-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:22:27-74
+78            </intent-filter>
+79        </activity>
+80        <activity android:name="com.example.foodbuddiez.HomescreenSettings" >
+80-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:83:9-89:20
+80-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:83:19-53
+81            <intent-filter>
+81-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:19:13-23:29
+82                <action android:name="android.intent.action.MAIN" />
+82-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:20:17-69
+82-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:20:25-66
+83
+84                <category android:name="android.intent.category.LAUNCHER" />
+84-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:22:17-77
+84-->C:\Users\Tyler\AndroidStudioProjects\hv_3\Frontend\Android\FoodBuddy\FoodBuddiez2\app\src\main\AndroidManifest.xml:22:27-74
+85            </intent-filter>
+86        </activity>
+87    </application>
+88
+89</manifest>
