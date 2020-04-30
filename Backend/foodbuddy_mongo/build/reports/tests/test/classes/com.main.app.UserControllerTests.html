@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - UserControllerTests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>UserControllerTests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.main.app.html">com.main.app</a> &gt; UserControllerTests</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">10</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.794s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testAddFollowing()</td>
+<td class="success">0.152s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testAuthUser()</td>
+<td class="success">0.046s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testDayTotal()</td>
+<td class="success">0.053s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testFindAll()</td>
+<td class="success">0.125s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testFindEmail()</td>
+<td class="success">0.046s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testFindEmailBasic()</td>
+<td class="success">0.052s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testFindFollowing()</td>
+<td class="success">0.048s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testUserAddFood()</td>
+<td class="success">0.113s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testUserUpdate()</td>
+<td class="success">0.082s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testUserUpdatePassword()</td>
+<td class="success">0.077s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2020-04-28 22:00:00.444  INFO 1300 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.main.app.UserControllerTests], using SpringBootContextLoader
+2020-04-28 22:00:00.451  INFO 1300 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.main.app.UserControllerTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-04-28 22:00:00.451  INFO 1300 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.main.app.UserControllerTests]: UserControllerTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-04-28 22:00:00.473  INFO 1300 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.main.app.FoodbuddyApplication for test class com.main.app.UserControllerTests
+2020-04-28 22:00:00.478  INFO 1300 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener]
+2020-04-28 22:00:00.479  INFO 1300 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5ead02dc, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1b0c845a, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4a7fa8a2, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@44f52eb1, org.springframework.test.context.support.DirtiesContextTestExecutionListener@72f87f11, org.springframework.test.context.transaction.TransactionalTestExecutionListener@da91b40, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3aa488ef, org.springframework.test.context.event.EventPublishingTestExecutionListener@57c9b9ac, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@66f844b3, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@234e2037, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@3d332741, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@272dfd92, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@354f818]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.6.RELEASE)
+
+2020-04-28 22:00:00.585  INFO 1300 --- [    Test worker] com.main.app.UserControllerTests         : Starting UserControllerTests on Desktop with PID 1300 (started by Amish Cyborg in C:\Users\Amish Cyborg\Documents\hv_3\Backend\foodbuddy_mongo)
+2020-04-28 22:00:00.587  INFO 1300 --- [    Test worker] com.main.app.UserControllerTests         : No active profile set, falling back to default profiles: default
+2020-04-28 22:00:01.422  INFO 1300 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-28 22:00:01.422  INFO 1300 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-04-28 22:00:01.446  INFO 1300 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.main.app.repository.MessageRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2020-04-28 22:00:01.450  INFO 1300 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.main.app.repository.StatusRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2020-04-28 22:00:01.454  INFO 1300 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.main.app.repository.UserRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2020-04-28 22:00:01.454  INFO 1300 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31ms. Found 0 JPA repository interfaces.
+2020-04-28 22:00:01.467  INFO 1300 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-28 22:00:01.467  INFO 1300 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-04-28 22:00:01.503  INFO 1300 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35ms. Found 3 MongoDB repository interfaces.
+2020-04-28 22:00:01.997  INFO 1300 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2020-04-28 22:00:01.999  INFO 1300 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-28 22:00:02.000  INFO 1300 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-28 22:00:02.067  INFO 1300 --- [    Test worker] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-04-28 22:00:02.068  INFO 1300 --- [    Test worker] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1470 ms
+2020-04-28 22:00:02.287  INFO 1300 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2020-04-28 22:00:02.288  INFO 1300 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2020-04-28 22:00:02.336  INFO 1300 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-04-28 22:00:02.352  INFO 1300 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-04-28 22:00:02.398  INFO 1300 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-28 22:00:02.399  INFO 1300 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-04-28 22:00:02.518  INFO 1300 --- [    Test worker] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[coms-309-hv-3.cs.iastate.edu:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-04-28 22:00:02.518  INFO 1300 --- [    Test worker] org.mongodb.driver.cluster               : Adding discovered server coms-309-hv-3.cs.iastate.edu:27017 to client view of cluster
+2020-04-28 22:00:02.753  INFO 1300 --- [state.edu:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:1439}] to coms-309-hv-3.cs.iastate.edu:27017
+2020-04-28 22:00:02.801  INFO 1300 --- [state.edu:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=coms-309-hv-3.cs.iastate.edu:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 3]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=46939200}
+2020-04-28 22:00:02.802  INFO 1300 --- [state.edu:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2020-04-28 22:00:03.205  WARN 1300 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-04-28 22:00:03.570  INFO 1300 --- [    Test worker] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-04-28 22:00:03.843  INFO 1300 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-28 22:00:04.050  WARN 1300 --- [    Test worker] o.s.b.a.m.MustacheAutoConfiguration      : Cannot find template location: classpath:/templates/ (please add some templates, check your Mustache configuration, or set spring.mustache.check-template-location=false)
+2020-04-28 22:00:04.275  INFO 1300 --- [    Test worker] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring TestDispatcherServlet ''
+2020-04-28 22:00:04.275  INFO 1300 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-04-28 22:00:04.308  INFO 1300 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 33 ms
+2020-04-28 22:00:04.347  INFO 1300 --- [    Test worker] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-04-28 22:00:04.348  INFO 1300 --- [    Test worker] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-04-28 22:00:04.363  INFO 1300 --- [    Test worker] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-04-28 22:00:04.713  INFO 1300 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findUsingGET_1
+2020-04-28 22:00:04.772  INFO 1300 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 53959 (http) with context path ''
+2020-04-28 22:00:04.774  INFO 1300 --- [    Test worker] com.main.app.UserControllerTests         : Started UserControllerTests in 4.289 seconds (JVM running for 16.021)
+2020-04-28 22:00:05.463  INFO 1300 --- [    Test worker] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:1440}] to coms-309-hv-3.cs.iastate.edu:27017
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /user/add
+       Parameters = {}
+          Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;, Content-Length:&quot;58&quot;]
+             Body = {&quot;email&quot;:&quot;testmockaccount@test.com&quot;,&quot;password&quot;:&quot;password&quot;}
+    Session Attrs = {}
+
+Handler:
+             Type = com.main.app.controller.UserController
+           Method = com.main.app.controller.UserController#addData(UserAddJ)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json&quot;]
+     Content type = application/json
+             Body = {&quot;response&quot;:1,&quot;message&quot;:&quot;N/A&quot;}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /user/add
+       Parameters = {}
+          Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;, Content-Length:&quot;57&quot;]
+             Body = {&quot;email&quot;:&quot;testmockfriend@test.com&quot;,&quot;password&quot;:&quot;password&quot;}
+    Session Attrs = {}
+
+Handler:
+             Type = com.main.app.controller.UserController
+           Method = com.main.app.controller.UserController#addData(UserAddJ)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json&quot;]
+     Content type = application/json
+             Body = {&quot;response&quot;:1,&quot;message&quot;:&quot;N/A&quot;}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /user/day/add/food
+       Parameters = {}
+          Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;, Content-Length:&quot;157&quot;]
+             Body = {&quot;email&quot;:&quot;testmockaccount@test.com&quot;,&quot;name&quot;:&quot;Sustenance&quot;,&quot;calories&quot;:1000,&quot;sodium&quot;:15.0,&quot;carbs&quot;:15.0,&quot;protein&quot;:15.0,&quot;fat&quot;:15.0,&quot;cholesterol&quot;:15.0,&quot;amount&quot;:2.0}
+    Session Attrs = {}
+
+Handler:
+             Type = com.main.app.controller.UserController
+           Method = com.main.app.controller.UserController#addFoodToDay(FoodAddJ)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json&quot;]
+     Content type = application/json
+             Body = {&quot;response&quot;:1,&quot;message&quot;:&quot;N/A&quot;}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /user/day/total
+       Parameters = {email=[testmockaccount@test.com]}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.main.app.controller.UserController
+           Method = com.main.app.controller.UserController#getTotal(String, String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json&quot;]
+     Content type = application/json
+             Body = {&quot;calories&quot;:2000,&quot;sodium&quot;:30.0,&quot;carbs&quot;:30.0,&quot;protein&quot;:30.0,&quot;fat&quot;:30.0,&quot;cholesterol&quot;:30.0}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /user/find/following
+       Parameters = {email=[testmockaccount@test.com]}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.main.app.controller.UserController
+           Method = com.main.app.controller.UserController#findFollowing(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json&quot;]
+     Content type = application/json
+             Body = {&quot;content&quot;:[]}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /user/find/all
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.main.app.controller.UserController
+           Method = com.main.app.controller.UserController#find()
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json&quot;]
+     Content type = application/json
+             Body = {&quot;users&quot;:[{&quot;email&quot;:&quot;test@iastate.edu&quot;,&quot;name&quot;:&quot;Max Wilson&quot;,&quot;age&quot;:14,&quot;height&quot;:84,&quot;weight&quot;:10,&quot;lifestyle&quot;:&quot;Hyperactive&quot;,&quot;gender&quot;:&quot;Man&quot;,&quot;calorieLimit&quot;:420,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[&quot;peanut&quot;,&quot;water&quot;,&quot;gluten&quot;,&quot;meat&quot;],&quot;following&quot;:[&quot;tyler@iastate.edu&quot;],&quot;foods&quot;:[{&quot;name&quot;:&quot;Pie&quot;,&quot;calories&quot;:600,&quot;sodium&quot;:50.0,&quot;carbs&quot;:40.0,&quot;protein&quot;:35.0,&quot;fat&quot;:25.0,&quot;cholesterol&quot;:10.0}],&quot;calendar&quot;:{&quot;03/05/2020&quot;:{&quot;foods&quot;:[{&quot;food&quot;:&quot;Pie&quot;,&quot;amount&quot;:2.0,&quot;timestamp&quot;:&quot;03-05-2020 21:37:07.87&quot;}]},&quot;03/10/2020&quot;:{&quot;foods&quot;:[{&quot;food&quot;:&quot;Pie&quot;,&quot;amount&quot;:2.0,&quot;timestamp&quot;:&quot;03-10-2020 17:11:47.57&quot;},{&quot;food&quot;:&quot;Pie&quot;,&quot;amount&quot;:2.0,&quot;timestamp&quot;:&quot;03-10-2020 17:11:50.41&quot;},{&quot;food&quot;:&quot;Pie&quot;,&quot;amount&quot;:2.0,&quot;timestamp&quot;:&quot;03-10-2020 17:11:51.27&quot;}]}}},{&quot;email&quot;:&quot;maw1@iastate.edu&quot;,&quot;name&quot;:null,&quot;age&quot;:null,&quot;height&quot;:null,&quot;weight&quot;:null,&quot;lifestyle&quot;:null,&quot;gender&quot;:null,&quot;calorieLimit&quot;:null,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[],&quot;calendar&quot;:{}},{&quot;email&quot;:&quot;tdj1@iastate.edu&quot;,&quot;name&quot;:null,&quot;age&quot;:null,&quot;height&quot;:null,&quot;weight&quot;:null,&quot;lifestyle&quot;:null,&quot;gender&quot;:null,&quot;calorieLimit&quot;:null,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[],&quot;calendar&quot;:{}},{&quot;email&quot;:&quot;test@test.test&quot;,&quot;name&quot;:&quot;TEST&quot;,&quot;age&quot;:21,&quot;height&quot;:80,&quot;weight&quot;:150,&quot;lifestyle&quot;:&quot;Moderate&quot;,&quot;gender&quot;:&quot;male&quot;,&quot;calorieLimit&quot;:3226,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[&quot;milk&quot;,&quot;egg&quot;],&quot;following&quot;:[],&quot;foods&quot;:[],&quot;calendar&quot;:{}},{&quot;email&quot;:&quot;teste@test.test&quot;,&quot;name&quot;:null,&quot;age&quot;:null,&quot;height&quot;:null,&quot;weight&quot;:null,&quot;lifestyle&quot;:null,&quot;gender&quot;:null,&quot;calorieLimit&quot;:null,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[],&quot;calendar&quot;:{}},{&quot;email&quot;:&quot;test2@test.test&quot;,&quot;name&quot;:null,&quot;age&quot;:null,&quot;height&quot;:null,&quot;weight&quot;:null,&quot;lifestyle&quot;:null,&quot;gender&quot;:null,&quot;calorieLimit&quot;:null,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[],&quot;calendar&quot;:{}},{&quot;email&quot;:&quot;test3@test.test&quot;,&quot;name&quot;:null,&quot;age&quot;:null,&quot;height&quot;:null,&quot;weight&quot;:null,&quot;lifestyle&quot;:null,&quot;gender&quot;:null,&quot;calorieLimit&quot;:null,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[],&quot;calendar&quot;:{}},{&quot;email&quot;:&quot;test4@test.test&quot;,&quot;name&quot;:null,&quot;age&quot;:null,&quot;height&quot;:null,&quot;weight&quot;:null,&quot;lifestyle&quot;:null,&quot;gender&quot;:null,&quot;calorieLimit&quot;:null,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[],&quot;calendar&quot;:{}},{&quot;email&quot;:&quot;maxv1@iastate.edu&quot;,&quot;name&quot;:&quot;Max Van de Wille&quot;,&quot;age&quot;:22,&quot;height&quot;:77,&quot;weight&quot;:160,&quot;lifestyle&quot;:&quot;Inactive&quot;,&quot;gender&quot;:&quot;Male&quot;,&quot;calorieLimit&quot;:3883,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[&quot;Tree Nuts&quot;,&quot;Eggs&quot;],&quot;following&quot;:[&quot;maxv8@iastate.edu&quot;],&quot;foods&quot;:[{&quot;name&quot;:&quot;Raisinets&quot;,&quot;calories&quot;:190,&quot;sodium&quot;:15.0,&quot;carbs&quot;:32.0,&quot;protein&quot;:2.0,&quot;fat&quot;:8.0,&quot;cholesterol&quot;:5.0},{&quot;name&quot;:&quot;Raisinets&quot;,&quot;calories&quot;:190,&quot;sodium&quot;:15.0,&quot;carbs&quot;:32.0,&quot;protein&quot;:2.0,&quot;fat&quot;:8.0,&quot;cholesterol&quot;:5.0},{&quot;name&quot;:&quot;dusisiakka&quot;,&quot;calories&quot;:190,&quot;sodium&quot;:190.0,&quot;carbs&quot;:190.0,&quot;protein&quot;:190.0,&quot;fat&quot;:190.0,&quot;cholesterol&quot;:190.0},{&quot;name&quot;:&quot;raisin&quot;,&quot;calories&quot;:12,&quot;sodium&quot;:12.0,&quot;carbs&quot;:12.0,&quot;protein&quot;:12.0,&quot;fat&quot;:12.0,&quot;cholesterol&quot;:12.0},{&quot;name&quot;:&quot;raisin&quot;,&quot;calories&quot;:12,&quot;sodium&quot;:12.0,&quot;carbs&quot;:12.0,&quot;protein&quot;:12.0,&quot;fat&quot;:12.0,&quot;cholesterol&quot;:12.0},{&quot;name&quot;:&quot;raisin&quot;,&quot;calories&quot;:12,&quot;sodium&quot;:12.0,&quot;carbs&quot;:12.0,&quot;protein&quot;:12.0,&quot;fat&quot;:12.0,&quot;cholesterol&quot;:12.0},{&quot;name&quot;:&quot;raisin&quot;,&quot;calories&quot;:12,&quot;sodium&quot;:12.0,&quot;carbs&quot;:12.0,&quot;protein&quot;:12.0,&quot;fat&quot;:12.0,&quot;cholesterol&quot;:12.0},{&quot;name&quot;:&quot;raisin&quot;,&quot;calories&quot;:12,&quot;sodium&quot;:12.0,&quot;carbs&quot;:12.0,&quot;protein&quot;:12.0,&quot;fat&quot;:12.0,&quot;cholesterol&quot;:12.0},{&quot;name&quot;:&quot;raisin&quot;,&quot;calories&quot;:12,&quot;sodium&quot;:12.0,&quot;carbs&quot;:12.0,&quot;protein&quot;:12.0,&quot;fat&quot;:12.0,&quot;cholesterol&quot;:12.0},{&quot;name&quot;:&quot;raisin&quot;,&quot;calories&quot;:12,&quot;sodium&quot;:12.0,&quot;carbs&quot;:12.0,&quot;protein&quot;:12.0,&quot;fat&quot;:12.0,&quot;cholesterol&quot;:12.0},{&quot;name&quot;:&quot;raisin&quot;,&quot;calories&quot;:12,&quot;sodium&quot;:12.0,&quot;carbs&quot;:12.0,&quot;protein&quot;:12.0,&quot;fat&quot;:12.0,&quot;cholesterol&quot;:12.0},{&quot;name&quot;:&quot;raisin&quot;,&quot;calories&quot;:12,&quot;sodium&quot;:12.0,&quot;carbs&quot;:12.0,&quot;protein&quot;:12.0,&quot;fat&quot;:12.0,&quot;cholesterol&quot;:12.0},{&quot;name&quot;:&quot;raisin&quot;,&quot;calories&quot;:12,&quot;sodium&quot;:12.0,&quot;carbs&quot;:12.0,&quot;protein&quot;:12.0,&quot;fat&quot;:12.0,&quot;cholesterol&quot;:12.0},{&quot;name&quot;:&quot;raisin&quot;,&quot;calories&quot;:12,&quot;sodium&quot;:12.0,&quot;carbs&quot;:12.0,&quot;protein&quot;:12.0,&quot;fat&quot;:12.0,&quot;cholesterol&quot;:12.0},{&quot;name&quot;:&quot;raisin&quot;,&quot;calories&quot;:12,&quot;sodium&quot;:12.0,&quot;carbs&quot;:12.0,&quot;protein&quot;:12.0,&quot;fat&quot;:12.0,&quot;cholesterol&quot;:12.0},{&quot;name&quot;:&quot;raisinets&quot;,&quot;calories&quot;:190,&quot;sodium&quot;:15.0,&quot;carbs&quot;:32.0,&quot;protein&quot;:2.0,&quot;fat&quot;:8.0,&quot;cholesterol&quot;:5.0},{&quot;name&quot;:&quot;dumb shit&quot;,&quot;calories&quot;:161,&quot;sodium&quot;:151.0,&quot;carbs&quot;:1616.0,&quot;protein&quot;:1717.0,&quot;fat&quot;:181718.0,&quot;cholesterol&quot;:1818.0},{&quot;name&quot;:&quot;jimmy John&quot;,&quot;calories&quot;:410,&quot;sodium&quot;:0.29,&quot;carbs&quot;:56.0,&quot;protein&quot;:5.0,&quot;fat&quot;:19.0,&quot;cholesterol&quot;:0.05},{&quot;name&quot;:&quot;Yogurt&quot;,&quot;calories&quot;:200,&quot;sodium&quot;:0.004,&quot;carbs&quot;:5.0,&quot;protein&quot;:6.0,&quot;fat&quot;:2.0,&quot;cholesterol&quot;:0.02},{&quot;name&quot;:&quot;yogurt&quot;,&quot;calories&quot;:80,&quot;sodium&quot;:0.08,&quot;carbs&quot;:15.0,&quot;protein&quot;:5.0,&quot;fat&quot;:0.0,&quot;cholesterol&quot;:0.005},{&quot;name&quot;:&quot;Yogurt&quot;,&quot;calories&quot;:80,&quot;sodium&quot;:85.0,&quot;carbs&quot;:15.0,&quot;protein&quot;:5.0,&quot;fat&quot;:0.0,&quot;cholesterol&quot;:5.0}],&quot;calendar&quot;:{&quot;03/10/2020&quot;:{&quot;foods&quot;:[{&quot;food&quot;:&quot;Raisinets&quot;,&quot;amount&quot;:1.5,&quot;timestamp&quot;:&quot;03-10-2020 04:52:49.81&quot;},{&quot;food&quot;:&quot;Raisinets&quot;,&quot;amount&quot;:1.5,&quot;timestamp&quot;:&quot;03-10-2020 04:54:06.80&quot;},{&quot;food&quot;:&quot;dusisiakka&quot;,&quot;amount&quot;:1.0,&quot;timestamp&quot;:&quot;03-10-2020 05:00:54.48&quot;},{&quot;food&quot;:&quot;raisin&quot;,&quot;amount&quot;:12.0,&quot;timestamp&quot;:&quot;03-10-2020 05:06:45.16&quot;},{&quot;food&quot;:&quot;raisin&quot;,&quot;amount&quot;:12.0,&quot;timestamp&quot;:&quot;03-10-2020 05:06:46.14&quot;},{&quot;food&quot;:&quot;raisin&quot;,&quot;amount&quot;:12.0,&quot;timestamp&quot;:&quot;03-10-2020 05:06:47.36&quot;},{&quot;food&quot;:&quot;raisin&quot;,&quot;amount&quot;:12.0,&quot;timestamp&quot;:&quot;03-10-2020 05:06:50.75&quot;},{&quot;food&quot;:&quot;raisin&quot;,&quot;amount&quot;:12.0,&quot;timestamp&quot;:&quot;03-10-2020 05:06:51.58&quot;},{&quot;food&quot;:&quot;raisin&quot;,&quot;amount&quot;:12.0,&quot;timestamp&quot;:&quot;03-10-2020 05:07:01.09&quot;},{&quot;food&quot;:&quot;raisin&quot;,&quot;amount&quot;:12.0,&quot;timestamp&quot;:&quot;03-10-2020 05:07:01.58&quot;},{&quot;food&quot;:&quot;raisin&quot;,&quot;amount&quot;:12.0,&quot;timestamp&quot;:&quot;03-10-2020 05:07:25.94&quot;},{&quot;food&quot;:&quot;raisin&quot;,&quot;amount&quot;:12.0,&quot;timestamp&quot;:&quot;03-10-2020 05:08:07.30&quot;},{&quot;food&quot;:&quot;raisin&quot;,&quot;amount&quot;:12.0,&quot;timestamp&quot;:&quot;03-10-2020 05:08:07.35&quot;},{&quot;food&quot;:&quot;raisin&quot;,&quot;amount&quot;:12.0,&quot;timestamp&quot;:&quot;03-10-2020 05:08:26.82&quot;},{&quot;food&quot;:&quot;raisin&quot;,&quot;amount&quot;:12.0,&quot;timestamp&quot;:&quot;03-10-2020 05:08:28.27&quot;},{&quot;food&quot;:&quot;raisinets&quot;,&quot;amount&quot;:1.0,&quot;timestamp&quot;:&quot;03-10-2020 05:17:25.68&quot;},{&quot;food&quot;:&quot;dumb shit&quot;,&quot;amount&quot;:2.0,&quot;timestamp&quot;:&quot;03-10-2020 05:18:29.97&quot;}]},&quot;03/12/2020&quot;:{&quot;foods&quot;:[{&quot;food&quot;:&quot;jimmy John&quot;,&quot;amount&quot;:1.0,&quot;timestamp&quot;:&quot;03-12-2020 21:43:46.26&quot;}]},&quot;03/13/2020&quot;:{&quot;foods&quot;:[{&quot;food&quot;:&quot;Yogurt&quot;,&quot;amount&quot;:1.0,&quot;timestamp&quot;:&quot;03-13-2020 15:33:51.18&quot;}]},&quot;04/10/2020&quot;:{&quot;foods&quot;:[{&quot;food&quot;:&quot;yogurt&quot;,&quot;amount&quot;:1.0,&quot;timestamp&quot;:&quot;04-10-2020 17:14:04.39&quot;}]},&quot;04/14/2020&quot;:{&quot;foods&quot;:[{&quot;food&quot;:&quot;Yogurt&quot;,&quot;amount&quot;:2.0,&quot;timestamp&quot;:&quot;04-14-2020 23:30:01.80&quot;}]}}},{&quot;email&quot;:&quot;test5@test.test&quot;,&quot;name&quot;:null,&quot;age&quot;:null,&quot;height&quot;:null,&quot;weight&quot;:null,&quot;lifestyle&quot;:null,&quot;gender&quot;:null,&quot;calorieLimit&quot;:null,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[],&quot;calendar&quot;:{}},{&quot;email&quot;:&quot;teset6@test.test&quot;,&quot;name&quot;:null,&quot;age&quot;:null,&quot;height&quot;:null,&quot;weight&quot;:null,&quot;lifestyle&quot;:null,&quot;gender&quot;:null,&quot;calorieLimit&quot;:null,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[],&quot;calendar&quot;:{}},{&quot;email&quot;:&quot;test7@test.test&quot;,&quot;name&quot;:null,&quot;age&quot;:null,&quot;height&quot;:null,&quot;weight&quot;:null,&quot;lifestyle&quot;:null,&quot;gender&quot;:null,&quot;calorieLimit&quot;:null,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[],&quot;calendar&quot;:{}},{&quot;email&quot;:&quot;test8@test.test&quot;,&quot;name&quot;:null,&quot;age&quot;:null,&quot;height&quot;:null,&quot;weight&quot;:null,&quot;lifestyle&quot;:null,&quot;gender&quot;:null,&quot;calorieLimit&quot;:null,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[],&quot;calendar&quot;:{}},{&quot;email&quot;:&quot;test10@test.test&quot;,&quot;name&quot;:&quot;Test10&quot;,&quot;age&quot;:21,&quot;height&quot;:123,&quot;weight&quot;:234,&quot;lifestyle&quot;:&quot;1&quot;,&quot;gender&quot;:&quot;Male&quot;,&quot;calorieLimit&quot;:null,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[],&quot;calendar&quot;:{}},{&quot;email&quot;:&quot;test11@test.test&quot;,&quot;name&quot;:&quot;test11&quot;,&quot;age&quot;:21,&quot;height&quot;:85,&quot;weight&quot;:125,&quot;lifestyle&quot;:&quot;3&quot;,&quot;gender&quot;:&quot;Male&quot;,&quot;calorieLimit&quot;:null,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[],&quot;calendar&quot;:{}},{&quot;email&quot;:&quot;test12@test.test&quot;,&quot;name&quot;:null,&quot;age&quot;:null,&quot;height&quot;:null,&quot;weight&quot;:null,&quot;lifestyle&quot;:null,&quot;gender&quot;:null,&quot;calorieLimit&quot;:null,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[],&quot;calendar&quot;:{}},{&quot;email&quot;:&quot;test13@test.test&quot;,&quot;name&quot;:null,&quot;age&quot;:null,&quot;height&quot;:null,&quot;weight&quot;:null,&quot;lifestyle&quot;:null,&quot;gender&quot;:null,&quot;calorieLimit&quot;:null,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[],&quot;calendar&quot;:{}},{&quot;email&quot;:&quot;test14@test.test&quot;,&quot;name&quot;:null,&quot;age&quot;:null,&quot;height&quot;:null,&quot;weight&quot;:null,&quot;lifestyle&quot;:null,&quot;gender&quot;:null,&quot;calorieLimit&quot;:null,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[],&quot;calendar&quot;:{}},{&quot;email&quot;:&quot;test15@test.test&quot;,&quot;name&quot;:&quot;test15&quot;,&quot;age&quot;:23,&quot;height&quot;:85,&quot;weight&quot;:200,&quot;lifestyle&quot;:&quot;Active&quot;,&quot;gender&quot;:&quot;Male&quot;,&quot;calorieLimit&quot;:null,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[],&quot;calendar&quot;:{}},{&quot;email&quot;:&quot;test16@test.test&quot;,&quot;name&quot;:&quot;test16&quot;,&quot;age&quot;:45,&quot;height&quot;:70,&quot;weight&quot;:280,&quot;lifestyle&quot;:&quot;Somewhat active&quot;,&quot;gender&quot;:&quot;Male&quot;,&quot;calorieLimit&quot;:null,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[],&quot;calendar&quot;:{}},{&quot;email&quot;:&quot;test17@test.test&quot;,&quot;name&quot;:&quot;test17&quot;,&quot;age&quot;:45,&quot;height&quot;:69,&quot;weight&quot;:420,&quot;lifestyle&quot;:&quot;Sedentary&quot;,&quot;gender&quot;:&quot;Male&quot;,&quot;calorieLimit&quot;:null,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[],&quot;calendar&quot;:{}},{&quot;email&quot;:&quot;test18@test.test&quot;,&quot;name&quot;:&quot;test18&quot;,&quot;age&quot;:34,&quot;height&quot;:69,&quot;weight&quot;:220,&quot;lifestyle&quot;:&quot;Somewhat active&quot;,&quot;gender&quot;:&quot;Male&quot;,&quot;calorieLimit&quot;:2073,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[&quot;Fish&quot;],&quot;following&quot;:[],&quot;foods&quot;:[],&quot;calendar&quot;:{}},{&quot;email&quot;:&quot;tyler@iastate.com&quot;,&quot;name&quot;:null,&quot;age&quot;:null,&quot;height&quot;:null,&quot;weight&quot;:null,&quot;lifestyle&quot;:null,&quot;gender&quot;:null,&quot;calorieLimit&quot;:null,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[],&quot;calendar&quot;:{}},{&quot;email&quot;:&quot;tyler@iastate.edu&quot;,&quot;name&quot;:null,&quot;age&quot;:null,&quot;height&quot;:null,&quot;weight&quot;:null,&quot;lifestyle&quot;:null,&quot;gender&quot;:null,&quot;calorieLimit&quot;:null,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[],&quot;calendar&quot;:{}},{&quot;email&quot;:&quot;test@test123.test&quot;,&quot;name&quot;:&quot;testy&quot;,&quot;age&quot;:24,&quot;height&quot;:72,&quot;weight&quot;:100,&quot;lifestyle&quot;:&quot;Moderate&quot;,&quot;gender&quot;:&quot;Male&quot;,&quot;calorieLimit&quot;:3046,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[&quot;Milk&quot;,&quot;Eggs&quot;,&quot;Tree Nuts&quot;],&quot;following&quot;:[],&quot;foods&quot;:[{&quot;name&quot;:&quot;Trail mix&quot;,&quot;calories&quot;:210,&quot;sodium&quot;:0.09,&quot;carbs&quot;:20.0,&quot;protein&quot;:5.0,&quot;fat&quot;:13.0,&quot;cholesterol&quot;:0.0}],&quot;calendar&quot;:{&quot;03/10/2020&quot;:{&quot;foods&quot;:[{&quot;food&quot;:&quot;Trail mix&quot;,&quot;amount&quot;:1.0,&quot;timestamp&quot;:&quot;03-10-2020 18:30:58.75&quot;}]}}},{&quot;email&quot;:&quot;gmail@gmail.com&quot;,&quot;name&quot;:&quot;Tyler&quot;,&quot;age&quot;:21,&quot;height&quot;:60,&quot;weight&quot;:70,&quot;lifestyle&quot;:&quot;Moderate&quot;,&quot;gender&quot;:&quot;Male&quot;,&quot;calorieLimit&quot;:1764,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[&quot;Tree Nuts&quot;,&quot;Garlic&quot;],&quot;following&quot;:[],&quot;foods&quot;:[{&quot;name&quot;:&quot;spicy garlic&quot;,&quot;calories&quot;:25,&quot;sodium&quot;:0.54,&quot;carbs&quot;:2.0,&quot;protein&quot;:0.0,&quot;fat&quot;:2.0,&quot;cholesterol&quot;:0.005}],&quot;calendar&quot;:{&quot;03/19/2020&quot;:{&quot;foods&quot;:[{&quot;food&quot;:&quot;spicy garlic&quot;,&quot;amount&quot;:2.0,&quot;timestamp&quot;:&quot;03-19-2020 01:58:37.18&quot;}]}}},{&quot;email&quot;:&quot;maxv8@iastate.edu&quot;,&quot;name&quot;:&quot;owiefj&quot;,&quot;age&quot;:31,&quot;height&quot;:12,&quot;weight&quot;:12,&quot;lifestyle&quot;:&quot;Active&quot;,&quot;gender&quot;:&quot;Male&quot;,&quot;calorieLimit&quot;:162,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[&quot;Milk&quot;,&quot;Eggs&quot;,&quot;Tree Nuts&quot;],&quot;following&quot;:[],&quot;foods&quot;:[],&quot;calendar&quot;:{}},{&quot;email&quot;:&quot;demo@test.test&quot;,&quot;name&quot;:&quot;test&quot;,&quot;age&quot;:21,&quot;height&quot;:80,&quot;weight&quot;:150,&quot;lifestyle&quot;:&quot;Somewhat active&quot;,&quot;gender&quot;:&quot;Male&quot;,&quot;calorieLimit&quot;:1855,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[],&quot;calendar&quot;:{}},{&quot;email&quot;:&quot;maxv9@iastate.edu&quot;,&quot;name&quot;:&quot;wiuefghiwuehf&quot;,&quot;age&quot;:21,&quot;height&quot;:14,&quot;weight&quot;:56,&quot;lifestyle&quot;:&quot;Moderate&quot;,&quot;gender&quot;:&quot;Male&quot;,&quot;calorieLimit&quot;:707,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[&quot;Milk&quot;,&quot;Eggs&quot;,&quot;Soy&quot;,&quot;Wheat&quot;],&quot;following&quot;:[],&quot;foods&quot;:[{&quot;name&quot;:&quot;Example food&quot;,&quot;calories&quot;:400,&quot;sodium&quot;:123.0,&quot;carbs&quot;:123.0,&quot;protein&quot;:123.0,&quot;fat&quot;:123.0,&quot;cholesterol&quot;:123.0}],&quot;calendar&quot;:{&quot;03/12/2020&quot;:{&quot;foods&quot;:[{&quot;food&quot;:&quot;Example food&quot;,&quot;amount&quot;:1.0,&quot;timestamp&quot;:&quot;03-12-2020 21:21:14.58&quot;}]}}},{&quot;email&quot;:&quot;maxv10@iastate.edu&quot;,&quot;name&quot;:&quot;Max V&quot;,&quot;age&quot;:21,&quot;height&quot;:72,&quot;weight&quot;:165,&quot;lifestyle&quot;:&quot;Moderate&quot;,&quot;gender&quot;:&quot;Male&quot;,&quot;calorieLimit&quot;:2931,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[&quot;Milk&quot;,&quot;Wheat&quot;],&quot;following&quot;:[],&quot;foods&quot;:[{&quot;name&quot;:&quot;yogurt&quot;,&quot;calories&quot;:80,&quot;sodium&quot;:0.08,&quot;carbs&quot;:15.0,&quot;protein&quot;:5.0,&quot;fat&quot;:0.0,&quot;cholesterol&quot;:0.005},{&quot;name&quot;:&quot;Yogurt&quot;,&quot;calories&quot;:80,&quot;sodium&quot;:80.0,&quot;carbs&quot;:15.0,&quot;protein&quot;:5.0,&quot;fat&quot;:0.0,&quot;cholesterol&quot;:5.0}],&quot;calendar&quot;:{&quot;04/10/2020&quot;:{&quot;foods&quot;:[{&quot;food&quot;:&quot;yogurt&quot;,&quot;amount&quot;:2.0,&quot;timestamp&quot;:&quot;04-10-2020 17:22:50.65&quot;},{&quot;food&quot;:&quot;Yogurt&quot;,&quot;amount&quot;:1.5,&quot;timestamp&quot;:&quot;04-10-2020 17:25:21.84&quot;}]}}},{&quot;email&quot;:&quot;maxv11@iastate.edu&quot;,&quot;name&quot;:&quot;Max v&quot;,&quot;age&quot;:21,&quot;height&quot;:72,&quot;weight&quot;:165,&quot;lifestyle&quot;:&quot;Active&quot;,&quot;gender&quot;:&quot;Male&quot;,&quot;calorieLimit&quot;:3593,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[&quot;Wheat&quot;,&quot;Fish&quot;,&quot;Shellfish&quot;],&quot;following&quot;:[],&quot;foods&quot;:[{&quot;name&quot;:&quot;Yogurt&quot;,&quot;calories&quot;:80,&quot;sodium&quot;:80.0,&quot;carbs&quot;:15.0,&quot;protein&quot;:5.0,&quot;fat&quot;:0.0,&quot;cholesterol&quot;:5.0}],&quot;calendar&quot;:{&quot;04/10/2020&quot;:{&quot;foods&quot;:[{&quot;food&quot;:&quot;Yogurt&quot;,&quot;amount&quot;:1.5,&quot;timestamp&quot;:&quot;04-10-2020 17:29:40.38&quot;}]}}},{&quot;email&quot;:&quot;maxv12@iastate.edu&quot;,&quot;name&quot;:&quot;Max V&quot;,&quot;age&quot;:21,&quot;height&quot;:72,&quot;weight&quot;:165,&quot;lifestyle&quot;:&quot;Moderate&quot;,&quot;gender&quot;:&quot;Male&quot;,&quot;calorieLimit&quot;:2269,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[&quot;Eggs&quot;,&quot;Shellfish&quot;,&quot;Fish&quot;],&quot;following&quot;:[],&quot;foods&quot;:[{&quot;name&quot;:&quot;Yogurt&quot;,&quot;calories&quot;:80,&quot;sodium&quot;:80.0,&quot;carbs&quot;:15.0,&quot;protein&quot;:5.0,&quot;fat&quot;:0.0,&quot;cholesterol&quot;:5.0}],&quot;calendar&quot;:{&quot;04/10/2020&quot;:{&quot;foods&quot;:[{&quot;food&quot;:&quot;Yogurt&quot;,&quot;amount&quot;:2.0,&quot;timestamp&quot;:&quot;04-10-2020 17:32:20.69&quot;}]}}},{&quot;email&quot;:&quot;whatever@whatever.whatever&quot;,&quot;name&quot;:&quot;pqiorgiqwrg&quot;,&quot;age&quot;:21,&quot;height&quot;:20,&quot;weight&quot;:20,&quot;lifestyle&quot;:&quot;Active&quot;,&quot;gender&quot;:&quot;Male&quot;,&quot;calorieLimit&quot;:583,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[&quot;Milk&quot;],&quot;following&quot;:[],&quot;foods&quot;:[],&quot;calendar&quot;:{}},{&quot;email&quot;:&quot;testmockaccount@test.com&quot;,&quot;name&quot;:null,&quot;age&quot;:null,&quot;height&quot;:null,&quot;weight&quot;:null,&quot;lifestyle&quot;:null,&quot;gender&quot;:null,&quot;calorieLimit&quot;:null,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[{&quot;name&quot;:&quot;Sustenance&quot;,&quot;calories&quot;:1000,&quot;sodium&quot;:15.0,&quot;carbs&quot;:15.0,&quot;protein&quot;:15.0,&quot;fat&quot;:15.0,&quot;cholesterol&quot;:15.0}],&quot;calendar&quot;:{&quot;04/28/2020&quot;:{&quot;foods&quot;:[{&quot;food&quot;:&quot;Sustenance&quot;,&quot;amount&quot;:2.0,&quot;timestamp&quot;:&quot;04-28-2020 22:00:05.81&quot;}]}}},{&quot;email&quot;:&quot;testmockfriend@test.com&quot;,&quot;name&quot;:null,&quot;age&quot;:null,&quot;height&quot;:null,&quot;weight&quot;:null,&quot;lifestyle&quot;:null,&quot;gender&quot;:null,&quot;calorieLimit&quot;:null,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[],&quot;calendar&quot;:{}}]}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /user/find/email/basic
+       Parameters = {email=[testmockaccount@test.com]}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.main.app.controller.UserController
+           Method = com.main.app.controller.UserController#emailFindBasic(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json&quot;]
+     Content type = application/json
+             Body = {&quot;email&quot;:&quot;testmockaccount@test.com&quot;,&quot;name&quot;:null,&quot;age&quot;:null,&quot;height&quot;:null,&quot;weight&quot;:null,&quot;lifestyle&quot;:null,&quot;gender&quot;:null,&quot;calorieLimit&quot;:null,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[]}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /user/update/password
+       Parameters = {}
+          Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;, Content-Length:&quot;58&quot;]
+             Body = {&quot;email&quot;:&quot;testmockaccount@test.com&quot;,&quot;password&quot;:&quot;password&quot;}
+    Session Attrs = {}
+
+Handler:
+             Type = com.main.app.controller.UserController
+           Method = com.main.app.controller.UserController#updatePassword(UserAddJ)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json&quot;]
+     Content type = application/json
+             Body = {&quot;response&quot;:1,&quot;message&quot;:&quot;Password changed&quot;}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /user/update
+       Parameters = {}
+          Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;, Content-Length:&quot;174&quot;]
+             Body = {&quot;email&quot;:&quot;testmockaccount@test.com&quot;,&quot;name&quot;:&quot;Max&quot;,&quot;age&quot;:1,&quot;height&quot;:10,&quot;weight&quot;:10,&quot;lifestyle&quot;:&quot;Active&quot;,&quot;gender&quot;:&quot;Computer&quot;,&quot;calorieLimit&quot;:1,&quot;userType&quot;:&quot;tester&quot;,&quot;allergens&quot;:[]}
+    Session Attrs = {}
+
+Handler:
+             Type = com.main.app.controller.UserController
+           Method = com.main.app.controller.UserController#updateUser(UserBasicJ)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json&quot;]
+     Content type = application/json
+             Body = {&quot;response&quot;:1,&quot;message&quot;:&quot;N/A&quot;}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /user/find/email
+       Parameters = {email=[testmockaccount@test.com]}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.main.app.controller.UserController
+           Method = com.main.app.controller.UserController#emailFind(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json&quot;]
+     Content type = application/json
+             Body = {&quot;email&quot;:&quot;testmockaccount@test.com&quot;,&quot;name&quot;:&quot;Max&quot;,&quot;age&quot;:1,&quot;height&quot;:10,&quot;weight&quot;:10,&quot;lifestyle&quot;:&quot;Active&quot;,&quot;gender&quot;:&quot;Computer&quot;,&quot;calorieLimit&quot;:1,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[{&quot;name&quot;:&quot;Sustenance&quot;,&quot;calories&quot;:1000,&quot;sodium&quot;:15.0,&quot;carbs&quot;:15.0,&quot;protein&quot;:15.0,&quot;fat&quot;:15.0,&quot;cholesterol&quot;:15.0}],&quot;calendar&quot;:{&quot;04/28/2020&quot;:{&quot;foods&quot;:[{&quot;food&quot;:&quot;Sustenance&quot;,&quot;amount&quot;:2.0,&quot;timestamp&quot;:&quot;04-28-2020 22:00:05.81&quot;}]}}}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /user/add/following
+       Parameters = {}
+          Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;, Content-Length:&quot;74&quot;]
+             Body = {&quot;email&quot;:&quot;testmockaccount@test.com&quot;,&quot;following&quot;:&quot;testmockfriend@test.com&quot;}
+    Session Attrs = {}
+
+Handler:
+             Type = com.main.app.controller.UserController
+           Method = com.main.app.controller.UserController#addFriend(FriendJ)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json&quot;]
+     Content type = application/json
+             Body = {&quot;response&quot;:1,&quot;message&quot;:&quot;N/A&quot;}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /user/auth
+       Parameters = {email=[testmockaccount@test.com], password=[password]}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.main.app.controller.UserController
+           Method = com.main.app.controller.UserController#auth(String, String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json&quot;]
+     Content type = application/json
+             Body = {&quot;response&quot;:1,&quot;message&quot;:&quot;N/A&quot;}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = DELETE
+      Request URI = /user/delete/email
+       Parameters = {email=[testmockaccount@test.com]}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.main.app.controller.UserController
+           Method = com.main.app.controller.UserController#delEmail(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json&quot;]
+     Content type = application/json
+             Body = {&quot;response&quot;:1,&quot;message&quot;:&quot;Data deleted for testmockaccount@test.com&quot;}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = DELETE
+      Request URI = /user/delete/email
+       Parameters = {email=[testmockfriend@test.com]}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.main.app.controller.UserController
+           Method = com.main.app.controller.UserController#delEmail(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json&quot;]
+     Content type = application/json
+             Body = {&quot;response&quot;:1,&quot;message&quot;:&quot;Data deleted for testmockfriend@test.com&quot;}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 6.1</a> at Apr 28, 2020, 10:00:07 PM</p>
+</div>
+</div>
+</body>
+</html>
