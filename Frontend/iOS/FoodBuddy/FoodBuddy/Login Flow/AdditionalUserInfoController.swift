@@ -11,6 +11,7 @@ import UIKit
  
 class AdditionalUserInfoController: UIViewController
 {
+    //MARK: Variables
     var formDict: Dictionary<String, Any> = [:]
     var calLimit: Int = 0
     
@@ -28,6 +29,7 @@ class AdditionalUserInfoController: UIViewController
         super.touchesBegan(touches, with: event)
     }
     
+    //MARK: Submit Btn Action
     @IBAction func submitForm(_ sender: Any)
     {
         _errorLabel.isHidden = true
@@ -65,6 +67,7 @@ class AdditionalUserInfoController: UIViewController
         }
     }
     
+    //MARK: Calorie Calculation
     func calculateCalories(_ gender: String,_ height: Int,_ weight: Int,_ lifestyle: String,_ age: Int) -> Int
     {
         var limitMale: Double
@@ -104,11 +107,13 @@ class AdditionalUserInfoController: UIViewController
         return Int((limitMale + limitFemale)/2)
     }
     
+    //MARK: Gender UIPickerView
     var genders = ["Select one:", "Male", "Female", "Other"]
     var selectedGender : String = ""
     
     let genderPicker = UIPickerView()
     
+    //MARK: View init/Deinit
     override func viewDidLoad() {
         super.viewDidLoad()
         DispatchQueue.main.async {
@@ -129,6 +134,7 @@ class AdditionalUserInfoController: UIViewController
         super.viewWillAppear(animated)
     }
     
+    //MARK: Custom Picker and Toolbar
     func createGenderPicker() {
         
         let genderPicker = UIPickerView()
@@ -167,6 +173,7 @@ final class SnappingSlider: UISlider {
     }
 }
 
+//MARK: UIPickerView Extension
 extension AdditionalUserInfoController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

@@ -20,7 +20,7 @@ class ImageConfirmController : UIViewController
     
     var image : UIImage?
     
-    var croppedImage : UIImage?
+    private var croppedImage : UIImage?
     
     var box : CGRect?
     

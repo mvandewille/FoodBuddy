@@ -11,8 +11,10 @@ import UIKit
 
 class LoginPromptViewController: UIViewController {
     
-    let backgroundImageView = UIImageView()
+    //MARK: -Variables
+    private let backgroundImageView = UIImageView()
     
+    //MARK: -View Init/Deinit
     override func viewDidLoad() {
         super.viewDidLoad()
         let password = UserDefaults.standard.string(forKey: "password")
@@ -33,6 +35,7 @@ class LoginPromptViewController: UIViewController {
         super.viewWillAppear(animated)
     }
     
+    //MARK: - Perform Login HTTP
     func DoLogin(_ email: String, _ pwd: String) {
         
         let urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/auth?email=" + email + "&password=" + String(pwd)
@@ -63,6 +66,7 @@ class LoginPromptViewController: UIViewController {
         task.resume()
     }
     
+    //MARK: -Verify User Info HTTP
     func DoFieldCheck(_ email: String,_ pwd: String)
     {
         let urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/find/email/basic?email=" + email

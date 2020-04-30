@@ -9,13 +9,29 @@
 import Foundation
 import UIKit
 
-class SettingsController: UIViewController, UITableViewDelegate, UITableViewDataSource
+class SettingsController: UIViewController
 {
-
+    //MARK: Variables
     @IBOutlet weak var _settingsTable: UITableView!
     
-    var settingsArray = ["App Settings", "Account Settings", "Friends", "Allergen Settings"]
+    private var settingsArray = ["Account Settings", "Following", "Allergen Settings"]
+    
+    //MARK: View Init/Deinit
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        _settingsTable.dataSource = self
+        _settingsTable.delegate = self
+    }
+    
+    @IBAction func unwindToSettingsController(segue: UIStoryboardSegue)
+    {
+        print("Unwinding from account settings")
+    }
+}
 
+//MARK: Table View Extension
+extension SettingsController: UITableViewDelegate, UITableViewDataSource
+{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return settingsArray.count
     }
@@ -36,7 +52,7 @@ class SettingsController: UIViewController, UITableViewDelegate, UITableViewData
         {
             self.performSegue(withIdentifier: "accountSettings", sender: nil)
         }
-        if (settingsArray[indexPath.row] == "Friends")
+        if (settingsArray[indexPath.row] == "Following")
         {
             self.performSegue(withIdentifier: "friendsSettings", sender: nil)
         }
@@ -44,16 +60,5 @@ class SettingsController: UIViewController, UITableViewDelegate, UITableViewData
         {
             self.performSegue(withIdentifier: "allergenSettings", sender: nil)
         }
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        _settingsTable.dataSource = self
-        _settingsTable.delegate = self
-    }
-    
-    @IBAction func unwindToSettingsController(segue: UIStoryboardSegue)
-    {
-        print("Unwinding from account settings")
     }
 }

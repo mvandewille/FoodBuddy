@@ -11,6 +11,8 @@ import UIKit
 
 class TabbedPageViewController : UITabBarController, UITabBarControllerDelegate
 {
+    
+    //MARK: - View Init/Deinit
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
@@ -40,6 +42,7 @@ class TabbedPageViewController : UITabBarController, UITabBarControllerDelegate
     }
 }
 
+//MARK: - Custom Transitions
 extension CATransition {
 
     //New viewController will appear from bottom of screen.

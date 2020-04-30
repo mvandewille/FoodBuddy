@@ -11,6 +11,7 @@ import UIKit
 
 class DailyViewController : UIViewController
 {
+    //MARK: Variables
     @IBOutlet weak var _dateLabel: UILabel!
     
     //CALORIE RING VIEW
@@ -41,6 +42,8 @@ class DailyViewController : UIViewController
     let sodiumLimit : Double = 2500
     let cholesterolLimit : Double = 300
     
+    
+    //MARK: View Init/Deinit
     override func viewDidLoad() {
         print(UserDefaults.standard.string(forKey: "userName"))
         getLimits()
@@ -81,6 +84,7 @@ class DailyViewController : UIViewController
         }
     }
 
+    //MARK: Custom Calorie Ring
     func createCaloriering()
     {
         let center = _calorieView.center
@@ -104,6 +108,7 @@ class DailyViewController : UIViewController
         view.layer.addSublayer(shapeLayer)
     }
     
+    //MARK: Create Date Label
     func setDate()
     {
         let date = Date()
@@ -124,6 +129,7 @@ class DailyViewController : UIViewController
         }
     }
     
+    //MARK:
     func getLimits()
     {
         let email = UserDefaults.standard.string(forKey: "email")
@@ -147,6 +153,7 @@ class DailyViewController : UIViewController
         task.resume()
     }
     
+    //MARK: Get Daily Total HTTP
     func getData()
     {
         let email = UserDefaults.standard.string(forKey: "email")

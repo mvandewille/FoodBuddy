@@ -11,6 +11,7 @@ import UIKit
 
 class AddFoodController: UIViewController
 {
+    //MARK: Variables
     @IBOutlet weak var _foodName: UITextField!
     @IBOutlet weak var _calories: UITextField!
     @IBOutlet weak var _sodium: UITextField!
@@ -29,6 +30,7 @@ class AddFoodController: UIViewController
         super.touchesBegan(touches, with: event)
     }
     
+    //MARK: View Init/Deinit
     override func viewDidLoad() {
         _errorLabel.isHidden = true
         if (foodDict["Calories"] != nil)
@@ -63,6 +65,7 @@ class AddFoodController: UIViewController
         }
     }
     
+    //MARK: Add Food Btn Action
     @IBAction func addFood(_ sender: Any)
     {
         _errorLabel.isHidden = true
@@ -86,6 +89,7 @@ class AddFoodController: UIViewController
         doHTTP(dict: foodDict)
     }
     
+    //MARK: Update Food Total HTTP
     func doHTTP(dict : Dictionary<String, Any>)
     {
         let jsonData = try? JSONSerialization.data(withJSONObject: dict, options: [])

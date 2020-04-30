@@ -16,6 +16,7 @@ class AccountSettingsController: UIViewController
         super.touchesBegan(touches, with: event)
     }
     
+    //MARK: Variables
     var genders = ["Select one:", "Male", "Female", "Other"]
     var selectedGender : String = ""
     let genderPicker = UIPickerView()
@@ -33,6 +34,7 @@ class AccountSettingsController: UIViewController
     @IBOutlet weak var _saveBtn: UIButton!
     @IBOutlet weak var _errorLabel: UILabel!
     
+    //MARK: Log Out Btn Action
     @IBAction func logOut(_ sender: Any)
     {
         UserDefaults.standard.removeObject(forKey: "userInfo")
@@ -42,6 +44,7 @@ class AccountSettingsController: UIViewController
         self.performSegue(withIdentifier: "logOut", sender: nil)
     }
     
+    //MARK: Submit Btn Action
     @IBAction func submitChanges(_ sender: Any) {
         self._errorLabel.isHidden = true
         sendDict["name"] = _name.text
@@ -67,9 +70,7 @@ class AccountSettingsController: UIViewController
         doHTTP(dict: sendDict)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-    }
+    //MARK: View Init/Deinit
 
     override func viewDidLoad() {
         self._errorLabel.isHidden = true
@@ -119,6 +120,7 @@ class AccountSettingsController: UIViewController
         }
     }
     
+    //MARK: - Gender Picker/Toolbar
     func createGenderPicker() {
         
         let genderPicker = UIPickerView()
@@ -141,6 +143,7 @@ class AccountSettingsController: UIViewController
         _gender.inputAccessoryView = toolbar
     }
     
+    //MARK: Get User Info HTTP
     func DoFieldCheck(email: String)
     {
         let urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/find/email/basic?email=" + email
@@ -165,6 +168,7 @@ class AccountSettingsController: UIViewController
         task.resume()
     }
     
+    //MARK: Update User Info
     func doHTTP(dict : Dictionary<String, Any>)
     {
         let jsonData = try? JSONSerialization.data(withJSONObject: dict, options: [])
@@ -204,6 +208,7 @@ class AccountSettingsController: UIViewController
     }
 }
 
+//MARK: UIPickerView Extensions
 extension AccountSettingsController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

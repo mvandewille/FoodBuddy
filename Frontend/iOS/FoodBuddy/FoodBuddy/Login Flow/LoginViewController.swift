@@ -17,6 +17,7 @@ class LoginViewController: UIViewController
         super.touchesBegan(touches, with: event)
     }
     
+    //MARK: -View Init/Deinit
     override func viewDidLoad() {
         super.viewDidLoad()
         DispatchQueue.main.async {
@@ -31,6 +32,7 @@ class LoginViewController: UIViewController
     @IBOutlet weak var _login_button: UIButton!
     @IBOutlet weak var _error_label: UILabel!
     
+    //MARK: - Login Btn Action
     @IBAction func LoginButton(_ sender: Any)
     {
         DispatchQueue.main.async {
@@ -46,6 +48,7 @@ class LoginViewController: UIViewController
         DoLogin(email!, hashStr)
     }
     
+    //MARK: - Login Auth HTTP
     func DoLogin(_ email: String, _ pwd: String) {
         
         let urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/auth?email=" + email + "&password=" + String(pwd)
@@ -85,6 +88,7 @@ class LoginViewController: UIViewController
         task.resume()
     }
     
+    //MARK: -Very User Info HTTP
     func DoFieldCheck(_ email: String,_ pwd: String)
     {
         let urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/find/email/basic?email=" + email
