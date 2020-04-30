@@ -18,9 +18,9 @@ public class HomescreenCalendar extends AppCompatActivity implements CalendarVie
     CalendarView calendar;
     public static String email="";
 
-    int calDay;
-    int calMonth;
-    int calYear;
+    private int calDay;
+    private int calMonth;
+    private int calYear;
 
 
     @Override
@@ -54,7 +54,7 @@ public class HomescreenCalendar extends AppCompatActivity implements CalendarVie
 
 
     @Override
-    public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+    public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {      //get calendar date for pulling json date
         calendarValue.setText(String.valueOf(month+1) + "-" + String.valueOf(dayOfMonth) + "-" + String.valueOf(year));
          calDay = dayOfMonth;
          calMonth = month;

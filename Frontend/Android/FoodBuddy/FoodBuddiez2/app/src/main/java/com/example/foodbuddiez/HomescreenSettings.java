@@ -107,8 +107,6 @@ public class HomescreenSettings extends AppCompatActivity implements View.OnClic
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-
-
                         toastKickoff("User Updated: " + responseCode +  " " + responseMessage);
                     }
                 },
@@ -124,7 +122,7 @@ public class HomescreenSettings extends AppCompatActivity implements View.OnClic
 
     }
 
-    public String lifestyleString(SeekBar activity) {
+    public String lifestyleString(SeekBar activity) {       //helper method to determine activity level from seekbar
         String lifestyle = "";
         switch (activity.getProgress()) {
             case 1: lifestyle = "Sedentary";
@@ -138,7 +136,7 @@ public class HomescreenSettings extends AppCompatActivity implements View.OnClic
         return lifestyle;
     }
 
-    public void toastKickoff(String message) {
+    public void toastKickoff(String message) {      //helper method to start a toast to display messages
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 }

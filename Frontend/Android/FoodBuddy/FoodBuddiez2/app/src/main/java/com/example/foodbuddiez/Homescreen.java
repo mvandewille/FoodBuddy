@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -18,21 +19,26 @@ import androidx.camera.core.Camera;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
-public class Homescreen extends AppCompatActivity {
+public class Homescreen extends AppCompatActivity implements View.OnClickListener {
 
     BottomNavigationView navigationViewBar;
     private Button btnCapture;
     private ImageView imgCapture;
     private static final int Image_Capture_Code = 1;
+    ImageButton manualEntryButton;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.homescreen);
-        //navigationMenu = (Menu) findViewById(R.id.bottom_navigation_item_calendar).getParent();
         navigationViewBar = findViewById(R.id.homescreen_navigation_bar);
         navigationViewBar.setSelectedItemId(R.id.bottom_navigation_item_camera);
+        manualEntryButton = findViewById(R.id.homescreen_manual_entry);
+        manualEntryButton.setOnClickListener(this);
+        btnCapture =(Button)findViewById(R.id.btnTakePicture);
+        imgCapture = (ImageView) findViewById(R.id.capturedImage);
+        btnCapture.setOnClickListener(this);
 
         navigationViewBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -51,21 +57,10 @@ public class Homescreen extends AppCompatActivity {
                 return true;
             }
         });
-
-
-        btnCapture =(Button)findViewById(R.id.btnTakePicture);
-        imgCapture = (ImageView) findViewById(R.id.capturedImage);
-        btnCapture.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent cInt = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(cInt,Image_Capture_Code);
-            }
-        });
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {     //method for obtaining camera image
         super.onActivityResult(requestCode,resultCode,data);
         if (requestCode == Image_Capture_Code) {
             if (resultCode == RESULT_OK) {
@@ -74,6 +69,22 @@ public class Homescreen extends AppCompatActivity {
             } else if (resultCode == RESULT_CANCELED) {
                 Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
             }
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btnTakePicture:
+                Intent cInt = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(cInt,Image_Capture_Code);
+                break;
+            case R.id.homescreen_manual_entry:
+                Intent signupIntent = new Intent(this, ManualEntry.class);
+                this.startActivity(signupIntent);
+                break;
+            default:
+                break;
         }
     }
 
