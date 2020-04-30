@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8a67a357-2504-4ed6-8c1e-a8667a16d0b6" name="Default Changelist" comment="" />
+    <list default="true" id="8a67a357-2504-4ed6-8c1e-a8667a16d0b6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,6 +67,9 @@
       <updated>1581368892951</updated>
       <workItem from="1581368900777" duration="5177000" />
       <workItem from="1581700102463" duration="6614000" />
+      <workItem from="1588092898894" duration="72000" />
+      <workItem from="1588265370592" duration="1154000" />
+      <workItem from="1588266535541" duration="27000" />
     </task>
     <servers />
   </component>
@@ -76,9 +81,10 @@
       <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state x="0" y="0" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1707.920@0.0.1707.920" timestamp="1581794857003" />
-    <state x="978" y="219" key="FileChooserDialogImpl" timestamp="1581806017851">
+    <state x="978" y="219" key="FileChooserDialogImpl" timestamp="1588266559138">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
+    <state x="978" y="219" key="FileChooserDialogImpl/0.0.1707.920/1253.-1050.1680.1010@0.0.1707.920" timestamp="1588266559138" />
     <state x="978" y="219" key="FileChooserDialogImpl/0.0.1707.920@0.0.1707.920" timestamp="1581806017851" />
     <state width="975" height="138" key="GridCell.Tab.0.bottom" timestamp="1581806022447">
       <screen x="0" y="0" width="1707" height="920" />
@@ -112,9 +118,10 @@
       <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state width="975" height="138" key="GridCell.Tab.1.right/0.0.1707.920@0.0.1707.920" timestamp="1581806022448" />
-    <state x="552" y="286" key="com.intellij.ide.util.TipDialog" timestamp="1581700104792">
+    <state x="552" y="286" key="com.intellij.ide.util.TipDialog" timestamp="1588266544387">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
+    <state x="552" y="286" key="com.intellij.ide.util.TipDialog/0.0.1707.920/1253.-1050.1680.1010@0.0.1707.920" timestamp="1588266544387" />
     <state x="552" y="286" key="com.intellij.ide.util.TipDialog/0.0.1707.920@0.0.1707.920" timestamp="1581700104792" />
   </component>
 </project>
