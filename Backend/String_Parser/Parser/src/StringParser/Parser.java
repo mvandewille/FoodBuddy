@@ -5,160 +5,26 @@ import java.util.Dictionary;
 import java.util.Hashtable;
 
 public class Parser {
-	public static void main(String[] args)
+	
+	public String arg;
+	
+	public Parser(String in)
+	{
+		arg = in;
+	}
+	
+	public String run()
 	{
 		Dictionary values = new Hashtable();
-		Dictionary values2 = new Hashtable();
-		Dictionary values3 = new Hashtable();
-		Dictionary values4 = new Hashtable();
-		String test = "Nutrition Facts\n"
-				+ "3 servings per container\n"
-				+ "Serving size 4 oz (113g)\n"
-				+ "a\n"
-				+ "\n"
-				+ "Amount per serving\n"
-				+ "\n"
-				+ "alories 240\n"
-				+ "\n"
-				+ "% Daily Value*\n"
-				+ "Total Fat 14g 18%\n"
-				+ "Saturated Fat 8g 40%\n"
-				+ "Trans Fat Og\n"
-				+ "Cholesterol Omg 0%\n"
-				+ "Sodium 370mg 16%\n"
-				+ "Total Carbohydrate 9g 3%\n"
-				+ "Dietary Fiber 3g 11%\n"
-				+ "\n"
-				+ "\n"
-				+ "\n"
-				+ "\n"
-				+ "\n"
-				+ "Total Sugars <1g\n"
-				+ "Includes <1g Added Sugars 1%\n"
-				+ "\n"
-				+ "\n"
-				+ "Protein 19g 31%\n"
-				+ "\n"
-				+ "ee\n"
-				+ "Vitamin D Omcg 0%\n"
-				+ "\n"
-				+ "Calcium 170mg 15%\n"
-				+ "lron 4.2mg 25%\n"
-				+ "Potassium 610mg 15%\n"
-				+ "Thiamin 2350%\n"
-				+ "Riboflavin 15%\n"
-				+ "Niacin 50%\n"
-				+ "Vitamin Be 20%\n"
-				+ "Folate 30%\n"
-				+ "Vitamin Biz 130%\n"
-				+ "Phosphorus 15%\n"
-				+ "Zinc 50%\n"
-				+ "\n"
-				+ "*The % Daily Value tells you how much a nutrient in a\n"
-				+ "serving of food contributes to a daily diet. 2,000 calories a\n"
-				+ "day is used for general nutrition advice.";
 		
-			String test2 = "Nutrition Facts\n"
-					+ "Serving Size 1 Tbsp (21g)\n"
-					+ "Servings Per Container 11\n"
-					+ "\n"
-					+ "Amount Per Serving\n"
-					+ "alories 60\n"
-					+ "% Daily Value*\n"
-					+ "\n"
-					+ "Total Fat 0g 0%\n"
-					+ "Trans Fat 0g\n"
-					+ "\n"
-					+ "Sodium Omg 0%\n"
-					+ "Total Carbohydrate 179 6%\n"
-					+ "Sugars 16g\n"
-					+ "rotein Og 0%\n"
-					+ "aaa\n"
-					+ "\n"
-					+ "* Percent Daily Values are based\n"
-					+ "on a 2,000 calorie diet.\n"
-					+ "\n"
-					+ "\n"
-					+ "\n"
-					+ "8 0z. (2269) Honey\n"
-					+ "\n"
-					+ "Honey should not be fed to infants\n"
-					+ "under one year of age.";
-
-			String test3 = "Nutrition Facts\n"
-					+ "\n"
-					+ "1 serving per container\n"
-					+ "Serving size 1/4 cup (40g)\n"
-					+ "\n"
-					+ "Amount per serving\n"
-					+ "\n"
-					+ "Calories 120\n"
-					+ "% Daily Value*\n"
-					+ "Includes 0 Added Sugars 0%\n"
-					+ "Protein 1g\n"
-					+ "Vitamin D Omeg 0%\n"
-					+ "Calcium 25mg 2%\n"
-					+ "Iron 0.7mg 4%\n"
-					+ "Potassium 298mg 6%\n"
-					+ "a\n"
-					+ "* The % Daily Value (DV) tells you how much a nutrient in\n"
-					+ "a serving of food contributes to a daily diet. 2,000 calories\n"
-					+ "a day is used for general nutrition advice\n"
-					+ "Ingredients: California Raisins";
 		
-			String test4 = "Nutrition Facts\n"
-					+ "--------------------------------------------------\n"
-					+ "1 serving per container\n"
-					+ "Serving size 1/4 cup (40g)\n"
-					+ "---------------------------------------------------\n"
-					+ "---------------------------------------------------\n"
-					+ "Amount per serving\n"
-					+ "Calories 120\n"
-					+ "--------------------------------------------------\n"
-					+ "% Daily Value*\n"
-					+ "Total Fat Og 0%\n"
-					+ "---------------------------------------------------\n"
-					+ "Saturated Fat 0g\n"
-					+ "Trans Fat 0g\n"
-					+ "Cholesterol Omg\n"
-					+ "0%\n"
-					+ "0%\n"
-					+ "---------------------------------------------------\n"
-					+ "Total Carbohydrate 32g 12%\n"
-					+ "Dietary Fiber 2g 7%\n"
-					+ "--------------------------------------------------\n"
-					+ "Total Sugars 26g\n"
-					+ "Includes 0 Added Sugars 0%\n"
-					+ "Protein 1g\n"
-					+ "---------------------------------------------------\n"
-					+ "---------------------------------------------------\n"
-					+ "Vitamin D Omeg\n"
-					+ "Calcium 25mg\n"
-					+ "Iron 0.7mg\n"
-					+ "---------------------------------------------------\n"
-					+ "Potassium 298mg\n"
-					+ "---------------------------------------------------";
-
-			
-			ArrayList<String> out = new ArrayList<String>();
-			ArrayList<String> out2 = new ArrayList<String>();	
-			ArrayList<String> out3 = new ArrayList<String>();
-			ArrayList<String> out4 = new ArrayList<String>();
-			split(test, out);
-			split(test2, out2);
-			split(test3, out3);
-			split(test4, out4);
-			values = readText(out, values);
-			values2 = readText(out2, values2);
-			values3 = readText(out3, values3);
-			values4 = readText(out4, values4);
-			
-			printString(values);
-			printString(values2);
-			printString(values3);
-			printString(values4);
-			
-			values = null;
+		ArrayList<String> out = new ArrayList<String>();
+		split(arg, out);
+		values = readText(out, values);
+		
+		printString(values);
+		
+		return values.toString();
 	}
 	
 	public static void printString(Dictionary values)
