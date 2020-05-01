@@ -23,7 +23,6 @@ class SignUpViewController: UIViewController
         DispatchQueue.main.async {
             self._error_label.isHidden = true
             self._submit_btn.layer.cornerRadius = 5
-            self._submit_btn.layer.backgroundColor = UIColor(rgb: 0x5195FF).cgColor
         }
         // Do any additional setup after loading the view.
     }

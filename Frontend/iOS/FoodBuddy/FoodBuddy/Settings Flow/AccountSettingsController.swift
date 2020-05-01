@@ -143,6 +143,11 @@ class AccountSettingsController: UIViewController
         _gender.inputAccessoryView = toolbar
     }
     
+    @objc func dismissKeyboard()
+    {
+        view.endEditing(true)
+    }
+    
     //MARK: Get User Info HTTP
     func DoFieldCheck(email: String)
     {

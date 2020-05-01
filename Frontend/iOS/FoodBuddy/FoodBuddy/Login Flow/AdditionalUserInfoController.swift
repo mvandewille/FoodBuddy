@@ -118,7 +118,6 @@ class AdditionalUserInfoController: UIViewController
         super.viewDidLoad()
         DispatchQueue.main.async {
             self._submit.layer.cornerRadius = 5
-            self._submit.layer.backgroundColor = UIColor(rgb: 0x5195FF).cgColor
         }
         _errorLabel.isHidden = true
         createGenderPicker()

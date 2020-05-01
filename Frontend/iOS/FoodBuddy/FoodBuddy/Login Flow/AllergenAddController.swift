@@ -41,7 +41,6 @@ class AllergenAddController : UIViewController
         super.viewDidLoad()
         DispatchQueue.main.async {
             self._continue.layer.cornerRadius = 5
-            self._continue.layer.backgroundColor = UIColor(rgb: 0x5195FF).cgColor
         }
         incomingDict = UserDefaults.standard.dictionary(forKey: "userInfo")!
         self._errorlabel.isHidden = true
