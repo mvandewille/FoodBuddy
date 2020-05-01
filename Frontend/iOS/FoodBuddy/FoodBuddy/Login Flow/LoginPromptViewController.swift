@@ -11,12 +11,20 @@ import UIKit
 
 class LoginPromptViewController: UIViewController {
     
+    @IBOutlet weak var _loginBTN: UIButton!
+    
+    @IBOutlet weak var signupBTN: UIButton!
+    
     //MARK: -Variables
     private let backgroundImageView = UIImageView()
     
     //MARK: -View Init/Deinit
     override func viewDidLoad() {
         super.viewDidLoad()
+        _loginBTN.layer.cornerRadius = 5
+        _loginBTN.layer.backgroundColor = UIColor(rgb: 0x54A456).cgColor
+        signupBTN.layer.cornerRadius = 5
+        signupBTN.layer.backgroundColor = UIColor(rgb: 0x5195FF).cgColor
         let password = UserDefaults.standard.string(forKey: "password")
         let email = UserDefaults.standard.string(forKey: "email")
         if (email != nil && password != nil)

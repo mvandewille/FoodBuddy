@@ -17,13 +17,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3/14/2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2C1-MR-oBH">
-                                <rect key="frame" x="118.5" y="113" width="177" height="48"/>
+                                <rect key="frame" x="118.5" y="98" width="177" height="48"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBoldItalic" family="Avenir Next" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QHh-Zc-56G">
-                                <rect key="frame" x="107" y="181" width="200" height="200"/>
+                                <rect key="frame" x="107" y="156" width="200" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="BE2-XA-jQL"/>
@@ -31,7 +31,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="oqo-Oe-E6C">
-                                <rect key="frame" x="67" y="401" width="280" height="271.5"/>
+                                <rect key="frame" x="67" y="376" width="280" height="271.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="i04-D9-Wyo">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="37.5"/>
@@ -67,6 +67,7 @@
                                                 </constraints>
                                             </progressView>
                                         </subviews>
+                                        <color key="tintColor" red="0.99362963439999996" green="0.61508625750000001" blue="0.65094715359999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8we-Ov-QoI">
                                         <rect key="frame" x="0.0" y="57.5" width="280" height="38.5"/>
@@ -214,12 +215,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="QHh-Zc-56G" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="25R-51-5Vy"/>
-                            <constraint firstItem="oqo-Oe-E6C" firstAttribute="top" secondItem="QHh-Zc-56G" secondAttribute="bottom" constant="20" id="5n5-UI-H9y"/>
-                            <constraint firstItem="2C1-MR-oBH" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="25" id="FyL-PO-flm"/>
+                            <constraint firstItem="2C1-MR-oBH" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="10" id="FyL-PO-flm"/>
                             <constraint firstItem="oqo-Oe-E6C" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="Nto-pb-cK1"/>
-                            <constraint firstItem="QHh-Zc-56G" firstAttribute="top" secondItem="2C1-MR-oBH" secondAttribute="bottom" constant="20" id="SQB-9t-hbh"/>
+                            <constraint firstItem="QHh-Zc-56G" firstAttribute="top" secondItem="2C1-MR-oBH" secondAttribute="bottom" constant="10" id="SQB-9t-hbh"/>
                             <constraint firstItem="QHh-Zc-56G" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="aIp-vG-lCU"/>
                             <constraint firstItem="2C1-MR-oBH" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="wCG-Zx-uDI"/>
+                            <constraint firstItem="oqo-Oe-E6C" firstAttribute="top" secondItem="QHh-Zc-56G" secondAttribute="bottom" constant="20" id="xMo-VP-Bpi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
@@ -640,6 +641,13 @@
                                     <action selector="sendToDaily:" destination="gFI-QO-zjK" eventType="touchUpInside" id="lbk-zx-KRr"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nutrition Label Detected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89P-Cp-e1P">
+                                <rect key="frame" x="76" y="108" width="262.5" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -649,6 +657,8 @@
                             <constraint firstAttribute="bottom" secondItem="63r-rx-gid" secondAttribute="bottom" id="W1d-zb-OgQ"/>
                             <constraint firstItem="JTP-e9-ORD" firstAttribute="leading" secondItem="32A-Dc-rX8" secondAttribute="trailing" constant="60" id="aaB-Ip-5T6"/>
                             <constraint firstItem="Cm1-2V-n6o" firstAttribute="top" secondItem="32A-Dc-rX8" secondAttribute="centerY" constant="-10" id="hEY-ey-Cye"/>
+                            <constraint firstItem="89P-Cp-e1P" firstAttribute="top" secondItem="2wi-Yl-Na1" secondAttribute="top" constant="20" id="jSG-MT-7FX"/>
+                            <constraint firstItem="89P-Cp-e1P" firstAttribute="centerX" secondItem="zIe-vq-tC9" secondAttribute="centerX" id="kRC-4t-HYy"/>
                             <constraint firstItem="JTP-e9-ORD" firstAttribute="top" secondItem="32A-Dc-rX8" secondAttribute="centerY" constant="-10" id="lhS-39-aeL"/>
                             <constraint firstItem="63r-rx-gid" firstAttribute="leading" secondItem="zIe-vq-tC9" secondAttribute="leading" id="q1j-aQ-JLx"/>
                             <constraint firstItem="63r-rx-gid" firstAttribute="top" secondItem="zIe-vq-tC9" secondAttribute="top" id="vVE-Gn-7tt"/>
@@ -669,6 +679,7 @@
                         <outlet property="_capture" destination="32A-Dc-rX8" id="avp-K2-7dV"/>
                         <outlet property="_dailyViewBtn" destination="Cm1-2V-n6o" id="6Js-MJ-FVf"/>
                         <outlet property="_globalChatBtn" destination="JTP-e9-ORD" id="SAh-oe-t7o"/>
+                        <outlet property="_labelDetected" destination="89P-Cp-e1P" id="6TF-aZ-7hr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mym-Q3-vfq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -711,7 +722,7 @@
         <scene sceneID="pTi-xL-RC0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CJh-tU-vAY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Daily" image="globe" catalog="system" id="C2Y-7A-Dgy"/>
+                    <tabBarItem key="tabBarItem" title="Daily" image="person.crop.circle.fill" catalog="system" id="C2Y-7A-Dgy"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9Y5-zV-OfK">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -761,7 +772,7 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="v6p-ci-t8O"/>
                                             <constraint firstAttribute="width" constant="160" id="zoT-rS-alw"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                         <state key="normal" title="CONTINUE">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -804,5 +815,6 @@
         <image name="ellipses.bubble.fill" catalog="system" width="128" height="110"/>
         <image name="globe" catalog="system" width="128" height="121"/>
         <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
+        <image name="person.crop.circle.fill" catalog="system" width="128" height="121"/>
     </resources>
 </document>

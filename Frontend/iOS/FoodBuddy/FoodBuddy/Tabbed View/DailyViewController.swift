@@ -45,7 +45,6 @@ class DailyViewController : UIViewController
     
     //MARK: View Init/Deinit
     override func viewDidLoad() {
-        print(UserDefaults.standard.string(forKey: "userName"))
         getLimits()
         getData()
         setDate()
@@ -64,22 +63,27 @@ class DailyViewController : UIViewController
             
             //PROTEIN BAR
             self._proteinBar.progress = Float(self.dailyTotals["protein"]!/self.proteinLimit)
+            self._proteinBar.tintColor = UIColor(rgb: 0xE6744F)
             self._proteinLabel.text = "\(Int(ceil(self.dailyTotals["protein"]!)))" + "/" + "\(Int(self.proteinLimit))" + "g"
             
             //SODIUM BAR
             self._sodiumBar.progress = Float(self.dailyTotals["sodium"]!/self.sodiumLimit)
+            self._sodiumBar.tintColor = UIColor(rgb: 0x36DFC8)
             self._sodiumLabel.text = "\(Int(ceil(self.dailyTotals["sodium"]!)))" + "/" + "\(Int(self.sodiumLimit))" + "mg"
             
             //CHOLESTEROL BAR
             self._cholesterolBar.progress = Float(self.dailyTotals["cholesterol"]!/self.cholesterolLimit)
+            self._cholesterolBar.tintColor = UIColor(rgb: 0x4FD75D)
             self._cholesterolLabel.text = "\(Int(ceil(self.dailyTotals["cholesterol"]!)))" + "/" + "\(Int(self.cholesterolLimit))" + "mg"
             
             //CARBOHYDRATES BAR
             self._carbBar.progress = Float(self.dailyTotals["carbs"]!/self.carbLimit)
+            self._carbBar.tintColor = UIColor(rgb: 0xFFD400)
             self._carbLabel.text = "\(Int(ceil(self.dailyTotals["carbs"]!)))" + "/" + "\(Int(self.carbLimit))" + "g"
             
             //FAT BAR
             self._fatBar.progress = Float(self.dailyTotals["fat"]!/self.fatLimit)
+            self._fatBar.tintColor = UIColor(rgb: 0xB373E3)
             self._fatLabel.text = "\(Int(ceil(self.dailyTotals["fat"]!)))" + "/" + "\(Int(self.fatLimit))" + "g"
         }
     }
@@ -100,7 +104,7 @@ class DailyViewController : UIViewController
         view.layer.addSublayer(trackLayer)
         
         shapeLayer.path = circularPath.cgPath
-        shapeLayer.strokeColor = UIColor.red.cgColor
+        shapeLayer.strokeColor = UIColor(rgb: 0x5195FF).cgColor
         shapeLayer.lineWidth = 20
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.lineCap = .round
@@ -129,7 +133,7 @@ class DailyViewController : UIViewController
         }
     }
     
-    //MARK:
+    //MARK: Get Calorie Limit
     func getLimits()
     {
         let email = UserDefaults.standard.string(forKey: "email")

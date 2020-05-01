@@ -17,6 +17,8 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
     @IBOutlet weak var _cameraView: UIView!
     @IBOutlet weak var _dailyViewBtn: UIButton!
     @IBOutlet weak var _globalChatBtn: UIButton!
+    @IBOutlet weak var _labelDetected: UILabel!
+    
     
     private let captureSession = AVCaptureSession()
     
@@ -42,19 +44,20 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
     }
     
     @IBAction func sendToChat(_ sender: Any) {
-        self.tabBarController?.selectedIndex = 2
         self.tabBarController?.tabBar.isHidden = false
+        self.tabBarController?.selectedIndex = 2
     }
     
     //MARK: - View Init/Deinit
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        _labelDetected.isHidden = true
+        boundingBox = nil
         captureSession.startRunning()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         captureSession.sessionPreset = .photo
         guard let captureDevice = AVCaptureDevice.default(for: .video) else { return }
         guard let input = try? AVCaptureDeviceInput(device: captureDevice) else { return }
@@ -80,7 +83,6 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         captureSession.stopRunning()
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     //MARK: - Find Label
@@ -93,8 +95,16 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
             print(finishedReq.results)
             
             guard let results = finishedReq.results as? [VNRecognizedObjectObservation] else { return }
-            
+            if results.isEmpty
+            {
+                DispatchQueue.main.async {
+                    self._labelDetected.isHidden = true
+                }
+            }
             guard let firstResult = results.first else { return }
+            DispatchQueue.main.async {
+                self._labelDetected.isHidden = false
+            }
             self.boundingBox = firstResult.boundingBox
         }
         try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])

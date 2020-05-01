@@ -32,6 +32,7 @@ class AddFoodController: UIViewController
     
     //MARK: View Init/Deinit
     override func viewDidLoad() {
+        _addFoodBtn.layer.cornerRadius = 5
         _errorLabel.isHidden = true
         if (foodDict["Calories"] != nil)
         {

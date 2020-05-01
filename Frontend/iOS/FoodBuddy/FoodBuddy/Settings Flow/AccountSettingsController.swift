@@ -221,11 +221,6 @@ extension AccountSettingsController: UIPickerViewDelegate, UIPickerViewDataSourc
     }
     
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return genders[row]
-    }
-    
-    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         selectedGender = genders[row]
@@ -243,7 +238,7 @@ extension AccountSettingsController: UIPickerViewDelegate, UIPickerViewDataSourc
         }
         
         label.text = genders[row]
-        
+        label.textAlignment = .center
         return label
     }
 }

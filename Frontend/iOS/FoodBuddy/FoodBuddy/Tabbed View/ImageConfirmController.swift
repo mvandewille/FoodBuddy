@@ -50,7 +50,7 @@ class ImageConfirmController : UIViewController
     override func viewWillAppear(_ animated: Bool) {
         if (box != nil)
         {
-            let cropBox = CGRect(x: box!.minX * (image?.size.height)!, y: box!.minY * image!.size.width, width: box!.width * (image?.size.width)!, height: box!.height * (image?.size.height)!)
+            let cropBox = CGRect(x: box!.minX * (image?.size.height)!, y: box!.minY * image!.size.height, width: box!.width * (image?.size.height)!, height: box!.height * (image?.size.width)!)
             
             let newImage = UIImage(cgImage: (image?.cgImage?.cropping(to: cropBox))!).rotate(radians: .pi/2)
             
@@ -152,7 +152,6 @@ class ImageConfirmController : UIViewController
                     {
                         
                         let tempIndex = word.index(word.endIndex, offsetBy: -2)
-                        let startIndex = word.index(word.startIndex, offsetBy: 1)
                         var tempStr = String(word[..<tempIndex])
                         tempStr.remove(at: tempStr.startIndex)
 

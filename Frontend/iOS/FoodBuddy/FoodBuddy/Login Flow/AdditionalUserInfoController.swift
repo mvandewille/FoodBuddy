@@ -118,6 +118,7 @@ class AdditionalUserInfoController: UIViewController
         super.viewDidLoad()
         DispatchQueue.main.async {
             self._submit.layer.cornerRadius = 5
+            self._submit.layer.backgroundColor = UIColor(rgb: 0x5195FF).cgColor
         }
         _errorLabel.isHidden = true
         createGenderPicker()
@@ -185,12 +186,6 @@ extension AdditionalUserInfoController: UIPickerViewDelegate, UIPickerViewDataSo
         return genders.count
     }
     
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return genders[row]
-    }
-    
-    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         selectedGender = genders[row]
@@ -208,7 +203,7 @@ extension AdditionalUserInfoController: UIPickerViewDelegate, UIPickerViewDataSo
         }
         
         label.text = genders[row]
-        
+        label.textAlignment = .center
         return label
     }
 }
