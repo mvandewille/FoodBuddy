@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">1.097s</div>
+<div class="counter">1.930s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,17 +79,17 @@
 </thead>
 <tr>
 <td class="success">testAddFollowing()</td>
-<td class="success">0.244s</td>
+<td class="success">0.258s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testAuthUser()</td>
-<td class="success">0.067s</td>
+<td class="success">0.068s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testDayTotal()</td>
-<td class="success">0.074s</td>
+<td class="success">0.083s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -99,32 +99,32 @@
 </tr>
 <tr>
 <td class="success">testFindEmail()</td>
-<td class="success">0.067s</td>
+<td class="success">0.086s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testFindEmailBasic()</td>
-<td class="success">0.070s</td>
+<td class="success">0.077s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testFindFollowing()</td>
-<td class="success">0.069s</td>
+<td class="success">0.072s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testUserAddFood()</td>
-<td class="success">0.160s</td>
+<td class="success">0.915s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testUserUpdate()</td>
-<td class="success">0.133s</td>
+<td class="success">0.146s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testUserUpdatePassword()</td>
-<td class="success">0.123s</td>
+<td class="success">0.135s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -132,12 +132,22 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2020-05-08 19:16:55.273  INFO 54616 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.main.app.UserControllerTests], using SpringBootContextLoader
-2020-05-08 19:16:55.276  INFO 54616 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.main.app.UserControllerTests]: no resource found for suffixes {-context.xml, Context.groovy}.
-2020-05-08 19:16:55.277  INFO 54616 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.main.app.UserControllerTests]: UserControllerTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2020-05-08 19:16:55.293  INFO 54616 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.main.app.FoodbuddyApplication for test class com.main.app.UserControllerTests
-2020-05-08 19:16:55.297  INFO 54616 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener]
-2020-05-08 19:16:55.298  INFO 54616 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3e68b344, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3e55ec8a, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@79509d7a, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@1d82bf2a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@668bcd4d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@772b4caa, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@a6da478, org.springframework.test.context.event.EventPublishingTestExecutionListener@29e31f0, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3a47654b, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@17a420b5, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@708d085d, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3efa60d, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@203f606]
+<pre>23:22:48.384 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+23:22:48.400 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+23:22:48.433 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.main.app.UserControllerTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+23:22:48.459 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.main.app.UserControllerTests], using SpringBootContextLoader
+23:22:48.463 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.main.app.UserControllerTests]: class path resource [com/main/app/UserControllerTests-context.xml] does not exist
+23:22:48.464 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.main.app.UserControllerTests]: class path resource [com/main/app/UserControllerTestsContext.groovy] does not exist
+23:22:48.464 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.main.app.UserControllerTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+23:22:48.465 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.main.app.UserControllerTests]: UserControllerTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+23:22:48.529 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.main.app.UserControllerTests]
+23:22:48.598 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/max/Documents/FoodBuddy/Backend/foodbuddy_mongo/build/classes/kotlin/main/com/main/app/FoodbuddyApplication.class]
+23:22:48.603 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.main.app.FoodbuddyApplication for test class com.main.app.UserControllerTests
+23:22:48.695 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.main.app.UserControllerTests]: using defaults.
+23:22:48.696 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener]
+23:22:48.716 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1ca2618f, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3208b91, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@79325d8d, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@603fd06f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6f1e6bfe, org.springframework.test.context.transaction.TransactionalTestExecutionListener@68e5098f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@350ef2b, org.springframework.test.context.event.EventPublishingTestExecutionListener@1d72fb86, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@12f324d, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@41c6fa96, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@456b7c32, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4fcf11d2, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@378aff3c]
+23:22:48.722 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@18b5b9c0 testClass = UserControllerTests, testInstance = com.main.app.UserControllerTests@73fa5669, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@338249f4 testClass = UserControllerTests, locations = '{}', classes = '{class com.main.app.FoodbuddyApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@2bdf7341, [ImportsContextCustomizer@12f7b8f6 key = [org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@487dd055, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@2f489a60, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@1cb687c0], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; false]]].
+23:22:48.743 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -147,55 +157,55 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.2.6.RELEASE)
 
-2020-05-08 19:16:55.375  INFO 54616 --- [    Test worker] com.main.app.UserControllerTests         : Starting UserControllerTests on Desktop with PID 54616 (started by Amish Cyborg in C:\Users\Amish Cyborg\Documents\FoodBuddy\Backend\foodbuddy_mongo)
-2020-05-08 19:16:55.377  INFO 54616 --- [    Test worker] com.main.app.UserControllerTests         : No active profile set, falling back to default profiles: default
-2020-05-08 19:16:56.166  INFO 54616 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2020-05-08 19:16:56.166  INFO 54616 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2020-05-08 19:16:56.183  INFO 54616 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.main.app.repository.MessageRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
-2020-05-08 19:16:56.185  INFO 54616 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.main.app.repository.UserRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
-2020-05-08 19:16:56.186  INFO 54616 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19ms. Found 0 JPA repository interfaces.
-2020-05-08 19:16:56.198  INFO 54616 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2020-05-08 19:16:56.199  INFO 54616 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2020-05-08 19:16:56.225  INFO 54616 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25ms. Found 2 MongoDB repository interfaces.
-2020-05-08 19:16:56.626  INFO 54616 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
-2020-05-08 19:16:56.628  INFO 54616 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-05-08 19:16:56.629  INFO 54616 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
-2020-05-08 19:16:56.692  INFO 54616 --- [    Test worker] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
-2020-05-08 19:16:56.693  INFO 54616 --- [    Test worker] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1308 ms
-2020-05-08 19:16:56.900  INFO 54616 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2020-05-08 19:16:56.902  INFO 54616 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2020-05-08 19:16:56.932  INFO 54616 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-05-08 19:16:56.951  INFO 54616 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2020-05-08 19:16:56.993  INFO 54616 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-05-08 19:16:56.994  INFO 54616 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-05-08 19:17:00.110  INFO 54616 --- [    Test worker] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[127.0.0.1:27017], srvHost=main-xz1r5.mongodb.net, mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500, requiredReplicaSetName='main-shard-0'}
-2020-05-08 19:17:00.858  WARN 54616 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-05-08 19:17:01.304  INFO 54616 --- [    Test worker] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-05-08 19:17:01.641  INFO 54616 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-05-08 19:17:01.842  WARN 54616 --- [    Test worker] o.s.b.a.m.MustacheAutoConfiguration      : Cannot find template location: classpath:/templates/ (please add some templates, check your Mustache configuration, or set spring.mustache.check-template-location=false)
-2020-05-08 19:17:02.022  INFO 54616 --- [    Test worker] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring TestDispatcherServlet ''
-2020-05-08 19:17:02.022  INFO 54616 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2020-05-08 19:17:02.042  INFO 54616 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 20 ms
-2020-05-08 19:17:02.101  INFO 54616 --- [    Test worker] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2020-05-08 19:17:02.102  INFO 54616 --- [    Test worker] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2020-05-08 19:17:02.124  INFO 54616 --- [    Test worker] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2020-05-08 19:17:02.361  INFO 54616 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 53557 (http) with context path ''
-2020-05-08 19:17:02.362  INFO 54616 --- [    Test worker] com.main.app.UserControllerTests         : Started UserControllerTests in 7.059 seconds (JVM running for 21.858)
-2020-05-08 19:17:02.793  INFO 54616 --- [    Test worker] org.mongodb.driver.cluster               : Cluster description not yet available. Waiting for 30000 ms before timing out
-2020-05-08 19:17:03.119  INFO 54616 --- [1r5.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server main-shard-00-00-xz1r5.mongodb.net:27017 to client view of cluster
-2020-05-08 19:17:03.120  INFO 54616 --- [1r5.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server main-shard-00-01-xz1r5.mongodb.net:27017 to client view of cluster
-2020-05-08 19:17:03.121  INFO 54616 --- [1r5.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server main-shard-00-02-xz1r5.mongodb.net:27017 to client view of cluster
-2020-05-08 19:17:03.124  INFO 54616 --- [    Test worker] org.mongodb.driver.cluster               : No server chosen by com.mongodb.client.internal.MongoClientDelegate$1@74f36823 from cluster description ClusterDescription{type=REPLICA_SET, connectionMode=MULTIPLE, serverDescriptions=[ServerDescription{address=main-shard-00-00-xz1r5.mongodb.net:27017, type=UNKNOWN, state=CONNECTING}, ServerDescription{address=main-shard-00-01-xz1r5.mongodb.net:27017, type=UNKNOWN, state=CONNECTING}, ServerDescription{address=main-shard-00-02-xz1r5.mongodb.net:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
-2020-05-08 19:17:03.381  INFO 54616 --- [ngodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:6, serverValue:17647}] to main-shard-00-02-xz1r5.mongodb.net:27017
-2020-05-08 19:17:03.390  INFO 54616 --- [ngodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:5, serverValue:23318}] to main-shard-00-01-xz1r5.mongodb.net:27017
-2020-05-08 19:17:03.390  INFO 54616 --- [ngodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:4, serverValue:19240}] to main-shard-00-00-xz1r5.mongodb.net:27017
-2020-05-08 19:17:03.437  INFO 54616 --- [ngodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=main-shard-00-02-xz1r5.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 6]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=56114900, setName='main-shard-0', canonicalAddress=main-shard-00-02-xz1r5.mongodb.net:27017, hosts=[main-shard-00-00-xz1r5.mongodb.net:27017, main-shard-00-02-xz1r5.mongodb.net:27017, main-shard-00-01-xz1r5.mongodb.net:27017], passives=[], arbiters=[], primary='main-shard-00-01-xz1r5.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='US_EAST_1'}]}, electionId=null, setVersion=2, lastWriteDate=Fri May 08 19:17:04 MDT 2020, lastUpdateTimeNanos=1155405828697500}
-2020-05-08 19:17:03.445  INFO 54616 --- [ngodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=main-shard-00-01-xz1r5.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 6]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=55198800, setName='main-shard-0', canonicalAddress=main-shard-00-01-xz1r5.mongodb.net:27017, hosts=[main-shard-00-00-xz1r5.mongodb.net:27017, main-shard-00-02-xz1r5.mongodb.net:27017, main-shard-00-01-xz1r5.mongodb.net:27017], passives=[], arbiters=[], primary='main-shard-00-01-xz1r5.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='US_EAST_1'}]}, electionId=7fffffff0000000000000002, setVersion=2, lastWriteDate=Fri May 08 19:17:04 MDT 2020, lastUpdateTimeNanos=1155405836655700}
-2020-05-08 19:17:03.446  INFO 54616 --- [ngodb.net:27017] org.mongodb.driver.cluster               : Setting max election id to 7fffffff0000000000000002 from replica set primary main-shard-00-01-xz1r5.mongodb.net:27017
-2020-05-08 19:17:03.446  INFO 54616 --- [ngodb.net:27017] org.mongodb.driver.cluster               : Setting max set version to 2 from replica set primary main-shard-00-01-xz1r5.mongodb.net:27017
-2020-05-08 19:17:03.446  INFO 54616 --- [ngodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary main-shard-00-01-xz1r5.mongodb.net:27017
-2020-05-08 19:17:03.448  INFO 54616 --- [ngodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=main-shard-00-00-xz1r5.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 6]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=57101600, setName='main-shard-0', canonicalAddress=main-shard-00-00-xz1r5.mongodb.net:27017, hosts=[main-shard-00-00-xz1r5.mongodb.net:27017, main-shard-00-02-xz1r5.mongodb.net:27017, main-shard-00-01-xz1r5.mongodb.net:27017], passives=[], arbiters=[], primary='main-shard-00-01-xz1r5.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='US_EAST_1'}]}, electionId=null, setVersion=2, lastWriteDate=Fri May 08 19:17:04 MDT 2020, lastUpdateTimeNanos=1155405839194500}
-2020-05-08 19:17:03.979  INFO 54616 --- [    Test worker] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:7, serverValue:23318}] to main-shard-00-01-xz1r5.mongodb.net:27017
+2020-05-08 23:22:49.146  INFO 54301 --- [    Test worker] com.main.app.UserControllerTests         : Starting UserControllerTests on Maxs-MacBook-Pro.local with PID 54301 (started by max in /Users/max/Documents/FoodBuddy/Backend/foodbuddy_mongo)
+2020-05-08 23:22:49.148  INFO 54301 --- [    Test worker] com.main.app.UserControllerTests         : No active profile set, falling back to default profiles: default
+2020-05-08 23:22:50.253  INFO 54301 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-08 23:22:50.255  INFO 54301 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-08 23:22:50.304  INFO 54301 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.main.app.repository.MessageRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2020-05-08 23:22:50.306  INFO 54301 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.main.app.repository.UserRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2020-05-08 23:22:50.307  INFO 54301 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44ms. Found 0 JPA repository interfaces.
+2020-05-08 23:22:50.339  INFO 54301 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-08 23:22:50.339  INFO 54301 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-05-08 23:22:50.368  INFO 54301 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28ms. Found 2 MongoDB repository interfaces.
+2020-05-08 23:22:51.215  INFO 54301 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2020-05-08 23:22:51.227  INFO 54301 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-08 23:22:51.228  INFO 54301 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-08 23:22:51.374  INFO 54301 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-08 23:22:51.374  INFO 54301 --- [    Test worker] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2203 ms
+2020-05-08 23:22:51.610  INFO 54301 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-08 23:22:51.775  INFO 54301 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-08 23:22:51.851  INFO 54301 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-08 23:22:51.934  INFO 54301 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-08 23:22:52.069  INFO 54301 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-08 23:22:52.185  INFO 54301 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-05-08 23:22:52.447  INFO 54301 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-08 23:22:52.454  INFO 54301 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-08 23:22:52.759  INFO 54301 --- [    Test worker] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[127.0.0.1:27017], srvHost=main-xz1r5.mongodb.net, mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500, requiredReplicaSetName='main-shard-0'}
+2020-05-08 23:22:52.772  INFO 54301 --- [1r5.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server main-shard-00-00-xz1r5.mongodb.net:27017 to client view of cluster
+2020-05-08 23:22:52.812  INFO 54301 --- [1r5.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server main-shard-00-01-xz1r5.mongodb.net:27017 to client view of cluster
+2020-05-08 23:22:52.814  INFO 54301 --- [1r5.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server main-shard-00-02-xz1r5.mongodb.net:27017 to client view of cluster
+2020-05-08 23:22:53.343  INFO 54301 --- [ngodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:21924}] to main-shard-00-00-xz1r5.mongodb.net:27017
+2020-05-08 23:22:53.347  INFO 54301 --- [ngodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:19031}] to main-shard-00-02-xz1r5.mongodb.net:27017
+2020-05-08 23:22:53.349  INFO 54301 --- [ngodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:24939}] to main-shard-00-01-xz1r5.mongodb.net:27017
+2020-05-08 23:22:53.409  INFO 54301 --- [ngodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=main-shard-00-00-xz1r5.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 6]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=62902838, setName='main-shard-0', canonicalAddress=main-shard-00-00-xz1r5.mongodb.net:27017, hosts=[main-shard-00-00-xz1r5.mongodb.net:27017, main-shard-00-02-xz1r5.mongodb.net:27017, main-shard-00-01-xz1r5.mongodb.net:27017], passives=[], arbiters=[], primary='main-shard-00-01-xz1r5.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='US_EAST_1'}]}, electionId=null, setVersion=2, lastWriteDate=Fri May 08 23:22:52 MDT 2020, lastUpdateTimeNanos=213309285504020}
+2020-05-08 23:22:53.409  INFO 54301 --- [ngodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=main-shard-00-01-xz1r5.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 6]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=59643440, setName='main-shard-0', canonicalAddress=main-shard-00-01-xz1r5.mongodb.net:27017, hosts=[main-shard-00-00-xz1r5.mongodb.net:27017, main-shard-00-02-xz1r5.mongodb.net:27017, main-shard-00-01-xz1r5.mongodb.net:27017], passives=[], arbiters=[], primary='main-shard-00-01-xz1r5.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='US_EAST_1'}]}, electionId=7fffffff0000000000000002, setVersion=2, lastWriteDate=Fri May 08 23:22:52 MDT 2020, lastUpdateTimeNanos=213309287050040}
+2020-05-08 23:22:53.409  INFO 54301 --- [ngodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=main-shard-00-02-xz1r5.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 6]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=61695441, setName='main-shard-0', canonicalAddress=main-shard-00-02-xz1r5.mongodb.net:27017, hosts=[main-shard-00-00-xz1r5.mongodb.net:27017, main-shard-00-02-xz1r5.mongodb.net:27017, main-shard-00-01-xz1r5.mongodb.net:27017], passives=[], arbiters=[], primary='main-shard-00-01-xz1r5.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='US_EAST_1'}]}, electionId=null, setVersion=2, lastWriteDate=Fri May 08 23:22:52 MDT 2020, lastUpdateTimeNanos=213309287163870}
+2020-05-08 23:22:53.412  INFO 54301 --- [ngodb.net:27017] org.mongodb.driver.cluster               : Setting max election id to 7fffffff0000000000000002 from replica set primary main-shard-00-01-xz1r5.mongodb.net:27017
+2020-05-08 23:22:53.413  INFO 54301 --- [ngodb.net:27017] org.mongodb.driver.cluster               : Setting max set version to 2 from replica set primary main-shard-00-01-xz1r5.mongodb.net:27017
+2020-05-08 23:22:53.413  INFO 54301 --- [ngodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary main-shard-00-01-xz1r5.mongodb.net:27017
+2020-05-08 23:22:53.874  WARN 54301 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-08 23:22:54.177  INFO 54301 --- [    Test worker] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-05-08 23:22:54.421  INFO 54301 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-08 23:22:54.572  WARN 54301 --- [    Test worker] o.s.b.a.m.MustacheAutoConfiguration      : Cannot find template location: classpath:/templates/ (please add some templates, check your Mustache configuration, or set spring.mustache.check-template-location=false)
+2020-05-08 23:22:54.716  INFO 54301 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring TestDispatcherServlet ''
+2020-05-08 23:22:54.716  INFO 54301 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-05-08 23:22:54.728  INFO 54301 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 12 ms
+2020-05-08 23:22:54.775  INFO 54301 --- [    Test worker] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-05-08 23:22:54.794  INFO 54301 --- [    Test worker] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-05-08 23:22:54.816  INFO 54301 --- [    Test worker] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-05-08 23:22:55.197  INFO 54301 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 50125 (http) with context path ''
+2020-05-08 23:22:55.202  INFO 54301 --- [    Test worker] com.main.app.UserControllerTests         : Started UserControllerTests in 6.454 seconds (JVM running for 8.015)
+2020-05-08 23:22:56.029  INFO 54301 --- [    Test worker] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:4, serverValue:25074}] to main-shard-00-01-xz1r5.mongodb.net:27017
 
 MockHttpServletRequest:
       HTTP Method = POST
@@ -414,7 +424,7 @@ MockHttpServletResponse:
     Error message = null
           Headers = [Content-Type:&quot;application/json&quot;]
      Content type = application/json
-             Body = {&quot;users&quot;:[{&quot;email&quot;:&quot;maw1@iastate.edu&quot;,&quot;name&quot;:null,&quot;age&quot;:null,&quot;height&quot;:null,&quot;weight&quot;:null,&quot;lifestyle&quot;:null,&quot;gender&quot;:null,&quot;calorieLimit&quot;:null,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[],&quot;calendar&quot;:{}},{&quot;email&quot;:&quot;testmockaccount@test.com&quot;,&quot;name&quot;:null,&quot;age&quot;:null,&quot;height&quot;:null,&quot;weight&quot;:null,&quot;lifestyle&quot;:null,&quot;gender&quot;:null,&quot;calorieLimit&quot;:null,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[{&quot;name&quot;:&quot;Sustenance&quot;,&quot;calories&quot;:1000,&quot;sodium&quot;:15.0,&quot;carbs&quot;:15.0,&quot;protein&quot;:15.0,&quot;fat&quot;:15.0,&quot;cholesterol&quot;:15.0}],&quot;calendar&quot;:{&quot;05/08/2020&quot;:{&quot;foods&quot;:[{&quot;food&quot;:&quot;Sustenance&quot;,&quot;amount&quot;:2.0,&quot;timestamp&quot;:&quot;05-08-2020 19:17:04.43&quot;}]}}},{&quot;email&quot;:&quot;testmockfriend@test.com&quot;,&quot;name&quot;:null,&quot;age&quot;:null,&quot;height&quot;:null,&quot;weight&quot;:null,&quot;lifestyle&quot;:null,&quot;gender&quot;:null,&quot;calorieLimit&quot;:null,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[],&quot;calendar&quot;:{}}]}
+             Body = {&quot;users&quot;:[{&quot;email&quot;:&quot;maw1@iastate.edu&quot;,&quot;name&quot;:null,&quot;age&quot;:null,&quot;height&quot;:null,&quot;weight&quot;:null,&quot;lifestyle&quot;:null,&quot;gender&quot;:null,&quot;calorieLimit&quot;:null,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[],&quot;calendar&quot;:{}},{&quot;email&quot;:&quot;testmockaccount@test.com&quot;,&quot;name&quot;:null,&quot;age&quot;:null,&quot;height&quot;:null,&quot;weight&quot;:null,&quot;lifestyle&quot;:null,&quot;gender&quot;:null,&quot;calorieLimit&quot;:null,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[{&quot;name&quot;:&quot;Sustenance&quot;,&quot;calories&quot;:1000,&quot;sodium&quot;:15.0,&quot;carbs&quot;:15.0,&quot;protein&quot;:15.0,&quot;fat&quot;:15.0,&quot;cholesterol&quot;:15.0}],&quot;calendar&quot;:{&quot;05/08/2020&quot;:{&quot;foods&quot;:[{&quot;food&quot;:&quot;Sustenance&quot;,&quot;amount&quot;:2.0,&quot;timestamp&quot;:&quot;05-08-2020 23:22:57.21&quot;}]}}},{&quot;email&quot;:&quot;testmockfriend@test.com&quot;,&quot;name&quot;:null,&quot;age&quot;:null,&quot;height&quot;:null,&quot;weight&quot;:null,&quot;lifestyle&quot;:null,&quot;gender&quot;:null,&quot;calorieLimit&quot;:null,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[],&quot;calendar&quot;:{}}]}
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
@@ -562,7 +572,7 @@ MockHttpServletResponse:
     Error message = null
           Headers = [Content-Type:&quot;application/json&quot;]
      Content type = application/json
-             Body = {&quot;email&quot;:&quot;testmockaccount@test.com&quot;,&quot;name&quot;:&quot;Max&quot;,&quot;age&quot;:1,&quot;height&quot;:10,&quot;weight&quot;:10,&quot;lifestyle&quot;:&quot;Active&quot;,&quot;gender&quot;:&quot;Computer&quot;,&quot;calorieLimit&quot;:1,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[{&quot;name&quot;:&quot;Sustenance&quot;,&quot;calories&quot;:1000,&quot;sodium&quot;:15.0,&quot;carbs&quot;:15.0,&quot;protein&quot;:15.0,&quot;fat&quot;:15.0,&quot;cholesterol&quot;:15.0}],&quot;calendar&quot;:{&quot;05/08/2020&quot;:{&quot;foods&quot;:[{&quot;food&quot;:&quot;Sustenance&quot;,&quot;amount&quot;:2.0,&quot;timestamp&quot;:&quot;05-08-2020 19:17:04.43&quot;}]}}}
+             Body = {&quot;email&quot;:&quot;testmockaccount@test.com&quot;,&quot;name&quot;:&quot;Max&quot;,&quot;age&quot;:1,&quot;height&quot;:10,&quot;weight&quot;:10,&quot;lifestyle&quot;:&quot;Active&quot;,&quot;gender&quot;:&quot;Computer&quot;,&quot;calorieLimit&quot;:1,&quot;userType&quot;:&quot;default&quot;,&quot;allergens&quot;:[],&quot;following&quot;:[],&quot;foods&quot;:[{&quot;name&quot;:&quot;Sustenance&quot;,&quot;calories&quot;:1000,&quot;sodium&quot;:15.0,&quot;carbs&quot;:15.0,&quot;protein&quot;:15.0,&quot;fat&quot;:15.0,&quot;cholesterol&quot;:15.0}],&quot;calendar&quot;:{&quot;05/08/2020&quot;:{&quot;foods&quot;:[{&quot;food&quot;:&quot;Sustenance&quot;,&quot;amount&quot;:2.0,&quot;timestamp&quot;:&quot;05-08-2020 23:22:57.21&quot;}]}}}
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
@@ -725,7 +735,7 @@ MockHttpServletResponse:
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.1</a> at May 8, 2020, 7:17:06 PM</p>
+<a href="http://www.gradle.org">Gradle 6.1.1</a> at May 8, 2020, 11:23:01 PM</p>
 </div>
 </div>
 </body>
