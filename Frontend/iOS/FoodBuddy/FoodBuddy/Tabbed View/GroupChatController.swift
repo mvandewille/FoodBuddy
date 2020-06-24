@@ -84,7 +84,7 @@ class GroupChatController : UIViewController
     
     var isConnected = false
     
-    var socketConnection = URLSession.shared.webSocketTask(with: URL(string: "ws://coms-309-hv-3.cs.iastate.edu:8080/chat/")!)
+    var socketConnection = URLSession.shared.webSocketTask(with: URL(string: "ws://foodbuddy-env-main.eba-yminfrgp.us-east-2.elasticbeanstalk.com/chat/")!)
 
     //MARK: Send Message Btn Action
     @IBAction func submitMsg(_ sender: Any)
@@ -107,7 +107,7 @@ class GroupChatController : UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         let name = UserDefaults.standard.string(forKey: "userName")!.replacingOccurrences(of: " ", with: "%20")
-        let urlTemp = URL(string: "ws://coms-309-hv-3.cs.iastate.edu:8080/chat/" + name)!
+        let urlTemp = URL(string: "ws://foodbuddy-env-main.eba-yminfrgp.us-east-2.elasticbeanstalk.com/chat/" + name)!
         socketConnection = URLSession.shared.webSocketTask(with: urlTemp)
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()

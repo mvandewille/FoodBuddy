@@ -65,7 +65,7 @@ class SignUpViewController: UIViewController
         let json: [String: Any] = ["email": email, "password": pwd]
         let jsonData = try? JSONSerialization.data(withJSONObject: json, options: [])
         //TODO - Create JSON for email, password here
-        let urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/add"
+        let urlStr = "http://foodbuddy-env-main.eba-yminfrgp.us-east-2.elasticbeanstalk.com/user/add"
         let url = URL(string: urlStr)
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"

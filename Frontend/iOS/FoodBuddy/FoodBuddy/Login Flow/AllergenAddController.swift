@@ -71,7 +71,7 @@ class AllergenAddController : UIViewController
     func doHTTP(dict : Dictionary<String, Any>)
     {
         let jsonData = try? JSONSerialization.data(withJSONObject: dict, options: [])
-        let urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/update"
+        let urlStr = "http://foodbuddy-env-main.eba-yminfrgp.us-east-2.elasticbeanstalk.com/user/update"
         let url = URL(string: urlStr)
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"

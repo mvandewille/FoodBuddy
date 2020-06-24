@@ -23,6 +23,7 @@
 		AFE02B49240C949200CBA9CD /* AllergenSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE02B48240C949200CBA9CD /* AllergenSettingsController.swift */; };
 		AFE02B4D240C94F700CBA9CD /* AccountSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE02B4C240C94F700CBA9CD /* AccountSettingsController.swift */; };
 		AFE02B4F240CB57A00CBA9CD /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE02B4E240CB57A00CBA9CD /* SettingsController.swift */; };
+		AFEB5F0324A3B9210033B775 /* FoodBuddy in Resources */ = {isa = PBXBuildFile; fileRef = AFEB5F0224A3B9210033B775 /* FoodBuddy */; };
 		AFEDE97D241EBE9A000ABD7F /* GroupChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEDE97C241EBE9A000ABD7F /* GroupChatController.swift */; };
 		AFFAF99F240701B70079837D /* AllergenAddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFAF99E240701B70079837D /* AllergenAddController.swift */; };
 		AFFEDE7823D9F0B5002D6E82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFEDE7723D9F0B5002D6E82 /* AppDelegate.swift */; };
@@ -74,6 +75,7 @@
 		AFE02B48240C949200CBA9CD /* AllergenSettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergenSettingsController.swift; sourceTree = "<group>"; };
 		AFE02B4C240C94F700CBA9CD /* AccountSettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsController.swift; sourceTree = "<group>"; };
 		AFE02B4E240CB57A00CBA9CD /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		AFEB5F0224A3B9210033B775 /* FoodBuddy */ = {isa = PBXFileReference; lastKnownFileType = folder; name = FoodBuddy; sourceTree = "<group>"; };
 		AFEDE97C241EBE9A000ABD7F /* GroupChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatController.swift; sourceTree = "<group>"; };
 		AFFAF99E240701B70079837D /* AllergenAddController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergenAddController.swift; sourceTree = "<group>"; };
 		AFFEDE7423D9F0B5002D6E82 /* FoodBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -217,6 +219,7 @@
 				AFE02B46240B68D100CBA9CD /* Settings Flow */,
 				AFA9C193245945340063FCC5 /* UIView+Extensions.swift */,
 				AFA9C197245A931E0063FCC5 /* LabelFinder2.mlmodel */,
+				AFEB5F0224A3B9210033B775 /* FoodBuddy */,
 				AFFEDE8223D9F0B7002D6E82 /* Assets.xcassets */,
 				AFFEDE8723D9F0B7002D6E82 /* Info.plist */,
 			);
@@ -346,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFFEDE8623D9F0B7002D6E82 /* LaunchScreen.storyboard in Resources */,
+				AFEB5F0324A3B9210033B775 /* FoodBuddy in Resources */,
 				AF5B649C23FCE5F5004708F3 /* FoodProcessing.storyboard in Resources */,
 				AFFEDE8323D9F0B7002D6E82 /* Assets.xcassets in Resources */,
 				AFFEDE8123D9F0B5002D6E82 /* Main.storyboard in Resources */,

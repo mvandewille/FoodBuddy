@@ -67,7 +67,7 @@ class FriendsSettingController: UIViewController
     func getFollowers()
     {
         let email = UserDefaults.standard.string(forKey: "email")
-        let urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/find/following?email=" + email!
+        let urlStr = "http://foodbuddy-env-main.eba-yminfrgp.us-east-2.elasticbeanstalk.com/user/find/following?email=" + email!
         let newString = urlStr.replacingOccurrences(of: " ", with: "+")
         let url = URL(string: newString)
         var request = URLRequest(url: url!)
@@ -98,7 +98,7 @@ class FriendsSettingController: UIViewController
     func doHTTP(dict : Dictionary<String, Any>)
     {
         let jsonData = try? JSONSerialization.data(withJSONObject: dict, options: [])
-        let urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/add/following"
+        let urlStr = "http://foodbuddy-env-main.eba-yminfrgp.us-east-2.elasticbeanstalk.com/user/add/following"
         let url = URL(string: urlStr)
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
@@ -142,7 +142,7 @@ class FriendsSettingController: UIViewController
     //MARK: Remove Follower HTTP
     func doHTTPDelete(following: String, index: IndexPath)
     {
-        var urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/delete/following?email="
+        var urlStr = "http://foodbuddy-env-main.eba-yminfrgp.us-east-2.elasticbeanstalk.com/user/delete/following?email="
         urlStr.append(UserDefaults.standard.string(forKey: "email")! + "&following=" + following)
         let url = URL(string: urlStr)
         var request = URLRequest(url: url!)

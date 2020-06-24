@@ -137,7 +137,7 @@ class DailyViewController : UIViewController
     func getLimits()
     {
         let email = UserDefaults.standard.string(forKey: "email")
-        let urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/find/email/basic?email=" + email!
+        let urlStr = "http://foodbuddy-env-main.eba-yminfrgp.us-east-2.elasticbeanstalk.com/user/find/email/basic?email=" + email!
         let newString = urlStr.replacingOccurrences(of: " ", with: "+")
         let url = URL(string: newString)
         var request = URLRequest(url: url!)
@@ -161,7 +161,7 @@ class DailyViewController : UIViewController
     func getData()
     {
         let email = UserDefaults.standard.string(forKey: "email")
-        let urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/day/total?email=" + email!
+        let urlStr = "http://foodbuddy-env-main.eba-yminfrgp.us-east-2.elasticbeanstalk.com/user/day/total?email=" + email!
         let newString = urlStr.replacingOccurrences(of: " ", with: "+")
         let url = URL(string: newString)
         var request = URLRequest(url: url!)

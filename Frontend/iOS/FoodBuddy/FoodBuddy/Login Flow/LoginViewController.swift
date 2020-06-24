@@ -51,7 +51,7 @@ class LoginViewController: UIViewController
     //MARK: - Login Auth HTTP
     func DoLogin(_ email: String, _ pwd: String) {
         
-        let urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/auth?email=" + email + "&password=" + String(pwd)
+        let urlStr = "http://foodbuddy-env-main.eba-yminfrgp.us-east-2.elasticbeanstalk.com/user/auth?email=" + email + "&password=" + String(pwd)
         let newString = urlStr.replacingOccurrences(of: " ", with: "+")
         let url = URL(string: newString)
         var request = URLRequest(url: url!)
@@ -91,7 +91,7 @@ class LoginViewController: UIViewController
     //MARK: -Very User Info HTTP
     func DoFieldCheck(_ email: String,_ pwd: String)
     {
-        let urlStr = "http://coms-309-hv-3.cs.iastate.edu:8080/user/find/email/basic?email=" + email
+        let urlStr = "http://foodbuddy-env-main.eba-yminfrgp.us-east-2.elasticbeanstalk.com/user/find/email/basic?email=" + email
         let newString = urlStr.replacingOccurrences(of: " ", with: "+")
         let url = URL(string: newString)
         var request = URLRequest(url: url!)
